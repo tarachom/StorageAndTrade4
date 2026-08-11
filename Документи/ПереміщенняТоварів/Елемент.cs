@@ -38,7 +38,7 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
     TimeControl ЧасДоставкиЗ = TimeControl.New();
     TimeControl ЧасДоставкиДо = TimeControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
 
@@ -143,8 +143,8 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПереміщенняТоварів.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПереміщенняТоварів.Підстава";
 
         //Автор:
         Автор.Caption = "Автор";
@@ -199,8 +199,8 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         //Автор
         CreateField(vBox, null, Автор);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -246,7 +246,7 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Автор.Pointer = Елемент.Автор;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
 
@@ -278,7 +278,7 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
     }

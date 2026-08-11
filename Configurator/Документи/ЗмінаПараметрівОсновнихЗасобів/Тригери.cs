@@ -21,7 +21,7 @@ static class ЗмінаПараметрівОсновнихЗасобів_Trigge
                     
     }
 
-    public static Task Copying(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт, ЗмінаПараметрівОсновнихЗасобів_Object Основа)
+    public static Task Copying(ЗмінаПараметрівОсновнихЗасобів_Object ДокументОбєкт, ЗмінаПараметрівОсновнихЗасобів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

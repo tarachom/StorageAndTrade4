@@ -26,7 +26,7 @@ partial class Амортизація_Елемент : DocumentFormElement
     Entry НомерДок = Entry.New();
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
@@ -51,8 +51,8 @@ partial class Амортизація_Елемент : DocumentFormElement
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.Амортизація.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.Амортизація.Підстава";
 
         //Організація:
         Організація.Caption = "Організація";
@@ -91,8 +91,8 @@ partial class Амортизація_Елемент : DocumentFormElement
 
     void CreateTopEnd(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
 
         // Автор
         CreateField(vBox, null, Автор);
@@ -112,7 +112,7 @@ partial class Амортизація_Елемент : DocumentFormElement
         НомерДок.SetText(Елемент.НомерДок);
         ДатаДок.Value = Елемент.ДатаДок;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Організація.Pointer = Елемент.Організація;
         Автор.Pointer = Елемент.Автор;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
@@ -123,7 +123,7 @@ partial class Амортизація_Елемент : DocumentFormElement
         Елемент.НомерДок = НомерДок.GetText();
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Організація = Організація.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;

@@ -16,7 +16,7 @@ class ФізичніОсоби_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ФізичніОсоби(++number)).ToString("D6");
     }
 
-    public static Task Copying(ФізичніОсоби_Object ДовідникОбєкт, ФізичніОсоби_Object Основа)
+    public static Task Copying(ФізичніОсоби_Object ДовідникОбєкт, ФізичніОсоби_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

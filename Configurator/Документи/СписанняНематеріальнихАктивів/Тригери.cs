@@ -21,7 +21,7 @@ static class СписанняНематеріальнихАктивів_Triggers
                     
     }
 
-    public static Task Copying(СписанняНематеріальнихАктивів_Object ДокументОбєкт, СписанняНематеріальнихАктивів_Object Основа)
+    public static Task Copying(СписанняНематеріальнихАктивів_Object ДокументОбєкт, СписанняНематеріальнихАктивів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -38,7 +38,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
     СтаттяРухуКоштів_PointerControl СтаттяРухуКоштів = СтаттяРухуКоштів_PointerControl.New();
     Каси_PointerControl КасаОтримувач = Каси_PointerControl.New();
     NumericControl Курс = NumericControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
@@ -159,8 +159,8 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
         КасаОтримувач.Caption = "Каса отримувач";
         КасаОтримувач.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.РозхіднийКасовийОрдер.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.РозхіднийКасовийОрдер.Підстава";
 
         //Коментар:
         Коментар.WidthRequest = 920;
@@ -232,8 +232,8 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
         //Автор
         CreateField(vBox, null, Автор);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -275,7 +275,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
         СтаттяРухуКоштів.Pointer = Елемент.СтаттяРухуКоштів;
         КасаОтримувач.Pointer = Елемент.КасаОтримувач;
         Курс.Value = Елемент.Курс;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Коментар.SetText(Елемент.Коментар);
         Автор.Pointer = Елемент.Автор;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
@@ -308,7 +308,7 @@ partial class РозхіднийКасовийОрдер_Елемент : Docume
         Елемент.СтаттяРухуКоштів = СтаттяРухуКоштів.Pointer;
         Елемент.КасаОтримувач = КасаОтримувач.Pointer;
         Елемент.Курс = Курс.Value;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Автор = Автор.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;

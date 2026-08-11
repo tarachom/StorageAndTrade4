@@ -21,7 +21,7 @@ static class Модернізація_Triggers
                     
     }
 
-    public static Task Copying(Модернізація_Object ДокументОбєкт, Модернізація_Object Основа)
+    public static Task Copying(Модернізація_Object ДокументОбєкт, Модернізація_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

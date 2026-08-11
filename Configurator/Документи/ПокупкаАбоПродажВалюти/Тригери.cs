@@ -21,7 +21,7 @@ static class ПокупкаАбоПродажВалюти_Triggers
                     
     }
 
-    public static Task Copying(ПокупкаАбоПродажВалюти_Object ДокументОбєкт, ПокупкаАбоПродажВалюти_Object Основа)
+    public static Task Copying(ПокупкаАбоПродажВалюти_Object ДокументОбєкт, ПокупкаАбоПродажВалюти_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

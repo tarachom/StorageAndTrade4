@@ -18,7 +18,7 @@ class Блокнот_Triggers
         ДовідникОбєкт.ДатаЗапису = DateTime.Now;
     }
 
-    public static Task Copying(Блокнот_Object ДовідникОбєкт, Блокнот_Object Основа)
+    public static Task Copying(Блокнот_Object ДовідникОбєкт, Блокнот_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

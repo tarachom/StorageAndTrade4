@@ -21,7 +21,7 @@ static class НакладнаВимога_Triggers
                     
     }
 
-    public static Task Copying(НакладнаВимога_Object ДокументОбєкт, НакладнаВимога_Object Основа)
+    public static Task Copying(НакладнаВимога_Object ДокументОбєкт, НакладнаВимога_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

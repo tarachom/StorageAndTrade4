@@ -16,7 +16,7 @@ class КраїниСвіту_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.КраїниСвіту(++number)).ToString("D6");
     }
 
-    public static Task Copying(КраїниСвіту_Object ДовідникОбєкт, КраїниСвіту_Object Основа)
+    public static Task Copying(КраїниСвіту_Object ДовідникОбєкт, КраїниСвіту_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

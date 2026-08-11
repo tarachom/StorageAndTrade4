@@ -16,7 +16,7 @@ class Користувачі_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Користувачі(++number)).ToString("D6");
     }
 
-    public static Task Copying(Користувачі_Object ДовідникОбєкт, Користувачі_Object Основа)
+    public static Task Copying(Користувачі_Object ДовідникОбєкт, Користувачі_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

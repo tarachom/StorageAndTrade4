@@ -26,7 +26,7 @@ partial class РозподілІншихВитрат_Елемент : DocumentFo
     Entry НомерДок = Entry.New();
                     DateTimeControl ДатаДок = DateTimeControl.New();
             Entry Коментар = Entry.New();
-                    CompositePointerControl Основа = CompositePointerControl.New();
+                    CompositePointerControl Підстава = CompositePointerControl.New();
             
     #endregion
 
@@ -50,8 +50,8 @@ partial class РозподілІншихВитрат_Елемент : DocumentFo
             //Коментар:
             Коментар.WidthRequest = 300;
                         
-            //Основа:
-            Основа.BoundConfType = "Документи.РозподілІншихВитрат.Основа";
+            //Підстава:
+            Підстава.BoundConfType = "Документи.РозподілІншихВитрат.Підстава";
                 
     }
 
@@ -76,8 +76,8 @@ partial class РозподілІншихВитрат_Елемент : DocumentFo
     void CreateBottomStart(Box vBox)
     {
         
-            // Основа
-            CreateField(vBox, null, Основа);
+            // Підстава
+            CreateField(vBox, null, Підстава);
                 
     }
 
@@ -93,7 +93,7 @@ partial class РозподілІншихВитрат_Елемент : DocumentFo
         НомерДок.SetText(Елемент.НомерДок);
                         ДатаДок.Value = Елемент.ДатаДок;
                 Коментар.SetText(Елемент.Коментар);
-                        Основа.Pointer = Елемент.Основа;
+                        Підстава.Pointer = Елемент.Підстава;
                 
     }
 
@@ -102,7 +102,7 @@ partial class РозподілІншихВитрат_Елемент : DocumentFo
         Елемент.НомерДок = НомерДок.GetText();
                         Елемент.ДатаДок = ДатаДок.Value;
                 Елемент.Коментар = Коментар.GetText();
-                        Елемент.Основа = Основа.Pointer;
+                        Елемент.Підстава = Підстава.Pointer;
                 
     }
 

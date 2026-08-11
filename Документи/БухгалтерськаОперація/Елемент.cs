@@ -24,7 +24,7 @@ partial class БухгалтерськаОперація_Елемент : Docume
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry Коментар = Entry.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
 
     #endregion
 
@@ -58,8 +58,8 @@ partial class БухгалтерськаОперація_Елемент : Docume
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.БухгалтерськаОперація.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.БухгалтерськаОперація.Підстава";
     }
 
     public static БухгалтерськаОперація_Елемент New()
@@ -97,8 +97,8 @@ partial class БухгалтерськаОперація_Елемент : Docume
 
     void CreateBottomStart(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -121,7 +121,7 @@ partial class БухгалтерськаОперація_Елемент : Docume
         ДатаДок.Value = Елемент.ДатаДок;
         Коментар.SetText(Елемент.Коментар);
         Організація.Pointer = Елемент.Організація;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Проводки" 
         Операції.ЕлементВласник = Елемент;
@@ -134,7 +134,7 @@ partial class БухгалтерськаОперація_Елемент : Docume
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Організація = Організація.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
     }
 
     #endregion

@@ -21,7 +21,7 @@ static class ПослугиСторонньоїОрганізації_Triggers
                     
     }
 
-    public static Task Copying(ПослугиСторонньоїОрганізації_Object ДокументОбєкт, ПослугиСторонньоїОрганізації_Object Основа)
+    public static Task Copying(ПослугиСторонньоїОрганізації_Object ДокументОбєкт, ПослугиСторонньоїОрганізації_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

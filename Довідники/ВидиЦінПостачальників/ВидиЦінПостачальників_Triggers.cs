@@ -16,7 +16,7 @@ class ВидиЦінПостачальників_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиЦінПостачальників(++number)).ToString("D6");
     }
 
-    public static Task Copying(ВидиЦінПостачальників_Object ДовідникОбєкт, ВидиЦінПостачальників_Object Основа)
+    public static Task Copying(ВидиЦінПостачальників_Object ДовідникОбєкт, ВидиЦінПостачальників_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

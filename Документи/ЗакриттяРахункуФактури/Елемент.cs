@@ -34,7 +34,7 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
 
     #endregion
 
@@ -109,8 +109,8 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         Менеджер.Caption = "Менеджер";
         Менеджер.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ЗакриттяРахункуФактури.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ЗакриттяРахункуФактури.Підстава";
     }
 
     public static ЗакриттяРахункуФактури_Елемент New()
@@ -178,8 +178,8 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
 
     void CreateBottomEnd(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -210,7 +210,7 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         Автор.Pointer = Елемент.Автор;
         Коментар.SetText(Елемент.Коментар);
         Менеджер.Pointer = Елемент.Менеджер;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -238,7 +238,7 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         Елемент.Автор = Автор.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Менеджер = Менеджер.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.СумаДокументу = Товари.СумаДокументу();
     }
 

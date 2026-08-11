@@ -21,7 +21,7 @@ static class ЗаписКнигиПридбання_Triggers
                     
     }
 
-    public static Task Copying(ЗаписКнигиПридбання_Object ДокументОбєкт, ЗаписКнигиПридбання_Object Основа)
+    public static Task Copying(ЗаписКнигиПридбання_Object ДокументОбєкт, ЗаписКнигиПридбання_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

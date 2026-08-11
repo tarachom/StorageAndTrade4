@@ -16,7 +16,7 @@ class СтруктураПідприємства_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.СтруктураПідприємства(++number)).ToString("D6");
     }
 
-    public static Task Copying(СтруктураПідприємства_Object ДовідникОбєкт, СтруктураПідприємства_Object Основа)
+    public static Task Copying(СтруктураПідприємства_Object ДовідникОбєкт, СтруктураПідприємства_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -23,7 +23,7 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
     Entry НомерДок = Entry.New();
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     ФізичніОсоби_PointerControl ФізичнаОсоба = ФізичніОсоби_PointerControl.New();
@@ -69,8 +69,8 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.АвансовийЗвіт.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.АвансовийЗвіт.Підстава";
 
         //Організація:
         Організація.Caption = "Організація";
@@ -154,8 +154,8 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         // ВидЦіни
         CreateField(vBox, null, ВидЦіни);
 
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -174,7 +174,7 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         НомерДок.SetText(Елемент.НомерДок);
         ДатаДок.Value = Елемент.ДатаДок;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Організація.Pointer = Елемент.Організація;
         Валюта.Pointer = Елемент.Валюта;
         ФізичнаОсоба.Pointer = Елемент.ФізичнаОсоба;
@@ -198,7 +198,7 @@ partial class АвансовийЗвіт_Елемент : DocumentFormElement
         Елемент.НомерДок = НомерДок.GetText();
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Організація = Організація.Pointer;
         Елемент.Валюта = Валюта.Pointer;
         Елемент.ФізичнаОсоба = ФізичнаОсоба.Pointer;

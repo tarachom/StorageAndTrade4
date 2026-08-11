@@ -21,7 +21,7 @@ static class СписанняОсновнихЗасобів_Triggers
                     
     }
 
-    public static Task Copying(СписанняОсновнихЗасобів_Object ДокументОбєкт, СписанняОсновнихЗасобів_Object Основа)
+    public static Task Copying(СписанняОсновнихЗасобів_Object ДокументОбєкт, СписанняОсновнихЗасобів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

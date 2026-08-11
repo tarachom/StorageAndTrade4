@@ -21,7 +21,7 @@ static class СписанняТоварів_Triggers
                     
     }
 
-    public static Task Copying(СписанняТоварів_Object ДокументОбєкт, СписанняТоварів_Object Основа)
+    public static Task Copying(СписанняТоварів_Object ДокументОбєкт, СписанняТоварів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

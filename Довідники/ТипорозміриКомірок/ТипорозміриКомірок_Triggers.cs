@@ -13,7 +13,7 @@ class ТипорозміриКомірок_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task Copying(ТипорозміриКомірок_Object ДовідникОбєкт, ТипорозміриКомірок_Object Основа)
+    public static Task Copying(ТипорозміриКомірок_Object ДовідникОбєкт, ТипорозміриКомірок_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

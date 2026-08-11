@@ -17,7 +17,7 @@ static class ПланРахунків_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task Copying(ПланРахунків_Object ДовідникОбєкт, ПланРахунків_Object Основа)
+    public static Task Copying(ПланРахунків_Object ДовідникОбєкт, ПланРахунків_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

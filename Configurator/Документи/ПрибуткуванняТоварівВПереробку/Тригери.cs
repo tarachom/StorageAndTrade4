@@ -21,7 +21,7 @@ static class ПрибуткуванняТоварівВПереробку_Trigge
                     
     }
 
-    public static Task Copying(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт, ПрибуткуванняТоварівВПереробку_Object Основа)
+    public static Task Copying(ПрибуткуванняТоварівВПереробку_Object ДокументОбєкт, ПрибуткуванняТоварівВПереробку_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

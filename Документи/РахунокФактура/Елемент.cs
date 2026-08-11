@@ -36,7 +36,7 @@ partial class РахунокФактура_Елемент : DocumentFormElement
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
@@ -143,8 +143,8 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.РахунокФактура.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.РахунокФактура.Підстава";
 
         //Автор:
         Автор.Caption = "Автор";
@@ -217,8 +217,8 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         //Менеджер
         CreateField(vBox, null, Менеджер);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -265,7 +265,7 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         Договір.Pointer = Елемент.Договір;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Автор.Pointer = Елемент.Автор;
         Менеджер.Pointer = Елемент.Менеджер;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
@@ -302,7 +302,7 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         Елемент.Договір = Договір.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;

@@ -26,7 +26,7 @@ partial class ПереміщенняТоварівНаСкладі_Елемен�
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry НомерДок = Entry.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
@@ -59,8 +59,8 @@ partial class ПереміщенняТоварівНаСкладі_Елемен�
         //Коментар:
         Коментар.WidthRequest = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПереміщенняТоварівНаСкладі.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПереміщенняТоварівНаСкладі.Підстава";
 
         //Склад:
         Склад.Caption = "Склад";
@@ -113,8 +113,8 @@ partial class ПереміщенняТоварівНаСкладі_Елемен�
 
     void CreateBottomStart(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
 
         // Склад
         CreateField(vBox, null, Склад);
@@ -143,7 +143,7 @@ partial class ПереміщенняТоварівНаСкладі_Елемен�
         ДатаДок.Value = Елемент.ДатаДок;
         НомерДок.SetText(Елемент.НомерДок);
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Склад.Pointer = Елемент.Склад;
         Автор.Pointer = Елемент.Автор;
         Організація.Pointer = Елемент.Організація;
@@ -160,7 +160,7 @@ partial class ПереміщенняТоварівНаСкладі_Елемен�
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.НомерДок = НомерДок.GetText();
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Склад = Склад.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.Організація = Організація.Pointer;

@@ -28,7 +28,7 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
     Організації_PointerControl Організація = Організації_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
 
@@ -76,8 +76,8 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.КорегуванняБоргу.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.КорегуванняБоргу.Підстава";
 
         //Автор:
         Автор.Caption = "Автор";
@@ -128,8 +128,8 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
 
     void CreateBottomEnd(Box vBox)
     {
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -149,7 +149,7 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         Організація.Pointer = Елемент.Організація;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Автор.Pointer = Елемент.Автор;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
 
@@ -169,7 +169,7 @@ partial class КорегуванняБоргу_Елемент : DocumentFormElem
         Елемент.Організація = Організація.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
 

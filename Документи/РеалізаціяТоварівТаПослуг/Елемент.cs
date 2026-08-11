@@ -38,7 +38,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
     ComboBoxText ГосподарськаОперація = ComboBoxText.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     ComboBoxText Статус = ComboBoxText.New();
     NumericControl СумаПередоплати = NumericControl.New();
     NumericControl СумаПередоплатиЗаТару = NumericControl.New();
@@ -145,8 +145,8 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Договір.Caption = "Договір";
         Договір.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.РеалізаціяТоварівТаПослуг.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.РеалізаціяТоварівТаПослуг.Підстава";
 
         //Статус:
         {
@@ -241,8 +241,8 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         //Менеджер
         CreateField(vBox, null, Менеджер);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -304,7 +304,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
         Каса.Pointer = Елемент.Каса;
         Договір.Pointer = Елемент.Договір;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Статус.ActiveId = Елемент.Статус.ToString();
         СумаПередоплати.Value = Елемент.СумаПередоплати;
         СумаПередоплатиЗаТару.Value = Елемент.СумаПередоплатиЗаТару;
@@ -352,7 +352,7 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
         Елемент.Каса = Каса.Pointer;
         Елемент.Договір = Договір.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Статус = ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_FindByName(Статус.ActiveId);
         Елемент.СумаПередоплати = СумаПередоплати.Value;
         Елемент.СумаПередоплатиЗаТару = СумаПередоплатиЗаТару.Value;

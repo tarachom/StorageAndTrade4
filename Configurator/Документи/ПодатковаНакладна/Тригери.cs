@@ -21,7 +21,7 @@ static class ПодатковаНакладна_Triggers
                     
     }
 
-    public static Task Copying(ПодатковаНакладна_Object ДокументОбєкт, ПодатковаНакладна_Object Основа)
+    public static Task Copying(ПодатковаНакладна_Object ДокументОбєкт, ПодатковаНакладна_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

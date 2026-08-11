@@ -34,7 +34,7 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     ComboBoxText ПричинаЗакриттяЗамовлення = ComboBoxText.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
 
     #endregion
 
@@ -110,8 +110,8 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
             ПричинаЗакриттяЗамовлення.AddController(FunctionForComboBox.DisableScrolling());
         }
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ЗакриттяЗамовленняКлієнта.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ЗакриттяЗамовленняКлієнта.Підстава";
     }
 
     public static ЗакриттяЗамовленняКлієнта_Елемент New()
@@ -179,8 +179,8 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
 
     void CreateBottomEnd(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -211,7 +211,7 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         Коментар.SetText(Елемент.Коментар);
         Менеджер.Pointer = Елемент.Менеджер;
         ПричинаЗакриттяЗамовлення.ActiveId = Елемент.ПричинаЗакриттяЗамовлення.ToString();
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -239,7 +239,7 @@ partial class ЗакриттяЗамовленняКлієнта_Елемент 
         Елемент.Коментар = Коментар.GetText();
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.ПричинаЗакриттяЗамовлення = ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняКлієнта_FindByName(ПричинаЗакриттяЗамовлення.ActiveId);
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
 
         Елемент.СумаДокументу = Товари.СумаДокументу();
     }

@@ -21,7 +21,7 @@ static class ПередачаОбладнанняВМонтаж_Triggers
                     
     }
 
-    public static Task Copying(ПередачаОбладнанняВМонтаж_Object ДокументОбєкт, ПередачаОбладнанняВМонтаж_Object Основа)
+    public static Task Copying(ПередачаОбладнанняВМонтаж_Object ДокументОбєкт, ПередачаОбладнанняВМонтаж_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 07.08.2026 19:42:02
+ * Дата конфігурації: 10.08.2026 14:14:14
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
@@ -15624,7 +15624,7 @@ namespace GeneratedCode.Документи
         public const string Статус = "col_b5";
         public const string ФормаОплати = "col_b6";
         public const string Менеджер = "col_b7";
-        public const string Основа = "col_b8";
+        public const string Підстава = "col_b8";
         public const string Коментар = "col_a2";
         public const string КлючовіСловаДляПошуку = "col_b9";
     }
@@ -15677,7 +15677,7 @@ namespace GeneratedCode.Документи
                 Статус = (base.FieldValue["col_b5"] != DBNull.Value) ? (Перелічення.СтатусиЗамовленьПостачальникам)base.FieldValue["col_b5"] : 0;
                 ФормаОплати = (base.FieldValue["col_b6"] != DBNull.Value) ? (Перелічення.ФормаОплати)base.FieldValue["col_b6"] : 0;
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_b7"]);
-                Основа = (base.FieldValue["col_b8"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b8"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_b8"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b8"] : new UuidAndText();
                 Коментар = base.FieldValue["col_a2"].ToString() ?? "";
                 КлючовіСловаДляПошуку = base.FieldValue["col_b9"].ToString() ?? "";
                 
@@ -15724,7 +15724,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b5"] = (int)Статус;
             base.FieldValue["col_b6"] = (int)ФормаОплати;
             base.FieldValue["col_b7"] = Менеджер.UniqueID.UGuid;
-            base.FieldValue["col_b8"] = Основа;
+            base.FieldValue["col_b8"] = Підстава;
             base.FieldValue["col_a2"] = Коментар;
             base.FieldValue["col_b9"] = КлючовіСловаДляПошуку;
             
@@ -15800,7 +15800,7 @@ namespace GeneratedCode.Документи
                 Статус = Статус,
                 ФормаОплати = ФормаОплати,
                 Менеджер = Менеджер.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Коментар = Коментар,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
@@ -15864,7 +15864,7 @@ namespace GeneratedCode.Документи
         public Перелічення.СтатусиЗамовленьПостачальникам Статус { get; set; } = 0;
         public Перелічення.ФормаОплати ФормаОплати { get; set; } = 0;
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string Коментар { get; set; } = "";
         public string КлючовіСловаДляПошуку { get; set; } = "";
         
@@ -15992,7 +15992,7 @@ namespace GeneratedCode.Документи
         public Перелічення.СтатусиЗамовленьПостачальникам Статус { get { var obj = getValue("col_b5"); return (obj != DBNull.Value) ? (Перелічення.СтатусиЗамовленьПостачальникам)obj : 0; } }
         public Перелічення.ФормаОплати ФормаОплати { get { var obj = getValue("col_b6"); return (obj != DBNull.Value) ? (Перелічення.ФормаОплати)obj : 0; } }
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b7"); return new Довідники.Користувачі_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string Коментар { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b9"); return obj.ToString() ?? ""; } }
         
@@ -16408,7 +16408,7 @@ namespace GeneratedCode.Документи
         public const string Менеджер = "col_d1";
         public const string СтаттяРухуКоштів = "col_d2";
         public const string Каса = "col_d3";
-        public const string Основа = "col_a1";
+        public const string Підстава = "col_a1";
         public const string Коментар = "col_b1";
         public const string КлючовіСловаДляПошуку = "col_a2";
         public const string ДокументБухгалтерськаОперація = "col_d5";
@@ -16470,7 +16470,7 @@ namespace GeneratedCode.Документи
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_d1"]);
                 СтаттяРухуКоштів = new Довідники.СтаттяРухуКоштів_Pointer(base.FieldValue["col_d2"]);
                 Каса = new Довідники.Каси_Pointer(base.FieldValue["col_d3"]);
-                Основа = (base.FieldValue["col_a1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a1"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a1"] : new UuidAndText();
                 Коментар = base.FieldValue["col_b1"].ToString() ?? "";
                 КлючовіСловаДляПошуку = base.FieldValue["col_a2"].ToString() ?? "";
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_d5"]);
@@ -16526,7 +16526,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_d1"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_d2"] = СтаттяРухуКоштів.UniqueID.UGuid;
             base.FieldValue["col_d3"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Основа;
+            base.FieldValue["col_a1"] = Підстава;
             base.FieldValue["col_b1"] = Коментар;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_d5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
@@ -16624,7 +16624,7 @@ namespace GeneratedCode.Документи
                 Менеджер = Менеджер.Copy(),
                 СтаттяРухуКоштів = СтаттяРухуКоштів.Copy(),
                 Каса = Каса.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Коментар = Коментар,
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
@@ -16702,7 +16702,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get; set; } = new Довідники.СтаттяРухуКоштів_Pointer();
         public Довідники.Каси_Pointer Каса { get; set; } = new Довідники.Каси_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string Коментар { get; set; } = "";
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
@@ -16848,7 +16848,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_d1"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = getValue("col_d2"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
         public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_d3"); return new Довідники.Каси_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string Коментар { get { var obj = getValue("col_b1"); return obj.ToString() ?? ""; } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_d5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
@@ -17536,7 +17536,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_c1";
         public const string Менеджер = "col_b2";
         public const string КлючовіСловаДляПошуку = "col_b3";
-        public const string Основа = "col_d1";
+        public const string Підстава = "col_d1";
     }
 
     public class ЗамовленняКлієнта_Object : DocumentObject
@@ -17593,7 +17593,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_c1"].ToString() ?? "";
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_b2"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_b3"].ToString() ?? "";
-                Основа = (base.FieldValue["col_d1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_d1"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_d1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_d1"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -17644,7 +17644,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_c1"] = Коментар;
             base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_d1"] = Основа;
+            base.FieldValue["col_d1"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -17726,7 +17726,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -17794,7 +17794,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ЗамовленняКлієнта_Товари_TablePart Товари_TablePart { get; set; }
@@ -17928,7 +17928,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_d1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_d1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -18324,7 +18324,7 @@ namespace GeneratedCode.Документи
         public const string ГосподарськаОперація = "col_b4";
         public const string Каса = "col_b5";
         public const string Договір = "col_b6";
-        public const string Основа = "col_b7";
+        public const string Підстава = "col_b7";
         public const string Статус = "col_b8";
         public const string Автор = "col_b9";
         public const string СумаПередоплати = "col_c1";
@@ -18385,7 +18385,7 @@ namespace GeneratedCode.Документи
                 ГосподарськаОперація = (base.FieldValue["col_b4"] != DBNull.Value) ? (Перелічення.ГосподарськіОперації)base.FieldValue["col_b4"] : 0;
                 Каса = new Довідники.Каси_Pointer(base.FieldValue["col_b5"]);
                 Договір = new Довідники.ДоговориКонтрагентів_Pointer(base.FieldValue["col_b6"]);
-                Основа = (base.FieldValue["col_b7"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b7"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_b7"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b7"] : new UuidAndText();
                 Статус = (base.FieldValue["col_b8"] != DBNull.Value) ? (Перелічення.СтатусиРеалізаціїТоварівТаПослуг)base.FieldValue["col_b8"] : 0;
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_b9"]);
                 СумаПередоплати = (base.FieldValue["col_c1"] != DBNull.Value) ? (decimal)base.FieldValue["col_c1"] : 0;
@@ -18440,7 +18440,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b4"] = (int)ГосподарськаОперація;
             base.FieldValue["col_b5"] = Каса.UniqueID.UGuid;
             base.FieldValue["col_b6"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_b7"] = Основа;
+            base.FieldValue["col_b7"] = Підстава;
             base.FieldValue["col_b8"] = (int)Статус;
             base.FieldValue["col_b9"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_c1"] = СумаПередоплати;
@@ -18533,7 +18533,7 @@ namespace GeneratedCode.Документи
                 ГосподарськаОперація = ГосподарськаОперація,
                 Каса = Каса.Copy(),
                 Договір = Договір.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Статус = Статус,
                 Автор = Автор.Copy(),
                 СумаПередоплати = СумаПередоплати,
@@ -18608,7 +18608,7 @@ namespace GeneratedCode.Документи
         public Перелічення.ГосподарськіОперації ГосподарськаОперація { get; set; } = 0;
         public Довідники.Каси_Pointer Каса { get; set; } = new Довідники.Каси_Pointer();
         public Довідники.ДоговориКонтрагентів_Pointer Договір { get; set; } = new Довідники.ДоговориКонтрагентів_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Перелічення.СтатусиРеалізаціїТоварівТаПослуг Статус { get; set; } = 0;
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public decimal СумаПередоплати { get; set; } = 0;
@@ -18754,7 +18754,7 @@ namespace GeneratedCode.Документи
         public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
         public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_b5"); return new Довідники.Каси_Pointer(obj); } }
         public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_b6"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Перелічення.СтатусиРеалізаціїТоварівТаПослуг Статус { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (Перелічення.СтатусиРеалізаціїТоварівТаПослуг)obj : 0; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_b9"); return new Довідники.Користувачі_Pointer(obj); } }
         public decimal СумаПередоплати { get { var obj = getValue("col_c1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
@@ -19442,7 +19442,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_g9";
         public const string Автор = "col_a4";
         public const string КлючовіСловаДляПошуку = "col_a5";
-        public const string Основа = "col_a6";
+        public const string Підстава = "col_a6";
     }
 
     public class ВстановленняЦінНоменклатури_Object : DocumentObject
@@ -19478,7 +19478,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_g9"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a5"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a6"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a6"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a6"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a6"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -19508,7 +19508,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_g9"] = Коментар;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a6"] = Основа;
+            base.FieldValue["col_a6"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -19559,7 +19559,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -19606,7 +19606,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ВстановленняЦінНоменклатури_Товари_TablePart Товари_TablePart { get; set; }
@@ -19704,7 +19704,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_g9"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -19913,7 +19913,7 @@ namespace GeneratedCode.Документи
         public const string Каса = "col_h9";
         public const string СумаДокументу = "col_i1";
         public const string ГосподарськаОперація = "col_i2";
-        public const string Основа = "col_i3";
+        public const string Підстава = "col_i3";
         public const string Контрагент = "col_i4";
         public const string Договір = "col_a6";
         public const string БанківськийРахунок = "col_i5";
@@ -19960,7 +19960,7 @@ namespace GeneratedCode.Документи
                 Каса = new Довідники.Каси_Pointer(base.FieldValue["col_h9"]);
                 СумаДокументу = (base.FieldValue["col_i1"] != DBNull.Value) ? (decimal)base.FieldValue["col_i1"] : 0;
                 ГосподарськаОперація = (base.FieldValue["col_i2"] != DBNull.Value) ? (Перелічення.ГосподарськіОперації)base.FieldValue["col_i2"] : 0;
-                Основа = (base.FieldValue["col_i3"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_i3"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_i3"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_i3"] : new UuidAndText();
                 Контрагент = new Довідники.Контрагенти_Pointer(base.FieldValue["col_i4"]);
                 Договір = new Довідники.ДоговориКонтрагентів_Pointer(base.FieldValue["col_a6"]);
                 БанківськийРахунок = new Довідники.БанківськіРахункиОрганізацій_Pointer(base.FieldValue["col_i5"]);
@@ -20001,7 +20001,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_h9"] = Каса.UniqueID.UGuid;
             base.FieldValue["col_i1"] = СумаДокументу;
             base.FieldValue["col_i2"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_i3"] = Основа;
+            base.FieldValue["col_i3"] = Підстава;
             base.FieldValue["col_i4"] = Контрагент.UniqueID.UGuid;
             base.FieldValue["col_a6"] = Договір.UniqueID.UGuid;
             base.FieldValue["col_i5"] = БанківськийРахунок.UniqueID.UGuid;
@@ -20076,7 +20076,7 @@ namespace GeneratedCode.Документи
                 Каса = Каса.Copy(),
                 СумаДокументу = СумаДокументу,
                 ГосподарськаОперація = ГосподарськаОперація,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Контрагент = Контрагент.Copy(),
                 Договір = Договір.Copy(),
                 БанківськийРахунок = БанківськийРахунок.Copy(),
@@ -20137,7 +20137,7 @@ namespace GeneratedCode.Документи
         public Довідники.Каси_Pointer Каса { get; set; } = new Довідники.Каси_Pointer();
         public decimal СумаДокументу { get; set; } = 0;
         public Перелічення.ГосподарськіОперації ГосподарськаОперація { get; set; } = 0;
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Контрагенти_Pointer Контрагент { get; set; } = new Довідники.Контрагенти_Pointer();
         public Довідники.ДоговориКонтрагентів_Pointer Договір { get; set; } = new Довідники.ДоговориКонтрагентів_Pointer();
         public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get; set; } = new Довідники.БанківськіРахункиОрганізацій_Pointer();
@@ -20260,7 +20260,7 @@ namespace GeneratedCode.Документи
         public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_h9"); return new Довідники.Каси_Pointer(obj); } }
         public decimal СумаДокументу { get { var obj = getValue("col_i1"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
         public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_i2"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
-        public UuidAndText Основа { get { var obj = getValue("col_i3"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_i3"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_i4"); return new Довідники.Контрагенти_Pointer(obj); } }
         public Довідники.ДоговориКонтрагентів_Pointer Договір { get { var obj = getValue("col_a6"); return new Довідники.ДоговориКонтрагентів_Pointer(obj); } }
         public Довідники.БанківськіРахункиОрганізацій_Pointer БанківськийРахунок { get { var obj = getValue("col_i5"); return new Довідники.БанківськіРахункиОрганізацій_Pointer(obj); } }
@@ -20713,7 +20713,7 @@ namespace GeneratedCode.Документи
         public const string СтаттяРухуКоштів = "col_l2";
         public const string КасаОтримувач = "col_k6";
         public const string Курс = "col_a2";
-        public const string Основа = "col_a1";
+        public const string Підстава = "col_a1";
         public const string Коментар = "col_l1";
         public const string Автор = "col_a6";
         public const string КлючовіСловаДляПошуку = "col_a7";
@@ -20762,7 +20762,7 @@ namespace GeneratedCode.Документи
                 СтаттяРухуКоштів = new Довідники.СтаттяРухуКоштів_Pointer(base.FieldValue["col_l2"]);
                 КасаОтримувач = new Довідники.Каси_Pointer(base.FieldValue["col_k6"]);
                 Курс = (base.FieldValue["col_a2"] != DBNull.Value) ? (decimal)base.FieldValue["col_a2"] : 0;
-                Основа = (base.FieldValue["col_a1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a1"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a1"] : new UuidAndText();
                 Коментар = base.FieldValue["col_l1"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a6"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a7"].ToString() ?? "";
@@ -20805,7 +20805,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_l2"] = СтаттяРухуКоштів.UniqueID.UGuid;
             base.FieldValue["col_k6"] = КасаОтримувач.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Курс;
-            base.FieldValue["col_a1"] = Основа;
+            base.FieldValue["col_a1"] = Підстава;
             base.FieldValue["col_l1"] = Коментар;
             base.FieldValue["col_a6"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
@@ -20882,7 +20882,7 @@ namespace GeneratedCode.Документи
                 СтаттяРухуКоштів = СтаттяРухуКоштів.Copy(),
                 КасаОтримувач = КасаОтримувач.Copy(),
                 Курс = Курс,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
@@ -20945,7 +20945,7 @@ namespace GeneratedCode.Документи
         public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get; set; } = new Довідники.СтаттяРухуКоштів_Pointer();
         public Довідники.Каси_Pointer КасаОтримувач { get; set; } = new Довідники.Каси_Pointer();
         public decimal Курс { get; set; } = 0;
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
@@ -21070,7 +21070,7 @@ namespace GeneratedCode.Документи
         public Довідники.СтаттяРухуКоштів_Pointer СтаттяРухуКоштів { get { var obj = getValue("col_l2"); return new Довідники.СтаттяРухуКоштів_Pointer(obj); } }
         public Довідники.Каси_Pointer КасаОтримувач { get { var obj = getValue("col_k6"); return new Довідники.Каси_Pointer(obj); } }
         public decimal Курс { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string Коментар { get { var obj = getValue("col_l1"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a6"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
@@ -21524,7 +21524,7 @@ namespace GeneratedCode.Документи
         public const string ЧасДоставкиДо = "col_b8";
         public const string Коментар = "col_a6";
         public const string Автор = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string КлючовіСловаДляПошуку = "col_b9";
         public const string ДокументБухгалтерськаОперація = "col_c1";
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_c2";
@@ -21574,7 +21574,7 @@ namespace GeneratedCode.Документи
                 ЧасДоставкиДо = (base.FieldValue["col_b8"] != DBNull.Value) ? TimeSpan.Parse(base.FieldValue["col_b8"]?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay;
                 Коментар = base.FieldValue["col_a6"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a1"]);
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 КлючовіСловаДляПошуку = base.FieldValue["col_b9"].ToString() ?? "";
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_c1"]);
                 ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_c2"] != DBNull.Value) ? (bool)base.FieldValue["col_c2"] : false;
@@ -21618,7 +21618,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b8"] = ЧасДоставкиДо;
             base.FieldValue["col_a6"] = Коментар;
             base.FieldValue["col_a1"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_b9"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_c1"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_c2"] = ВідобразитиВБухгалтерськомуОбліку;
@@ -21696,7 +21696,7 @@ namespace GeneratedCode.Документи
                 ЧасДоставкиДо = ЧасДоставкиДо,
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
@@ -21760,7 +21760,7 @@ namespace GeneratedCode.Документи
         public TimeSpan ЧасДоставкиДо { get; set; } = DateTime.MinValue.TimeOfDay;
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
@@ -21886,7 +21886,7 @@ namespace GeneratedCode.Документи
         public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
         public string Коментар { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a1"); return new Довідники.Користувачі_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b9"); return obj.ToString() ?? ""; } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_c1"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
         public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_c2"); return (obj != DBNull.Value) ? (bool)obj : false; } }
@@ -22350,7 +22350,7 @@ namespace GeneratedCode.Документи
         public const string ЧасДоставкиЗ = "col_d6";
         public const string ЧасДоставкиДо = "col_d7";
         public const string Каса = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Коментар = "col_c8";
         public const string Автор = "col_a3";
         public const string Менеджер = "col_a4";
@@ -22402,7 +22402,7 @@ namespace GeneratedCode.Документи
                 ЧасДоставкиЗ = (base.FieldValue["col_d6"] != DBNull.Value) ? TimeSpan.Parse(base.FieldValue["col_d6"]?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay;
                 ЧасДоставкиДо = (base.FieldValue["col_d7"] != DBNull.Value) ? TimeSpan.Parse(base.FieldValue["col_d7"]?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay;
                 Каса = new Довідники.Каси_Pointer(base.FieldValue["col_a1"]);
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Коментар = base.FieldValue["col_c8"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a3"]);
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
@@ -22448,7 +22448,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_d6"] = ЧасДоставкиЗ;
             base.FieldValue["col_d7"] = ЧасДоставкиДо;
             base.FieldValue["col_a1"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_c8"] = Коментар;
             base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Менеджер.UniqueID.UGuid;
@@ -22532,7 +22532,7 @@ namespace GeneratedCode.Документи
                 ЧасДоставкиЗ = ЧасДоставкиЗ,
                 ЧасДоставкиДо = ЧасДоставкиДо,
                 Каса = Каса.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 Менеджер = Менеджер.Copy(),
@@ -22598,7 +22598,7 @@ namespace GeneratedCode.Документи
         public TimeSpan ЧасДоставкиЗ { get; set; } = DateTime.MinValue.TimeOfDay;
         public TimeSpan ЧасДоставкиДо { get; set; } = DateTime.MinValue.TimeOfDay;
         public Довідники.Каси_Pointer Каса { get; set; } = new Довідники.Каси_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
@@ -22730,7 +22730,7 @@ namespace GeneratedCode.Документи
         public TimeSpan ЧасДоставкиЗ { get { var obj = getValue("col_d6"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
         public TimeSpan ЧасДоставкиДо { get { var obj = getValue("col_d7"); return (obj != DBNull.Value) ? TimeSpan.Parse(obj?.ToString() ?? DateTime.MinValue.TimeOfDay.ToString()) : DateTime.MinValue.TimeOfDay; } }
         public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a1"); return new Довідники.Каси_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string Коментар { get { var obj = getValue("col_c8"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
@@ -23204,7 +23204,7 @@ namespace GeneratedCode.Документи
         public const string ПричинаПовернення = "col_g1";
         public const string Контрагент = "col_g2";
         public const string Каса = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Коментар = "col_f6";
         public const string Автор = "col_a3";
         public const string КлючовіСловаДляПошуку = "col_a4";
@@ -23252,7 +23252,7 @@ namespace GeneratedCode.Документи
                 ПричинаПовернення = base.FieldValue["col_g1"].ToString() ?? "";
                 Контрагент = new Довідники.Контрагенти_Pointer(base.FieldValue["col_g2"]);
                 Каса = new Довідники.Каси_Pointer(base.FieldValue["col_a1"]);
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Коментар = base.FieldValue["col_f6"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a3"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a4"].ToString() ?? "";
@@ -23294,7 +23294,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_g1"] = ПричинаПовернення;
             base.FieldValue["col_g2"] = Контрагент.UniqueID.UGuid;
             base.FieldValue["col_a1"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_f6"] = Коментар;
             base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a4"] = КлючовіСловаДляПошуку;
@@ -23374,7 +23374,7 @@ namespace GeneratedCode.Документи
                 ПричинаПовернення = ПричинаПовернення,
                 Контрагент = Контрагент.Copy(),
                 Каса = Каса.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
@@ -23436,7 +23436,7 @@ namespace GeneratedCode.Документи
         public string ПричинаПовернення { get; set; } = "";
         public Довідники.Контрагенти_Pointer Контрагент { get; set; } = new Довідники.Контрагенти_Pointer();
         public Довідники.Каси_Pointer Каса { get; set; } = new Довідники.Каси_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
@@ -23564,7 +23564,7 @@ namespace GeneratedCode.Документи
         public string ПричинаПовернення { get { var obj = getValue("col_g1"); return obj.ToString() ?? ""; } }
         public Довідники.Контрагенти_Pointer Контрагент { get { var obj = getValue("col_g2"); return new Довідники.Контрагенти_Pointer(obj); } }
         public Довідники.Каси_Pointer Каса { get { var obj = getValue("col_a1"); return new Довідники.Каси_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string Коментар { get { var obj = getValue("col_f6"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a4"); return obj.ToString() ?? ""; } }
@@ -24044,7 +24044,7 @@ namespace GeneratedCode.Документи
         public const string Автор = "col_a7";
         public const string Менеджер = "col_a8";
         public const string КлючовіСловаДляПошуку = "col_a9";
-        public const string Основа = "col_b1";
+        public const string Підстава = "col_b1";
         public const string ДокументБухгалтерськаОперація = "col_b7";
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_b8";
     }
@@ -24091,7 +24091,7 @@ namespace GeneratedCode.Документи
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a7"]);
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_a8"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a9"].ToString() ?? "";
-                Основа = (base.FieldValue["col_b1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b1"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_b1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b1"] : new UuidAndText();
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_b7"]);
                 ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_b8"] != DBNull.Value) ? (bool)base.FieldValue["col_b8"] : false;
                 
@@ -24132,7 +24132,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a7"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a8"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_a9"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_b1"] = Основа;
+            base.FieldValue["col_b1"] = Підстава;
             base.FieldValue["col_b7"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_b8"] = ВідобразитиВБухгалтерськомуОбліку;
             
@@ -24205,7 +24205,7 @@ namespace GeneratedCode.Документи
                 Автор = Автор.Copy(),
                 Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
@@ -24266,7 +24266,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         
@@ -24387,7 +24387,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a7"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_a8"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a9"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_b7"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
         public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_b8"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
@@ -24962,7 +24962,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_d1";
         public const string Автор = "col_a3";
         public const string КлючовіСловаДляПошуку = "col_a2";
-        public const string Основа = "col_a4";
+        public const string Підстава = "col_a4";
         public const string ДокументБухгалтерськаОперація = "col_a5";
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a6";
     }
@@ -25008,7 +25008,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_d1"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a3"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a2"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a5"]);
                 ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_a6"] != DBNull.Value) ? (bool)base.FieldValue["col_a6"] : false;
                 
@@ -25048,7 +25048,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_d1"] = Коментар;
             base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a4"] = Основа;
+            base.FieldValue["col_a4"] = Підстава;
             base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a6"] = ВідобразитиВБухгалтерськомуОбліку;
             
@@ -25125,7 +25125,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
@@ -25196,7 +25196,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         
@@ -25326,7 +25326,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
         public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a6"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
@@ -27145,7 +27145,7 @@ namespace GeneratedCode.Документи
         public const string КлючовіСловаДляПошуку = "col_a2";
         public const string Організація = "col_a3";
         public const string Підрозділ = "col_a4";
-        public const string Основа = "col_a5";
+        public const string Підстава = "col_a5";
     }
 
     public class ПерерахунокТоварів_Object : DocumentObject
@@ -27182,7 +27182,7 @@ namespace GeneratedCode.Документи
                 КлючовіСловаДляПошуку = base.FieldValue["col_a2"].ToString() ?? "";
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a3"]);
                 Підрозділ = new Довідники.СтруктураПідприємства_Pointer(base.FieldValue["col_a4"]);
-                Основа = (base.FieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a5"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a5"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -27213,7 +27213,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Основа;
+            base.FieldValue["col_a5"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -27263,7 +27263,7 @@ namespace GeneratedCode.Документи
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 Організація = Організація.Copy(),
                 Підрозділ = Підрозділ.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -27311,7 +27311,7 @@ namespace GeneratedCode.Документи
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get; set; } = new Довідники.СтруктураПідприємства_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ПерерахунокТоварів_Товари_TablePart Товари_TablePart { get; set; }
@@ -27413,7 +27413,7 @@ namespace GeneratedCode.Документи
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -27637,7 +27637,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_a5";
         public const string Автор = "col_a2";
         public const string КлючовіСловаДляПошуку = "col_a3";
-        public const string Основа = "col_b2";
+        public const string Підстава = "col_b2";
     }
 
     public class ПсуванняТоварів_Object : DocumentObject
@@ -27675,7 +27675,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_a5"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a2"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a3"].ToString() ?? "";
-                Основа = (base.FieldValue["col_b2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_b2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -27707,7 +27707,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a5"] = Коментар;
             base.FieldValue["col_a2"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a3"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_b2"] = Основа;
+            base.FieldValue["col_b2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -27772,7 +27772,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -27821,7 +27821,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ПсуванняТоварів_Товари_TablePart Товари_TablePart { get; set; }
@@ -27938,7 +27938,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_a5"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a2"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a3"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_b2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -28172,7 +28172,7 @@ namespace GeneratedCode.Документи
         public const string Валюта = "col_a2";
         public const string Підрозділ = "col_a9";
         public const string СумаДокументу = "col_a8";
-        public const string Основа = "col_b7";
+        public const string Підстава = "col_b7";
         public const string Автор = "col_b9";
         public const string ГосподарськаОперація = "col_b4";
         public const string Коментар = "col_b2";
@@ -28214,7 +28214,7 @@ namespace GeneratedCode.Документи
                 Валюта = new Довідники.Валюти_Pointer(base.FieldValue["col_a2"]);
                 Підрозділ = new Довідники.СтруктураПідприємства_Pointer(base.FieldValue["col_a9"]);
                 СумаДокументу = (base.FieldValue["col_a8"] != DBNull.Value) ? (decimal)base.FieldValue["col_a8"] : 0;
-                Основа = (base.FieldValue["col_b7"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b7"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_b7"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_b7"] : new UuidAndText();
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_b9"]);
                 ГосподарськаОперація = (base.FieldValue["col_b4"] != DBNull.Value) ? (Перелічення.ГосподарськіОперації)base.FieldValue["col_b4"] : 0;
                 Коментар = base.FieldValue["col_b2"].ToString() ?? "";
@@ -28250,7 +28250,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a2"] = Валюта.UniqueID.UGuid;
             base.FieldValue["col_a9"] = Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a8"] = СумаДокументу;
-            base.FieldValue["col_b7"] = Основа;
+            base.FieldValue["col_b7"] = Підстава;
             base.FieldValue["col_b9"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_b4"] = (int)ГосподарськаОперація;
             base.FieldValue["col_b2"] = Коментар;
@@ -28320,7 +28320,7 @@ namespace GeneratedCode.Документи
                 Валюта = Валюта.Copy(),
                 Підрозділ = Підрозділ.Copy(),
                 СумаДокументу = СумаДокументу,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Автор = Автор.Copy(),
                 ГосподарськаОперація = ГосподарськаОперація,
                 Коментар = Коментар,
@@ -28376,7 +28376,7 @@ namespace GeneratedCode.Документи
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get; set; } = new Довідники.СтруктураПідприємства_Pointer();
         public decimal СумаДокументу { get; set; } = 0;
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Перелічення.ГосподарськіОперації ГосподарськаОперація { get; set; } = 0;
         public string Коментар { get; set; } = "";
@@ -28494,7 +28494,7 @@ namespace GeneratedCode.Документи
         public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a2"); return new Довідники.Валюти_Pointer(obj); } }
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a9"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
         public decimal СумаДокументу { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_b7"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_b9"); return new Довідники.Користувачі_Pointer(obj); } }
         public Перелічення.ГосподарськіОперації ГосподарськаОперація { get { var obj = getValue("col_b4"); return (obj != DBNull.Value) ? (Перелічення.ГосподарськіОперації)obj : 0; } }
         public string Коментар { get { var obj = getValue("col_b2"); return obj.ToString() ?? ""; } }
@@ -28973,7 +28973,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_c1";
         public const string Менеджер = "col_a2";
         public const string КлючовіСловаДляПошуку = "col_a7";
-        public const string Основа = "col_a8";
+        public const string Підстава = "col_a8";
         public const string ДокументБухгалтерськаОперація = "col_a9";
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_b1";
     }
@@ -29023,7 +29023,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_c1"].ToString() ?? "";
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_a2"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a7"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a8"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a8"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a8"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a8"] : new UuidAndText();
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a9"]);
                 ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_b1"] != DBNull.Value) ? (bool)base.FieldValue["col_b1"] : false;
                 
@@ -29067,7 +29067,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_c1"] = Коментар;
             base.FieldValue["col_a2"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a8"] = Основа;
+            base.FieldValue["col_a8"] = Підстава;
             base.FieldValue["col_a9"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_b1"] = ВідобразитиВБухгалтерськомуОбліку;
             
@@ -29141,7 +29141,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
@@ -29205,7 +29205,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         
@@ -29327,7 +29327,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_c1"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_a2"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a7"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a8"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a9"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
         public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_b1"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
@@ -29952,7 +29952,7 @@ namespace GeneratedCode.Документи
         public const string ДатаДок = "docdate";
         public const string НомерДок = "docnomer";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Склад = "col_a3";
         public const string Автор = "col_a4";
         public const string Організація = "col_a5";
@@ -29989,7 +29989,7 @@ namespace GeneratedCode.Документи
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Склад = new Довідники.Склади_Pointer(base.FieldValue["col_a3"]);
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a5"]);
@@ -30020,7 +30020,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Організація.UniqueID.UGuid;
@@ -30080,7 +30080,7 @@ namespace GeneratedCode.Документи
                 ДатаДок = ДатаДок,
                 НомерДок = НомерДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Склад = Склад.Copy(),
                 Автор = Автор.Copy(),
                 Організація = Організація.Copy(),
@@ -30128,7 +30128,7 @@ namespace GeneratedCode.Документи
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string НомерДок { get; set; } = "";
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
@@ -30240,7 +30240,7 @@ namespace GeneratedCode.Документи
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a5"); return new Довідники.Організації_Pointer(obj); } }
@@ -30466,7 +30466,7 @@ namespace GeneratedCode.Документи
         public const string ДатаДок = "docdate";
         public const string НомерДок = "docnomer";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Склад = "col_a3";
         public const string Автор = "col_a4";
         public const string Організація = "col_a5";
@@ -30502,7 +30502,7 @@ namespace GeneratedCode.Документи
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Склад = new Довідники.Склади_Pointer(base.FieldValue["col_a3"]);
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a5"]);
@@ -30532,7 +30532,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Організація.UniqueID.UGuid;
@@ -30591,7 +30591,7 @@ namespace GeneratedCode.Документи
                 ДатаДок = ДатаДок,
                 НомерДок = НомерДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Склад = Склад.Copy(),
                 Автор = Автор.Copy(),
                 Організація = Організація.Copy(),
@@ -30638,7 +30638,7 @@ namespace GeneratedCode.Документи
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string НомерДок { get; set; } = "";
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
@@ -30749,7 +30749,7 @@ namespace GeneratedCode.Документи
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a5"); return new Довідники.Організації_Pointer(obj); } }
@@ -30983,7 +30983,7 @@ namespace GeneratedCode.Документи
         public const string ДатаДок = "docdate";
         public const string НомерДок = "docnomer";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Склад = "col_a3";
         public const string Автор = "col_a4";
         public const string Організація = "col_a5";
@@ -31020,7 +31020,7 @@ namespace GeneratedCode.Документи
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Склад = new Довідники.Склади_Pointer(base.FieldValue["col_a3"]);
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a5"]);
@@ -31051,7 +31051,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Організація.UniqueID.UGuid;
@@ -31111,7 +31111,7 @@ namespace GeneratedCode.Документи
                 ДатаДок = ДатаДок,
                 НомерДок = НомерДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Склад = Склад.Copy(),
                 Автор = Автор.Copy(),
                 Організація = Організація.Copy(),
@@ -31159,7 +31159,7 @@ namespace GeneratedCode.Документи
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string НомерДок { get; set; } = "";
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Склади_Pointer Склад { get; set; } = new Довідники.Склади_Pointer();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
@@ -31271,7 +31271,7 @@ namespace GeneratedCode.Документи
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Склади_Pointer Склад { get { var obj = getValue("col_a3"); return new Довідники.Склади_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a5"); return new Довідники.Організації_Pointer(obj); } }
@@ -31501,7 +31501,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_g9";
         public const string Автор = "col_a4";
         public const string Підрозділ = "col_a3";
-        public const string Основа = "col_a5";
+        public const string Підстава = "col_a5";
         public const string КлючовіСловаДляПошуку = "col_a6";
     }
 
@@ -31537,7 +31537,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_g9"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 Підрозділ = new Довідники.СтруктураПідприємства_Pointer(base.FieldValue["col_a3"]);
-                Основа = (base.FieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a5"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a5"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a5"] : new UuidAndText();
                 КлючовіСловаДляПошуку = base.FieldValue["col_a6"].ToString() ?? "";
                 
                 BaseClear();
@@ -31567,7 +31567,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_g9"] = Коментар;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a3"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Основа;
+            base.FieldValue["col_a5"] = Підстава;
             base.FieldValue["col_a6"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -31616,7 +31616,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 Підрозділ = Підрозділ.Copy(),
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 
             };
@@ -31663,7 +31663,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get; set; } = new Довідники.СтруктураПідприємства_Pointer();
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public string КлючовіСловаДляПошуку { get; set; } = "";
         
         //Табличні частини
@@ -31764,7 +31764,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_g9"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a3"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
-        public UuidAndText Основа { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a6"); return obj.ToString() ?? ""; } }
         
     }
@@ -31961,7 +31961,7 @@ namespace GeneratedCode.Документи
         public const string Коментар = "col_d1";
         public const string Автор = "col_a3";
         public const string КлючовіСловаДляПошуку = "col_a2";
-        public const string Основа = "col_a1";
+        public const string Підстава = "col_a1";
         public const string ДокументБухгалтерськаОперація = "col_a4";
         public const string ВідобразитиВБухгалтерськомуОбліку = "col_a5";
     }
@@ -31999,7 +31999,7 @@ namespace GeneratedCode.Документи
                 Коментар = base.FieldValue["col_d1"].ToString() ?? "";
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a3"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_a2"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a1"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a1"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a1"] : new UuidAndText();
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a4"]);
                 ВідобразитиВБухгалтерськомуОбліку = (base.FieldValue["col_a5"] != DBNull.Value) ? (bool)base.FieldValue["col_a5"] : false;
                 
@@ -32031,7 +32031,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_d1"] = Коментар;
             base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a1"] = Основа;
+            base.FieldValue["col_a1"] = Підстава;
             base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a5"] = ВідобразитиВБухгалтерськомуОбліку;
             
@@ -32095,7 +32095,7 @@ namespace GeneratedCode.Документи
                 Коментар = Коментар,
                 Автор = Автор.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку,
                 
@@ -32147,7 +32147,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get; set; } = "";
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public bool ВідобразитиВБухгалтерськомуОбліку { get; set; } = false;
         
@@ -32259,7 +32259,7 @@ namespace GeneratedCode.Документи
         public string Коментар { get { var obj = getValue("col_d1"); return obj.ToString() ?? ""; } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a3"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a1"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
         public bool ВідобразитиВБухгалтерськомуОбліку { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (bool)obj : false; } }
         
@@ -32693,7 +32693,7 @@ namespace GeneratedCode.Документи
         public const string Менеджер = "col_b2";
         public const string КлючовіСловаДляПошуку = "col_b3";
         public const string СумаДокументу = "col_a3";
-        public const string Основа = "col_a4";
+        public const string Підстава = "col_a4";
     }
 
     public class ЗакриттяЗамовленняКлієнта_Object : DocumentObject
@@ -32736,7 +32736,7 @@ namespace GeneratedCode.Документи
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_b2"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_b3"].ToString() ?? "";
                 СумаДокументу = (base.FieldValue["col_a3"] != DBNull.Value) ? (decimal)base.FieldValue["col_a3"] : 0;
-                Основа = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -32773,7 +32773,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = СумаДокументу;
-            base.FieldValue["col_a4"] = Основа;
+            base.FieldValue["col_a4"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -32841,7 +32841,7 @@ namespace GeneratedCode.Документи
                 Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 СумаДокументу = СумаДокументу,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -32895,7 +32895,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public decimal СумаДокументу { get; set; } = 0;
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ЗакриттяЗамовленняКлієнта_Товари_TablePart Товари_TablePart { get; set; }
@@ -33015,7 +33015,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
         public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -33248,7 +33248,7 @@ namespace GeneratedCode.Документи
         public const string Менеджер = "col_b2";
         public const string КлючовіСловаДляПошуку = "col_b3";
         public const string СумаДокументу = "col_a3";
-        public const string Основа = "col_a4";
+        public const string Підстава = "col_a4";
     }
 
     public class ЗакриттяРахункуФактури_Object : DocumentObject
@@ -33291,7 +33291,7 @@ namespace GeneratedCode.Документи
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_b2"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_b3"].ToString() ?? "";
                 СумаДокументу = (base.FieldValue["col_a3"] != DBNull.Value) ? (decimal)base.FieldValue["col_a3"] : 0;
-                Основа = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -33328,7 +33328,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = СумаДокументу;
-            base.FieldValue["col_a4"] = Основа;
+            base.FieldValue["col_a4"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -33394,7 +33394,7 @@ namespace GeneratedCode.Документи
                 Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 СумаДокументу = СумаДокументу,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -33448,7 +33448,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public decimal СумаДокументу { get; set; } = 0;
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ЗакриттяРахункуФактури_Товари_TablePart Товари_TablePart { get; set; }
@@ -33566,7 +33566,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
         public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -33799,7 +33799,7 @@ namespace GeneratedCode.Документи
         public const string Менеджер = "col_b2";
         public const string КлючовіСловаДляПошуку = "col_b3";
         public const string СумаДокументу = "col_a3";
-        public const string Основа = "col_a4";
+        public const string Підстава = "col_a4";
     }
 
     public class ЗакриттяЗамовленняПостачальнику_Object : DocumentObject
@@ -33842,7 +33842,7 @@ namespace GeneratedCode.Документи
                 Менеджер = new Довідники.Користувачі_Pointer(base.FieldValue["col_b2"]);
                 КлючовіСловаДляПошуку = base.FieldValue["col_b3"].ToString() ?? "";
                 СумаДокументу = (base.FieldValue["col_a3"] != DBNull.Value) ? (decimal)base.FieldValue["col_a3"] : 0;
-                Основа = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a4"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a4"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -33879,7 +33879,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = СумаДокументу;
-            base.FieldValue["col_a4"] = Основа;
+            base.FieldValue["col_a4"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -33945,7 +33945,7 @@ namespace GeneratedCode.Документи
                 Менеджер = Менеджер.Copy(),
                 КлючовіСловаДляПошуку = КлючовіСловаДляПошуку,
                 СумаДокументу = СумаДокументу,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -33999,7 +33999,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get; set; } = new Довідники.Користувачі_Pointer();
         public string КлючовіСловаДляПошуку { get; set; } = "";
         public decimal СумаДокументу { get; set; } = 0;
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
         //Табличні частини
         public ЗакриттяЗамовленняПостачальнику_Товари_TablePart Товари_TablePart { get; set; }
@@ -34117,7 +34117,7 @@ namespace GeneratedCode.Документи
         public Довідники.Користувачі_Pointer Менеджер { get { var obj = getValue("col_b2"); return new Довідники.Користувачі_Pointer(obj); } }
         public string КлючовіСловаДляПошуку { get { var obj = getValue("col_b3"); return obj.ToString() ?? ""; } }
         public decimal СумаДокументу { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a4"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -34338,7 +34338,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Організація = "col_a3";
         public const string Валюта = "col_a4";
         public const string СумаДокументу = "col_a5";
@@ -34378,7 +34378,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a3"]);
                 Валюта = new Довідники.Валюти_Pointer(base.FieldValue["col_a4"]);
                 СумаДокументу = (base.FieldValue["col_a5"] != DBNull.Value) ? (decimal)base.FieldValue["col_a5"] : 0;
@@ -34412,7 +34412,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Валюта.UniqueID.UGuid;
             base.FieldValue["col_a5"] = СумаДокументу;
@@ -34479,7 +34479,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Організація = Організація.Copy(),
                 Валюта = Валюта.Copy(),
                 СумаДокументу = СумаДокументу,
@@ -34530,7 +34530,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
         public decimal СумаДокументу { get; set; } = 0;
@@ -34649,7 +34649,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
         public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a4"); return new Довідники.Валюти_Pointer(obj); } }
         public decimal СумаДокументу { get { var obj = getValue("col_a5"); return (obj != DBNull.Value) ? (decimal)obj : 0; } }
@@ -34898,7 +34898,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "comment";
-        public const string Основа = "base";
+        public const string Підстава = "base";
         public const string Автор = "author";
         public const string Організація = "col_a1";
     }
@@ -34931,7 +34931,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["comment"].ToString() ?? "";
-                Основа = (base.FieldValue["base"] != DBNull.Value) ? (UuidAndText)base.FieldValue["base"] : new UuidAndText();
+                Підстава = (base.FieldValue["base"] != DBNull.Value) ? (UuidAndText)base.FieldValue["base"] : new UuidAndText();
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["author"]);
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a1"]);
                 
@@ -34958,7 +34958,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["comment"] = Коментар;
-            base.FieldValue["base"] = Основа;
+            base.FieldValue["base"] = Підстава;
             base.FieldValue["author"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a1"] = Організація.UniqueID.UGuid;
             
@@ -35012,7 +35012,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Автор = Автор.Copy(),
                 Організація = Організація.Copy(),
                 
@@ -35056,7 +35056,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         
@@ -35164,7 +35164,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("comment"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("base"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("base"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("author"); return new Довідники.Користувачі_Pointer(obj); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a1"); return new Довідники.Організації_Pointer(obj); } }
         
@@ -35471,7 +35471,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Організація = "col_a3";
         public const string ДокументБухгалтерськаОперація = "col_a4";
         public const string Валюта = "col_a5";
@@ -35513,7 +35513,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a3"]);
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a4"]);
                 Валюта = new Довідники.Валюти_Pointer(base.FieldValue["col_a5"]);
@@ -35549,7 +35549,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Валюта.UniqueID.UGuid;
@@ -35613,7 +35613,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Організація = Організація.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
                 Валюта = Валюта.Copy(),
@@ -35669,7 +35669,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
         public Довідники.Валюти_Pointer Валюта { get; set; } = new Довідники.Валюти_Pointer();
@@ -35783,7 +35783,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a4"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
         public Довідники.Валюти_Pointer Валюта { get { var obj = getValue("col_a5"); return new Довідники.Валюти_Pointer(obj); } }
@@ -36191,7 +36191,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Організація = "col_a3";
         public const string Автор = "col_a4";
         public const string ДокументБухгалтерськаОперація = "col_a5";
@@ -36223,7 +36223,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a3"]);
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a5"]);
@@ -36246,7 +36246,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
@@ -36304,7 +36304,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Організація = Організація.Copy(),
                 Автор = Автор.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
@@ -36341,7 +36341,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
@@ -36445,7 +36445,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
@@ -36482,7 +36482,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Організація = "col_a3";
         public const string Автор = "col_a4";
         public const string ДокументБухгалтерськаОперація = "col_a5";
@@ -36514,7 +36514,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a3"]);
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a4"]);
                 ДокументБухгалтерськаОперація = new Документи.БухгалтерськаОперація_Pointer(base.FieldValue["col_a5"]);
@@ -36537,7 +36537,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
@@ -36593,7 +36593,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Організація = Організація.Copy(),
                 Автор = Автор.Copy(),
                 ДокументБухгалтерськаОперація = ДокументБухгалтерськаОперація.Copy(),
@@ -36630,7 +36630,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get; set; } = new Документи.БухгалтерськаОперація_Pointer();
@@ -36737,7 +36737,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a4"); return new Довідники.Користувачі_Pointer(obj); } }
         public Документи.БухгалтерськаОперація_Pointer ДокументБухгалтерськаОперація { get { var obj = getValue("col_a5"); return new Документи.БухгалтерськаОперація_Pointer(obj); } }
@@ -36774,7 +36774,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ВиплатаЗаробітноїПлати_Object : DocumentObject
@@ -36802,7 +36802,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -36821,7 +36821,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -36873,7 +36873,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -36906,7 +36906,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -37009,7 +37009,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -37042,7 +37042,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
         public const string Організація = "col_a3";
         public const string Підрозділ = "col_a4";
         public const string Автор = "col_a5";
@@ -37083,7 +37083,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 Організація = new Довідники.Організації_Pointer(base.FieldValue["col_a3"]);
                 Підрозділ = new Довідники.СтруктураПідприємства_Pointer(base.FieldValue["col_a4"]);
                 Автор = new Довідники.Користувачі_Pointer(base.FieldValue["col_a5"]);
@@ -37118,7 +37118,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Автор.UniqueID.UGuid;
@@ -37190,7 +37190,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 Організація = Організація.Copy(),
                 Підрозділ = Підрозділ.Copy(),
                 Автор = Автор.Copy(),
@@ -37248,7 +37248,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         public Довідники.Організації_Pointer Організація { get; set; } = new Довідники.Організації_Pointer();
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get; set; } = new Довідники.СтруктураПідприємства_Pointer();
         public Довідники.Користувачі_Pointer Автор { get; set; } = new Довідники.Користувачі_Pointer();
@@ -37369,7 +37369,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         public Довідники.Організації_Pointer Організація { get { var obj = getValue("col_a3"); return new Довідники.Організації_Pointer(obj); } }
         public Довідники.СтруктураПідприємства_Pointer Підрозділ { get { var obj = getValue("col_a4"); return new Довідники.СтруктураПідприємства_Pointer(obj); } }
         public Довідники.Користувачі_Pointer Автор { get { var obj = getValue("col_a5"); return new Довідники.Користувачі_Pointer(obj); } }
@@ -38033,7 +38033,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class Додаток1ДоПодатковоїНакладної_Object : DocumentObject
@@ -38061,7 +38061,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -38080,7 +38080,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -38132,7 +38132,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -38165,7 +38165,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -38268,7 +38268,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -38301,7 +38301,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class Додаток2ДоПодатковоїНакладної_Object : DocumentObject
@@ -38329,7 +38329,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -38348,7 +38348,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -38390,7 +38390,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -38423,7 +38423,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -38516,7 +38516,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -38549,7 +38549,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ЗаписКнигиПридбання_Object : DocumentObject
@@ -38577,7 +38577,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -38596,7 +38596,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -38648,7 +38648,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -38681,7 +38681,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -38784,7 +38784,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -38817,7 +38817,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ЗмінаПараметрівОсновнихЗасобів_Object : DocumentObject
@@ -38845,7 +38845,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -38864,7 +38864,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -38916,7 +38916,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -38949,7 +38949,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -39052,7 +39052,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39085,7 +39085,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ЗвітКомісіонераПроПродажТоварів_Object : DocumentObject
@@ -39113,7 +39113,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -39132,7 +39132,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -39184,7 +39184,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -39217,7 +39217,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -39320,7 +39320,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39353,7 +39353,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ЗвітКомітентуПроПродажТоварів_Object : DocumentObject
@@ -39381,7 +39381,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -39400,7 +39400,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -39452,7 +39452,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -39485,7 +39485,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -39588,7 +39588,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39621,7 +39621,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class КоригуванняНезавершеногоВиробництва_Object : DocumentObject
@@ -39649,7 +39649,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -39668,7 +39668,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -39720,7 +39720,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -39753,7 +39753,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -39856,7 +39856,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -39889,7 +39889,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class КоригуванняПДВ_Object : DocumentObject
@@ -39917,7 +39917,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -39936,7 +39936,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -39988,7 +39988,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -40021,7 +40021,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -40124,7 +40124,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40157,7 +40157,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class КоригуванняІншихВитрат_Object : DocumentObject
@@ -40185,7 +40185,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -40204,7 +40204,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -40256,7 +40256,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -40289,7 +40289,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -40392,7 +40392,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40425,7 +40425,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class Модернізація_Object : DocumentObject
@@ -40453,7 +40453,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -40472,7 +40472,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -40524,7 +40524,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -40557,7 +40557,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -40660,7 +40660,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40693,7 +40693,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class Комплектація_Object : DocumentObject
@@ -40721,7 +40721,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -40740,7 +40740,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -40792,7 +40792,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -40825,7 +40825,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -40928,7 +40928,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -40961,7 +40961,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class НакладнаВимога_Object : DocumentObject
@@ -40989,7 +40989,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -41008,7 +41008,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -41060,7 +41060,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -41093,7 +41093,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -41196,7 +41196,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41229,7 +41229,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class Наряд_Object : DocumentObject
@@ -41257,7 +41257,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -41276,7 +41276,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -41328,7 +41328,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -41361,7 +41361,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -41464,7 +41464,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41497,7 +41497,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class НарахуванняЗаробітньоїПлати_Object : DocumentObject
@@ -41525,7 +41525,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -41544,7 +41544,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -41596,7 +41596,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -41629,7 +41629,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -41732,7 +41732,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -41765,7 +41765,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПередачаМатеріалівВЕксплуатацію_Object : DocumentObject
@@ -41793,7 +41793,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -41812,7 +41812,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -41864,7 +41864,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -41897,7 +41897,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -42000,7 +42000,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42033,7 +42033,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПереміщенняМатеріалівВЕксплуатації_Object : DocumentObject
@@ -42061,7 +42061,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -42080,7 +42080,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -42132,7 +42132,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -42165,7 +42165,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -42268,7 +42268,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42301,7 +42301,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПередачаНематеріальнихАктивів_Object : DocumentObject
@@ -42329,7 +42329,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -42348,7 +42348,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -42400,7 +42400,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -42433,7 +42433,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -42536,7 +42536,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42569,7 +42569,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПереміщенняНематеріальнихАктивів_Object : DocumentObject
@@ -42597,7 +42597,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -42616,7 +42616,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -42668,7 +42668,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -42701,7 +42701,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -42804,7 +42804,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -42837,7 +42837,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПередачаОбладнанняВМонтаж_Object : DocumentObject
@@ -42865,7 +42865,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -42884,7 +42884,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -42936,7 +42936,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -42969,7 +42969,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -43072,7 +43072,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43105,7 +43105,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПередачаОсновнихЗасобів_Object : DocumentObject
@@ -43133,7 +43133,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -43152,7 +43152,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -43204,7 +43204,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -43237,7 +43237,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -43340,7 +43340,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43373,7 +43373,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПереміщенняОсновнихЗасобів_Object : DocumentObject
@@ -43401,7 +43401,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -43420,7 +43420,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -43472,7 +43472,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -43505,7 +43505,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -43608,7 +43608,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43641,7 +43641,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПередачаТоварів_Object : DocumentObject
@@ -43669,7 +43669,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -43688,7 +43688,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -43740,7 +43740,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -43773,7 +43773,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -43876,7 +43876,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -43909,7 +43909,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПереоцінкаВалюти_Object : DocumentObject
@@ -43937,7 +43937,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -43956,7 +43956,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -44008,7 +44008,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -44041,7 +44041,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -44144,7 +44144,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44177,7 +44177,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПереоцінкаОсновнихЗасобів_Object : DocumentObject
@@ -44205,7 +44205,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -44224,7 +44224,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -44276,7 +44276,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -44309,7 +44309,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -44412,7 +44412,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44445,7 +44445,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПереоцінкаТоварів_Object : DocumentObject
@@ -44473,7 +44473,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -44492,7 +44492,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -44544,7 +44544,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -44577,7 +44577,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -44680,7 +44680,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44713,7 +44713,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПлатіжнеДорученняВхідне_Object : DocumentObject
@@ -44741,7 +44741,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -44760,7 +44760,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -44812,7 +44812,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -44845,7 +44845,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -44948,7 +44948,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -44981,7 +44981,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПлатіжнеДорученняВихідне_Object : DocumentObject
@@ -45009,7 +45009,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -45028,7 +45028,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -45080,7 +45080,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -45113,7 +45113,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -45216,7 +45216,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45249,7 +45249,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПодатковаНакладна_Object : DocumentObject
@@ -45277,7 +45277,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -45296,7 +45296,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -45348,7 +45348,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -45381,7 +45381,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -45484,7 +45484,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45517,7 +45517,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПокупкаАбоПродажВалюти_Object : DocumentObject
@@ -45545,7 +45545,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -45564,7 +45564,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -45616,7 +45616,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -45649,7 +45649,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -45752,7 +45752,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -45785,7 +45785,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПідготовкаДоПередачіОсновнихЗасобів_Object : DocumentObject
@@ -45813,7 +45813,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -45832,7 +45832,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -45884,7 +45884,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -45917,7 +45917,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -46020,7 +46020,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46053,7 +46053,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПослугиСторонньоїОрганізації_Object : DocumentObject
@@ -46081,7 +46081,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -46100,7 +46100,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -46152,7 +46152,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -46185,7 +46185,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -46288,7 +46288,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46321,7 +46321,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПрибуткуванняМатеріалівЗВиробництва_Object : DocumentObject
@@ -46349,7 +46349,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -46368,7 +46368,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -46420,7 +46420,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -46453,7 +46453,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -46556,7 +46556,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46589,7 +46589,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПрибуткуванняТоварівВПереробку_Object : DocumentObject
@@ -46617,7 +46617,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -46636,7 +46636,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -46688,7 +46688,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -46721,7 +46721,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -46824,7 +46824,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -46857,7 +46857,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПрибуткуванняТоварівЗПереробки_Object : DocumentObject
@@ -46885,7 +46885,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -46904,7 +46904,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -46956,7 +46956,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -46989,7 +46989,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -47092,7 +47092,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47125,7 +47125,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПрибуткуванняНезавершеногоВиробництва_Object : DocumentObject
@@ -47153,7 +47153,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -47172,7 +47172,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -47224,7 +47224,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -47257,7 +47257,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -47360,7 +47360,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47393,7 +47393,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПрийняттяДоОбліку_Object : DocumentObject
@@ -47421,7 +47421,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -47440,7 +47440,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -47492,7 +47492,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -47525,7 +47525,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -47628,7 +47628,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47661,7 +47661,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class ПоверненняПереданихТоварів_Object : DocumentObject
@@ -47689,7 +47689,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -47708,7 +47708,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -47760,7 +47760,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -47793,7 +47793,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -47896,7 +47896,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -47929,7 +47929,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class РемонтОсновнихЗасобів_Object : DocumentObject
@@ -47957,7 +47957,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -47976,7 +47976,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -48028,7 +48028,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -48061,7 +48061,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -48164,7 +48164,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48197,7 +48197,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class РозподілІншихВитрат_Object : DocumentObject
@@ -48225,7 +48225,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -48244,7 +48244,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -48296,7 +48296,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -48329,7 +48329,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -48432,7 +48432,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48465,7 +48465,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class РозрахунокСобівартостіВипуску_Object : DocumentObject
@@ -48493,7 +48493,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -48512,7 +48512,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -48564,7 +48564,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -48597,7 +48597,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -48700,7 +48700,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -48733,7 +48733,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class СписанняМатеріалів_Object : DocumentObject
@@ -48761,7 +48761,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -48780,7 +48780,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -48832,7 +48832,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -48865,7 +48865,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -48968,7 +48968,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -49001,7 +49001,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class СписанняНезавершеногоВиробництва_Object : DocumentObject
@@ -49029,7 +49029,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -49048,7 +49048,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -49100,7 +49100,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -49133,7 +49133,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -49236,7 +49236,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -49269,7 +49269,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class СписанняНематеріальнихАктивів_Object : DocumentObject
@@ -49297,7 +49297,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -49316,7 +49316,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -49368,7 +49368,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -49401,7 +49401,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -49504,7 +49504,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -49537,7 +49537,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class СписанняОсновнихЗасобів_Object : DocumentObject
@@ -49565,7 +49565,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -49584,7 +49584,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -49636,7 +49636,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -49669,7 +49669,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -49772,7 +49772,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -49805,7 +49805,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class СписанняВитратМайбутніхПеріодів_Object : DocumentObject
@@ -49833,7 +49833,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -49852,7 +49852,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -49904,7 +49904,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -49937,7 +49937,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -50040,7 +50040,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -50073,7 +50073,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class СписанняТоварів_Object : DocumentObject
@@ -50101,7 +50101,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -50120,7 +50120,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -50172,7 +50172,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -50205,7 +50205,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -50308,7 +50308,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 
@@ -50341,7 +50341,7 @@ namespace GeneratedCode.Документи
         public const string НомерДок = "docnomer";
         public const string ДатаДок = "docdate";
         public const string Коментар = "col_a1";
-        public const string Основа = "col_a2";
+        public const string Підстава = "col_a2";
     }
 
     public class Сторнування_Object : DocumentObject
@@ -50369,7 +50369,7 @@ namespace GeneratedCode.Документи
                 НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
                 ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
                 Коментар = base.FieldValue["col_a1"].ToString() ?? "";
-                Основа = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
                 
                 BaseClear();
                 
@@ -50388,7 +50388,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a2"] = Основа;
+            base.FieldValue["col_a2"] = Підстава;
             
             bool result = await BaseSave();
             if (result)
@@ -50440,7 +50440,7 @@ namespace GeneratedCode.Документи
                 НомерДок = НомерДок,
                 ДатаДок = ДатаДок,
                 Коментар = Коментар,
-                Основа = Основа.Copy(),
+                Підстава = Підстава.Copy(),
                 
             };
             
@@ -50473,7 +50473,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get; set; } = "";
         public DateTime ДатаДок { get; set; } = DateTime.MinValue;
         public string Коментар { get; set; } = "";
-        public UuidAndText Основа { get; set; } = new UuidAndText();
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
         
     }
     
@@ -50576,7 +50576,7 @@ namespace GeneratedCode.Документи
         public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
         public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
         public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
-        public UuidAndText Основа { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
         
     }
 

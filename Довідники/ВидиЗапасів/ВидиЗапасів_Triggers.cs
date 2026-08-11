@@ -16,7 +16,7 @@ class ВидиЗапасів_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиЗапасів(++number)).ToString("D6");
     }
 
-    public static Task Copying(ВидиЗапасів_Object ДовідникОбєкт, ВидиЗапасів_Object Основа)
+    public static Task Copying(ВидиЗапасів_Object ДовідникОбєкт, ВидиЗапасів_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

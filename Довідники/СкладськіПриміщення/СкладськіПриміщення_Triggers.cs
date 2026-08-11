@@ -13,7 +13,7 @@ class СкладськіПриміщення_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task Copying(СкладськіПриміщення_Object ДовідникОбєкт, СкладськіПриміщення_Object Основа)
+    public static Task Copying(СкладськіПриміщення_Object ДовідникОбєкт, СкладськіПриміщення_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

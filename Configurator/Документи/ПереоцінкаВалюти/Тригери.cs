@@ -21,7 +21,7 @@ static class ПереоцінкаВалюти_Triggers
                     
     }
 
-    public static Task Copying(ПереоцінкаВалюти_Object ДокументОбєкт, ПереоцінкаВалюти_Object Основа)
+    public static Task Copying(ПереоцінкаВалюти_Object ДокументОбєкт, ПереоцінкаВалюти_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

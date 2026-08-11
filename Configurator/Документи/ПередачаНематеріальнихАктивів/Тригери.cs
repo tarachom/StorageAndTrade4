@@ -21,7 +21,7 @@ static class ПередачаНематеріальнихАктивів_Triggers
                     
     }
 
-    public static Task Copying(ПередачаНематеріальнихАктивів_Object ДокументОбєкт, ПередачаНематеріальнихАктивів_Object Основа)
+    public static Task Copying(ПередачаНематеріальнихАктивів_Object ДокументОбєкт, ПередачаНематеріальнихАктивів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

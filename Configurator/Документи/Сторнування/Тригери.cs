@@ -21,7 +21,7 @@ static class Сторнування_Triggers
                     
     }
 
-    public static Task Copying(Сторнування_Object ДокументОбєкт, Сторнування_Object Основа)
+    public static Task Copying(Сторнування_Object ДокументОбєкт, Сторнування_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -17,7 +17,7 @@ static class ВидиПодатків_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиПодатків(++number)).ToString("D6");
     }
 
-    public static Task Copying(ВидиПодатків_Object ДовідникОбєкт, ВидиПодатків_Object Основа)
+    public static Task Copying(ВидиПодатків_Object ДовідникОбєкт, ВидиПодатків_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -37,7 +37,7 @@ partial class ПоверненняТоварівПостачальнику_Ел�
     TimeControl ЧасДоставкиЗ = TimeControl.New();
     TimeControl ЧасДоставкиДо = TimeControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
@@ -135,8 +135,8 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         Каса.Caption = "Каса";
         Каса.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПоверненняТоварівПостачальнику.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПоверненняТоварівПостачальнику.Підстава";
 
         //Коментар:
         Коментар.WidthRequest = 920;
@@ -215,8 +215,8 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         //Менеджер
         CreateField(vBox, null, Менеджер);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -264,7 +264,7 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
         Каса.Pointer = Елемент.Каса;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Коментар.SetText(Елемент.Коментар);
         Автор.Pointer = Елемент.Автор;
         Менеджер.Pointer = Елемент.Менеджер;
@@ -303,7 +303,7 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
         Елемент.Каса = Каса.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Автор = Автор.Pointer;
         Елемент.Менеджер = Менеджер.Pointer;

@@ -21,7 +21,7 @@ static class ПереоцінкаОсновнихЗасобів_Triggers
                     
     }
 
-    public static Task Copying(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт, ПереоцінкаОсновнихЗасобів_Object Основа)
+    public static Task Copying(ПереоцінкаОсновнихЗасобів_Object ДокументОбєкт, ПереоцінкаОсновнихЗасобів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -18,7 +18,7 @@ static class ТипиБухОперацій_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ТипиБухОперацій(++number)).ToString("D6");
     }
 
-    public static Task Copying(ТипиБухОперацій_Object ДовідникОбєкт, ТипиБухОперацій_Object Основа)
+    public static Task Copying(ТипиБухОперацій_Object ДовідникОбєкт, ТипиБухОперацій_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

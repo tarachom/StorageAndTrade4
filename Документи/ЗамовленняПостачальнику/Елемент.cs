@@ -44,7 +44,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
     ComboBoxText Статус = ComboBoxText.New();
     ComboBoxText ФормаОплати = ComboBoxText.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
 
@@ -159,8 +159,8 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         Менеджер.Caption = "Менеджер";
         Менеджер.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ЗамовленняПостачальнику.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ЗамовленняПостачальнику.Підстава";
 
         //Коментар:
         Коментар.WidthRequest = 920;
@@ -235,8 +235,8 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         //Менеджер
         CreateField(vBox, null, Менеджер);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -294,7 +294,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         Статус.ActiveId = Елемент.Статус.ToString();
         ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
         Менеджер.Pointer = Елемент.Менеджер;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Коментар.SetText(Елемент.Коментар);
         Автор.Pointer = Елемент.Автор;
 
@@ -332,7 +332,7 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         Елемент.Статус = ПсевдонімиПерелічення.СтатусиЗамовленьПостачальникам_FindByName(Статус.ActiveId);
         Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
         Елемент.Менеджер = Менеджер.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Автор = Автор.Pointer;
         Елемент.СумаДокументу = Товари.СумаДокументу();

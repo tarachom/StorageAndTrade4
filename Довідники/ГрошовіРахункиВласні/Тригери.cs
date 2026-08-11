@@ -18,7 +18,7 @@ static class ГрошовіРахункиВласні_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ГрошовіРахункиВласні(++number)).ToString("D6");
     }
 
-    public static Task Copying(ГрошовіРахункиВласні_Object ДовідникОбєкт, ГрошовіРахункиВласні_Object Основа)
+    public static Task Copying(ГрошовіРахункиВласні_Object ДовідникОбєкт, ГрошовіРахункиВласні_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -16,7 +16,7 @@ class Банки_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Банки(++number)).ToString("D6");
     }
 
-    public static Task Copying(Банки_Object ДовідникОбєкт, Банки_Object Основа)
+    public static Task Copying(Банки_Object ДовідникОбєкт, Банки_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -18,7 +18,7 @@ static class МалоцінніПредмети_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.МалоцінніПредмети(++number)).ToString("D6");
     }
 
-    public static Task Copying(МалоцінніПредмети_Object ДовідникОбєкт, МалоцінніПредмети_Object Основа)
+    public static Task Copying(МалоцінніПредмети_Object ДовідникОбєкт, МалоцінніПредмети_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

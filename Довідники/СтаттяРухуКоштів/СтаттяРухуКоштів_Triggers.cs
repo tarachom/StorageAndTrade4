@@ -16,7 +16,7 @@ class СтаттяРухуКоштів_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.СтаттяРухуКоштів(++number)).ToString("D6");
     }
 
-    public static Task Copying(СтаттяРухуКоштів_Object ДовідникОбєкт, СтаттяРухуКоштів_Object Основа)
+    public static Task Copying(СтаттяРухуКоштів_Object ДовідникОбєкт, СтаттяРухуКоштів_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

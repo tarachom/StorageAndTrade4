@@ -17,7 +17,7 @@ class Контрагенти_Папки_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Контрагенти_Папки(++number)).ToString("D6");
     }
 
-    public static Task Copying(Контрагенти_Папки_Object ДовідникОбєкт, Контрагенти_Папки_Object Основа)
+    public static Task Copying(Контрагенти_Папки_Object ДовідникОбєкт, Контрагенти_Папки_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

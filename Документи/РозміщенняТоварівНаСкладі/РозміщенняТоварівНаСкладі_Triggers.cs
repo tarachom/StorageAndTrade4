@@ -19,7 +19,7 @@ class РозміщенняТоварівНаСкладі_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(РозміщенняТоварівНаСкладі_Object ДокументОбєкт, РозміщенняТоварівНаСкладі_Object Основа)
+    public static Task Copying(РозміщенняТоварівНаСкладі_Object ДокументОбєкт, РозміщенняТоварівНаСкладі_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

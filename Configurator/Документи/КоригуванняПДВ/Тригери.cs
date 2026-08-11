@@ -21,7 +21,7 @@ static class КоригуванняПДВ_Triggers
                     
     }
 
-    public static Task Copying(КоригуванняПДВ_Object ДокументОбєкт, КоригуванняПДВ_Object Основа)
+    public static Task Copying(КоригуванняПДВ_Object ДокументОбєкт, КоригуванняПДВ_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

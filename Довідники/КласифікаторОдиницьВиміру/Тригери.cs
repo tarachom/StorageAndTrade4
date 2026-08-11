@@ -20,7 +20,7 @@ static class КласифікаторОдиницьВиміру_Triggers
               
     }
 
-    public static Task Copying(КласифікаторОдиницьВиміру_Object ДовідникОбєкт, КласифікаторОдиницьВиміру_Object Основа)
+    public static Task Copying(КласифікаторОдиницьВиміру_Object ДовідникОбєкт, КласифікаторОдиницьВиміру_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

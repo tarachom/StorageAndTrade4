@@ -21,7 +21,7 @@ static class ПрийняттяДоОбліку_Triggers
                     
     }
 
-    public static Task Copying(ПрийняттяДоОбліку_Object ДокументОбєкт, ПрийняттяДоОбліку_Object Основа)
+    public static Task Copying(ПрийняттяДоОбліку_Object ДокументОбєкт, ПрийняттяДоОбліку_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

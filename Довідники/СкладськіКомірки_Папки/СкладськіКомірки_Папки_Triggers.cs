@@ -17,7 +17,7 @@ class СкладськіКомірки_Папки_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.СкладськіКомірки_Папки(++number)).ToString("D6");
     }
 
-    public static Task Copying(СкладськіКомірки_Папки_Object ДовідникОбєкт, СкладськіКомірки_Папки_Object Основа)
+    public static Task Copying(СкладськіКомірки_Папки_Object ДовідникОбєкт, СкладськіКомірки_Папки_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

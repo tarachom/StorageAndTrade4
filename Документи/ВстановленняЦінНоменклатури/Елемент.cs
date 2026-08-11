@@ -29,7 +29,7 @@ partial class ВстановленняЦінНоменклатури_Елеме�
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     ВидиЦін_PointerControl ВидЦіни = ВидиЦін_PointerControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
 
     #endregion
@@ -78,8 +78,8 @@ partial class ВстановленняЦінНоменклатури_Елеме�
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ВстановленняЦінНоменклатури.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ВстановленняЦінНоменклатури.Підстава";
 
         //Автор:
         Автор.Caption = "Автор";
@@ -131,8 +131,8 @@ partial class ВстановленняЦінНоменклатури_Елеме�
 
     void CreateBottomEnd(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -152,7 +152,7 @@ partial class ВстановленняЦінНоменклатури_Елеме�
         Валюта.Pointer = Елемент.Валюта;
         ВидЦіни.Pointer = Елемент.ВидЦіни;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Автор.Pointer = Елемент.Автор;
 
         // Таблична частина "Товари" 
@@ -169,7 +169,7 @@ partial class ВстановленняЦінНоменклатури_Елеме�
         Елемент.Валюта = Валюта.Pointer;
         Елемент.ВидЦіни = ВидЦіни.Pointer;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Автор = Автор.Pointer;
     }
 

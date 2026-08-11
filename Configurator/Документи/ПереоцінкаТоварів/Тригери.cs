@@ -21,7 +21,7 @@ static class ПереоцінкаТоварів_Triggers
                     
     }
 
-    public static Task Copying(ПереоцінкаТоварів_Object ДокументОбєкт, ПереоцінкаТоварів_Object Основа)
+    public static Task Copying(ПереоцінкаТоварів_Object ДокументОбєкт, ПереоцінкаТоварів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

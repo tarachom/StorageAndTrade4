@@ -46,7 +46,7 @@ partial class ЗамовленняКлієнта_Елемент : DocumentFormEl
     CheckButton ПовернутиТару = CheckButton.NewWithLabel("ПовернутиТару");
     DateTimeControl ДатаПоверненняТари = DateTimeControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
 
@@ -163,8 +163,8 @@ partial class ЗамовленняКлієнта_Елемент : DocumentFormEl
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ЗамовленняКлієнта.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ЗамовленняКлієнта.Підстава";
 
         //Автор:
         Автор.Caption = "Автор";
@@ -240,8 +240,8 @@ partial class ЗамовленняКлієнта_Елемент : DocumentFormEl
         //Менеджер
         CreateField(vBox, null, Менеджер);
 
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -306,7 +306,7 @@ partial class ЗамовленняКлієнта_Елемент : DocumentFormEl
         ПовернутиТару.Active = Елемент.ПовернутиТару;
         ДатаПоверненняТари.Value = Елемент.ДатаПоверненняТари;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Автор.Pointer = Елемент.Автор;
         Менеджер.Pointer = Елемент.Менеджер;
 
@@ -348,7 +348,7 @@ partial class ЗамовленняКлієнта_Елемент : DocumentFormEl
         Елемент.ПовернутиТару = ПовернутиТару.Active;
         Елемент.ДатаПоверненняТари = ДатаПоверненняТари.Value;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.СумаДокументу = Товари.СумаДокументу();

@@ -22,7 +22,7 @@ static class БухгалтерськаОперація_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(БухгалтерськаОперація_Object ДокументОбєкт, БухгалтерськаОперація_Object Основа)
+    public static Task Copying(БухгалтерськаОперація_Object ДокументОбєкт, БухгалтерськаОперація_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

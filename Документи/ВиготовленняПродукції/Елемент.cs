@@ -25,7 +25,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
     Entry НомерДок = Entry.New();
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
@@ -99,9 +99,9 @@ partial class ВиготовленняПродукції_Елемент : Docume
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.Caption = "На основі";
-        Основа.BoundConfType = "Документи.ВиготовленняПродукції.Основа";
+        //Підстава:
+        Підстава.Caption = "Підстава";
+        Підстава.BoundConfType = "Документи.ВиготовленняПродукції.Підстава";
 
         //Організація:
         Організація.Caption = "Організація";
@@ -163,8 +163,8 @@ partial class ВиготовленняПродукції_Елемент : Docume
 
     void CreateBottomStart(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -193,7 +193,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
         НомерДок.SetText(Елемент.НомерДок);
         ДатаДок.Value = Елемент.ДатаДок;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Організація.Pointer = Елемент.Організація;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Автор.Pointer = Елемент.Автор;
@@ -216,7 +216,7 @@ partial class ВиготовленняПродукції_Елемент : Docume
         Елемент.НомерДок = НомерДок.GetText();
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Організація = Організація.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Автор = Автор.Pointer;

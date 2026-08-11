@@ -22,7 +22,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
     Entry НомерДок = Entry.New();
     DateTimeControl ДатаДок = DateTimeControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
@@ -56,8 +56,8 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         //Коментар:
         Коментар.WidthRequest = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ЧекККМ.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ЧекККМ.Підстава";
 
         //Організація:
         Організація.Caption = "Організація";
@@ -122,8 +122,8 @@ partial class ЧекККМ_Елемент : DocumentFormElement
 
     void CreateBottomStart(Box vBox)
     {
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -141,7 +141,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         НомерДок.SetText(Елемент.НомерДок);
         ДатаДок.Value = Елемент.ДатаДок;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Організація.Pointer = Елемент.Організація;
         Валюта.Pointer = Елемент.Валюта;
         Склад.Pointer = Елемент.Склад;
@@ -159,7 +159,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         Елемент.НомерДок = НомерДок.GetText();
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Організація = Організація.Pointer;
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Склад = Склад.Pointer;

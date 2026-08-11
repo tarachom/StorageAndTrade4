@@ -20,7 +20,7 @@ static class Додаток2ДоПодатковоїНакладної_Triggers
                     
     }
 
-    public static Task Copying(Додаток2ДоПодатковоїНакладної_Object ДокументОбєкт, Додаток2ДоПодатковоїНакладної_Object Основа)
+    public static Task Copying(Додаток2ДоПодатковоїНакладної_Object ДокументОбєкт, Додаток2ДоПодатковоїНакладної_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

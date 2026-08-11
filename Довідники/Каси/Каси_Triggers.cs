@@ -16,7 +16,7 @@ class Каси_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Каси(++number)).ToString("D6");
     }
 
-    public static Task Copying(Каси_Object ДовідникОбєкт, Каси_Object Основа)
+    public static Task Copying(Каси_Object ДовідникОбєкт, Каси_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -26,7 +26,7 @@ partial class РозміщенняНоменклатуриПоКоміркам_�
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
 
     #endregion
 
@@ -71,8 +71,8 @@ partial class РозміщенняНоменклатуриПоКоміркам_�
         Підрозділ.Caption = "Підрозділ";
         Підрозділ.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.РозміщенняНоменклатуриПоКоміркам.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.РозміщенняНоменклатуриПоКоміркам.Підстава";
     }
 
     public static РозміщенняНоменклатуриПоКоміркам_Елемент New()
@@ -121,8 +121,8 @@ partial class РозміщенняНоменклатуриПоКоміркам_�
         // Підрозділ
         CreateField(vBox, null, Підрозділ);
 
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -143,7 +143,7 @@ partial class РозміщенняНоменклатуриПоКоміркам_�
         Коментар.SetText(Елемент.Коментар);
         Автор.Pointer = Елемент.Автор;
         Підрозділ.Pointer = Елемент.Підрозділ;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -160,7 +160,7 @@ partial class РозміщенняНоменклатуриПоКоміркам_�
         Елемент.Коментар = Коментар.GetText();
         Елемент.Автор = Автор.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
 
     }
 

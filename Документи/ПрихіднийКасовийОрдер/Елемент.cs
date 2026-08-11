@@ -26,7 +26,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
     ComboBoxText ГосподарськаОперація = ComboBoxText.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
     БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = БанківськіРахункиОрганізацій_PointerControl.New();
@@ -128,8 +128,8 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
             };
         }
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПрихіднийКасовийОрдер.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПрихіднийКасовийОрдер.Підстава";
 
         //Контрагент:
         Контрагент.Caption = "Контрагент";
@@ -225,8 +225,8 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         //Автор
         CreateField(vBox, null, Автор);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -258,7 +258,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         Організація.Pointer = Елемент.Організація;
         Каса.Pointer = Елемент.Каса;
         ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Контрагент.Pointer = Елемент.Контрагент;
         Договір.Pointer = Елемент.Договір;
         БанківськийРахунок.Pointer = Елемент.БанківськийРахунок;
@@ -289,7 +289,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         Елемент.Організація = Організація.Pointer;
         Елемент.Каса = Каса.Pointer;
         Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Договір = Договір.Pointer;
         Елемент.БанківськийРахунок = БанківськийРахунок.Pointer;

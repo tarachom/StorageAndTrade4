@@ -17,7 +17,7 @@ class Номенклатура_Папки_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Номенклатура_Папки(++number)).ToString("D6");
     }
 
-    public static Task Copying(Номенклатура_Папки_Object ДовідникОбєкт, Номенклатура_Папки_Object Основа)
+    public static Task Copying(Номенклатура_Папки_Object ДовідникОбєкт, Номенклатура_Папки_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

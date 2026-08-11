@@ -20,7 +20,7 @@ static class ЧекККМ_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ЧекККМ_Object ДокументОбєкт, ЧекККМ_Object Основа)
+    public static Task Copying(ЧекККМ_Object ДокументОбєкт, ЧекККМ_Object Підстава)
     {
 
         ДокументОбєкт.Назва += " - Копія";

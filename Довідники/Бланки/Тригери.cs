@@ -18,7 +18,7 @@ static class Бланки_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Бланки(++number)).ToString("D6");
     }
 
-    public static Task Copying(Бланки_Object ДовідникОбєкт, Бланки_Object Основа)
+    public static Task Copying(Бланки_Object ДовідникОбєкт, Бланки_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

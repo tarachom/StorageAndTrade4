@@ -20,7 +20,7 @@ class ПсуванняТоварів_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ПсуванняТоварів_Object ДокументОбєкт, ПсуванняТоварів_Object Основа)
+    public static Task Copying(ПсуванняТоварів_Object ДокументОбєкт, ПсуванняТоварів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

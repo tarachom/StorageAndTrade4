@@ -33,7 +33,7 @@ partial class ПоверненняТоварівВідКлієнта_Елеме�
     Entry ПричинаПовернення = Entry.New();
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
@@ -117,8 +117,8 @@ partial class ПоверненняТоварівВідКлієнта_Елеме�
         Каса.Caption = "Каса";
         Каса.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПоверненняТоварівВідКлієнта.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПоверненняТоварівВідКлієнта.Підстава";
 
         //Коментар:
         Коментар.WidthRequest = 920;
@@ -200,8 +200,8 @@ partial class ПоверненняТоварівВідКлієнта_Елеме�
         //ДокументПродажу
         CreateField(vBox, null, ДокументПродажу);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -232,7 +232,7 @@ partial class ПоверненняТоварівВідКлієнта_Елеме�
         ПричинаПовернення.SetText(Елемент.ПричинаПовернення);
         Контрагент.Pointer = Елемент.Контрагент;
         Каса.Pointer = Елемент.Каса;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Коментар.SetText(Елемент.Коментар);
         Менеджер.Pointer = Елемент.Менеджер;
         Автор.Pointer = Елемент.Автор;
@@ -267,7 +267,7 @@ partial class ПоверненняТоварівВідКлієнта_Елеме�
         Елемент.ПричинаПовернення = ПричинаПовернення.GetText();
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Каса = Каса.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.Автор = Автор.Pointer;

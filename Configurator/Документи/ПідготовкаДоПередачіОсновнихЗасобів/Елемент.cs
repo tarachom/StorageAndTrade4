@@ -26,7 +26,7 @@ partial class ПідготовкаДоПередачіОсновнихЗасоб
     Entry НомерДок = Entry.New();
                     DateTimeControl ДатаДок = DateTimeControl.New();
             Entry Коментар = Entry.New();
-                    CompositePointerControl Основа = CompositePointerControl.New();
+                    CompositePointerControl Підстава = CompositePointerControl.New();
             
     #endregion
 
@@ -50,8 +50,8 @@ partial class ПідготовкаДоПередачіОсновнихЗасоб
             //Коментар:
             Коментар.WidthRequest = 300;
                         
-            //Основа:
-            Основа.BoundConfType = "Документи.ПідготовкаДоПередачіОсновнихЗасобів.Основа";
+            //Підстава:
+            Підстава.BoundConfType = "Документи.ПідготовкаДоПередачіОсновнихЗасобів.Підстава";
                 
     }
 
@@ -76,8 +76,8 @@ partial class ПідготовкаДоПередачіОсновнихЗасоб
     void CreateBottomStart(Box vBox)
     {
         
-            // Основа
-            CreateField(vBox, null, Основа);
+            // Підстава
+            CreateField(vBox, null, Підстава);
                 
     }
 
@@ -93,7 +93,7 @@ partial class ПідготовкаДоПередачіОсновнихЗасоб
         НомерДок.SetText(Елемент.НомерДок);
                         ДатаДок.Value = Елемент.ДатаДок;
                 Коментар.SetText(Елемент.Коментар);
-                        Основа.Pointer = Елемент.Основа;
+                        Підстава.Pointer = Елемент.Підстава;
                 
     }
 
@@ -102,7 +102,7 @@ partial class ПідготовкаДоПередачіОсновнихЗасоб
         Елемент.НомерДок = НомерДок.GetText();
                         Елемент.ДатаДок = ДатаДок.Value;
                 Елемент.Коментар = Коментар.GetText();
-                        Елемент.Основа = Основа.Pointer;
+                        Елемент.Підстава = Підстава.Pointer;
                 
     }
 

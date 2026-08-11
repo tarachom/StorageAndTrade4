@@ -21,7 +21,7 @@ class ЗакриттяРахункуФактури_Triggers
         ДокументОбєкт.Менеджер = Program.Користувач;
     }
 
-    public static Task Copying(ЗакриттяРахункуФактури_Object ДокументОбєкт, ЗакриттяРахункуФактури_Object Основа)
+    public static Task Copying(ЗакриттяРахункуФактури_Object ДокументОбєкт, ЗакриттяРахункуФактури_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

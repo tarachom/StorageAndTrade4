@@ -25,7 +25,7 @@ static class Номенклатура_Triggers
         ДовідникОбєкт.ВидНоменклатури = await ЗначенняТипові.ОсновнийВидНоменклатури();
     }
 
-    public static Task Copying(Номенклатура_Object ДовідникОбєкт, Номенклатура_Object Основа)
+    public static Task Copying(Номенклатура_Object ДовідникОбєкт, Номенклатура_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

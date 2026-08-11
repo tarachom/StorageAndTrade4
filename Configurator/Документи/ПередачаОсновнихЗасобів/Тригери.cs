@@ -21,7 +21,7 @@ static class ПередачаОсновнихЗасобів_Triggers
                     
     }
 
-    public static Task Copying(ПередачаОсновнихЗасобів_Object ДокументОбєкт, ПередачаОсновнихЗасобів_Object Основа)
+    public static Task Copying(ПередачаОсновнихЗасобів_Object ДокументОбєкт, ПередачаОсновнихЗасобів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

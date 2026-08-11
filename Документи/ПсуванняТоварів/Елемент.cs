@@ -26,7 +26,7 @@ partial class ПсуванняТоварів_Елемент : DocumentFormElemen
     Склади_PointerControl Склад = Склади_PointerControl.New();
     Entry Причина = Entry.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
 
     #endregion
 
@@ -70,8 +70,8 @@ partial class ПсуванняТоварів_Елемент : DocumentFormElemen
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПсуванняТоварів.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПсуванняТоварів.Підстава";
     }
 
     public static ПсуванняТоварів_Елемент New()
@@ -121,8 +121,8 @@ partial class ПсуванняТоварів_Елемент : DocumentFormElemen
         // Причина
         CreateField(vBox, "Причина:", Причина);
 
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
 
     }
 
@@ -144,7 +144,7 @@ partial class ПсуванняТоварів_Елемент : DocumentFormElemen
         Склад.Pointer = Елемент.Склад;
         Причина.SetText(Елемент.Причина);
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -161,7 +161,7 @@ partial class ПсуванняТоварів_Елемент : DocumentFormElemen
         Елемент.Склад = Склад.Pointer;
         Елемент.Причина = Причина.GetText();
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
 
     }
 

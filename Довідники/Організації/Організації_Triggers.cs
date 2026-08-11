@@ -16,7 +16,7 @@ class Організації_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Організації(++number)).ToString("D6");
     }
 
-    public static Task Copying(Організації_Object ДовідникОбєкт, Організації_Object Основа)
+    public static Task Copying(Організації_Object ДовідникОбєкт, Організації_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

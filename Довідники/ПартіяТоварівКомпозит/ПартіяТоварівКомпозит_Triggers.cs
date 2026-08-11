@@ -13,7 +13,7 @@ class ПартіяТоварівКомпозит_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task Copying(ПартіяТоварівКомпозит_Object ДовідникОбєкт, ПартіяТоварівКомпозит_Object Основа)
+    public static Task Copying(ПартіяТоварівКомпозит_Object ДовідникОбєкт, ПартіяТоварівКомпозит_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

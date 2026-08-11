@@ -21,7 +21,7 @@ static class РемонтОсновнихЗасобів_Triggers
                     
     }
 
-    public static Task Copying(РемонтОсновнихЗасобів_Object ДокументОбєкт, РемонтОсновнихЗасобів_Object Основа)
+    public static Task Copying(РемонтОсновнихЗасобів_Object ДокументОбєкт, РемонтОсновнихЗасобів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

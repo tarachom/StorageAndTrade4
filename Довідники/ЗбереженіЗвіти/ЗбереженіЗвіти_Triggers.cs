@@ -19,7 +19,7 @@ class ЗбереженіЗвіти_Triggers
         ДовідникОбєкт.Користувач = Program.Користувач;
     }
 
-    public static Task Copying(ЗбереженіЗвіти_Object ДовідникОбєкт, ЗбереженіЗвіти_Object Основа)
+    public static Task Copying(ЗбереженіЗвіти_Object ДовідникОбєкт, ЗбереженіЗвіти_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

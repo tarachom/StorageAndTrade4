@@ -16,7 +16,7 @@ class ВидиНоменклатури_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиНоменклатури(++number)).ToString("D6");
     }
 
-    public static Task Copying(ВидиНоменклатури_Object ДовідникОбєкт, ВидиНоменклатури_Object Основа)
+    public static Task Copying(ВидиНоменклатури_Object ДовідникОбєкт, ВидиНоменклатури_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

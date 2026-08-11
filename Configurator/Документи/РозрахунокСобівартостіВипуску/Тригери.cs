@@ -21,7 +21,7 @@ static class РозрахунокСобівартостіВипуску_Triggers
                     
     }
 
-    public static Task Copying(РозрахунокСобівартостіВипуску_Object ДокументОбєкт, РозрахунокСобівартостіВипуску_Object Основа)
+    public static Task Copying(РозрахунокСобівартостіВипуску_Object ДокументОбєкт, РозрахунокСобівартостіВипуску_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

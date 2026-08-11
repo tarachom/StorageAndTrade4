@@ -32,7 +32,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
     ComboBoxText ГосподарськаОперація = ComboBoxText.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
 
     #endregion
@@ -131,8 +131,8 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ВведенняЗалишків.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ВведенняЗалишків.Підстава";
     }
 
     public static ВведенняЗалишків_Елемент New()
@@ -191,8 +191,8 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
 
     void CreateBottomEnd(Box vBox)
     {
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
 
         //Автор
         CreateField(vBox, null, Автор);
@@ -224,7 +224,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
         Автор.Pointer = Елемент.Автор;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
 
         // Таблична частина "Товари" 
@@ -261,7 +261,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
         Елемент.Автор = Автор.Pointer;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
     }
 

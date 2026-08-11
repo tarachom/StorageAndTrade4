@@ -21,7 +21,7 @@ static class Наряд_Triggers
                     
     }
 
-    public static Task Copying(Наряд_Object ДокументОбєкт, Наряд_Object Основа)
+    public static Task Copying(Наряд_Object ДокументОбєкт, Наряд_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

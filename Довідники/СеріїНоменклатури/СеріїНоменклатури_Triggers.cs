@@ -15,10 +15,10 @@ class СеріїНоменклатури_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task Copying(СеріїНоменклатури_Object ДовідникОбєкт, СеріїНоменклатури_Object Основа)
+    public static Task Copying(СеріїНоменклатури_Object ДовідникОбєкт, СеріїНоменклатури_Object Підстава)
     {
         ДовідникОбєкт.Номер = Guid.NewGuid().ToString();
-        ДовідникОбєкт.Коментар = "Копія - " + Основа.Номер;
+        ДовідникОбєкт.Коментар = "Копія - " + Підстава.Номер;
 
         return Task.CompletedTask;
     }

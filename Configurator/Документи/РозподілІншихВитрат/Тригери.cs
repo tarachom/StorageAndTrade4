@@ -21,7 +21,7 @@ static class РозподілІншихВитрат_Triggers
                     
     }
 
-    public static Task Copying(РозподілІншихВитрат_Object ДокументОбєкт, РозподілІншихВитрат_Object Основа)
+    public static Task Copying(РозподілІншихВитрат_Object ДокументОбєкт, РозподілІншихВитрат_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

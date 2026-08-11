@@ -18,7 +18,7 @@ class ПакуванняОдиниціВиміру_Triggers
         ДовідникОбєкт.Коєфіціент = 1;
     }
 
-    public static Task Copying(ПакуванняОдиниціВиміру_Object ДовідникОбєкт, ПакуванняОдиниціВиміру_Object Основа)
+    public static Task Copying(ПакуванняОдиниціВиміру_Object ДовідникОбєкт, ПакуванняОдиниціВиміру_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

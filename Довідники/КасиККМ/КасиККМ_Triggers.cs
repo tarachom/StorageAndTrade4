@@ -14,7 +14,7 @@ static class КасиККМ_Triggers
         return Task.CompletedTask;
     }
 
-    public static Task Copying(КасиККМ_Object ДовідникОбєкт, КасиККМ_Object Основа)
+    public static Task Copying(КасиККМ_Object ДовідникОбєкт, КасиККМ_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

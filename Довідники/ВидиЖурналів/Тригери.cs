@@ -18,7 +18,7 @@ static class ВидиЖурналів_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ВидиЖурналів(++number)).ToString("D6");
     }
 
-    public static Task Copying(ВидиЖурналів_Object ДовідникОбєкт, ВидиЖурналів_Object Основа)
+    public static Task Copying(ВидиЖурналів_Object ДовідникОбєкт, ВидиЖурналів_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

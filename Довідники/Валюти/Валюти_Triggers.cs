@@ -16,7 +16,7 @@ class Валюти_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Валюти(++number)).ToString("D6");
     }
 
-    public static Task Copying(Валюти_Object ДовідникОбєкт, Валюти_Object Основа)
+    public static Task Copying(Валюти_Object ДовідникОбєкт, Валюти_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

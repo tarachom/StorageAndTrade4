@@ -21,7 +21,7 @@ static class ПлатіжнеДорученняВихідне_Triggers
                     
     }
 
-    public static Task Copying(ПлатіжнеДорученняВихідне_Object ДокументОбєкт, ПлатіжнеДорученняВихідне_Object Основа)
+    public static Task Copying(ПлатіжнеДорученняВихідне_Object ДокументОбєкт, ПлатіжнеДорученняВихідне_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

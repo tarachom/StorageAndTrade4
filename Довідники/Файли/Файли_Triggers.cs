@@ -16,7 +16,7 @@ class Файли_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Файли(++number)).ToString("D6");
     }
 
-    public static Task Copying(Файли_Object ДовідникОбєкт, Файли_Object Основа)
+    public static Task Copying(Файли_Object ДовідникОбєкт, Файли_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

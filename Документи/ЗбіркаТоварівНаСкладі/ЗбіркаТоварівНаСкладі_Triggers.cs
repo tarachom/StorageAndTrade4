@@ -20,7 +20,7 @@ class ЗбіркаТоварівНаСкладі_Triggers
         ДокументОбєкт.Автор = Program.Користувач;
     }
 
-    public static Task Copying(ЗбіркаТоварівНаСкладі_Object ДокументОбєкт, ЗбіркаТоварівНаСкладі_Object Основа)
+    public static Task Copying(ЗбіркаТоварівНаСкладі_Object ДокументОбєкт, ЗбіркаТоварівНаСкладі_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 07.08.2026 19:42:02
+ * Дата конфігурації: 10.08.2026 14:14:14
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -31192,28 +31192,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 form.Grid.AppendColumn(column);
             }
         
-            //Назва: Основа, "Основа"
-            {
-                SignalListItemFactory factory = SignalListItemFactory.New();
-                factory.OnSetup += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    listItem.Child = LabelTablePartCell.NewFromType("composite_pointer");
-                };
-                factory.OnBind += (_, args) =>
-                {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    if (cell != null && row != null)
-                        cell.SetText(row.Fields["Основа"]);
-                };
-                ColumnViewColumn column = ColumnViewColumn.New("Основа", factory);
-                column.Resizable = true;
-                
-                form.Grid.AppendColumn(column);
-            }
-        
             { /* Пуста колонка для заповнення вільного простору */
                 ColumnViewColumn column = ColumnViewColumn.New(null, null);
                 column.Resizable = true;
@@ -31247,7 +31225,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     /*НомерДок*/ Документи.БухгалтерськаОперація_Const.НомерДок,
                     /*ДатаДок*/ Документи.БухгалтерськаОперація_Const.ДатаДок,
                     /*Коментар*/ Документи.БухгалтерськаОперація_Const.Коментар,
-                    /*Основа*/ Документи.БухгалтерськаОперація_Const.Основа,
                     
                 ]);
             
@@ -31261,9 +31238,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                             /* Приєднання pointer */
                             Довідники.Користувачі_Pointer.GetJoin(БухгалтерськаОперація_Select.QuerySelect, Документи.БухгалтерськаОперація_Const.Автор,
                             БухгалтерськаОперація_Select.QuerySelect.Table, "join_tab_2", "Автор");
-                        
-                            /* Приєднання composite_pointer */
-                            БухгалтерськаОперація_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Документи.БухгалтерськаОперація_Const.Основа})", "Основа"));
                         
 
             /* Відбори */
@@ -31287,7 +31261,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     row.Fields.Add("Організація", Fields["Організація"].ToString());
                     row.Fields.Add("Автор", Fields["Автор"].ToString());
                     row.Fields.Add("Коментар", Fields[БухгалтерськаОперація_Const.Коментар].ToString());
-                    row.Fields.Add("Основа", Fields["Основа"].ToString());
                     
                     ObjectChanged? objCh = records.Find(x => x.Uid.Equals(curr.UniqueID.UGuid));
                     if (objCh != null)
@@ -31327,7 +31300,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     /*НомерДок*/ Документи.БухгалтерськаОперація_Const.НомерДок,
                     /*ДатаДок*/ Документи.БухгалтерськаОперація_Const.ДатаДок,
                     /*Коментар*/ Документи.БухгалтерськаОперація_Const.Коментар,
-                    /*Основа*/ Документи.БухгалтерськаОперація_Const.Основа,
                     
                 ]);
             
@@ -31341,9 +31313,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                             /* Приєднання pointer */
                             Довідники.Користувачі_Pointer.GetJoin(БухгалтерськаОперація_Select.QuerySelect, Документи.БухгалтерськаОперація_Const.Автор,
                             БухгалтерськаОперація_Select.QuerySelect.Table, "join_tab_2", "Автор");
-                        
-                            /* Приєднання composite_pointer */
-                            БухгалтерськаОперація_Select.QuerySelect.FieldAndAlias.Add(new ValueName<string>($"{SpecialFunc.CompisitePresentation}({Документи.БухгалтерськаОперація_Const.Основа})", "Основа"));
                         
 
             /* Відбори */
@@ -31379,7 +31348,6 @@ namespace GeneratedCode.Документи.ТабличніСписки
                     row.Fields.Add("Організація", Fields["Організація"].ToString());
                     row.Fields.Add("Автор", Fields["Автор"].ToString());
                     row.Fields.Add("Коментар", Fields[БухгалтерськаОперація_Const.Коментар].ToString());
-                    row.Fields.Add("Основа", Fields["Основа"].ToString());
                     
                     form.Store.Append(row);
                     if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();

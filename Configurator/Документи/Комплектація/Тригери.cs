@@ -21,7 +21,7 @@ static class Комплектація_Triggers
                     
     }
 
-    public static Task Copying(Комплектація_Object ДокументОбєкт, Комплектація_Object Основа)
+    public static Task Copying(Комплектація_Object ДокументОбєкт, Комплектація_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

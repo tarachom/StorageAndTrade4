@@ -17,7 +17,7 @@ static class ОсновніЗасоби_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.ОсновніЗасоби(++number)).ToString("D6");
     }
 
-    public static Task Copying(ОсновніЗасоби_Object ДовідникОбєкт, ОсновніЗасоби_Object Основа)
+    public static Task Copying(ОсновніЗасоби_Object ДовідникОбєкт, ОсновніЗасоби_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

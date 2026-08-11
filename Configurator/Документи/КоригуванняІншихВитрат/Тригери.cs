@@ -21,7 +21,7 @@ static class КоригуванняІншихВитрат_Triggers
                     
     }
 
-    public static Task Copying(КоригуванняІншихВитрат_Object ДокументОбєкт, КоригуванняІншихВитрат_Object Основа)
+    public static Task Copying(КоригуванняІншихВитрат_Object ДокументОбєкт, КоригуванняІншихВитрат_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

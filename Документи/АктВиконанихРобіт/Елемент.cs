@@ -34,7 +34,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
 
     #endregion
@@ -126,8 +126,8 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         //Коментар:
         Коментар.WidthRequest = 920;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.АктВиконанихРобіт.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.АктВиконанихРобіт.Підстава";
     }
 
     public static АктВиконанихРобіт_Елемент New()
@@ -192,8 +192,8 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         //ФормаОплати
         CreateField(vBox, "Форма оплати:", ФормаОплати);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
 
         //Менеджер
         CreateField(vBox, null, Менеджер);
@@ -227,7 +227,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Автор.Pointer = Елемент.Автор;
         Менеджер.Pointer = Елемент.Менеджер;
         Коментар.SetText(Елемент.Коментар);
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
 
         // Таблична частина "Послуги" 
@@ -260,7 +260,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Елемент.Автор = Автор.Pointer;
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.Коментар = Коментар.GetText();
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;
 
         Елемент.СумаДокументу = Послуги.СумаДокументу();

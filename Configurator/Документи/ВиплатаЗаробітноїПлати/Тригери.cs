@@ -21,7 +21,7 @@ static class ВиплатаЗаробітноїПлати_Triggers
                     
     }
 
-    public static Task Copying(ВиплатаЗаробітноїПлати_Object ДокументОбєкт, ВиплатаЗаробітноїПлати_Object Основа)
+    public static Task Copying(ВиплатаЗаробітноїПлати_Object ДокументОбєкт, ВиплатаЗаробітноїПлати_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -18,7 +18,7 @@ static class Категорії_Triggers
         ДовідникОбєкт.Код = (await НумераціяДовідників.Категорії(++number)).ToString("D6");
     }
 
-    public static Task Copying(Категорії_Object ДовідникОбєкт, Категорії_Object Основа)
+    public static Task Copying(Категорії_Object ДовідникОбєкт, Категорії_Object Підстава)
     {
         ДовідникОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

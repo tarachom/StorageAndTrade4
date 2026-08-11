@@ -27,7 +27,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
     Склади_PointerControl Склад = Склади_PointerControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     ComboBoxText ГосподарськаОперація = ComboBoxText.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
@@ -82,8 +82,8 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
         Підрозділ.Caption = "Підрозділ";
         Підрозділ.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ВнутрішнєСпоживанняТоварів.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ВнутрішнєСпоживанняТоварів.Підстава";
 
         //ГосподарськаОперація:
         {
@@ -155,8 +155,8 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
 
     void CreateBottomEnd(Box vBox)
     {
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     #endregion
@@ -179,7 +179,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
         Склад.Pointer = Елемент.Склад;
         Валюта.Pointer = Елемент.Валюта;
         Підрозділ.Pointer = Елемент.Підрозділ;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
         Автор.Pointer = Елемент.Автор;
         Коментар.SetText(Елемент.Коментар);
@@ -202,7 +202,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
         Елемент.Склад = Склад.Pointer;
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
         Елемент.Автор = Автор.Pointer;
         Елемент.Коментар = Коментар.GetText();

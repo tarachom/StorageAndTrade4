@@ -30,7 +30,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
     Entry Коментар = Entry.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
 
     #endregion
 
@@ -76,8 +76,8 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         Підрозділ.Caption = "Підрозділ";
         Підрозділ.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПерерахунокТоварів.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПерерахунокТоварів.Підстава";
     }
 
     public static ПерерахунокТоварів_Елемент New()
@@ -126,8 +126,8 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         // Підрозділ
         CreateField(vBox, null, Підрозділ);
 
-        // Основа
-        CreateField(vBox, null, Основа);
+        // Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -148,7 +148,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         Коментар.SetText(Елемент.Коментар);
         Організація.Pointer = Елемент.Організація;
         Підрозділ.Pointer = Елемент.Підрозділ;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Товари" 
         Товари.ЕлементВласник = Елемент;
@@ -165,7 +165,7 @@ partial class ПерерахунокТоварів_Елемент : DocumentForm
         Елемент.Коментар = Коментар.GetText();
         Елемент.Організація = Організація.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
 
     }
 

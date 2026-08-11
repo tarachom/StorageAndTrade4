@@ -21,7 +21,7 @@ static class ПередачаТоварів_Triggers
                     
     }
 
-    public static Task Copying(ПередачаТоварів_Object ДокументОбєкт, ПередачаТоварів_Object Основа)
+    public static Task Copying(ПередачаТоварів_Object ДокументОбєкт, ПередачаТоварів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

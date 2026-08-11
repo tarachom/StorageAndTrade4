@@ -47,7 +47,7 @@ partial class ПоступленняТоварівТаПослуг_Елемен�
     TimeControl ЧасДоставкиДо = TimeControl.New();
     СтаттяРухуКоштів_PointerControl СтаттяРухуКоштів = СтаттяРухуКоштів_PointerControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
-    CompositePointerControl Основа = CompositePointerControl.New();
+    CompositePointerControl Підстава = CompositePointerControl.New();
     Entry Коментар = Entry.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
@@ -173,8 +173,8 @@ partial class ПоступленняТоварівТаПослуг_Елемен�
         Каса.Caption = "Каса";
         Каса.WidthPresentation = 300;
 
-        //Основа:
-        Основа.BoundConfType = "Документи.ПоступленняТоварівТаПослуг.Основа";
+        //Підстава:
+        Підстава.BoundConfType = "Документи.ПоступленняТоварівТаПослуг.Підстава";
 
         //Коментар:
         Коментар.WidthRequest = 920;
@@ -262,8 +262,8 @@ partial class ПоступленняТоварівТаПослуг_Елемен�
         //Менеджер
         CreateField(vBox, null, Менеджер);
 
-        //Основа
-        CreateField(vBox, null, Основа);
+        //Підстава
+        CreateField(vBox, null, Підстава);
     }
 
     void CreateBottomEnd(Box vBox)
@@ -339,7 +339,7 @@ partial class ПоступленняТоварівТаПослуг_Елемен�
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
         СтаттяРухуКоштів.Pointer = Елемент.СтаттяРухуКоштів;
         Каса.Pointer = Елемент.Каса;
-        Основа.Pointer = Елемент.Основа;
+        Підстава.Pointer = Елемент.Підстава;
         Автор.Pointer = Елемент.Автор;
         Менеджер.Pointer = Елемент.Менеджер;
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
@@ -388,7 +388,7 @@ partial class ПоступленняТоварівТаПослуг_Елемен�
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
         Елемент.СтаттяРухуКоштів = СтаттяРухуКоштів.Pointer;
         Елемент.Каса = Каса.Pointer;
-        Елемент.Основа = Основа.Pointer;
+        Елемент.Підстава = Підстава.Pointer;
         Елемент.Автор = Автор.Pointer;
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;

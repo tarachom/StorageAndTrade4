@@ -21,7 +21,7 @@ class ЗамовленняКлієнта_Triggers
         ДокументОбєкт.Менеджер = Program.Користувач;
     }
 
-    public static Task Copying(ЗамовленняКлієнта_Object ДокументОбєкт, ЗамовленняКлієнта_Object Основа)
+    public static Task Copying(ЗамовленняКлієнта_Object ДокументОбєкт, ЗамовленняКлієнта_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;

@@ -21,7 +21,7 @@ static class ЗвітКомітентуПроПродажТоварів_Triggers
                     
     }
 
-    public static Task Copying(ЗвітКомітентуПроПродажТоварів_Object ДокументОбєкт, ЗвітКомітентуПроПродажТоварів_Object Основа)
+    public static Task Copying(ЗвітКомітентуПроПродажТоварів_Object ДокументОбєкт, ЗвітКомітентуПроПродажТоварів_Object Підстава)
     {
         ДокументОбєкт.Назва += " - Копія";
         return Task.CompletedTask;
