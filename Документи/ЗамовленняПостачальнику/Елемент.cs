@@ -36,13 +36,13 @@ partial class ЗамовленняПостачальнику_Елемент : Do
     DateTimeControl ДатаПоступлення = DateTimeControl.New();
     Entry АдресаДоставкиДляПостачальника = Entry.New();
     CheckButton ПовернутиТару = CheckButton.NewWithLabel("ПовернутиТару");
-    ComboBoxText СпосібДоставки = ComboBoxText.New();
+    DropDownControl СпосібДоставки = DropDownControl.New();
     TimeControl ЧасДоставкиЗ = TimeControl.New();
     TimeControl ЧасДоставкиДо = TimeControl.New();
     Entry АдресаДоставки = Entry.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
-    ComboBoxText Статус = ComboBoxText.New();
-    ComboBoxText ФормаОплати = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
+    DropDownControl Статус = DropDownControl.New();
+    DropDownControl ФормаОплати = DropDownControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     CompositePointerControl Підстава = CompositePointerControl.New();
     Entry Коментар = Entry.New();
@@ -112,48 +112,26 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         АдресаДоставкиДляПостачальника.WidthRequest = 300;
 
         //СпосібДоставки:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
-                СпосібДоставки.Append(field.Value.ToString(), field.Name);
-
-            СпосібДоставки.Active = 0;
-            СпосібДоставки.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        СпосібДоставки.Fill(ПсевдонімиПерелічення.СпособиДоставки_Dict());
 
         //АдресаДоставки:
         АдресаДоставки.WidthRequest = 300;
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.ПлануванняПоЗамовленнямПостачальнику))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Статус:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиЗамовленьПостачальникам_List())
-                Статус.Append(field.Value.ToString(), field.Name);
-
-            Статус.Active = 0;
-            Статус.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        Статус.Fill(ПсевдонімиПерелічення.СтатусиЗамовленьПостачальникам_Dict());
 
         //ФормаОплати:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
-                ФормаОплати.Append(field.Value.ToString(), field.Name);
-
-            ФормаОплати.Active = 0;
-            ФормаОплати.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ФормаОплати.Fill(ПсевдонімиПерелічення.ФормаОплати_Dict());
 
         //Менеджер:
         Менеджер.Caption = "Менеджер";
@@ -286,13 +264,13 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         ДатаПоступлення.Value = Елемент.ДатаПоступлення;
         АдресаДоставкиДляПостачальника.SetText(Елемент.АдресаДоставкиДляПостачальника);
         ПовернутиТару.Active = Елемент.ПовернутиТару;
-        СпосібДоставки.ActiveId = Елемент.СпосібДоставки.ToString();
+        СпосібДоставки.Value = Елемент.СпосібДоставки.ToString();
         ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
         АдресаДоставки.SetText(Елемент.АдресаДоставки);
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
-        Статус.ActiveId = Елемент.Статус.ToString();
-        ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
+        Статус.Value = Елемент.Статус.ToString();
+        ФормаОплати.Value = Елемент.ФормаОплати.ToString();
         Менеджер.Pointer = Елемент.Менеджер;
         Підстава.Pointer = Елемент.Підстава;
         Коментар.SetText(Елемент.Коментар);
@@ -324,13 +302,13 @@ partial class ЗамовленняПостачальнику_Елемент : Do
         Елемент.ДатаПоступлення = ДатаПоступлення.Value;
         Елемент.АдресаДоставкиДляПостачальника = АдресаДоставкиДляПостачальника.GetText();
         Елемент.ПовернутиТару = ПовернутиТару.Active;
-        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.ActiveId);
+        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.Value);
         Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
         Елемент.АдресаДоставки = АдресаДоставки.GetText();
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
-        Елемент.Статус = ПсевдонімиПерелічення.СтатусиЗамовленьПостачальникам_FindByName(Статус.ActiveId);
-        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
+        Елемент.Статус = ПсевдонімиПерелічення.СтатусиЗамовленьПостачальникам_FindByName(Статус.Value);
+        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.Value);
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.Підстава = Підстава.Pointer;
         Елемент.Коментар = Коментар.GetText();

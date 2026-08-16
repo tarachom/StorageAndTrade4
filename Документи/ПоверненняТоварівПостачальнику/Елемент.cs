@@ -28,11 +28,11 @@ partial class ПоверненняТоварівПостачальнику_Ел�
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     БанківськіРахункиОрганізацій_PointerControl БанківськийРахунокОрганізації = БанківськіРахункиОрганізацій_PointerControl.New();
     БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = БанківськіРахункиКонтрагентів_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
-    ComboBoxText СпосібДоставки = ComboBoxText.New();
+    DropDownControl СпосібДоставки = DropDownControl.New();
     Entry АдресДоставки = Entry.New();
     TimeControl ЧасДоставкиЗ = TimeControl.New();
     TimeControl ЧасДоставкиДо = TimeControl.New();
@@ -97,13 +97,12 @@ partial class ПоверненняТоварівПостачальнику_Ел�
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.ПоверненняТоварівПостачальнику))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //БанківськийРахунокОрганізації:
@@ -119,14 +118,7 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         Договір.WidthPresentation = 300;
 
         //СпосібДоставки:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
-                СпосібДоставки.Append(field.Value.ToString(), field.Name);
-
-            СпосібДоставки.Active = 0;
-            СпосібДоставки.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        СпосібДоставки.Fill(ПсевдонімиПерелічення.СпособиДоставки_Dict());
 
         //АдресДоставки:
         АдресДоставки.WidthRequest = 300;
@@ -160,7 +152,7 @@ partial class ПоверненняТоварівПостачальнику_Ел�
 
     #region Interface
 
-    FunctionForInterfaces.DocumentElement  Interface = FunctionForInterfaces.ForDocument();
+    FunctionForInterfaces.DocumentElement Interface = FunctionForInterfaces.ForDocument();
 
     protected override void BuildInterface()
     {
@@ -255,11 +247,11 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         Підрозділ.Pointer = Елемент.Підрозділ;
         Валюта.Pointer = Елемент.Валюта;
         Склад.Pointer = Елемент.Склад;
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         БанківськийРахунокОрганізації.Pointer = Елемент.БанківськийРахунокОрганізації;
         БанківськийРахунокКонтрагента.Pointer = Елемент.БанківськийРахунокКонтрагента;
         Договір.Pointer = Елемент.Договір;
-        СпосібДоставки.ActiveId = Елемент.СпосібДоставки.ToString();
+        СпосібДоставки.Value = Елемент.СпосібДоставки.ToString();
         АдресДоставки.SetText(Елемент.АдресДоставки);
         ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
@@ -294,11 +286,11 @@ partial class ПоверненняТоварівПостачальнику_Ел�
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Склад = Склад.Pointer;
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.БанківськийРахунокОрганізації = БанківськийРахунокОрганізації.Pointer;
         Елемент.БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Pointer;
         Елемент.Договір = Договір.Pointer;
-        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.ActiveId);
+        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.Value);
         Елемент.АдресДоставки = АдресДоставки.GetText();
         Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;

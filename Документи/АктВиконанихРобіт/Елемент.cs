@@ -28,9 +28,9 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
-    ComboBoxText ФормаОплати = ComboBoxText.New();
+    DropDownControl ФормаОплати = DropDownControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Користувачі_PointerControl Менеджер = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
@@ -91,14 +91,7 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Підрозділ.WidthPresentation = 300;
 
         //ФормаОплати:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
-                ФормаОплати.Append(field.Value.ToString(), field.Name);
-
-            ФормаОплати.Active = 0;
-            ФормаОплати.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ФормаОплати.Fill(ПсевдонімиПерелічення.ФормаОплати_Dict());
 
         //Договір:
         Договір.Caption = "Договір";
@@ -106,13 +99,12 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.РеалізаціяКлієнту))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Автор:
@@ -221,9 +213,9 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Контрагент.Pointer = Елемент.Контрагент;
         Організація.Pointer = Елемент.Організація;
         Підрозділ.Pointer = Елемент.Підрозділ;
-        ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
+        ФормаОплати.Value = Елемент.ФормаОплати.ToString();
         Договір.Pointer = Елемент.Договір;
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         Автор.Pointer = Елемент.Автор;
         Менеджер.Pointer = Елемент.Менеджер;
         Коментар.SetText(Елемент.Коментар);
@@ -254,9 +246,9 @@ partial class АктВиконанихРобіт_Елемент : DocumentFormEl
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Організація = Організація.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
-        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
+        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.Value);
         Елемент.Договір = Договір.Pointer;
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.Автор = Автор.Pointer;
         Елемент.Менеджер = Менеджер.Pointer;
         Елемент.Коментар = Коментар.GetText();

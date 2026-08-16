@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 10.08.2026 14:14:14
+ * Дата конфігурації: 13.08.2026 14:35:22
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -475,12 +475,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* ТипНоменклатури, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ТипНоменклатури = ComboBoxText.New();
+                        DropDownControl ТипНоменклатури = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ТипиНоменклатури_Dict());
                         ТипНоменклатури.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ТипиНоменклатури_List())
-                            ТипНоменклатури.Append(item.Value.ToString(), item.Name);
-                        ТипНоменклатури.Active = 0;
-                        object get() => Enum.TryParse(ТипНоменклатури.ActiveId, out ТипиНоменклатури value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ТипиНоменклатури_FindByName(ТипНоменклатури.Value);
                     
                 filterList.Add(new(Номенклатура_Const.ТипНоменклатури, get, sw));
                 form.Filter.Append("Тип:", ТипНоменклатури, sw);
@@ -894,12 +891,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* ТипНоменклатури, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ТипНоменклатури = ComboBoxText.New();
+                        DropDownControl ТипНоменклатури = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ТипиНоменклатури_Dict());
                         ТипНоменклатури.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ТипиНоменклатури_List())
-                            ТипНоменклатури.Append(item.Value.ToString(), item.Name);
-                        ТипНоменклатури.Active = 0;
-                        object get() => Enum.TryParse(ТипНоменклатури.ActiveId, out ТипиНоменклатури value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ТипиНоменклатури_FindByName(ТипНоменклатури.Value);
                     
                 filterList.Add(new(Номенклатура_Const.ТипНоменклатури, get, sw));
                 form.Filter.Append("Тип:", ТипНоменклатури, sw);
@@ -3031,12 +3025,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* ТипСкладу, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ТипСкладу = ComboBoxText.New();
+                        DropDownControl ТипСкладу = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ТипиСкладів_Dict());
                         ТипСкладу.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ТипиСкладів_List())
-                            ТипСкладу.Append(item.Value.ToString(), item.Name);
-                        ТипСкладу.Active = 0;
-                        object get() => Enum.TryParse(ТипСкладу.ActiveId, out ТипиСкладів value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.Value);
                     
                 filterList.Add(new(Склади_Const.ТипСкладу, get, sw));
                 form.Filter.Append("Тип cкладу:", ТипСкладу, sw);
@@ -3045,12 +3036,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* НалаштуванняАдресногоЗберігання, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
+                        DropDownControl НалаштуванняАдресногоЗберігання = DropDownControl.NewWithValues(ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Dict());
                         НалаштуванняАдресногоЗберігання.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
-                            НалаштуванняАдресногоЗберігання.Append(item.Value.ToString(), item.Name);
-                        НалаштуванняАдресногоЗберігання.Active = 0;
-                        object get() => Enum.TryParse(НалаштуванняАдресногоЗберігання.ActiveId, out НалаштуванняАдресногоЗберігання value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.Value);
                     
                 filterList.Add(new(Склади_Const.НалаштуванняАдресногоЗберігання, get, sw));
                 form.Filter.Append("Адресне зберігання:", НалаштуванняАдресногоЗберігання, sw);
@@ -7843,12 +7831,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* ТипДоговору, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ТипДоговору = ComboBoxText.New();
+                        DropDownControl ТипДоговору = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ТипДоговорів_Dict());
                         ТипДоговору.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ТипДоговорів_List())
-                            ТипДоговору.Append(item.Value.ToString(), item.Name);
-                        ТипДоговору.Active = 0;
-                        object get() => Enum.TryParse(ТипДоговору.ActiveId, out ТипДоговорів value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ТипДоговорів_FindByName(ТипДоговору.Value);
                     
                 filterList.Add(new(ДоговориКонтрагентів_Const.ТипДоговору, get, sw));
                 form.Filter.Append("Тип:", ТипДоговору, sw);
@@ -8644,12 +8629,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* ВидРухуКоштів, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ВидРухуКоштів = ComboBoxText.New();
+                        DropDownControl ВидРухуКоштів = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ВидиРухуКоштів_Dict());
                         ВидРухуКоштів.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
-                            ВидРухуКоштів.Append(item.Value.ToString(), item.Name);
-                        ВидРухуКоштів.Active = 0;
-                        object get() => Enum.TryParse(ВидРухуКоштів.ActiveId, out ВидиРухуКоштів value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ВидиРухуКоштів_FindByName(ВидРухуКоштів.Value);
                     
                 filterList.Add(new(СтаттяРухуКоштів_Const.ВидРухуКоштів, get, sw));
                 form.Filter.Append("ВидРухуКоштів:", ВидРухуКоштів, sw);
@@ -9179,12 +9161,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* ТипДокументу, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ТипДокументу = ComboBoxText.New();
+                        DropDownControl ТипДокументу = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_Dict());
                         ТипДокументу.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_List())
-                            ТипДокументу.Append(item.Value.ToString(), item.Name);
-                        ТипДокументу.Active = 0;
-                        object get() => Enum.TryParse(ТипДокументу.ActiveId, out ТипДокументуПартіяТоварівКомпозит value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ТипДокументуПартіяТоварівКомпозит_FindByName(ТипДокументу.Value);
                     
                 filterList.Add(new(ПартіяТоварівКомпозит_Const.ТипДокументу, get, sw));
                 form.Filter.Append("Тип документу:", ТипДокументу, sw);
@@ -10755,12 +10734,9 @@ namespace GeneratedCode.Довідники.ТабличніСписки
             { /* НалаштуванняАдресногоЗберігання, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
+                        DropDownControl НалаштуванняАдресногоЗберігання = DropDownControl.NewWithValues(ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Dict());
                         НалаштуванняАдресногоЗберігання.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
-                            НалаштуванняАдресногоЗберігання.Append(item.Value.ToString(), item.Name);
-                        НалаштуванняАдресногоЗберігання.Active = 0;
-                        object get() => Enum.TryParse(НалаштуванняАдресногоЗберігання.ActiveId, out НалаштуванняАдресногоЗберігання value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.Value);
                     
                 filterList.Add(new(СкладськіПриміщення_Const.НалаштуванняАдресногоЗберігання, get, sw));
                 form.Filter.Append("Налаштування:", НалаштуванняАдресногоЗберігання, sw);
@@ -29089,12 +29065,9 @@ namespace GeneratedCode.Документи.ТабличніСписки
             { /* ПричинаЗакриттяЗамовлення, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ПричинаЗакриттяЗамовлення = ComboBoxText.New();
+                        DropDownControl ПричинаЗакриттяЗамовлення = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняКлієнта_Dict());
                         ПричинаЗакриттяЗамовлення.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняКлієнта_List())
-                            ПричинаЗакриттяЗамовлення.Append(item.Value.ToString(), item.Name);
-                        ПричинаЗакриттяЗамовлення.Active = 0;
-                        object get() => Enum.TryParse(ПричинаЗакриттяЗамовлення.ActiveId, out ПричиниЗакриттяЗамовленняКлієнта value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняКлієнта_FindByName(ПричинаЗакриттяЗамовлення.Value);
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.ПричинаЗакриттяЗамовлення, get, sw));
                 form.Filter.Append("Причина:", ПричинаЗакриттяЗамовлення, sw);
@@ -30279,12 +30252,9 @@ namespace GeneratedCode.Документи.ТабличніСписки
             { /* ПричинаЗакриттяЗамовлення, enum */
                 Switch sw = Switch.New();
                 
-                        ComboBoxText ПричинаЗакриттяЗамовлення = ComboBoxText.New();
+                        DropDownControl ПричинаЗакриттяЗамовлення = DropDownControl.NewWithValues(ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняПостачальнику_Dict());
                         ПричинаЗакриттяЗамовлення.MarginStart = 5;
-                        foreach (var item in ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняПостачальнику_List())
-                            ПричинаЗакриттяЗамовлення.Append(item.Value.ToString(), item.Name);
-                        ПричинаЗакриттяЗамовлення.Active = 0;
-                        object get() => Enum.TryParse(ПричинаЗакриттяЗамовлення.ActiveId, out ПричиниЗакриттяЗамовленняПостачальнику value) ? (int)value: 0;
+                        object get() => (int)ПсевдонімиПерелічення.ПричиниЗакриттяЗамовленняПостачальнику_FindByName(ПричинаЗакриттяЗамовлення.Value);
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.ПричинаЗакриттяЗамовлення, get, sw));
                 form.Filter.Append("Причина:", ПричинаЗакриттяЗамовлення, sw);

@@ -24,7 +24,7 @@ partial class Категорії_Елемент : DirectoryFormElement
     Entry Код = Entry.New();
     Entry Назва = Entry.New();
     Категорії_PointerControl Родич = Категорії_PointerControl.New();
-    ComboBoxText МетодСписання = ComboBoxText.New();
+    DropDownControl МетодСписання = DropDownControl.New();
     ПланРахунків_PointerControl РахунокОбліку = ПланРахунків_PointerControl.New();
     ПланРахунків_PointerControl РахунокДоходів = ПланРахунків_PointerControl.New();
     Статті_PointerControl СтаттяДоходів = Статті_PointerControl.New();
@@ -52,13 +52,7 @@ partial class Категорії_Елемент : DirectoryFormElement
         Родич.WidthPresentation = 300;
 
         // МетодСписання:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.МетодиСписання_List())
-                МетодСписання.Append(field.Value.ToString(), field.Name);
-
-            МетодСписання.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        МетодСписання.Fill(ПсевдонімиПерелічення.МетодиСписання_Dict());
 
         // РахунокОбліку:
         РахунокОбліку.Caption = "Рахунок обліку";
@@ -163,7 +157,7 @@ partial class Категорії_Елемент : DirectoryFormElement
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
         Родич.Pointer = Елемент.Родич;
-        МетодСписання.ActiveId = Елемент.МетодСписання.ToString();
+        МетодСписання.Value = Елемент.МетодСписання.ToString();
         РахунокОбліку.Pointer = Елемент.РахунокОбліку;
         РахунокДоходів.Pointer = Елемент.РахунокДоходів;
         СтаттяДоходів.Pointer = Елемент.СтаттяДоходів;
@@ -176,7 +170,7 @@ partial class Категорії_Елемент : DirectoryFormElement
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
         Елемент.Родич = Родич.Pointer;
-        Елемент.МетодСписання = ПсевдонімиПерелічення.МетодиСписання_FindByName(МетодСписання.ActiveId);
+        Елемент.МетодСписання = ПсевдонімиПерелічення.МетодиСписання_FindByName(МетодСписання.Value);
         Елемент.РахунокОбліку = РахунокОбліку.Pointer;
         Елемент.РахунокДоходів = РахунокДоходів.Pointer;
         Елемент.СтаттяДоходів = СтаттяДоходів.Pointer;

@@ -21,7 +21,7 @@ partial class ВидиЗапасів_Елемент : DirectoryFormElement
     Entry Код = Entry.New();
     Entry Назва = Entry.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
-    ComboBoxText ТипЗапасів = ComboBoxText.New();
+    DropDownControl ТипЗапасів = DropDownControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
@@ -47,14 +47,7 @@ partial class ВидиЗапасів_Елемент : DirectoryFormElement
         Організація.WidthPresentation = 300;
 
         // ТипЗапасів:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипЗапасів_List())
-                ТипЗапасів.Append(field.Value.ToString(), field.Name);
-
-            ТипЗапасів.Active = 0;
-            ТипЗапасів.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ТипЗапасів.Fill(ПсевдонімиПерелічення.ТипЗапасів_Dict());
 
         // Валюта:
         Валюта.Caption = "Валюта";
@@ -120,7 +113,7 @@ partial class ВидиЗапасів_Елемент : DirectoryFormElement
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
         Організація.Pointer = Елемент.Організація;
-        ТипЗапасів.ActiveId = Елемент.ТипЗапасів.ToString();
+        ТипЗапасів.Value = Елемент.ТипЗапасів.ToString();
         Валюта.Pointer = Елемент.Валюта;
         Контрагент.Pointer = Елемент.Контрагент;
         Договір.Pointer = Елемент.Договір;
@@ -131,7 +124,7 @@ partial class ВидиЗапасів_Елемент : DirectoryFormElement
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
         Елемент.Організація = Організація.Pointer;
-        Елемент.ТипЗапасів = ПсевдонімиПерелічення.ТипЗапасів_FindByName(ТипЗапасів.ActiveId);
+        Елемент.ТипЗапасів = ПсевдонімиПерелічення.ТипЗапасів_FindByName(ТипЗапасів.Value);
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Договір = Договір.Pointer;

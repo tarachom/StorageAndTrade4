@@ -25,7 +25,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
     Entry НазваПовна = Entry.New();
     TextView Опис = TextView.New();
     Entry Артикул = Entry.New();
-    ComboBoxText ТипНоменклатури = ComboBoxText.New();
+    DropDownControl ТипНоменклатури = DropDownControl.New();
     Виробники_PointerControl Виробник = Виробники_PointerControl.New();
     ВидиНоменклатури_PointerControl ВидНоменклатури = ВидиНоменклатури_PointerControl.New();
     КласифікаторОдиницьВиміру_PointerControl БазоваОдиницяВиміру = КласифікаторОдиницьВиміру_PointerControl.New();
@@ -70,14 +70,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         Артикул.WidthRequest = 500;
 
         // ТипНоменклатури:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
-                ТипНоменклатури.Append(field.Value.ToString(), field.Name);
-
-            ТипНоменклатури.Active = 0;
-            ТипНоменклатури.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ТипНоменклатури.Fill(ПсевдонімиПерелічення.ТипиНоменклатури_Dict());
 
         // Виробник:
         Виробник.Caption = "Виробник";
@@ -198,7 +191,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         CreateTablePart(vBox, "Одиниці виміру", ОдиниціВиміруСписок);
 
         //Файли
-        CreateTablePart(vBox, "Файли", Файли);        
+        CreateTablePart(vBox, "Файли", Файли);
     }
 
     #endregion
@@ -215,7 +208,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         НазваПовна.SetText(Елемент.НазваПовна);
         Опис.Buffer?.Text = Елемент.Опис;
         Артикул.SetText(Елемент.Артикул);
-        ТипНоменклатури.ActiveId = Елемент.ТипНоменклатури.ToString();
+        ТипНоменклатури.Value = Елемент.ТипНоменклатури.ToString();
         Виробник.Pointer = Елемент.Виробник;
         ВидНоменклатури.Pointer = Елемент.ВидНоменклатури;
         БазоваОдиницяВиміру.Pointer = Елемент.БазоваОдиницяВиміру;
@@ -243,7 +236,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
         Елемент.НазваПовна = НазваПовна.GetText();
         Елемент.Опис = Опис.Buffer?.Text ?? "";
         Елемент.Артикул = Артикул.GetText();
-        Елемент.ТипНоменклатури = ПсевдонімиПерелічення.ТипиНоменклатури_FindByName(ТипНоменклатури.ActiveId);
+        Елемент.ТипНоменклатури = ПсевдонімиПерелічення.ТипиНоменклатури_FindByName(ТипНоменклатури.Value);
         Елемент.Виробник = Виробник.Pointer;
         Елемент.ВидНоменклатури = ВидНоменклатури.Pointer;
         Елемент.БазоваОдиницяВиміру = БазоваОдиницяВиміру.Pointer;
@@ -264,7 +257,7 @@ partial class Номенклатура_Елемент : DirectoryFormElement
             if (await Елемент.Save())
             {
                 await Файли.SaveRecords(); // Таблична частина "Файли"
-                
+
                 //Перевантаження списку одиниць виміру
                 await ОдиниціВиміруСписок.LoadRecords();
 

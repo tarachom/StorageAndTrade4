@@ -20,7 +20,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
     #region Fields
     Entry Назва = Entry.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
-    ComboBoxText Тип = ComboBoxText.New();
+    DropDownControl Тип = DropDownControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
 
     #endregion
@@ -41,14 +41,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
         Склад.WidthPresentation = 300;
 
         // Тип:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипККМ_List())
-                Тип.Append(field.Value.ToString(), field.Name);
-
-            Тип.Active = 0;
-            Тип.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        Тип.Fill(ПсевдонімиПерелічення.ТипККМ_Dict());
 
         // Валюта:
         Валюта.Caption = "Валюта";
@@ -96,7 +89,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
     {
         Назва.SetText(Елемент.Назва);
         Склад.Pointer = Елемент.Склад;
-        Тип.ActiveId = Елемент.Тип.ToString();
+        Тип.Value = Елемент.Тип.ToString();
         Валюта.Pointer = Елемент.Валюта;
     }
 
@@ -104,7 +97,7 @@ partial class КасиККМ_Елемент : DirectoryFormElement
     {
         Елемент.Назва = Назва.GetText();
         Елемент.Склад = Склад.Pointer;
-        Елемент.Тип = ПсевдонімиПерелічення.ТипККМ_FindByName(Тип.ActiveId);
+        Елемент.Тип = ПсевдонімиПерелічення.ТипККМ_FindByName(Тип.Value);
         Елемент.Валюта = Валюта.Pointer;
     }
 

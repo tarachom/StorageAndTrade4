@@ -17,7 +17,7 @@ namespace StorageAndTrade;
 partial class Користувачі_ТабличнаЧастина_Контакти : DirectoryFormTablePart
 {
     #region Data
-    
+
     [GObject.Subclass<GObject.Object>("ItemRow_dVFCNDiApEazzklL9srTxQ")]
     public partial class ItemRow : IRowSubclassTablePart
     {
@@ -39,7 +39,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         UniqueID UnigueID_ = new();
         public Action? Сhanged_UnigueID { get; set; } = null;
 
-    
+
         /* НомерРядка */
         public int НомерРядка
         {
@@ -56,7 +56,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         int НомерРядка_ = 0;
         public Action? Сhanged_НомерРядка { get; set; } = null;
 
-    
+
         /* Тип */
         public ТипиКонтактноїІнформації Тип
         {
@@ -73,7 +73,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         ТипиКонтактноїІнформації Тип_ = 0;
         public Action? Сhanged_Тип { get; set; } = null;
 
-    
+
         /* Значення */
         public string Значення
         {
@@ -90,7 +90,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string Значення_ = "";
         public Action? Сhanged_Значення { get; set; } = null;
 
-    
+
         /* Телефон */
         public string Телефон
         {
@@ -107,7 +107,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string Телефон_ = "";
         public Action? Сhanged_Телефон { get; set; } = null;
 
-    
+
         /* ЕлектроннаПошта */
         public string ЕлектроннаПошта
         {
@@ -124,7 +124,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string ЕлектроннаПошта_ = "";
         public Action? Сhanged_ЕлектроннаПошта { get; set; } = null;
 
-    
+
         /* Країна */
         public string Країна
         {
@@ -141,7 +141,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string Країна_ = "";
         public Action? Сhanged_Країна { get; set; } = null;
 
-    
+
         /* Область */
         public string Область
         {
@@ -158,7 +158,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string Область_ = "";
         public Action? Сhanged_Область { get; set; } = null;
 
-    
+
         /* Район */
         public string Район
         {
@@ -175,7 +175,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string Район_ = "";
         public Action? Сhanged_Район { get; set; } = null;
 
-    
+
         /* Місто */
         public string Місто
         {
@@ -192,12 +192,12 @@ partial class Користувачі_ТабличнаЧастина_Контак
         string Місто_ = "";
         public Action? Сhanged_Місто { get; set; } = null;
 
-    
+
 
         /*
         Функції
         */
-        
+
         public GObject.Object Copy()
         {
             var row = New();
@@ -210,17 +210,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
             row.Область = Область;
             row.Район = Район;
             row.Місто = Місто;
-            
+
             return row;
         }
     }
 
     #endregion
 
-    
+
     public Користувачі_Object? ЕлементВласник { get; set; }
-        
-    
+
+
     protected override Gio.ListStore Store { get; } = Gio.ListStore.New(ItemRow.GetGType());
 
     partial void Initialize()
@@ -241,7 +241,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
 
     protected override void Columns()
     {
-        
+
         //НомерРядка
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -249,9 +249,9 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = LabelTablePartCell.New();
-                
+
                 cell.Halign = Align.End;
-                    
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -259,48 +259,42 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not LabelTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Тип
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = ComboTextTablePartCell.New();
-                foreach (var field in ПсевдонімиПерелічення.ТипиКонтактноїІнформації_List())
-                    cell.Combo.Append(field.Value.ToString(), field.Name);
-                //Заборона прокрутки списку
-                EventControllerScroll contr = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-                cell.Combo.AddController(contr);
-                contr.OnScroll += (_, _) => true;
-                
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ТипиКонтактноїІнформації_Dict());
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not ComboTextTablePartCell cell) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
-                cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Combo.ActiveId);
+
+                cell.OnСhanged = () => row.Тип = ПсевдонімиПерелічення.ТипиКонтактноїІнформації_FindByName(cell.Value);
                 (row.Сhanged_Тип = () => cell.Value = row.Тип.ToString()).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Тип", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Значення
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -308,7 +302,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -316,17 +310,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Значення = cell.Value;
                 (row.Сhanged_Значення = () => cell.Value = row.Значення).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Значення", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Телефон
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -334,7 +328,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -342,17 +336,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Телефон = cell.Value;
                 (row.Сhanged_Телефон = () => cell.Value = row.Телефон).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Телефон", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //ЕлектроннаПошта
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -360,7 +354,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -368,17 +362,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.ЕлектроннаПошта = cell.Value;
                 (row.Сhanged_ЕлектроннаПошта = () => cell.Value = row.ЕлектроннаПошта).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("ЕлектроннаПошта", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Країна
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -386,7 +380,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -394,17 +388,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Країна = cell.Value;
                 (row.Сhanged_Країна = () => cell.Value = row.Країна).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Країна", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Область
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -412,7 +406,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -420,17 +414,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Область = cell.Value;
                 (row.Сhanged_Область = () => cell.Value = row.Область).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Область", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Район
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -438,7 +432,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -446,17 +440,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Район = cell.Value;
                 (row.Сhanged_Район = () => cell.Value = row.Район).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Район", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         //Місто
         {
             SignalListItemFactory factory = SignalListItemFactory.New();
@@ -464,7 +458,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
             {
                 if (args.Object is not ListItem listItem) return;
                 var cell = TextTablePartCell.New();
-                
+
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
@@ -472,17 +466,17 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not TextTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-                
+
                 cell.OnСhanged = () => row.Місто = cell.Value;
                 (row.Сhanged_Місто = () => cell.Value = row.Місто).Invoke();
-                    
+
             };
             ColumnViewColumn column = ColumnViewColumn.New("Місто", factory);
             column.Resizable = true;
-            
+
             Grid.AppendColumn(column);
         }
-        
+
         { /* Пуста колонка для заповнення вільного простору */
             ColumnViewColumn column = ColumnViewColumn.New(null, null);
             column.Resizable = true;
@@ -493,15 +487,15 @@ partial class Користувачі_ТабличнаЧастина_Контак
 
     public override async Task LoadRecords()
     {
-        
-        if (ЕлементВласник != null) 
+
+        if (ЕлементВласник != null)
         {
-            
+
             ЕлементВласник.Контакти_TablePart.FillJoin([Користувачі_Контакти_TablePart.НомерРядка,]);
             await ЕлементВласник.Контакти_TablePart.Read();
-            
+
             Store.RemoveAll();
-        
+
             foreach (var record in ЕлементВласник.Контакти_TablePart.Records)
             {
                 var row = ItemRow.New();
@@ -515,7 +509,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 row.Область = record.Область;
                 row.Район = record.Район;
                 row.Місто = record.Місто;
-                
+
                 Store.Append(row);
 
                 if (SelectPosition > 0)
@@ -529,10 +523,10 @@ partial class Користувачі_ТабличнаЧастина_Контак
 
     public override async Task SaveRecords()
     {
-        
+
         if (ЕлементВласник != null)
         {
-        ЕлементВласник.Контакти_TablePart.Records.Clear();
+            ЕлементВласник.Контакти_TablePart.Records.Clear();
             for (uint i = 0; i <= Store.GetNItems(); i++)
             {
                 ItemRow? row = (ItemRow?)Store.GetObject(i);
@@ -550,7 +544,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                         Область = row.Область,
                         Район = row.Район,
                         Місто = row.Місто,
-                        
+
                     });
                 }
             }
@@ -576,7 +570,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                     row.Область = x.Область;
                     row.Район = x.Район;
                     row.Місто = x.Місто;
-                    
+
                     return row;
                 });
 
@@ -588,7 +582,7 @@ partial class Користувачі_ТабличнаЧастина_Контак
                 //Виділення рядків після оновлення
                 foreach (var position in selection)
                     Grid.Model.SelectItem(position, false);
-                
+
             }
         }
     }
@@ -599,4 +593,3 @@ partial class Користувачі_ТабличнаЧастина_Контак
         return true;
     }
 }
-    

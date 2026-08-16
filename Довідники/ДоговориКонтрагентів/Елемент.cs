@@ -33,9 +33,9 @@ partial class ДоговориКонтрагентів_Елемент : Director
     Entry Номер = Entry.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     CheckButton Узгоджений = CheckButton.NewWithLabel("Узгоджений");
-    ComboBoxText Статус = ComboBoxText.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
-    ComboBoxText ТипДоговору = ComboBoxText.New();
+    DropDownControl Статус = DropDownControl.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
+    DropDownControl ТипДоговору = DropDownControl.New();
     NumericControl ДопустимаСумаЗаборгованості = NumericControl.New();
     NumericControl Сума = NumericControl.New();
     Entry Коментар = Entry.New();
@@ -93,34 +93,13 @@ partial class ДоговориКонтрагентів_Елемент : Director
         Підрозділ.WidthPresentation = 300;
 
         // Статус:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_List())
-                Статус.Append(field.Value.ToString(), field.Name);
-
-            Статус.ActiveId = СтатусиДоговорівКонтрагентів.Діє.ToString();
-            Статус.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        Статус.Fill(ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_Dict());
 
         // ГосподарськаОперація:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.ActiveId = ГосподарськіОперації.РеалізаціяКлієнту.ToString();
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ГосподарськаОперація.Fill(ПсевдонімиПерелічення.ГосподарськіОперації_Dict());
 
         // ТипДоговору:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипДоговорів_List())
-                ТипДоговору.Append(field.Value.ToString(), field.Name);
-
-            ТипДоговору.ActiveId = ТипДоговорів.ЗПокупцями.ToString();
-            ТипДоговору.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ТипДоговору.Fill(ПсевдонімиПерелічення.ТипДоговорів_Dict());
 
         // Коментар:
         Коментар.WidthRequest = 500;
@@ -226,9 +205,9 @@ partial class ДоговориКонтрагентів_Елемент : Director
         Номер.SetText(Елемент.Номер);
         Підрозділ.Pointer = Елемент.Підрозділ;
         Узгоджений.Active = Елемент.Узгоджений;
-        Статус.ActiveId = Елемент.Статус.ToString();
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
-        ТипДоговору.ActiveId = Елемент.ТипДоговору.ToString();
+        Статус.Value = Елемент.Статус.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
+        ТипДоговору.Value = Елемент.ТипДоговору.ToString();
         ДопустимаСумаЗаборгованості.Value = Елемент.ДопустимаСумаЗаборгованості;
         Сума.Value = Елемент.Сума;
         Коментар.SetText(Елемент.Коментар);
@@ -249,9 +228,9 @@ partial class ДоговориКонтрагентів_Елемент : Director
         Елемент.Номер = Номер.GetText();
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Узгоджений = Узгоджений.Active;
-        Елемент.Статус = ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_FindByName(Статус.ActiveId);
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
-        Елемент.ТипДоговору = ПсевдонімиПерелічення.ТипДоговорів_FindByName(ТипДоговору.ActiveId);
+        Елемент.Статус = ПсевдонімиПерелічення.СтатусиДоговорівКонтрагентів_FindByName(Статус.Value);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
+        Елемент.ТипДоговору = ПсевдонімиПерелічення.ТипДоговорів_FindByName(ТипДоговору.Value);
         Елемент.ДопустимаСумаЗаборгованості = ДопустимаСумаЗаборгованості.Value;
         Елемент.Сума = Сума.Value;
         Елемент.Коментар = Коментар.GetText();

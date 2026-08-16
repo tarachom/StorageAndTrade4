@@ -31,9 +31,9 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Склади_PointerControl СкладВідправник = Склади_PointerControl.New();
     Склади_PointerControl СкладОтримувач = Склади_PointerControl.New();
-    ComboBoxText Статус = ComboBoxText.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
-    ComboBoxText СпосібДоставки = ComboBoxText.New();
+    DropDownControl Статус = DropDownControl.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
+    DropDownControl СпосібДоставки = DropDownControl.New();
     Entry АдресДоставки = Entry.New();
     TimeControl ЧасДоставкиЗ = TimeControl.New();
     TimeControl ЧасДоставкиДо = TimeControl.New();
@@ -107,35 +107,20 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         СкладОтримувач.WidthPresentation = 300;
 
         //Статус:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_List())
-                Статус.Append(field.Value.ToString(), field.Name);
-
-            Статус.Active = 0;
-            Статус.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        Статус.Fill(ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_Dict());
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.ПереміщенняТоварів))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //СпосібДоставки:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
-                СпосібДоставки.Append(field.Value.ToString(), field.Name);
-
-            СпосібДоставки.Active = 0;
-            СпосібДоставки.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        СпосібДоставки.Fill(ПсевдонімиПерелічення.СпособиДоставки_Dict());
 
         //АдресДоставки:
         АдресДоставки.WidthRequest = 300;
@@ -239,9 +224,9 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         Підрозділ.Pointer = Елемент.Підрозділ;
         СкладВідправник.Pointer = Елемент.СкладВідправник;
         СкладОтримувач.Pointer = Елемент.СкладОтримувач;
-        Статус.ActiveId = Елемент.Статус.ToString();
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
-        СпосібДоставки.ActiveId = Елемент.СпосібДоставки.ToString();
+        Статус.Value = Елемент.Статус.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
+        СпосібДоставки.Value = Елемент.СпосібДоставки.ToString();
         АдресДоставки.SetText(Елемент.АдресДоставки);
         ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
@@ -271,9 +256,9 @@ partial class ПереміщенняТоварів_Елемент : DocumentForm
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.СкладВідправник = СкладВідправник.Pointer;
         Елемент.СкладОтримувач = СкладОтримувач.Pointer;
-        Елемент.Статус = ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_FindByName(Статус.ActiveId);
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
-        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.ActiveId);
+        Елемент.Статус = ПсевдонімиПерелічення.СтатусиПереміщенняТоварів_FindByName(Статус.Value);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
+        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.Value);
         Елемент.АдресДоставки = АдресДоставки.GetText();
         Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;

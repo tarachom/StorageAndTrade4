@@ -21,7 +21,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
     Entry Код = Entry.New();
     Entry Назва = Entry.New();
     Entry КореспондуючийРахунок = Entry.New();
-    ComboBoxText ВидРухуКоштів = ComboBoxText.New();
+    DropDownControl ВидРухуКоштів = DropDownControl.New();
     Entry Опис = Entry.New();
 
     #endregion
@@ -44,13 +44,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
         КореспондуючийРахунок.WidthRequest = 300;
 
         // ВидРухуКоштів:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ВидиРухуКоштів_List())
-                ВидРухуКоштів.Append(field.Value.ToString(), field.Name);
-
-            ВидРухуКоштів.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ВидРухуКоштів.Fill(ПсевдонімиПерелічення.ВидиРухуКоштів_Dict());
 
         // Опис:
         Опис.WidthRequest = 300;
@@ -101,7 +95,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
         КореспондуючийРахунок.SetText(Елемент.КореспондуючийРахунок);
-        ВидРухуКоштів.ActiveId = Елемент.ВидРухуКоштів.ToString();
+        ВидРухуКоштів.Value = Елемент.ВидРухуКоштів.ToString();
         Опис.SetText(Елемент.Опис);
     }
 
@@ -110,7 +104,7 @@ partial class СтаттяРухуКоштів_Елемент : DirectoryFormEle
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
         Елемент.КореспондуючийРахунок = КореспондуючийРахунок.GetText();
-        Елемент.ВидРухуКоштів = ПсевдонімиПерелічення.ВидиРухуКоштів_FindByName(ВидРухуКоштів.ActiveId);
+        Елемент.ВидРухуКоштів = ПсевдонімиПерелічення.ВидиРухуКоштів_FindByName(ВидРухуКоштів.Value);
         Елемент.Опис = Опис.GetText();
     }
 

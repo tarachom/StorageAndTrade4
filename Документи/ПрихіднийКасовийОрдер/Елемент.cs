@@ -25,7 +25,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
     DateTimeControl ДатаДок = DateTimeControl.New();
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     CompositePointerControl Підстава = CompositePointerControl.New();
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
@@ -83,16 +83,16 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
                 ГосподарськіОперації.ІншіДоходи
             ];
 
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => list.Contains(x.Value)))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
 
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
-            ГосподарськаОперація.OnChanged += (_, _) =>
+            ГосподарськаОперація.OnСhanged = () =>
             {
-                switch (ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId))
+                switch (ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value))
                 {
                     case ГосподарськіОперації.ПоступленняКоштівЗІншоїКаси:
                         {
@@ -257,7 +257,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         ДатаДок.Value = Елемент.ДатаДок;
         Організація.Pointer = Елемент.Організація;
         Каса.Pointer = Елемент.Каса;
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         Підстава.Pointer = Елемент.Підстава;
         Контрагент.Pointer = Елемент.Контрагент;
         Договір.Pointer = Елемент.Договір;
@@ -288,7 +288,7 @@ partial class ПрихіднийКасовийОрдер_Елемент : Docume
         Елемент.ДатаДок = ДатаДок.Value;
         Елемент.Організація = Організація.Pointer;
         Елемент.Каса = Каса.Pointer;
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.Підстава = Підстава.Pointer;
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Договір = Договір.Pointer;

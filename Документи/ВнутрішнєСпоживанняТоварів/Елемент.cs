@@ -28,7 +28,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     CompositePointerControl Підстава = CompositePointerControl.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     CheckButton ВідобразитиВБухгалтерськомуОбліку = CheckButton.NewWithLabel("Відобразити в бух обліку");
     Entry Коментар = Entry.New();
@@ -87,13 +87,12 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.ВнутрішнєСпоживанняТоварів))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Автор:
@@ -114,7 +113,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
 
     #region Interface
 
-    FunctionForInterfaces.DocumentElement  Interface = FunctionForInterfaces.ForDocument();
+    FunctionForInterfaces.DocumentElement Interface = FunctionForInterfaces.ForDocument();
 
     protected override void BuildInterface()
     {
@@ -180,7 +179,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
         Валюта.Pointer = Елемент.Валюта;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Підстава.Pointer = Елемент.Підстава;
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         Автор.Pointer = Елемент.Автор;
         Коментар.SetText(Елемент.Коментар);
         ВідобразитиВБухгалтерськомуОбліку.Active = Елемент.ВідобразитиВБухгалтерськомуОбліку;
@@ -203,7 +202,7 @@ partial class ВнутрішнєСпоживанняТоварів_Елемен�
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Підстава = Підстава.Pointer;
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.Автор = Автор.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.ВідобразитиВБухгалтерськомуОбліку = ВідобразитиВБухгалтерськомуОбліку.Active;

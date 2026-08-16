@@ -22,7 +22,7 @@ partial class ВидиНоменклатури_Елемент : DirectoryFormEle
     Entry Назва = Entry.New();
     TextView Опис = TextView.New();
     ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = ПакуванняОдиниціВиміру_PointerControl.New();
-    ComboBoxText ТипНоменклатури = ComboBoxText.New();
+    DropDownControl ТипНоменклатури = DropDownControl.New();
 
     #endregion
 
@@ -48,14 +48,7 @@ partial class ВидиНоменклатури_Елемент : DirectoryFormEle
         ОдиницяВиміру.WidthPresentation = 300;
 
         // ТипНоменклатури:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиНоменклатури_List())
-                ТипНоменклатури.Append(field.Value.ToString(), field.Name);
-
-            ТипНоменклатури.Active = 0;
-            ТипНоменклатури.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ТипНоменклатури.Fill(ПсевдонімиПерелічення.ТипиНоменклатури_Dict());
     }
 
     public static ВидиНоменклатури_Елемент New()
@@ -104,7 +97,7 @@ partial class ВидиНоменклатури_Елемент : DirectoryFormEle
         Назва.SetText(Елемент.Назва);
         Опис.Buffer?.Text = Елемент.Опис;
         ОдиницяВиміру.Pointer = Елемент.ОдиницяВиміру;
-        ТипНоменклатури.ActiveId = Елемент.ТипНоменклатури.ToString();
+        ТипНоменклатури.Value = Елемент.ТипНоменклатури.ToString();
     }
 
     protected override void GetValue()
@@ -113,7 +106,7 @@ partial class ВидиНоменклатури_Елемент : DirectoryFormEle
         Елемент.Назва = Назва.GetText();
         Елемент.Опис = Опис.Buffer?.Text ?? "";
         Елемент.ОдиницяВиміру = ОдиницяВиміру.Pointer;
-        Елемент.ТипНоменклатури = ПсевдонімиПерелічення.ТипиНоменклатури_FindByName(ТипНоменклатури.ActiveId);
+        Елемент.ТипНоменклатури = ПсевдонімиПерелічення.ТипиНоменклатури_FindByName(ТипНоменклатури.Value);
     }
 
     #endregion

@@ -29,7 +29,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
     Entry Коментар = Entry.New();
     CompositePointerControl Підстава = CompositePointerControl.New();
@@ -115,13 +115,12 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.ВведенняЗалишків))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Автор:
@@ -221,7 +220,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Валюта.Pointer = Елемент.Валюта;
         Контрагент.Pointer = Елемент.Контрагент;
         Договір.Pointer = Елемент.Договір;
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         Автор.Pointer = Елемент.Автор;
         Коментар.SetText(Елемент.Коментар);
         Підстава.Pointer = Елемент.Підстава;
@@ -258,7 +257,7 @@ partial class ВведенняЗалишків_Елемент : DocumentFormElem
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Договір = Договір.Pointer;
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.Автор = Автор.Pointer;
         Елемент.Коментар = Коментар.GetText();
         Елемент.Підстава = Підстава.Pointer;

@@ -27,12 +27,12 @@ partial class РахунокФактура_Елемент : DocumentFormElement
     Організації_PointerControl Організація = Організації_PointerControl.New();
     Валюти_PointerControl Валюта = Валюти_PointerControl.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
-    ComboBoxText Статус = ComboBoxText.New();
-    ComboBoxText ФормаОплати = ComboBoxText.New();
+    DropDownControl Статус = DropDownControl.New();
+    DropDownControl ФормаОплати = DropDownControl.New();
     БанківськіРахункиОрганізацій_PointerControl БанківськийРахунок = БанківськіРахункиОрганізацій_PointerControl.New();
     БанківськіРахункиКонтрагентів_PointerControl БанківськийРахунокКонтрагента = БанківськіРахункиКонтрагентів_PointerControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Entry Коментар = Entry.New();
@@ -90,25 +90,11 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         Склад.WidthPresentation = 300;
 
         //Статус:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_List())
-                Статус.Append(field.Value.ToString(), field.Name);
-
-            Статус.Active = 0;
-            Статус.AddController(FunctionForComboBox.DisableScrolling());
-        }
-
+        Статус.Fill(ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_Dict());
+        
         //ФормаОплати:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
-                ФормаОплати.Append(field.Value.ToString(), field.Name);
-
-            ФормаОплати.Active = 0;
-            ФормаОплати.AddController(FunctionForComboBox.DisableScrolling());
-        }
-
+        ФормаОплати.Fill(ПсевдонімиПерелічення.ФормаОплати_Dict());
+        
         //БанківськийРахунок:
         БанківськийРахунок.Caption = "Банківський рахунок";
         БанківськийРахунок.WidthPresentation = 300;
@@ -123,13 +109,12 @@ partial class РахунокФактура_Елемент : DocumentFormElement
 
         //ГосподарськаОперація:
         {
+            ГосподарськаОперація.AllowEmpty = false;
+            
             //Заповнення списку
             foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
                 .Where(x => x.Value == ГосподарськіОперації.ПлануванняПоЗамовленнямКлієнта))
                 ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
-
-            ГосподарськаОперація.Active = 0;
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
         }
 
         //Договір:
@@ -256,12 +241,12 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         Організація.Pointer = Елемент.Організація;
         Валюта.Pointer = Елемент.Валюта;
         Склад.Pointer = Елемент.Склад;
-        Статус.ActiveId = Елемент.Статус.ToString();
-        ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
+        Статус.Value = Елемент.Статус.ToString();
+        ФормаОплати.Value = Елемент.ФормаОплати.ToString();
         БанківськийРахунок.Pointer = Елемент.БанківськийРахунок;
         БанківськийРахунокКонтрагента.Pointer = Елемент.БанківськийРахунокКонтрагента;
         Каса.Pointer = Елемент.Каса;
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         Договір.Pointer = Елемент.Договір;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Коментар.SetText(Елемент.Коментар);
@@ -293,12 +278,12 @@ partial class РахунокФактура_Елемент : DocumentFormElement
         Елемент.Організація = Організація.Pointer;
         Елемент.Валюта = Валюта.Pointer;
         Елемент.Склад = Склад.Pointer;
-        Елемент.Статус = ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_FindByName(Статус.ActiveId);
-        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
+        Елемент.Статус = ПсевдонімиПерелічення.СтатусиЗамовленьКлієнтів_FindByName(Статус.Value);
+        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.Value);
         Елемент.БанківськийРахунок = БанківськийРахунок.Pointer;
         Елемент.БанківськийРахунокКонтрагента = БанківськийРахунокКонтрагента.Pointer;
         Елемент.Каса = Каса.Pointer;
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.Договір = Договір.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Коментар = Коментар.GetText();

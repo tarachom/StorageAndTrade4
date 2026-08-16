@@ -11,7 +11,7 @@
           "AccountingSoftware": "4.0.0",
           "Configurator4": "4.0.0",
           "GirCore.Gtk-4.0": "0.8.1",
-          "Google.GenAI": "1.17.0",
+          "Google.GenAI": "1.18.0",
           "InterfaceGtk4": "4.0.0",
           "Microsoft.Extensions.AI": "10.9.0",
           "NPOI": "2.8.0",
@@ -242,15 +242,15 @@
           }
         }
       },
-      "Google.GenAI/1.17.0": {
+      "Google.GenAI/1.18.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
           "Microsoft.Extensions.AI.Abstractions": "10.9.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.17.0.0",
-            "fileVersion": "1.17.0.0"
+            "assemblyVersion": "1.18.0.0",
+            "fileVersion": "1.18.0.0"
           }
         }
       },
@@ -944,12 +944,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.17.0": {
+    "Google.GenAI/1.18.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DU7eoRe5zAXVKNTPYXyC6pyhHdyQlcExawv/iGD/lSU3h8BfVNKcFxlST7Ca8bkykdQNKDtDn/BJfF/mJsu3qA==",
-      "path": "google.genai/1.17.0",
-      "hashPath": "google.genai.1.17.0.nupkg.sha512"
+      "sha512": "sha512-QOH2Mlh8e0P55ABVpEAHr7GlV+5TYmwJgexzQ8uibTSuIq/PgVCgU58y49RuTnrnhEq7SUoSKwmhUoM/oGqy3A==",
+      "path": "google.genai/1.18.0",
+      "hashPath": "google.genai.1.18.0.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",

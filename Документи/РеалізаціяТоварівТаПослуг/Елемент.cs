@@ -34,15 +34,15 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
     Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Склади_PointerControl Склад = Склади_PointerControl.New();
-    ComboBoxText ФормаОплати = ComboBoxText.New();
-    ComboBoxText ГосподарськаОперація = ComboBoxText.New();
+    DropDownControl ФормаОплати = DropDownControl.New();
+    DropDownControl ГосподарськаОперація = DropDownControl.New();
     Каси_PointerControl Каса = Каси_PointerControl.New();
     ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
     CompositePointerControl Підстава = CompositePointerControl.New();
-    ComboBoxText Статус = ComboBoxText.New();
+    DropDownControl Статус = DropDownControl.New();
     NumericControl СумаПередоплати = NumericControl.New();
     NumericControl СумаПередоплатиЗаТару = NumericControl.New();
-    ComboBoxText СпосібДоставки = ComboBoxText.New();
+    DropDownControl СпосібДоставки = DropDownControl.New();
     TimeControl ЧасДоставкиЗ = TimeControl.New();
     TimeControl ЧасДоставкиДо = TimeControl.New();
     CheckButton ПовернутиТару = CheckButton.NewWithLabel("ПовернутиТару");
@@ -120,21 +120,16 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Склад.WidthPresentation = 300;
 
         //ФормаОплати:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ФормаОплати_List())
-                ФормаОплати.Append(field.Value.ToString(), field.Name);
-
-            ФормаОплати.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ФормаОплати.Fill(ПсевдонімиПерелічення.ФормаОплати_Dict());
 
         //ГосподарськаОперація:
         {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List())
-                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
+            ГосподарськаОперація.AllowEmpty = false;
 
-            ГосподарськаОперація.AddController(FunctionForComboBox.DisableScrolling());
+            //Заповнення списку
+            foreach (var field in ПсевдонімиПерелічення.ГосподарськіОперації_List()
+               .Where(x => x.Value == ГосподарськіОперації.РеалізаціяКлієнту))
+                ГосподарськаОперація.Append(field.Value.ToString(), field.Name);
         }
 
         //Каса:
@@ -149,22 +144,10 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Підстава.BoundConfType = "Документи.РеалізаціяТоварівТаПослуг.Підстава";
 
         //Статус:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_List())
-                Статус.Append(field.Value.ToString(), field.Name);
-
-            Статус.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        Статус.Fill(ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_Dict());
 
         //СпосібДоставки:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СпособиДоставки_List())
-                СпосібДоставки.Append(field.Value.ToString(), field.Name);
-
-            СпосібДоставки.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        СпосібДоставки.Fill(ПсевдонімиПерелічення.СпособиДоставки_Dict());
 
         //ДатаПоверненняТари:
         ДатаПоверненняТари.OnlyDate = true;
@@ -300,15 +283,15 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Контрагент.Pointer = Елемент.Контрагент;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Склад.Pointer = Елемент.Склад;
-        ФормаОплати.ActiveId = Елемент.ФормаОплати.ToString();
-        ГосподарськаОперація.ActiveId = Елемент.ГосподарськаОперація.ToString();
+        ФормаОплати.Value = Елемент.ФормаОплати.ToString();
+        ГосподарськаОперація.Value = Елемент.ГосподарськаОперація.ToString();
         Каса.Pointer = Елемент.Каса;
         Договір.Pointer = Елемент.Договір;
         Підстава.Pointer = Елемент.Підстава;
-        Статус.ActiveId = Елемент.Статус.ToString();
+        Статус.Value = Елемент.Статус.ToString();
         СумаПередоплати.Value = Елемент.СумаПередоплати;
         СумаПередоплатиЗаТару.Value = Елемент.СумаПередоплатиЗаТару;
-        СпосібДоставки.ActiveId = Елемент.СпосібДоставки.ToString();
+        СпосібДоставки.Value = Елемент.СпосібДоставки.ToString();
         ЧасДоставкиЗ.Value = Елемент.ЧасДоставкиЗ;
         ЧасДоставкиДо.Value = Елемент.ЧасДоставкиДо;
         ПовернутиТару.Active = Елемент.ПовернутиТару;
@@ -348,15 +331,15 @@ partial class РеалізаціяТоварівТаПослуг_Елемент 
         Елемент.Контрагент = Контрагент.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Склад = Склад.Pointer;
-        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.ActiveId);
-        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.ActiveId);
+        Елемент.ФормаОплати = ПсевдонімиПерелічення.ФормаОплати_FindByName(ФормаОплати.Value);
+        Елемент.ГосподарськаОперація = ПсевдонімиПерелічення.ГосподарськіОперації_FindByName(ГосподарськаОперація.Value);
         Елемент.Каса = Каса.Pointer;
         Елемент.Договір = Договір.Pointer;
         Елемент.Підстава = Підстава.Pointer;
-        Елемент.Статус = ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_FindByName(Статус.ActiveId);
+        Елемент.Статус = ПсевдонімиПерелічення.СтатусиРеалізаціїТоварівТаПослуг_FindByName(Статус.Value);
         Елемент.СумаПередоплати = СумаПередоплати.Value;
         Елемент.СумаПередоплатиЗаТару = СумаПередоплатиЗаТару.Value;
-        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.ActiveId);
+        Елемент.СпосібДоставки = ПсевдонімиПерелічення.СпособиДоставки_FindByName(СпосібДоставки.Value);
         Елемент.ЧасДоставкиЗ = ЧасДоставкиЗ.Value;
         Елемент.ЧасДоставкиДо = ЧасДоставкиДо.Value;
         Елемент.ПовернутиТару = ПовернутиТару.Active;

@@ -208,23 +208,17 @@ partial class КорегуванняБоргу_ТабличнаЧастина_Р
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = ComboTextTablePartCell.New();
-                foreach (var field in ПсевдонімиПерелічення.ТипиКонтрагентів_List())
-                    cell.Combo.Append(field.Value.ToString(), field.Name);
-                //Заборона прокрутки списку
-                EventControllerScroll contr = EventControllerScroll.New(EventControllerScrollFlags.BothAxes);
-                cell.Combo.AddController(contr);
-                contr.OnScroll += (_, _) => true;
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ТипиКонтрагентів_Dict());
 
                 listItem.Child = cell;
             };
             factory.OnBind += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                if (listItem.Child is not ComboTextTablePartCell cell) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.ТипКонтрагента = ПсевдонімиПерелічення.ТипиКонтрагентів_FindByName(cell.Combo.ActiveId);
+                cell.OnСhanged = () => row.ТипКонтрагента = ПсевдонімиПерелічення.ТипиКонтрагентів_FindByName(cell.Value);
                 (row.Сhanged_ТипКонтрагента = () => cell.Value = row.ТипКонтрагента.ToString()).Invoke();
 
             };

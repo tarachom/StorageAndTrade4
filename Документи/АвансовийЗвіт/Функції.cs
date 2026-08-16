@@ -19,10 +19,10 @@ static class АвансовийЗвіт_Функції
         [
             
             //Назва
-            new Where(АвансовийЗвіт_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+            new(АвансовийЗвіт_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
             //Коментар
-            new Where(Comparison.OR, АвансовийЗвіт_Const.Коментар, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+            new(Comparison.OR, АвансовийЗвіт_Const.Коментар, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
         ];
     }

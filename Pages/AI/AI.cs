@@ -11,7 +11,7 @@ public class AiWorker
             return;
 
         IChatClient chatClient = new Client(apiKey: "")
-            .AsIChatClient("gemini-3.1-flash-lite")
+            .AsIChatClient("gemini-3.5-flash-lite")
             .AsBuilder()
             .UseFunctionInvocation()
             .Build();

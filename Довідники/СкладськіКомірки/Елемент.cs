@@ -27,7 +27,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
     Entry Позиція = Entry.New();
     Entry Стелаж = Entry.New();
     Entry Ярус = Entry.New();
-    ComboBoxText ТипСкладськоїКомірки = ComboBoxText.New();
+    DropDownControl ТипСкладськоїКомірки = DropDownControl.New();
     ТипорозміриКомірок_PointerControl Типорозмір = ТипорозміриКомірок_PointerControl.New();
 
     #endregion
@@ -64,14 +64,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
         Ярус.WidthRequest = 300;
 
         // ТипСкладськоїКомірки:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиСкладськихКомірок_List())
-                ТипСкладськоїКомірки.Append(field.Value.ToString(), field.Name);
-
-            ТипСкладськоїКомірки.Active = 0;
-            ТипСкладськоїКомірки.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ТипСкладськоїКомірки.Fill(ПсевдонімиПерелічення.ТипиСкладськихКомірок_Dict());
 
         // Типорозмір:
         Типорозмір.Caption = "Типорозмір";
@@ -142,7 +135,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
         Позиція.SetText(Елемент.Позиція);
         Стелаж.SetText(Елемент.Стелаж);
         Ярус.SetText(Елемент.Ярус);
-        ТипСкладськоїКомірки.ActiveId = Елемент.ТипСкладськоїКомірки.ToString();
+        ТипСкладськоїКомірки.Value = Елемент.ТипСкладськоїКомірки.ToString();
         Типорозмір.Pointer = Елемент.Типорозмір;
     }
 
@@ -155,7 +148,7 @@ partial class СкладськіКомірки_Елемент : DirectoryFormEle
         Елемент.Позиція = Позиція.GetText();
         Елемент.Стелаж = Стелаж.GetText();
         Елемент.Ярус = Ярус.GetText();
-        Елемент.ТипСкладськоїКомірки = ПсевдонімиПерелічення.ТипиСкладськихКомірок_FindByName(ТипСкладськоїКомірки.ActiveId);
+        Елемент.ТипСкладськоїКомірки = ПсевдонімиПерелічення.ТипиСкладськихКомірок_FindByName(ТипСкладськоїКомірки.Value);
         Елемент.Типорозмір = Типорозмір.Pointer;
     }
 

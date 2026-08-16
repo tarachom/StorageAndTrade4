@@ -21,7 +21,7 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
     Entry Код = Entry.New();
     Entry Назва = Entry.New();
     DateTimeControl ДатаНародження = DateTimeControl.New();
-    ComboBoxText Стать = ComboBoxText.New();
+    DropDownControl Стать = DropDownControl.New();
     Entry ІПН = Entry.New();
 
     #endregion
@@ -47,13 +47,7 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
         ДатаНародження.OnlyDate = true;
 
         // Стать:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.СтатьФізичноїОсоби_List())
-                Стать.Append(field.Value.ToString(), field.Name);
-
-            Стать.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        Стать.Fill(ПсевдонімиПерелічення.СтатьФізичноїОсоби_Dict());
 
         // ІПН:
         ІПН.WidthRequest = 200;
@@ -114,7 +108,7 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
         ДатаНародження.Value = Елемент.ДатаНародження;
-        Стать.ActiveId = Елемент.Стать.ToString();
+        Стать.Value = Елемент.Стать.ToString();
         ІПН.SetText(Елемент.ІПН);
 
         // Таблична частина "Контакти"
@@ -127,7 +121,7 @@ partial class ФізичніОсоби_Елемент : DirectoryFormElement
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
         Елемент.ДатаНародження = ДатаНародження.Value;
-        Елемент.Стать = ПсевдонімиПерелічення.СтатьФізичноїОсоби_FindByName(Стать.ActiveId);
+        Елемент.Стать = ПсевдонімиПерелічення.СтатьФізичноїОсоби_FindByName(Стать.Value);
         Елемент.ІПН = ІПН.GetText();
     }
 

@@ -20,12 +20,12 @@ partial class Склади_Елемент : DirectoryFormElement
     #region Fields
     Entry Код = Entry.New();
     Entry Назва = Entry.New();
-    ComboBoxText ТипСкладу = ComboBoxText.New();
+    DropDownControl ТипСкладу = DropDownControl.New();
     ФізичніОсоби_PointerControl Відповідальний = ФізичніОсоби_PointerControl.New();
     ВидиЦін_PointerControl ВидЦін = ВидиЦін_PointerControl.New();
     СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
     Склади_Папки_PointerControl Папка = Склади_Папки_PointerControl.New();
-    ComboBoxText НалаштуванняАдресногоЗберігання = ComboBoxText.New();
+    DropDownControl НалаштуванняАдресногоЗберігання = DropDownControl.New();
     Категорії_PointerControl Категорія = Категорії_PointerControl.New();
 
     #endregion
@@ -48,14 +48,7 @@ partial class Склади_Елемент : DirectoryFormElement
         Назва.WidthRequest = 500;
 
         // ТипСкладу:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.ТипиСкладів_List())
-                ТипСкладу.Append(field.Value.ToString(), field.Name);
-
-            ТипСкладу.Active = 0;
-            ТипСкладу.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        ТипСкладу.Fill(ПсевдонімиПерелічення.ТипиСкладів_Dict());
 
         // Відповідальний:
         Відповідальний.Caption = "Відповідальний";
@@ -74,14 +67,7 @@ partial class Склади_Елемент : DirectoryFormElement
         Папка.WidthPresentation = 300;
 
         // НалаштуванняАдресногоЗберігання:
-        {
-            //Заповнення списку
-            foreach (var field in ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_List())
-                НалаштуванняАдресногоЗберігання.Append(field.Value.ToString(), field.Name);
-
-            НалаштуванняАдресногоЗберігання.Active = 0;
-            НалаштуванняАдресногоЗберігання.AddController(FunctionForComboBox.DisableScrolling());
-        }
+        НалаштуванняАдресногоЗберігання.Fill(ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_Dict());
 
         // Категорія:
         Категорія.Caption = "Категорія";
@@ -157,12 +143,12 @@ partial class Склади_Елемент : DirectoryFormElement
     {
         Код.SetText(Елемент.Код);
         Назва.SetText(Елемент.Назва);
-        ТипСкладу.ActiveId = Елемент.ТипСкладу.ToString();
+        ТипСкладу.Value = Елемент.ТипСкладу.ToString();
         Відповідальний.Pointer = Елемент.Відповідальний;
         ВидЦін.Pointer = Елемент.ВидЦін;
         Підрозділ.Pointer = Елемент.Підрозділ;
         Папка.Pointer = Елемент.Папка;
-        НалаштуванняАдресногоЗберігання.ActiveId = Елемент.НалаштуванняАдресногоЗберігання.ToString();
+        НалаштуванняАдресногоЗберігання.Value = Елемент.НалаштуванняАдресногоЗберігання.ToString();
         Категорія.Pointer = Елемент.Категорія;
 
         // Таблична частина "Контакти"
@@ -173,12 +159,12 @@ partial class Склади_Елемент : DirectoryFormElement
     {
         Елемент.Код = Код.GetText();
         Елемент.Назва = Назва.GetText();
-        Елемент.ТипСкладу = ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.ActiveId);
+        Елемент.ТипСкладу = ПсевдонімиПерелічення.ТипиСкладів_FindByName(ТипСкладу.Value);
         Елемент.Відповідальний = Відповідальний.Pointer;
         Елемент.ВидЦін = ВидЦін.Pointer;
         Елемент.Підрозділ = Підрозділ.Pointer;
         Елемент.Папка = Папка.Pointer;
-        Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.ActiveId);
+        Елемент.НалаштуванняАдресногоЗберігання = ПсевдонімиПерелічення.НалаштуванняАдресногоЗберігання_FindByName(НалаштуванняАдресногоЗберігання.Value);
         Елемент.Категорія = Категорія.Pointer;
     }
 
