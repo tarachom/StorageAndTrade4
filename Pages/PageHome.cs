@@ -37,6 +37,15 @@ partial class PageHome : Form
             hBox.Append(view);
             Append(hBox);
         }
+
+        /*
+        {
+            ФункціїДляПовідомлень.ДодатиІнформаційнеПовідомлення(null, "Tester", $"<a href=\"https://accounting.org.ua\">accounting.org.ua</a>");
+
+            string pathText = @"C:\Users\yurii.tarakhomyn\Desktop\Оперативні втручання_Інтервенції.xlsx";
+            ФункціїДляПовідомлень.ДодатиПовідомленняПроФайл(null, "Tester", "Вигружено в файл", pathText);
+        }
+        */
     }
 
     /// <summary>
@@ -99,7 +108,6 @@ partial class PageHome : Form
             }
         }
         */
-
 
         /*
         var Вибірка = new ВиготовленняПродукції_Select();

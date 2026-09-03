@@ -13,14 +13,13 @@
 
   <ItemGroup>
     <PackageReference Include="GirCore.Gtk-4.0" Version="0.8.1" />
-    <!-- PDF -->
-    <PackageReference Include="QuestPDF" Version="2026.7.2" />
-    <!-- Excel -->
+    <PackageReference Include="QuestPDF" Version="2026.7.3" />
+
     <PackageReference Include="NPOI" Version="2.8.0" />
-    <PackageReference Include="SkiaSharp" Version="4.151.1" />
-    <!-- AI -->
+    <PackageReference Include="SkiaSharp" Version="4.151.2" />
+
     <PackageReference Include="Microsoft.Extensions.AI" Version="10.9.0" />
-    <PackageReference Include="Google.GenAI" Version="1.18.0" />
+    <PackageReference Include="Google.GenAI" Version="1.21.0" />
     <!--<PackageReference Include="OllamaSharp" Version="5.4.27" />-->
   </ItemGroup>
 

@@ -40,19 +40,26 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
             if (string.IsNullOrEmpty(await ЖурналиДокументів.ОсновнийТипПеріоду()))
                 await ЖурналиДокументів.ОсновнийТипПеріоду(PeriodForJournal.TypePeriod.AllPeriod.ToString());
 
-            const string КодОдШтуки = "1";
-            if ((await new КласифікаторОдиницьВиміру_Select().FindByField("Назва", "шт.")).IsEmpty())
+            //Одиниця виміру штуки в довіднику КласифікаторОдиницьВиміру
             {
-                КласифікаторОдиницьВиміру_Object Обєкт = new();
-                await Обєкт.New();
-                Обєкт.Назва = "шт.";
-                Обєкт.ПовнаНазва = "Штуки";
-                Обєкт.Код = КодОдШтуки;
-                await Обєкт.Save();
-            }
+                const string КодОдШтуки = "1";
 
-            if ((await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором()).IsEmpty())
-                await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором(await new КласифікаторОдиницьВиміру_Select().FindByField("Код", КодОдШтуки));
+                КласифікаторОдиницьВиміру_Pointer Вказівник = await new КласифікаторОдиницьВиміру_Select().FindByField("Назва", "шт.");
+                if (Вказівник.IsEmpty())
+                {
+                    КласифікаторОдиницьВиміру_Object Обєкт = new();
+                    await Обєкт.New();
+                    Обєкт.Назва = "шт.";
+                    Обєкт.ПовнаНазва = "Штуки";
+                    Обєкт.Код = КодОдШтуки;
+                    await Обєкт.Save();
+
+                    Вказівник = Обєкт.GetDirectoryPointer();
+                }
+
+                if ((await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором()).IsEmpty())
+                    await ЗначенняТипові.ОсновнаОдиницяВиміруЗаКласифікатором(Вказівник);
+            }
         }
 
         FormStorageAndTrade form = FormStorageAndTrade.NewWithParam(openConfigurationParam);

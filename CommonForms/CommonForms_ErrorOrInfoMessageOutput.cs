@@ -12,8 +12,8 @@ namespace StorageAndTrade;
 /// <summary>
 /// Вивід повідомлень
 /// </summary>
-[GObject.Subclass<InterfaceGtk4.CommonForms_ErrorMessageOutput>]
-partial class CommonForms_ErrorMessageOutput : InterfaceGtk4.CommonForms_ErrorMessageOutput
+[GObject.Subclass<InterfaceGtk4.CommonForms_ErrorOrInfoMessageOutput>]
+partial class CommonForms_ErrorOrInfoMessageOutput : InterfaceGtk4.CommonForms_ErrorOrInfoMessageOutput
 {
     /// <summary>
     /// Новий
@@ -21,20 +21,23 @@ partial class CommonForms_ErrorMessageOutput : InterfaceGtk4.CommonForms_ErrorMe
     /// <param name="width">Ширина</param>
     /// <param name="height">Висота</param>
     /// <returns>Новий контрол</returns>
-    public static CommonForms_ErrorMessageOutput New()
+    public static CommonForms_ErrorOrInfoMessageOutput New()
     {
-        CommonForms_ErrorMessageOutput view = NewWithProperties([]);
-        view.Init(Config.Kernel);
-
+        CommonForms_ErrorOrInfoMessageOutput view = NewWithProperties([]);
         return view;
     }
+
+    /// <summary>
+    /// Переоприділення ядра
+    /// </summary>
+    public override Kernel Kernel { get; init; } = Config.Kernel;
 
     /// <summary>
     /// Переоприділення функції для відображення назви заблокованого об'єкту
     /// </summary>
     /// <param name="uuidAndText"></param>
     /// <returns></returns>
-    protected override CompositePointerControl CreateCompositeControl(string caption, UuidAndText uuidAndText)
+    public override CompositePointerControl CreateCompositeControl(string caption, UuidAndText uuidAndText)
     {
         CompositePointerControl control = CompositePointerControl.New();
         control.Caption = caption;
