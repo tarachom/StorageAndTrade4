@@ -10,13 +10,11 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "Configurator4": "4.0.0",
-          "GirCore.Gtk-4.0": "0.8.1",
-          "Google.GenAI": "1.21.0",
+          "GirCore.Gtk-4.0": "0.9.0-preview.1",
           "InterfaceGtk4": "4.0.0",
-          "Microsoft.Extensions.AI": "10.9.0",
           "NPOI": "2.8.0",
-          "QuestPDF": "2026.7.3",
-          "SkiaSharp": "4.151.2"
+          "QuestPDF": "2026.8.0",
+          "SkiaSharp": "4.152.0"
         },
         "runtime": {
           "StorageAndTrade4.dll": {}
@@ -54,156 +52,156 @@
           }
         }
       },
-      "GirCore.Cairo-1.0/0.8.1": {
+      "GirCore.Cairo-1.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.GObject-2.0": "0.8.1"
+          "GirCore.GObject-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/cairo-1.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.FreeType2-2.0/0.8.1": {
+      "GirCore.FreeType2-2.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.GLib-2.0": "0.8.1",
-          "GirCore.GObject-2.0": "0.8.1"
+          "GirCore.GLib-2.0": "0.9.0-preview.1",
+          "GirCore.GObject-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/freetype2-2.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.Gdk-4.0/0.8.1": {
+      "GirCore.Gdk-4.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.Cairo-1.0": "0.8.1",
-          "GirCore.GdkPixbuf-2.0": "0.8.1",
-          "GirCore.Gio-2.0": "0.8.1",
-          "GirCore.Pango-1.0": "0.8.1",
-          "GirCore.PangoCairo-1.0": "0.8.1"
+          "GirCore.Cairo-1.0": "0.9.0-preview.1",
+          "GirCore.GdkPixbuf-2.0": "0.9.0-preview.1",
+          "GirCore.Gio-2.0": "0.9.0-preview.1",
+          "GirCore.Pango-1.0": "0.9.0-preview.1",
+          "GirCore.PangoCairo-1.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/Gdk-4.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.GdkPixbuf-2.0/0.8.1": {
+      "GirCore.GdkPixbuf-2.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.Gio-2.0": "0.8.1"
+          "GirCore.Gio-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/GdkPixbuf-2.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.Gio-2.0/0.8.1": {
+      "GirCore.Gio-2.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.GObject-2.0": "0.8.1"
+          "GirCore.GObject-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/Gio-2.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.GLib-2.0/0.8.1": {
+      "GirCore.GLib-2.0/0.9.0-preview.1": {
         "runtime": {
           "lib/net10.0/GLib-2.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.GObject-2.0/0.8.1": {
+      "GirCore.GObject-2.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.GLib-2.0": "0.8.1"
+          "GirCore.GLib-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/GObject-2.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.Graphene-1.0/0.8.1": {
+      "GirCore.Graphene-1.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.GObject-2.0": "0.8.1"
+          "GirCore.GObject-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/Graphene-1.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.Gsk-4.0/0.8.1": {
+      "GirCore.Gsk-4.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.Gdk-4.0": "0.8.1",
-          "GirCore.Graphene-1.0": "0.8.1"
+          "GirCore.Gdk-4.0": "0.9.0-preview.1",
+          "GirCore.Graphene-1.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/Gsk-4.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.Gtk-4.0/0.8.1": {
+      "GirCore.Gtk-4.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.Gdk-4.0": "0.8.1",
-          "GirCore.Gsk-4.0": "0.8.1"
+          "GirCore.Gdk-4.0": "0.9.0-preview.1",
+          "GirCore.Gsk-4.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/Gtk-4.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.HarfBuzz-0.0/0.8.1": {
+      "GirCore.HarfBuzz-0.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.FreeType2-2.0": "0.8.1",
-          "GirCore.GObject-2.0": "0.8.1"
+          "GirCore.FreeType2-2.0": "0.9.0-preview.1",
+          "GirCore.GObject-2.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/HarfBuzz-0.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.Pango-1.0/0.8.1": {
+      "GirCore.Pango-1.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.Cairo-1.0": "0.8.1",
-          "GirCore.GObject-2.0": "0.8.1",
-          "GirCore.Gio-2.0": "0.8.1",
-          "GirCore.HarfBuzz-0.0": "0.8.1"
+          "GirCore.Cairo-1.0": "0.9.0-preview.1",
+          "GirCore.GObject-2.0": "0.9.0-preview.1",
+          "GirCore.Gio-2.0": "0.9.0-preview.1",
+          "GirCore.HarfBuzz-0.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/Pango-1.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
-      "GirCore.PangoCairo-1.0/0.8.1": {
+      "GirCore.PangoCairo-1.0/0.9.0-preview.1": {
         "dependencies": {
-          "GirCore.Cairo-1.0": "0.8.1",
-          "GirCore.GObject-2.0": "0.8.1",
-          "GirCore.Pango-1.0": "0.8.1"
+          "GirCore.Cairo-1.0": "0.9.0-preview.1",
+          "GirCore.GObject-2.0": "0.9.0-preview.1",
+          "GirCore.Pango-1.0": "0.9.0-preview.1"
         },
         "runtime": {
           "lib/net10.0/PangoCairo-1.0.dll": {
-            "assemblyVersion": "0.8.1.0",
-            "fileVersion": "0.8.1.0"
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
@@ -242,15 +240,15 @@
           }
         }
       },
-      "Google.GenAI/1.21.0": {
+      "Google.GenAI/1.21.1": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
-          "Microsoft.Extensions.AI.Abstractions": "10.9.0"
+          "Microsoft.Extensions.AI.Abstractions": "10.10.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.21.0.0",
-            "fileVersion": "1.21.0.0"
+            "assemblyVersion": "1.21.1.0",
+            "fileVersion": "1.21.1.0"
           }
         }
       },
@@ -262,148 +260,148 @@
           }
         }
       },
-      "Microsoft.Extensions.AI/10.9.0": {
+      "Microsoft.Extensions.AI/10.10.0": {
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "10.9.0",
-          "Microsoft.Extensions.Caching.Abstractions": "10.0.11",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.11",
-          "Microsoft.Extensions.Logging.Abstractions": "10.0.11",
-          "System.Numerics.Tensors": "10.0.11"
+          "Microsoft.Extensions.AI.Abstractions": "10.10.0",
+          "Microsoft.Extensions.Caching.Abstractions": "10.0.12",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.12",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.12",
+          "System.Numerics.Tensors": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.dll": {
-            "assemblyVersion": "10.9.0.0",
-            "fileVersion": "10.900.26.41116"
+            "assemblyVersion": "10.10.0.0",
+            "fileVersion": "10.1000.26.45902"
           }
         }
       },
-      "Microsoft.Extensions.AI.Abstractions/10.9.0": {
+      "Microsoft.Extensions.AI.Abstractions/10.10.0": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
-            "assemblyVersion": "10.9.0.0",
-            "fileVersion": "10.900.26.41116"
+            "assemblyVersion": "10.10.0.0",
+            "fileVersion": "10.1000.26.45902"
           }
         }
       },
-      "Microsoft.Extensions.Caching.Abstractions/10.0.11": {
+      "Microsoft.Extensions.Caching.Abstractions/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "10.0.11"
+          "Microsoft.Extensions.Primitives": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Caching.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.Configuration/10.0.11": {
+      "Microsoft.Extensions.Configuration/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "10.0.11",
-          "Microsoft.Extensions.Primitives": "10.0.11"
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.12",
+          "Microsoft.Extensions.Primitives": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.Configuration.Abstractions/10.0.11": {
+      "Microsoft.Extensions.Configuration.Abstractions/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "10.0.11"
+          "Microsoft.Extensions.Primitives": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.Configuration.FileExtensions/10.0.11": {
+      "Microsoft.Extensions.Configuration.FileExtensions/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "10.0.11",
-          "Microsoft.Extensions.Configuration.Abstractions": "10.0.11",
-          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.11",
-          "Microsoft.Extensions.FileProviders.Physical": "10.0.11",
-          "Microsoft.Extensions.Primitives": "10.0.11"
+          "Microsoft.Extensions.Configuration": "10.0.12",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.12",
+          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.12",
+          "Microsoft.Extensions.FileProviders.Physical": "10.0.12",
+          "Microsoft.Extensions.Primitives": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.Configuration.Json/10.0.11": {
+      "Microsoft.Extensions.Configuration.Json/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "10.0.11",
-          "Microsoft.Extensions.Configuration.Abstractions": "10.0.11",
-          "Microsoft.Extensions.Configuration.FileExtensions": "10.0.11",
-          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.11"
+          "Microsoft.Extensions.Configuration": "10.0.12",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.12",
+          "Microsoft.Extensions.Configuration.FileExtensions": "10.0.12",
+          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.Json.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.11": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.12": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/10.0.11": {
+      "Microsoft.Extensions.FileProviders.Abstractions/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "10.0.11"
+          "Microsoft.Extensions.Primitives": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.FileProviders.Physical/10.0.11": {
+      "Microsoft.Extensions.FileProviders.Physical/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.11",
-          "Microsoft.Extensions.FileSystemGlobbing": "10.0.11",
-          "Microsoft.Extensions.Primitives": "10.0.11"
+          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.12",
+          "Microsoft.Extensions.FileSystemGlobbing": "10.0.12",
+          "Microsoft.Extensions.Primitives": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileProviders.Physical.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.FileSystemGlobbing/10.0.11": {
+      "Microsoft.Extensions.FileSystemGlobbing/10.0.12": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/10.0.11": {
+      "Microsoft.Extensions.Logging.Abstractions/10.0.12": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.11"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
-      "Microsoft.Extensions.Primitives/10.0.11": {
+      "Microsoft.Extensions.Primitives/10.0.12": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1126.37416"
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
@@ -425,7 +423,7 @@
       },
       "Npgsql/10.0.3": {
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "10.0.11"
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.12"
         },
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
@@ -442,7 +440,7 @@
           "MathNet.Numerics.Signed": "5.0.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "SharpZipLib": "1.4.2",
-          "SkiaSharp": "4.151.2",
+          "SkiaSharp": "4.152.0",
           "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.2",
           "System.Security.Cryptography.Xml": "8.0.2",
           "ZString": "2.6.0"
@@ -466,11 +464,11 @@
           }
         }
       },
-      "QuestPDF/2026.7.3": {
+      "QuestPDF/2026.8.0": {
         "runtime": {
           "lib/net10.0/QuestPDF.dll": {
-            "assemblyVersion": "2026.7.3.0",
-            "fileVersion": "2026.7.3.0"
+            "assemblyVersion": "2026.8.0.0",
+            "fileVersion": "2026.8.0.0"
           }
         },
         "runtimeTargets": {
@@ -564,15 +562,15 @@
           }
         }
       },
-      "SkiaSharp/4.151.2": {
+      "SkiaSharp/4.152.0": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "4.151.2",
-          "SkiaSharp.NativeAssets.macOS": "4.151.2"
+          "SkiaSharp.NativeAssets.Win32": "4.152.0",
+          "SkiaSharp.NativeAssets.macOS": "4.152.0"
         },
         "runtime": {
           "lib/net10.0/SkiaSharp.dll": {
-            "assemblyVersion": "4.151.0.0",
-            "fileVersion": "4.151.2.0"
+            "assemblyVersion": "4.152.0.0",
+            "fileVersion": "4.152.0.0"
           }
         }
       },
@@ -635,7 +633,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/4.151.2": {
+      "SkiaSharp.NativeAssets.macOS/4.152.0": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
@@ -644,7 +642,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/4.151.2": {
+      "SkiaSharp.NativeAssets.Win32/4.152.0": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
@@ -705,11 +703,11 @@
           }
         }
       },
-      "System.Numerics.Tensors/10.0.11": {
+      "System.Numerics.Tensors/10.0.12": {
         "runtime": {
           "lib/net10.0/System.Numerics.Tensors.dll": {
-            "assemblyVersion": "10.0.0.11",
-            "fileVersion": "10.0.1126.37416"
+            "assemblyVersion": "10.0.0.12",
+            "fileVersion": "10.0.1226.42308"
           }
         }
       },
@@ -763,7 +761,7 @@
       "Configurator4/4.0.0": {
         "dependencies": {
           "AccountingSoftware": "4.0.0",
-          "GirCore.Gtk-4.0": "0.8.1",
+          "GirCore.Gtk-4.0": "0.9.0-preview.1",
           "InterfaceGtk4": "4.0.0"
         },
         "runtime": {
@@ -776,10 +774,12 @@
       "InterfaceGtk4/4.0.0": {
         "dependencies": {
           "AccountingSoftware": "4.0.0",
-          "GirCore.Gtk-4.0": "0.8.1",
+          "GirCore.Gtk-4.0": "0.9.0-preview.1",
+          "Google.GenAI": "1.21.1",
           "InterfaceGtkLib": "4.0.0",
-          "Microsoft.Extensions.Configuration": "10.0.11",
-          "Microsoft.Extensions.Configuration.Json": "10.0.11"
+          "Microsoft.Extensions.AI": "10.10.0",
+          "Microsoft.Extensions.Configuration": "10.0.12",
+          "Microsoft.Extensions.Configuration.Json": "10.0.12"
         },
         "runtime": {
           "InterfaceGtk4.dll": {
@@ -832,96 +832,96 @@
       "path": "extendednumerics.bigdecimal/2025.1001.2.129",
       "hashPath": "extendednumerics.bigdecimal.2025.1001.2.129.nupkg.sha512"
     },
-    "GirCore.Cairo-1.0/0.8.1": {
+    "GirCore.Cairo-1.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-esyYCfjlJxi5+f0gwEnkL6VvXqlCeLGg0TnshXZMQAPVc8+HhOiML4UTR79DP3FWxa+thVp4YTEQGR2dxBwx0Q==",
-      "path": "gircore.cairo-1.0/0.8.1",
-      "hashPath": "gircore.cairo-1.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-2H9nMGBX74wgMxZLfxDuKuBBK7MmzicvvsTx0OfmeHR8qLnekjdcTJ0+dvQymXVSi1MmU9XM0Em4vMX/nKLCsg==",
+      "path": "gircore.cairo-1.0/0.9.0-preview.1",
+      "hashPath": "gircore.cairo-1.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.FreeType2-2.0/0.8.1": {
+    "GirCore.FreeType2-2.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qnYts6YndqwBcqBFLDp2HB+2pzb8fG6Jo1ygti1kz2d07BWU0Md+C9IrbG5/G0soZlZ42eDkKcWDNe0ID6vx1w==",
-      "path": "gircore.freetype2-2.0/0.8.1",
-      "hashPath": "gircore.freetype2-2.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-K0bujAFupZTUgSV8LNgGN2bCKOsv4FZdFxIVL+UMl4/VjZwdVyT/dB4Wp6yrBEQXMLik9lobcW1zOOX/IkfGrg==",
+      "path": "gircore.freetype2-2.0/0.9.0-preview.1",
+      "hashPath": "gircore.freetype2-2.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.Gdk-4.0/0.8.1": {
+    "GirCore.Gdk-4.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lC9H41XOwW5d1NbbkptNcsuUwJDoqIHNTmI8ft6ueOSAwUCnLR5m0g0tPg03dCELeiCltOoihbjCQPbZaWG2Jg==",
-      "path": "gircore.gdk-4.0/0.8.1",
-      "hashPath": "gircore.gdk-4.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-0VkbeID4ih5Dd+gxRy3G1eK/HTXgiKfqvMQSGoWmsi/FGBcPDQM+k12h8T/UNopfHnApLLh+PfMtXZgS6gnlsQ==",
+      "path": "gircore.gdk-4.0/0.9.0-preview.1",
+      "hashPath": "gircore.gdk-4.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.GdkPixbuf-2.0/0.8.1": {
+    "GirCore.GdkPixbuf-2.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ez5HUcV3vjgqOAxFzo4b7YjbBTSIEFafeUDmzs4GlzjyT1ST6G3R/5lqWduNk2guCWHefa6/GkgThPirL/X6Fg==",
-      "path": "gircore.gdkpixbuf-2.0/0.8.1",
-      "hashPath": "gircore.gdkpixbuf-2.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-UuFt19sMydnFwAt/xPAB4k9LRZnxzVqTTHL70Kj6l5EW8VEYsZNNHx7SMAc3ftaQa2A8xZqjPt5wpQnRPgBVGQ==",
+      "path": "gircore.gdkpixbuf-2.0/0.9.0-preview.1",
+      "hashPath": "gircore.gdkpixbuf-2.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.Gio-2.0/0.8.1": {
+    "GirCore.Gio-2.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/Ddc3QqosowxKBdNx2bYGjfkwpCvn0bJg2v1XPfR/IE6fDEsAw7zPEhLMJKeFPehl6Dlm2no/SKh/QXoJCYkTQ==",
-      "path": "gircore.gio-2.0/0.8.1",
-      "hashPath": "gircore.gio-2.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-NZ+D8JW63XBgTTQBIYy2rbEtrrdMLPI2oU1mHHyDL6uhXcjEt/GoQPwPoVuzDZazZob2MqIwiTiVYdQYkI6m2w==",
+      "path": "gircore.gio-2.0/0.9.0-preview.1",
+      "hashPath": "gircore.gio-2.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.GLib-2.0/0.8.1": {
+    "GirCore.GLib-2.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WKEIITNPAYuqIic4zXUm021bJFnWCPqt5IW7mqGTlvJBZ+C6VJZukRt0hDSplQifbpEYzlCgxeinyqyyMtVbEA==",
-      "path": "gircore.glib-2.0/0.8.1",
-      "hashPath": "gircore.glib-2.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-4iWcIkTXjKhlRI2Au4hy/KjCiLeaBkd09JwjUeiyoDN6+5TIcFDONCfs2Z5ZQPZHaA7k7l7sDF4wsgB0Z+MK8w==",
+      "path": "gircore.glib-2.0/0.9.0-preview.1",
+      "hashPath": "gircore.glib-2.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.GObject-2.0/0.8.1": {
+    "GirCore.GObject-2.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fu6jkSGTzV8v+kRRLfDnTnfzJ1K+/EoMc55u0OSsfV5tleZY3VJAjyf5MnMmY5SBn1Mj0DE712YMPoQDR3G7RA==",
-      "path": "gircore.gobject-2.0/0.8.1",
-      "hashPath": "gircore.gobject-2.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-iDUj5K7hV3vZDIXxfuBOOwMFfhZI59kusQTczW46hC6b00nsci14eVFDqPWJtI2sggXxZpzRlnuOUBfKMXLc2A==",
+      "path": "gircore.gobject-2.0/0.9.0-preview.1",
+      "hashPath": "gircore.gobject-2.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.Graphene-1.0/0.8.1": {
+    "GirCore.Graphene-1.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-g947SPM7uTI0+a+ev6pT22Jyh08V1U8IAjbNO8aOOrvWYCzyg6nJBw8iHt2DrW9VTsqi7M1zmoMmkuSYGLQiDQ==",
-      "path": "gircore.graphene-1.0/0.8.1",
-      "hashPath": "gircore.graphene-1.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-h6vrll8pwKiQZ/7uIMtBRYu/pnUVtxvVh+qGf2JIRCsE5qaz+Ft9o9bp4/YvyTXT/em9t637jZPqBKP2drL/sg==",
+      "path": "gircore.graphene-1.0/0.9.0-preview.1",
+      "hashPath": "gircore.graphene-1.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.Gsk-4.0/0.8.1": {
+    "GirCore.Gsk-4.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QLNB/ozKTsrGuhXPsTBBOjmR08DqZ+objRf4M3WCcjh21aUaGl5aLXcN9NaHa/wgpyJo29eGCpVW26O3CphecQ==",
-      "path": "gircore.gsk-4.0/0.8.1",
-      "hashPath": "gircore.gsk-4.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-p0mOGKN6AefPSiwkdcp5Y2dBzDNYohddNP3SdziPudFnZxqZ+DBYvzAwCrPUZvCpUqn8YQPJuqdWm44g6sA2/w==",
+      "path": "gircore.gsk-4.0/0.9.0-preview.1",
+      "hashPath": "gircore.gsk-4.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.Gtk-4.0/0.8.1": {
+    "GirCore.Gtk-4.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-voCdlOtmgciZAthyL4Q/5HHJbzAhQfRVO0XzXApOkEs9iSire0umhuHHf7/PIpTCpde1CARzTTtTcZXu/5oRbA==",
-      "path": "gircore.gtk-4.0/0.8.1",
-      "hashPath": "gircore.gtk-4.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-LwAsW9luY5kxIUycTKhNXRi05KhHENhAvyFOTUznqUCxqFC3gPIJ4VJOdMF4tOg8/5brF8lh9fn/GIG7NBAOXA==",
+      "path": "gircore.gtk-4.0/0.9.0-preview.1",
+      "hashPath": "gircore.gtk-4.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.HarfBuzz-0.0/0.8.1": {
+    "GirCore.HarfBuzz-0.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-N52x5hStRH0l/gQ6XyvZUDs1bh454i9KlUS3nNE34v3h6r63o+CiM1cGIXYBshrBPXlAR6LsiqPs1dryBGi+xQ==",
-      "path": "gircore.harfbuzz-0.0/0.8.1",
-      "hashPath": "gircore.harfbuzz-0.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-vqSPR7vEY4lN6BVkJf2K46nEvNC9gIsr+FBH3LLgrid8CPFxOa32MPHChLDJYaRIZEQktoNWLwjXz7A0jJX2Yw==",
+      "path": "gircore.harfbuzz-0.0/0.9.0-preview.1",
+      "hashPath": "gircore.harfbuzz-0.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.Pango-1.0/0.8.1": {
+    "GirCore.Pango-1.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HU7ob5yHvo/pVjjjd9SiKGUw3FTACUC+7KDbmvcIrI+1TpoWnwqYzOiymPZ2bi3CRyK2M4Drn6NKDmfuV2eY2A==",
-      "path": "gircore.pango-1.0/0.8.1",
-      "hashPath": "gircore.pango-1.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-UQtgyqNiUSX1b9bRp4b1P+/tZog6T0eTds2N+n0enHFT/XkpQL7+XVsKZuQx3i05fNdj/N1Takgk7ILfb3k6EQ==",
+      "path": "gircore.pango-1.0/0.9.0-preview.1",
+      "hashPath": "gircore.pango-1.0.0.9.0-preview.1.nupkg.sha512"
     },
-    "GirCore.PangoCairo-1.0/0.8.1": {
+    "GirCore.PangoCairo-1.0/0.9.0-preview.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aqTSYA2zQMGIc7d/UFDBl7hhURKAxGFI2dSwTBPcmHWu73MuIConw9hnQEwVYJF3svtP86Y3yfjP85xwHLfHKw==",
-      "path": "gircore.pangocairo-1.0/0.8.1",
-      "hashPath": "gircore.pangocairo-1.0.0.8.1.nupkg.sha512"
+      "sha512": "sha512-qLHPy79eEtcYJdemKpzH6VJkdT/gbn6wAbfF7e6al41+BG/VzUgDf6+lu+RoyoS/gILodU3VnKqMyy1mp8qsOw==",
+      "path": "gircore.pangocairo-1.0/0.9.0-preview.1",
+      "hashPath": "gircore.pangocairo-1.0.0.9.0-preview.1.nupkg.sha512"
     },
     "Google.Apis/1.69.0": {
       "type": "package",
@@ -944,12 +944,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.21.0": {
+    "Google.GenAI/1.21.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xIP+H1QusTvYPDklfsuh7pQxNlRMOTDKzvBtnE4ITJSRoddBjrHTrw0vsxbFfRPDy5GN9GlwlAYoy3Q2bjoAEA==",
-      "path": "google.genai/1.21.0",
-      "hashPath": "google.genai.1.21.0.nupkg.sha512"
+      "sha512": "sha512-vOZ5GPEvIsyrYTKd7LFUz4pSlnCINRXrieykd+6g+4uaRK/7haefU3VkFLURgTmtDZ7/pkHsYIu7flX5tLzT/A==",
+      "path": "google.genai/1.21.1",
+      "hashPath": "google.genai.1.21.1.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -958,96 +958,96 @@
       "path": "mathnet.numerics.signed/5.0.0",
       "hashPath": "mathnet.numerics.signed.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI/10.9.0": {
+    "Microsoft.Extensions.AI/10.10.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ymREzi/+uQ9KL0d0ir3FXHUb/XLHyLYcJYH/7A/uO6rg6Km8hUk++nMRG4/gDpDYrrU6s6YIpSDTexofexMGRg==",
-      "path": "microsoft.extensions.ai/10.9.0",
-      "hashPath": "microsoft.extensions.ai.10.9.0.nupkg.sha512"
+      "sha512": "sha512-XKvtDUD3KySkvA5UpS+UF67M5rcqiXjAQchTZZ26WnavVKXxwlUTVdK/Ju0tc/25+16AVUdNl8cnVVGX/tx03A==",
+      "path": "microsoft.extensions.ai/10.10.0",
+      "hashPath": "microsoft.extensions.ai.10.10.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI.Abstractions/10.9.0": {
+    "Microsoft.Extensions.AI.Abstractions/10.10.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-//nASHMCJVxnYfE/WSzfaLOao6/q816kPpgB9rxU0gfSmAny1u3rfQT0D4xAmcIo4yQqJs7rAeBB+M/dIMdZYA==",
-      "path": "microsoft.extensions.ai.abstractions/10.9.0",
-      "hashPath": "microsoft.extensions.ai.abstractions.10.9.0.nupkg.sha512"
+      "sha512": "sha512-frBHj2ckpevA+KdDLikxv8oxGPrJiyTvaiblYp+vtVEt0q6J73XP5m2SICm86nFK6rl+L1GCKxIy4S5Lb3p2kQ==",
+      "path": "microsoft.extensions.ai.abstractions/10.10.0",
+      "hashPath": "microsoft.extensions.ai.abstractions.10.10.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Caching.Abstractions/10.0.11": {
+    "Microsoft.Extensions.Caching.Abstractions/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vUl798SmruTqqlt/xH2gDk3tJlhk6k3HdOXAHirlRfbNKDym4g/kRpUL9S4sl6F6FsOTOMW+ZsDapqlZMOOiEw==",
-      "path": "microsoft.extensions.caching.abstractions/10.0.11",
-      "hashPath": "microsoft.extensions.caching.abstractions.10.0.11.nupkg.sha512"
+      "sha512": "sha512-sI3A6MUAyZwccLnwq0cXuRmC3WBtXieimBWafXSfhRJ4jnM2uGVXrqImDDVyW27u4vVaTOGlJxNJd8d1FGvCNQ==",
+      "path": "microsoft.extensions.caching.abstractions/10.0.12",
+      "hashPath": "microsoft.extensions.caching.abstractions.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration/10.0.11": {
+    "Microsoft.Extensions.Configuration/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wlhRqZW8LcJPa+vk2oLAc/REXDItHtkFQdf/QcXYGZbZOO13izcsKY1pCvuFQYwUiZD+hwSZwsKASjqT+BNaVg==",
-      "path": "microsoft.extensions.configuration/10.0.11",
-      "hashPath": "microsoft.extensions.configuration.10.0.11.nupkg.sha512"
+      "sha512": "sha512-e3IPP32CRNL031VZJAUTlCTG0YN7WFh4mN3fsSHTDQCJB+3+f0jGycv4fXk3rrftaY3B85XrQaj7sRthrOsavg==",
+      "path": "microsoft.extensions.configuration/10.0.12",
+      "hashPath": "microsoft.extensions.configuration.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.Abstractions/10.0.11": {
+    "Microsoft.Extensions.Configuration.Abstractions/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fVi053xdpda9Em7vSkmgVxO/PtgC2m78ekReKWsgcyskqY0U82Bz/MONwxpGzI0hElYKJfw+fupqMVeKW3fSaA==",
-      "path": "microsoft.extensions.configuration.abstractions/10.0.11",
-      "hashPath": "microsoft.extensions.configuration.abstractions.10.0.11.nupkg.sha512"
+      "sha512": "sha512-8xaGcvS/qZ1otoxPQCEJkNva389CVL/plNcvIETZhQTETYdRkYDPEYhUMoAGONo4FU45ufdfE0j29AfWVVj0wA==",
+      "path": "microsoft.extensions.configuration.abstractions/10.0.12",
+      "hashPath": "microsoft.extensions.configuration.abstractions.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.FileExtensions/10.0.11": {
+    "Microsoft.Extensions.Configuration.FileExtensions/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mDW7KVFB05M6jiRUyaZiOMWhS31n5HlSZwoYctHAZAucD4sMDJ70IxOmkGDt6RpstchD+keWBjhdzcMpSkWvWQ==",
-      "path": "microsoft.extensions.configuration.fileextensions/10.0.11",
-      "hashPath": "microsoft.extensions.configuration.fileextensions.10.0.11.nupkg.sha512"
+      "sha512": "sha512-PNPS7yYH9U2M0dExn0tMkQFVtE53xTlCs/dgTfsWTTFyCF6qwGT3VrTgm2nnnkSRlSmvM9/J+n9xCpyzd9xTpQ==",
+      "path": "microsoft.extensions.configuration.fileextensions/10.0.12",
+      "hashPath": "microsoft.extensions.configuration.fileextensions.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.Json/10.0.11": {
+    "Microsoft.Extensions.Configuration.Json/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nSPrT8U/cNoB4coqkmnanAMK9PsL7lsjG+LLUKEwHRFwS6E78b8S1wdv/y88EOxBhasWov1rLd7RTHmmsYPOLg==",
-      "path": "microsoft.extensions.configuration.json/10.0.11",
-      "hashPath": "microsoft.extensions.configuration.json.10.0.11.nupkg.sha512"
+      "sha512": "sha512-H4u2ZeIhjmRQvbHj7S7U4MK1kXb0khx3UtOWcir32VHczdFyIVF0lvHew/VVHmCF7Uk0QseAUaO7HyFKOCSiKA==",
+      "path": "microsoft.extensions.configuration.json/10.0.12",
+      "hashPath": "microsoft.extensions.configuration.json.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.11": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/a1aJz4m7ylhEDf25ugQChLQoN5XwoGjWw/BoR/ZWWKsO1v4DdJElS1uyngahz4B/eOzjFk1KNTkarRLE5wsIg==",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/10.0.11",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.10.0.11.nupkg.sha512"
+      "sha512": "sha512-9/qymSh7hVDMGTGwrLz8MRp5zRyXy9adGDOs4HwRdnLil3oZGYuWeZjbmHgCQ9BL1qBroVfgUK3U/nb61617Cw==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/10.0.12",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/10.0.11": {
+    "Microsoft.Extensions.FileProviders.Abstractions/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JOjac6SQQgZmdmB8WGEw61/7siqMZoWJMkmq2p1goJGxqI59lO6oB4bOl0jNsbaPBdYy5Mlkb+6U7T4+CjnD8Q==",
-      "path": "microsoft.extensions.fileproviders.abstractions/10.0.11",
-      "hashPath": "microsoft.extensions.fileproviders.abstractions.10.0.11.nupkg.sha512"
+      "sha512": "sha512-iQseV6HixWzEYQH4i++84ToIroXnM5jC1TJF4EqBz3lWNG1HBTMYDLkRb6Wm3wk5V6WqSfl7NukO/LYsloGyfg==",
+      "path": "microsoft.extensions.fileproviders.abstractions/10.0.12",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileProviders.Physical/10.0.11": {
+    "Microsoft.Extensions.FileProviders.Physical/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Tq/UqMaczePv9yWwSsJZRgKtgA46djVR5xHj/lZBCueQ3ag8f9v5mu0EdhrNx7tXxNk+Y9OurG2oKuSKINjr0A==",
-      "path": "microsoft.extensions.fileproviders.physical/10.0.11",
-      "hashPath": "microsoft.extensions.fileproviders.physical.10.0.11.nupkg.sha512"
+      "sha512": "sha512-3cY+wo2+Qe65BVwShhr2fFqZv5Ns73h3kX4mpW3WvSgfT3AWCk0hKArKW4TF7Dg3mvbJdA6RhWPW7FR+PS5/1w==",
+      "path": "microsoft.extensions.fileproviders.physical/10.0.12",
+      "hashPath": "microsoft.extensions.fileproviders.physical.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileSystemGlobbing/10.0.11": {
+    "Microsoft.Extensions.FileSystemGlobbing/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2i6rtW/B5rCnWCnhdmWWEmaM9O0HD0zsPY9eRqa++y4tclI3Uw8zvGbBvhY/LjAdtf8gUHhUPcAWj3DRlWMXmQ==",
-      "path": "microsoft.extensions.filesystemglobbing/10.0.11",
-      "hashPath": "microsoft.extensions.filesystemglobbing.10.0.11.nupkg.sha512"
+      "sha512": "sha512-45cV+UeI0chPAIXrx9Wv7K4PJXuuIR2pnOur5MOAo6kOFclBHSLLDrvGAxMfWRMtUvpv/kQZkxlgaUN56jwzSQ==",
+      "path": "microsoft.extensions.filesystemglobbing/10.0.12",
+      "hashPath": "microsoft.extensions.filesystemglobbing.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/10.0.11": {
+    "Microsoft.Extensions.Logging.Abstractions/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ljd0Uxoq5XpScD2Bg0nM/r3mwx7Ao5Uq24eo2ARxbGvqJ7Zht6rt2cJtwVRH4Cv+1ZVMdXz6TB43KbpmsxRrvQ==",
-      "path": "microsoft.extensions.logging.abstractions/10.0.11",
-      "hashPath": "microsoft.extensions.logging.abstractions.10.0.11.nupkg.sha512"
+      "sha512": "sha512-+24lC4plfbEDNfLAdTV/SWKS7dW+16X4HdydO3R++134kSNTzcbYA4KpR1Hdh6uWisB8Za3AzwyOn+K+NxWIug==",
+      "path": "microsoft.extensions.logging.abstractions/10.0.12",
+      "hashPath": "microsoft.extensions.logging.abstractions.10.0.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Primitives/10.0.11": {
+    "Microsoft.Extensions.Primitives/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SXcz+kF+4Oo9b1+55zntpJFYfwb1jw66ioxptyNOOTDc8g2FHnBFWjZpsWfCvZIhzr0x+4e2trVTs4OKwQfBtw==",
-      "path": "microsoft.extensions.primitives/10.0.11",
-      "hashPath": "microsoft.extensions.primitives.10.0.11.nupkg.sha512"
+      "sha512": "sha512-dYfCLR52UA+3DL7C4I/pvSaRPkNqxrUAQmbFL2u0zvYKKzqgrFCJl08Df+F1aYc8leu9JvpC9bsURUdpExcBXQ==",
+      "path": "microsoft.extensions.primitives/10.0.12",
+      "hashPath": "microsoft.extensions.primitives.10.0.12.nupkg.sha512"
     },
     "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
       "type": "package",
@@ -1077,12 +1077,12 @@
       "path": "npoi/2.8.0",
       "hashPath": "npoi.2.8.0.nupkg.sha512"
     },
-    "QuestPDF/2026.7.3": {
+    "QuestPDF/2026.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MYpJrSLwUkgaX/POQj+9GY8QreFoLXjHCiUPCNl0XrHF+nLDT9KeUFZbeaUNu1P5spt5QeYzCbf2tDF0z5idHg==",
-      "path": "questpdf/2026.7.3",
-      "hashPath": "questpdf.2026.7.3.nupkg.sha512"
+      "sha512": "sha512-6c/YtDiZm8NgxnFdUDom+IWGVXKhiwBVJ3cvlyIXZYH7Wp0HaXWoR2XWj/RAsZfjpW7J5LMVc1EF6JnJFouoXQ==",
+      "path": "questpdf/2026.8.0",
+      "hashPath": "questpdf.2026.8.0.nupkg.sha512"
     },
     "SharpZipLib/1.4.2": {
       "type": "package",
@@ -1091,12 +1091,12 @@
       "path": "sharpziplib/1.4.2",
       "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
     },
-    "SkiaSharp/4.151.2": {
+    "SkiaSharp/4.152.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zqcEy5E17Tqoh2tEvb4uC2G3ulli5YdsljzZuf93pCc/9gQDMx9VrUInxiqkLMGt+MjQi8hNrf1Uxmq25yyU3A==",
-      "path": "skiasharp/4.151.2",
-      "hashPath": "skiasharp.4.151.2.nupkg.sha512"
+      "sha512": "sha512-TfYpxUV/Ihe5WyGeddJROZA2RhfGaSEKKNDHhREUVCVihtTlcavHQEi29Q0Mtn37AYXAf7EbC+StVPmWk63tkQ==",
+      "path": "skiasharp/4.152.0",
+      "hashPath": "skiasharp.4.152.0.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.2": {
       "type": "package",
@@ -1105,19 +1105,19 @@
       "path": "skiasharp.nativeassets.linux.nodependencies/3.119.2",
       "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.2.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/4.151.2": {
+    "SkiaSharp.NativeAssets.macOS/4.152.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hDGy20k1DJZuKcdbHjwaOfsPeQYY9ty8wJeG1qzJWidPUzrwwvVtTLpDdTiP1M89UWbEYyWAhZo9qOaoYae6iQ==",
-      "path": "skiasharp.nativeassets.macos/4.151.2",
-      "hashPath": "skiasharp.nativeassets.macos.4.151.2.nupkg.sha512"
+      "sha512": "sha512-Vjx2sPleQDJXQjINxMzHaIU1KFyYAUerfBnwLAjMGSUCf0vCrSU2Y4LvCH0yAheeuu0YdlVfeSMiCKZYVJ12kA==",
+      "path": "skiasharp.nativeassets.macos/4.152.0",
+      "hashPath": "skiasharp.nativeassets.macos.4.152.0.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/4.151.2": {
+    "SkiaSharp.NativeAssets.Win32/4.152.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sTUHSfWXVYThf/lTG81n8y1gMnr0TiN/2zrApwd0jbGfbsEt9g4+GPsj6UVjjgNLXCI9l5CyzxQ6Zh4fP9ZoVQ==",
-      "path": "skiasharp.nativeassets.win32/4.151.2",
-      "hashPath": "skiasharp.nativeassets.win32.4.151.2.nupkg.sha512"
+      "sha512": "sha512-PfyLS6TRP/9YghtW97le8bkzootCietlt7QUqFKGjGcZ6eRjeWNNHCjvxO41O/LYpV4gCthp2xiiUiYTOqfVyA==",
+      "path": "skiasharp.nativeassets.win32/4.152.0",
+      "hashPath": "skiasharp.nativeassets.win32.4.152.0.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",
@@ -1133,12 +1133,12 @@
       "path": "system.management/7.0.2",
       "hashPath": "system.management.7.0.2.nupkg.sha512"
     },
-    "System.Numerics.Tensors/10.0.11": {
+    "System.Numerics.Tensors/10.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4jNNt67NhCqf3bf2FN0mrsC+EH60L7Sny6poqVeiviB27Kw7TQzMmgn8HIaPc8E9EcuGusUyfeu21gLfzcBpDA==",
-      "path": "system.numerics.tensors/10.0.11",
-      "hashPath": "system.numerics.tensors.10.0.11.nupkg.sha512"
+      "sha512": "sha512-17brFrnQHV/XMMazXNqFq4GkvzWy8yzDPo5Gb8TT8zJtMFbUqDycOCyPCp9F+eMc4L75kcCKRZqaeBHMwLCL9Q==",
+      "path": "system.numerics.tensors/10.0.12",
+      "hashPath": "system.numerics.tensors.10.0.12.nupkg.sha512"
     },
     "System.Security.Cryptography.Pkcs/8.0.1": {
       "type": "package",

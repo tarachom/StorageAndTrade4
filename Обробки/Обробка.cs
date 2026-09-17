@@ -24,7 +24,7 @@ partial class Обробка : Processing
 
         bStop.MarginEnd = 10;
         //bStop.Sensitive = false;
-        bStop.OnClicked += (_, _) => Log.CreateMessage("Text", InterfaceGtk4.LogMessage.TypeMessage.Info);
+        bStop.OnClicked += (_, _) => Log.CreateMessage("Text", LogMessage.TypeMessage.Info);
         HBoxTop.Append(bStop);
 
         progress.MarginEnd = 10;
