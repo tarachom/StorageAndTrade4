@@ -11,11 +11,12 @@ namespace StorageAndTrade;
 [GObject.Subclass<FormGeneral>]
 partial class FormStorageAndTrade : FormGeneral
 {
-    public static FormStorageAndTrade NewWithParam(ConfigurationParam? openConfigurationParam)
+    public static FormStorageAndTrade NewWithParam(GlobalConfigurationParam globalConfigurationParam, ConfigurationParam? openConfigurationParam)
     {
         FormStorageAndTrade form = NewWithProperties([]);
         form.Application = Program.BasicApp;
         form.OpenConfigurationParam = openConfigurationParam;
+        form.GlobalConfigurationParam = globalConfigurationParam;
 
         form.SetValue();
 

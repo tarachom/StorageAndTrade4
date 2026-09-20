@@ -30,7 +30,7 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         return window;
     }
 
-    public override async Task<bool> OpenProgram(ConfigurationParam? openConfigurationParam)
+    public override async Task<bool> OpenProgram(GlobalConfigurationParam globalConfigurationParam, ConfigurationParam? openConfigurationParam)
     {
         //Запуск фонових задач
         Config.StartBackgroundTask();
@@ -62,7 +62,7 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
             }
         }
 
-        FormStorageAndTrade form = FormStorageAndTrade.NewWithParam(openConfigurationParam);
+        FormStorageAndTrade form = FormStorageAndTrade.NewWithParam(globalConfigurationParam, openConfigurationParam);
         form.Show();
 
         Program.BasicForm = form;
@@ -76,9 +76,9 @@ partial class FormConfigurationSelection : InterfaceGtk4.FormConfigurationSelect
         return true;
     }
 
-    public override async Task<bool> OpenConfigurator(ConfigurationParam? openConfigurationParam)
+    public override async Task<bool> OpenConfigurator(GlobalConfigurationParam globalConfigurationParam, ConfigurationParam? openConfigurationParam)
     {
-        Configurator.FormConfigurator form = Configurator.FormConfigurator.NewProgramStart(Program.BasicApp, Config.Kernel, openConfigurationParam);
+        Configurator.FormConfigurator form = Configurator.FormConfigurator.NewProgramStart(Program.BasicApp, Config.Kernel, globalConfigurationParam, openConfigurationParam);
         form.Show();
 
         //Відкрити перші сторінки
