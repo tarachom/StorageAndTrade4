@@ -45,7 +45,11 @@ partial class НоменклатураВнутрішня_Список : Director
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
-                ParentWhereList = [new(НоменклатураВнутрішня_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+                ParentWhereList = uniqueID.IsEmpty() ?
+                    [new(НоменклатураВнутрішня_Const.Папка, Comparison.ISNULL, null, true) { Group = "topLevel" },
+                        new(Comparison.OR, НоменклатураВнутрішня_Const.Папка, Comparison.EQ, Guid.Empty) { Group = "topLevel" }]
+                         : [new(НоменклатураВнутрішня_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+
                 if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();

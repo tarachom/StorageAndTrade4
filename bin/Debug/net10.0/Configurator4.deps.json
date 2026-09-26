@@ -212,15 +212,15 @@
           }
         }
       },
-      "Google.GenAI/1.21.1": {
+      "Google.GenAI/1.22.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
           "Microsoft.Extensions.AI.Abstractions": "10.10.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.21.1.0",
-            "fileVersion": "1.21.1.0"
+            "assemblyVersion": "1.22.0.0",
+            "fileVersion": "1.22.0.0"
           }
         }
       },
@@ -439,7 +439,7 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
-          "Google.GenAI": "1.21.1",
+          "Google.GenAI": "1.22.0",
           "InterfaceGtkLib": "4.0.0",
           "Microsoft.Extensions.AI": "10.10.0",
           "Microsoft.Extensions.Configuration": "10.0.12",
@@ -587,12 +587,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.21.1": {
+    "Google.GenAI/1.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vOZ5GPEvIsyrYTKd7LFUz4pSlnCINRXrieykd+6g+4uaRK/7haefU3VkFLURgTmtDZ7/pkHsYIu7flX5tLzT/A==",
-      "path": "google.genai/1.21.1",
-      "hashPath": "google.genai.1.21.1.nupkg.sha512"
+      "sha512": "sha512-o8yclR84AfGb8QzCkcYFGJ7wmtfHvwGi6DHRU2ZfkwoLU1vM1wl10HYGZLx6dm4Jsmw9+snX9TJSBMVI9tOplA==",
+      "path": "google.genai/1.22.0",
+      "hashPath": "google.genai.1.22.0.nupkg.sha512"
     },
     "Microsoft.Extensions.AI/10.10.0": {
       "type": "package",

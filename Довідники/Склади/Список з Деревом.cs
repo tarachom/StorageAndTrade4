@@ -45,7 +45,11 @@ partial class Склади_Список : DirectoryFormJournalFull
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
-                ParentWhereList = [new(Склади_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+                ParentWhereList = uniqueID.IsEmpty() ?
+                    [new(Склади_Const.Папка, Comparison.ISNULL, null, true) { Group = "topLevel" },
+                        new(Comparison.OR, Склади_Const.Папка, Comparison.EQ, Guid.Empty) { Group = "topLevel" }]
+                         : [new(Склади_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+
                 if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();

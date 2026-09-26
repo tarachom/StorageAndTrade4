@@ -3,10 +3,10 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 20.09.2026 17:03:07
+ * Дата конфігурації: 26.09.2026 16:05:02
  *
  *
- * Цей код згенерований в Конфігураторі 3. Шаблон GeneratedCode.xslt
+ * Згенеровано в Конфігураторі 4. Шаблон GeneratedCode.xslt
  *
  */
 
@@ -2642,7 +2642,7 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a6"] = КраїнаРеєстрації;
             base.FieldValue["col_a7"] = СвідоцтвоСеріяНомер;
             base.FieldValue["col_a8"] = СвідоцтвоДатаВидачі;
-            base.FieldValue["col_a9"] = Холдинг.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Холдинг.IsEmpty() ? DBNull.Value : Холдинг.UniqueID.UGuid;
             base.FieldValue["col_b1"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -3056,14 +3056,14 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a1"] = Опис;
             base.FieldValue["col_b3"] = Артикул;
             base.FieldValue["col_b5"] = (int)ТипНоменклатури;
-            base.FieldValue["col_a2"] = Виробник.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = ВидНоменклатури.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = ОдиницяВиміру.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Папка.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = ОсновнаКартинкаФайл.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Категорія.UniqueID.UGuid;
-            base.FieldValue["col_a8"] = БазоваОдиницяВиміру.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = ОдиницяДляЗвітів.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Виробник.IsEmpty() ? DBNull.Value : Виробник.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = ВидНоменклатури.IsEmpty() ? DBNull.Value : ВидНоменклатури.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = ОдиницяВиміру.IsEmpty() ? DBNull.Value : ОдиницяВиміру.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Папка.IsEmpty() ? DBNull.Value : Папка.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = ОсновнаКартинкаФайл.IsEmpty() ? DBNull.Value : ОсновнаКартинкаФайл.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Категорія.IsEmpty() ? DBNull.Value : Категорія.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = БазоваОдиницяВиміру.IsEmpty() ? DBNull.Value : БазоваОдиницяВиміру.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = ОдиницяДляЗвітів.IsEmpty() ? DBNull.Value : ОдиницяДляЗвітів.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -3337,7 +3337,7 @@ namespace GeneratedCode.Довідники
                 
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.Файл.UniqueID.UGuid},
+                    {"col_a1", record.Файл.IsEmpty() ? DBNull.Value : record.Файл.UniqueID.UGuid},
                     {"col_a3", record.Основний},
                     {"col_a2", record.НомерРядка},
                     
@@ -3616,7 +3616,7 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_b9"] = Код;
             base.FieldValue["col_a2"] = Опис;
             base.FieldValue["col_a1"] = (int)ТипНоменклатури;
-            base.FieldValue["col_a4"] = ОдиницяВиміру.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = ОдиницяВиміру.IsEmpty() ? DBNull.Value : ОдиницяВиміру.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -3812,11 +3812,11 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_c1"] = Назва;
             base.FieldValue["col_c2"] = Код;
             base.FieldValue["col_c3"] = НазваПовна;
-            base.FieldValue["col_a1"] = ОдиницяЗаКласифікатором.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = ОдиницяЗаКласифікатором.IsEmpty() ? DBNull.Value : ОдиницяЗаКласифікатором.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Коєфіціент;
             base.FieldValue["col_a3"] = Вага;
             base.FieldValue["col_a4"] = Обєм;
-            base.FieldValue["col_a5"] = Номенклатура.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Номенклатура.IsEmpty() ? DBNull.Value : Номенклатура.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -4230,12 +4230,12 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_c8"] = Код;
             base.FieldValue["col_c9"] = НазваПовна;
             base.FieldValue["col_d1"] = РеєстраційнийНомер;
-            base.FieldValue["col_a1"] = Папка.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Папка.IsEmpty() ? DBNull.Value : Папка.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Опис;
             base.FieldValue["col_a3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a4"] = Постачальник;
             base.FieldValue["col_a5"] = Покупець;
-            base.FieldValue["col_a6"] = Категорія.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Категорія.IsEmpty() ? DBNull.Value : Категорія.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -4664,7 +4664,7 @@ namespace GeneratedCode.Довідники
                 
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.Файл.UniqueID.UGuid},
+                    {"col_a1", record.Файл.IsEmpty() ? DBNull.Value : record.Файл.UniqueID.UGuid},
                     {"col_a2", record.НомерРядка},
                     
                 };
@@ -4787,13 +4787,13 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_d9"] = Назва;
             base.FieldValue["col_e1"] = Код;
             base.FieldValue["col_a1"] = (int)ТипСкладу;
-            base.FieldValue["col_a2"] = Відповідальний.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = ВидЦін.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Папка.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Відповідальний.IsEmpty() ? DBNull.Value : Відповідальний.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = ВидЦін.IsEmpty() ? DBNull.Value : ВидЦін.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Папка.IsEmpty() ? DBNull.Value : Папка.UniqueID.UGuid;
             base.FieldValue["col_a6"] = (int)НалаштуванняАдресногоЗберігання;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a8"] = Категорія.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = Категорія.IsEmpty() ? DBNull.Value : Категорія.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -5169,7 +5169,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_e9"] = Назва;
             base.FieldValue["col_f1"] = Код;
-            base.FieldValue["col_f2"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_f2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -5346,7 +5346,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_f3"] = Назва;
             base.FieldValue["col_f4"] = Код;
-            base.FieldValue["col_f5"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_f5"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -5536,7 +5536,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_f6"] = Назва;
             base.FieldValue["col_f7"] = Код;
-            base.FieldValue["col_a1"] = ФізичнаОсоба.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = ФізичнаОсоба.IsEmpty() ? DBNull.Value : ФізичнаОсоба.UniqueID.UGuid;
             base.FieldValue["col_g6"] = Коментар;
             base.FieldValue["col_a2"] = КодВСпеціальнійТаблиці;
             
@@ -6273,10 +6273,10 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_h8"] = Назва;
             base.FieldValue["col_h9"] = Код;
-            base.FieldValue["col_i1"] = Керівник.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Родич.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = Категорія.UniqueID.UGuid;
+            base.FieldValue["col_i1"] = Керівник.IsEmpty() ? DBNull.Value : Керівник.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Категорія.IsEmpty() ? DBNull.Value : Категорія.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -6856,7 +6856,7 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_i7"] = Назва;
             base.FieldValue["col_i8"] = Код;
             base.FieldValue["col_i9"] = НазваПовна;
-            base.FieldValue["col_a1"] = Номенклатура.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Номенклатура.IsEmpty() ? DBNull.Value : Номенклатура.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -7036,7 +7036,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_j1"] = Назва;
             base.FieldValue["col_j2"] = Код;
-            base.FieldValue["col_j3"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_j3"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -7241,7 +7241,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_j4"] = Назва;
             base.FieldValue["col_j5"] = Код;
-            base.FieldValue["col_j6"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_j6"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -7446,7 +7446,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_j7"] = Назва;
             base.FieldValue["col_j8"] = Код;
-            base.FieldValue["col_a1"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -7653,8 +7653,8 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_k8"] = Назва;
             base.FieldValue["col_k9"] = Код;
-            base.FieldValue["col_a2"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -7842,11 +7842,11 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_l1"] = Назва;
             base.FieldValue["col_l2"] = Код;
-            base.FieldValue["col_l3"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_l4"] = Банк.UniqueID.UGuid;
-            base.FieldValue["col_l5"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_l3"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_l4"] = Банк.IsEmpty() ? DBNull.Value : Банк.UniqueID.UGuid;
+            base.FieldValue["col_l5"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_l7"] = НомерРахунку;
-            base.FieldValue["col_a1"] = Організація.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -8071,16 +8071,16 @@ namespace GeneratedCode.Довідники
                 await ДоговориКонтрагентів_Triggers.BeforeSave(this);
             base.FieldValue["col_n4"] = Назва;
             base.FieldValue["col_n5"] = Код;
-            base.FieldValue["col_n6"] = БанківськийРахунок.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = БанківськийРахунокКонтрагента.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = ВалютаВзаєморозрахунків.UniqueID.UGuid;
+            base.FieldValue["col_n6"] = БанківськийРахунок.IsEmpty() ? DBNull.Value : БанківськийРахунок.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = БанківськийРахунокКонтрагента.IsEmpty() ? DBNull.Value : БанківськийРахунокКонтрагента.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = ВалютаВзаєморозрахунків.IsEmpty() ? DBNull.Value : ВалютаВзаєморозрахунків.UniqueID.UGuid;
             base.FieldValue["col_a4"] = ДатаПочаткуДії;
             base.FieldValue["col_a5"] = ДатаЗакінченняДії;
-            base.FieldValue["col_a6"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
             base.FieldValue["col_a8"] = Дата;
             base.FieldValue["col_a9"] = Номер;
-            base.FieldValue["col_b1"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_b2"] = Узгоджений;
             base.FieldValue["col_b3"] = (int)Статус;
             base.FieldValue["col_b4"] = (int)ГосподарськаОперація;
@@ -8323,9 +8323,9 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_n7"] = Назва;
             base.FieldValue["col_n8"] = Код;
             base.FieldValue["col_n9"] = НомерРахунку;
-            base.FieldValue["col_m1"] = Банк.UniqueID.UGuid;
-            base.FieldValue["col_m5"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_o3"] = Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_m1"] = Банк.IsEmpty() ? DBNull.Value : Банк.UniqueID.UGuid;
+            base.FieldValue["col_m5"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_o3"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -9016,9 +9016,9 @@ namespace GeneratedCode.Довідники
             base.FieldValue["col_a2"] = Дата;
             base.FieldValue["col_a3"] = (int)ТипДокументу;
             base.FieldValue["col_a6"] = ДокументКлюч;
-            base.FieldValue["col_a4"] = ПоступленняТоварівТаПослуг.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = ВведенняЗалишків.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = ВиготовленняПродукції.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = ПоступленняТоварівТаПослуг.IsEmpty() ? DBNull.Value : ПоступленняТоварівТаПослуг.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = ВведенняЗалишків.IsEmpty() ? DBNull.Value : ВведенняЗалишків.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = ВиготовленняПродукції.IsEmpty() ? DBNull.Value : ВиготовленняПродукції.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -9212,11 +9212,11 @@ namespace GeneratedCode.Довідники
         public async Task<bool> Save()
         {
             base.FieldValue["col_a5"] = Назва;
-            base.FieldValue["col_b3"] = Організація.UniqueID.UGuid;
+            base.FieldValue["col_b3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
             base.FieldValue["col_a7"] = (int)ТипЗапасів;
-            base.FieldValue["col_a9"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_b1"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b2"] = Договір.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
             base.FieldValue["col_a1"] = Код;
             
             bool result = await BaseSave();
@@ -9733,7 +9733,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a2"] = Назва;
             base.FieldValue["col_a3"] = (int)НалаштуванняАдресногоЗберігання;
-            base.FieldValue["col_a1"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -9922,16 +9922,16 @@ namespace GeneratedCode.Довідники
         
         public async Task<bool> Save()
         {
-            base.FieldValue["col_a1"] = Папка.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Папка.IsEmpty() ? DBNull.Value : Папка.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = ОбластьЗберігання.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = ОбластьЗберігання.IsEmpty() ? DBNull.Value : ОбластьЗберігання.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Лінія;
             base.FieldValue["col_a5"] = Позиція;
-            base.FieldValue["col_a6"] = Приміщення.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Приміщення.IsEmpty() ? DBNull.Value : Приміщення.UniqueID.UGuid;
             base.FieldValue["col_a7"] = Стелаж;
             base.FieldValue["col_a8"] = Ярус;
             base.FieldValue["col_a9"] = (int)ТипСкладськоїКомірки;
-            base.FieldValue["col_b1"] = Типорозмір.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = Типорозмір.IsEmpty() ? DBNull.Value : Типорозмір.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -10129,7 +10129,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a2"] = Назва;
             base.FieldValue["col_a3"] = Опис;
-            base.FieldValue["col_a4"] = Приміщення.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Приміщення.IsEmpty() ? DBNull.Value : Приміщення.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -10501,8 +10501,8 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_j1"] = Назва;
             base.FieldValue["col_j2"] = Код;
-            base.FieldValue["col_j3"] = Родич.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Власник.UniqueID.UGuid;
+            base.FieldValue["col_j3"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Власник.IsEmpty() ? DBNull.Value : Власник.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -10915,7 +10915,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a1"] = Додано;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Користувач.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Користувач.IsEmpty() ? DBNull.Value : Користувач.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Опис;
             base.FieldValue["col_a5"] = Інформація;
             base.FieldValue["col_a6"] = Код;
@@ -11389,9 +11389,9 @@ namespace GeneratedCode.Довідники
         public async Task<bool> Save()
         {
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_a4"] = (int)Тип;
-            base.FieldValue["col_a1"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -11587,7 +11587,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             base.FieldValue["col_a4"] = ЦеГрупа;
             base.FieldValue["col_a5"] = Сумовий;
             base.FieldValue["col_a6"] = Кількісний;
@@ -11847,13 +11847,13 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             base.FieldValue["col_a4"] = (int)МетодСписання;
-            base.FieldValue["col_a5"] = РахунокОбліку.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = РахунокДоходів.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = СтаттяДоходів.UniqueID.UGuid;
-            base.FieldValue["col_a8"] = РахунокВитрат.UniqueID.UGuid;
-            base.FieldValue["col_a9"] = СтаттяВитрат.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = РахунокОбліку.IsEmpty() ? DBNull.Value : РахунокОбліку.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = РахунокДоходів.IsEmpty() ? DBNull.Value : РахунокДоходів.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = СтаттяДоходів.IsEmpty() ? DBNull.Value : СтаттяДоходів.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = РахунокВитрат.IsEmpty() ? DBNull.Value : РахунокВитрат.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = СтаттяВитрат.IsEmpty() ? DBNull.Value : СтаттяВитрат.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -12082,7 +12082,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             base.FieldValue["col_a4"] = ЦеПапка;
             base.FieldValue["col_a5"] = КодЗПодатковоїДекларації;
             
@@ -13138,7 +13138,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Папка.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Папка.IsEmpty() ? DBNull.Value : Папка.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -13313,7 +13313,7 @@ namespace GeneratedCode.Довідники
         {
             base.FieldValue["col_a1"] = Код;
             base.FieldValue["col_a2"] = Назва;
-            base.FieldValue["col_a3"] = Родич.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Родич.IsEmpty() ? DBNull.Value : Родич.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -15703,16 +15703,16 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_k2"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_k3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_k4"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_k5"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_k2"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_k3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_k4"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_k5"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_k6"] = СумаДокументу;
-            base.FieldValue["col_k7"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = БанківськийРахунок.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_k7"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = БанківськийРахунок.IsEmpty() ? DBNull.Value : БанківськийРахунок.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a7"] = ДатаПоступлення;
             base.FieldValue["col_a8"] = АдресаДоставкиДляПостачальника;
             base.FieldValue["col_a9"] = ПовернутиТару;
@@ -15723,7 +15723,7 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_a6"] = (int)ГосподарськаОперація;
             base.FieldValue["col_b5"] = (int)Статус;
             base.FieldValue["col_b6"] = (int)ФормаОплати;
-            base.FieldValue["col_b7"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_b7"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b8"] = Підстава;
             base.FieldValue["col_a2"] = Коментар;
             base.FieldValue["col_b9"] = КлючовіСловаДляПошуку;
@@ -16134,17 +16134,17 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_b2", record.НомерРядка},
-                    {"col_o4", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a2", record.Пакування.UniqueID.UGuid},
+                    {"col_o4", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a2", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a3", record.Коєфіціент},
                     {"col_a4", record.Кількість},
                     {"col_a5", record.ДатаПоступлення},
                     {"col_a6", record.Ціна},
                     {"col_a7", record.Сума},
                     {"col_a8", record.Скидка},
-                    {"col_a9", record.Склад.UniqueID.UGuid},
-                    {"col_b1", record.Підрозділ.UniqueID.UGuid},
+                    {"col_a9", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_b1", record.Підрозділ.IsEmpty() ? DBNull.Value : record.Підрозділ.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -16499,37 +16499,37 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a3"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_a4"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_a5"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
             base.FieldValue["col_a8"] = СумаДокументу;
-            base.FieldValue["col_a9"] = ЗамовленняПостачальнику.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = ЗамовленняПостачальнику.IsEmpty() ? DBNull.Value : ЗамовленняПостачальнику.UniqueID.UGuid;
             base.FieldValue["col_b2"] = ДатаОплати;
             base.FieldValue["col_b3"] = (int)ФормаОплати;
             base.FieldValue["col_b4"] = Узгоджений;
-            base.FieldValue["col_b5"] = БанківськийРахунокОрганізації.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = БанківськийРахунокОрганізації.IsEmpty() ? DBNull.Value : БанківськийРахунокОрганізації.UniqueID.UGuid;
             base.FieldValue["col_b6"] = НомерВхідногоДокументу;
             base.FieldValue["col_b7"] = ДатаВхідногоДокументу;
-            base.FieldValue["col_b8"] = БанківськийРахунокКонтрагента.UniqueID.UGuid;
-            base.FieldValue["col_b9"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_c1"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = БанківськийРахунокКонтрагента.IsEmpty() ? DBNull.Value : БанківськийРахунокКонтрагента.UniqueID.UGuid;
+            base.FieldValue["col_b9"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_c1"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c2"] = ПовернутиТару;
             base.FieldValue["col_c3"] = ДатаПоверненняТари;
             base.FieldValue["col_c4"] = (int)СпосібДоставки;
-            base.FieldValue["col_c5"] = Організація.UniqueID.UGuid;
+            base.FieldValue["col_c5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
             base.FieldValue["col_c6"] = Курс;
             base.FieldValue["col_c7"] = Кратність;
             base.FieldValue["col_c8"] = ЧасДоставкиЗ;
             base.FieldValue["col_c9"] = ЧасДоставкиДо;
-            base.FieldValue["col_d1"] = Менеджер.UniqueID.UGuid;
-            base.FieldValue["col_d2"] = СтаттяРухуКоштів.UniqueID.UGuid;
-            base.FieldValue["col_d3"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_d1"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_d2"] = СтаттяРухуКоштів.IsEmpty() ? DBNull.Value : СтаттяРухуКоштів.UniqueID.UGuid;
+            base.FieldValue["col_d3"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_a1"] = Підстава;
             base.FieldValue["col_b1"] = Коментар;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_d5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_d5"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_d4"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -17008,19 +17008,19 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_b3", record.НомерРядка},
-                    {"col_a9", record.Номенклатура.UniqueID.UGuid},
-                    {"col_b1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_b4", record.Серія.UniqueID.UGuid},
-                    {"col_a1", record.Пакування.UniqueID.UGuid},
+                    {"col_a9", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_b1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_b4", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a1", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a2", record.Коєфіціент},
                     {"col_a3", record.Кількість},
                     {"col_a4", record.Ціна},
                     {"col_a5", record.Сума},
-                    {"col_a6", record.Склад.UniqueID.UGuid},
-                    {"col_a7", record.ЗамовленняПостачальнику.UniqueID.UGuid},
+                    {"col_a6", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a7", record.ЗамовленняПостачальнику.IsEmpty() ? DBNull.Value : record.ЗамовленняПостачальнику.UniqueID.UGuid},
                     {"col_a8", record.Скидка},
-                    {"col_b2", record.Підрозділ.UniqueID.UGuid},
-                    {"col_b5", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_b2", record.Підрозділ.IsEmpty() ? DBNull.Value : record.Підрозділ.UniqueID.UGuid},
+                    {"col_b5", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -17237,7 +17237,7 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_b1", record.Дебет},
                     {"col_a5", record.Кредит},
                     {"col_b2", record.Кількість},
@@ -17245,11 +17245,11 @@ namespace GeneratedCode.Документи
                     {"col_a3", record.Аналітика1},
                     {"col_a7", record.Аналітика2},
                     {"col_a8", record.Аналітика3},
-                    {"col_a6", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_a6", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
-                    {"col_a9", record.Податки.UniqueID.UGuid},
+                    {"col_a9", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -17617,32 +17617,32 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_b4"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b4"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_b7"] = СумаДокументу;
-            base.FieldValue["col_b8"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_a1"] = (int)Статус;
             base.FieldValue["col_a2"] = Узгоджений;
             base.FieldValue["col_a3"] = (int)ФормаОплати;
-            base.FieldValue["col_a4"] = БанківськийРахунок.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = БанківськийРахунокКонтрагента.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = БанківськийРахунок.IsEmpty() ? DBNull.Value : БанківськийРахунок.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = БанківськийРахунокКонтрагента.IsEmpty() ? DBNull.Value : БанківськийРахунокКонтрагента.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_a7"] = СумаАвансуДоЗабезпечення;
             base.FieldValue["col_a8"] = СумаПередоплатиДоВідгрузки;
             base.FieldValue["col_b1"] = ДатаВідгрузки;
             base.FieldValue["col_a9"] = АдресаДоставки;
             base.FieldValue["col_b9"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_c2"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_c3"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_c4"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_c2"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_c3"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_c4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c5"] = (int)СпосібДоставки;
             base.FieldValue["col_c6"] = ЧасДоставкиЗ;
             base.FieldValue["col_c7"] = ЧасДоставкиДо;
             base.FieldValue["col_c8"] = ПовернутиТару;
             base.FieldValue["col_c9"] = ДатаПоверненняТари;
             base.FieldValue["col_c1"] = Коментар;
-            base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_d1"] = Підстава;
             
@@ -18066,16 +18066,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a2", record.НомерРядка},
-                    {"col_b9", record.Номенклатура.UniqueID.UGuid},
-                    {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_c2", record.Пакування.UniqueID.UGuid},
+                    {"col_b9", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_c1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_c2", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
-                    {"col_c5", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_c5", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     {"col_c6", record.Ціна},
                     {"col_c7", record.Сума},
                     {"col_c8", record.Скидка},
-                    {"col_a1", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -18426,23 +18426,23 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a1"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = БанківськийРахунокОрганізації.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = БанківськийРахунокКонтрагента.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = БанківськийРахунокОрганізації.IsEmpty() ? DBNull.Value : БанківськийРахунокОрганізації.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = БанківськийРахунокКонтрагента.IsEmpty() ? DBNull.Value : БанківськийРахунокКонтрагента.UniqueID.UGuid;
             base.FieldValue["col_a5"] = ДатаОплати;
-            base.FieldValue["col_a6"] = ЗамовленняКлієнта.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = ЗамовленняКлієнта.IsEmpty() ? DBNull.Value : ЗамовленняКлієнта.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
             base.FieldValue["col_a8"] = СумаДокументу;
-            base.FieldValue["col_a9"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_b1"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_b3"] = (int)ФормаОплати;
             base.FieldValue["col_b4"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_b5"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Договір.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
             base.FieldValue["col_b7"] = Підстава;
             base.FieldValue["col_b8"] = (int)Статус;
-            base.FieldValue["col_b9"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_b9"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c1"] = СумаПередоплати;
             base.FieldValue["col_c2"] = СумаПередоплатиЗаТару;
             base.FieldValue["col_c3"] = (int)СпосібДоставки;
@@ -18453,9 +18453,9 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_c8"] = Курс;
             base.FieldValue["col_d2"] = Кратність;
             base.FieldValue["col_b2"] = Коментар;
-            base.FieldValue["col_c9"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_c9"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_d1"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_d3"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_d3"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_d4"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -18932,20 +18932,20 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_d2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_d3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a2", record.Серія.UniqueID.UGuid},
-                    {"col_d4", record.Пакування.UniqueID.UGuid},
+                    {"col_d2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_d3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a2", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_d4", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_d5", record.Коєфіціент},
                     {"col_d6", record.Кількість},
-                    {"col_d7", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_d7", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     {"col_d8", record.Ціна},
                     {"col_d9", record.Сума},
-                    {"col_e1", record.Склад.UniqueID.UGuid},
-                    {"col_e2", record.ЗамовленняКлієнта.UniqueID.UGuid},
-                    {"col_a3", record.РахунокФактура.UniqueID.UGuid},
+                    {"col_e1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_e2", record.ЗамовленняКлієнта.IsEmpty() ? DBNull.Value : record.ЗамовленняКлієнта.UniqueID.UGuid},
+                    {"col_a3", record.РахунокФактура.IsEmpty() ? DBNull.Value : record.РахунокФактура.UniqueID.UGuid},
                     {"col_e3", record.Скидка},
-                    {"col_a4", record.Партія.UniqueID.UGuid},
+                    {"col_a4", record.Партія.IsEmpty() ? DBNull.Value : record.Партія.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -19164,16 +19164,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a7", record.Аналітика2},
                     {"col_a8", record.Аналітика3},
-                    {"col_a9", record.Податки.UniqueID.UGuid},
+                    {"col_a9", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_b1", record.Дебет},
                     {"col_b2", record.Кількість},
                     {"col_a4", (int)record.ВидПроводки},
                     {"col_a5", record.Кредит},
-                    {"col_a6", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_a6", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -19502,11 +19502,11 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a2"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = ВидЦіни.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = ВидЦіни.IsEmpty() ? DBNull.Value : ВидЦіни.UniqueID.UGuid;
             base.FieldValue["col_g9"] = Коментар;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a5"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a6"] = Підстава;
             
@@ -19828,10 +19828,10 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_h1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_h2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_h3", record.Пакування.UniqueID.UGuid},
-                    {"col_h4", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_h1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_h2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_h3", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_h4", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     {"col_h5", record.Ціна},
                     
                 };
@@ -19997,22 +19997,22 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_h8"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_h9"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_h8"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_h9"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_i1"] = СумаДокументу;
             base.FieldValue["col_i2"] = (int)ГосподарськаОперація;
             base.FieldValue["col_i3"] = Підстава;
-            base.FieldValue["col_i4"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_i5"] = БанківськийРахунок.UniqueID.UGuid;
-            base.FieldValue["col_i6"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = СтаттяРухуКоштів.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = КасаВідправник.UniqueID.UGuid;
+            base.FieldValue["col_i4"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_i5"] = БанківськийРахунок.IsEmpty() ? DBNull.Value : БанківськийРахунок.UniqueID.UGuid;
+            base.FieldValue["col_i6"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = СтаттяРухуКоштів.IsEmpty() ? DBNull.Value : СтаттяРухуКоштів.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = КасаВідправник.IsEmpty() ? DBNull.Value : КасаВідправник.UniqueID.UGuid;
             base.FieldValue["col_a4"] = Курс;
             base.FieldValue["col_a3"] = Коментар;
-            base.FieldValue["col_a5"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a8"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a9"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -20394,9 +20394,9 @@ namespace GeneratedCode.Документи
                     {"col_a1", record.НомерРядка},
                     {"col_j4", record.Замовлення},
                     {"col_j5", record.Сума},
-                    {"col_j6", record.Підрозділ.UniqueID.UGuid},
-                    {"col_j7", record.ВалютаВзаєморозрахунків.UniqueID.UGuid},
-                    {"col_j8", record.Організація.UniqueID.UGuid},
+                    {"col_j6", record.Підрозділ.IsEmpty() ? DBNull.Value : record.Підрозділ.UniqueID.UGuid},
+                    {"col_j7", record.ВалютаВзаєморозрахунків.IsEmpty() ? DBNull.Value : record.ВалютаВзаєморозрахунків.UniqueID.UGuid},
+                    {"col_j8", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -20597,16 +20597,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -20792,24 +20792,24 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_k2"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_k3"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_k2"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_k3"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_a3"] = СумаДокументу;
             base.FieldValue["col_a5"] = СумаДокументуПоКурсу;
             base.FieldValue["col_k5"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_k4"] = ОрганізаціяОтримувач.UniqueID.UGuid;
-            base.FieldValue["col_k7"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_k8"] = БанківськийРахунок.UniqueID.UGuid;
-            base.FieldValue["col_k9"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_l2"] = СтаттяРухуКоштів.UniqueID.UGuid;
-            base.FieldValue["col_k6"] = КасаОтримувач.UniqueID.UGuid;
+            base.FieldValue["col_k4"] = ОрганізаціяОтримувач.IsEmpty() ? DBNull.Value : ОрганізаціяОтримувач.UniqueID.UGuid;
+            base.FieldValue["col_k7"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_k8"] = БанківськийРахунок.IsEmpty() ? DBNull.Value : БанківськийРахунок.UniqueID.UGuid;
+            base.FieldValue["col_k9"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_l2"] = СтаттяРухуКоштів.IsEmpty() ? DBNull.Value : СтаттяРухуКоштів.UniqueID.UGuid;
+            base.FieldValue["col_k6"] = КасаОтримувач.IsEmpty() ? DBNull.Value : КасаОтримувач.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Курс;
             base.FieldValue["col_a1"] = Підстава;
             base.FieldValue["col_l1"] = Коментар;
-            base.FieldValue["col_a6"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a8"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a9"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -21199,10 +21199,10 @@ namespace GeneratedCode.Документи
                     {"col_a1", record.НомерРядка},
                     {"col_l4", record.Замовлення},
                     {"col_l5", record.Сума},
-                    {"col_l6", record.ВалютаВзаєморозрахунків.UniqueID.UGuid},
-                    {"col_l7", record.Підрозділ.UniqueID.UGuid},
+                    {"col_l6", record.ВалютаВзаєморозрахунків.IsEmpty() ? DBNull.Value : record.ВалютаВзаєморозрахунків.UniqueID.UGuid},
+                    {"col_l7", record.Підрозділ.IsEmpty() ? DBNull.Value : record.Підрозділ.UniqueID.UGuid},
                     {"col_l8", record.Коментар},
-                    {"col_l9", record.Організація.UniqueID.UGuid},
+                    {"col_l9", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -21405,16 +21405,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -21602,14 +21602,14 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = БанківськийРахунокОрганізації.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = ВидЦіни.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = ОрганізаціяОтримувач.UniqueID.UGuid;
-            base.FieldValue["col_a8"] = Відповідальний.UniqueID.UGuid;
-            base.FieldValue["col_a9"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_b1"] = СкладВідправник.UniqueID.UGuid;
-            base.FieldValue["col_b2"] = СкладОтримувач.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = БанківськийРахунокОрганізації.IsEmpty() ? DBNull.Value : БанківськийРахунокОрганізації.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = ВидЦіни.IsEmpty() ? DBNull.Value : ВидЦіни.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = ОрганізаціяОтримувач.IsEmpty() ? DBNull.Value : ОрганізаціяОтримувач.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = Відповідальний.IsEmpty() ? DBNull.Value : Відповідальний.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = СкладВідправник.IsEmpty() ? DBNull.Value : СкладВідправник.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = СкладОтримувач.IsEmpty() ? DBNull.Value : СкладОтримувач.UniqueID.UGuid;
             base.FieldValue["col_b3"] = (int)Статус;
             base.FieldValue["col_b4"] = (int)ГосподарськаОперація;
             base.FieldValue["col_b5"] = (int)СпосібДоставки;
@@ -21617,10 +21617,10 @@ namespace GeneratedCode.Документи
             base.FieldValue["col_b7"] = ЧасДоставкиЗ;
             base.FieldValue["col_b8"] = ЧасДоставкиДо;
             base.FieldValue["col_a6"] = Коментар;
-            base.FieldValue["col_a1"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_b9"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_c1"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_c1"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_c2"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -22021,13 +22021,13 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_b8", record.НомерРядка},
-                    {"col_b3", record.Номенклатура.UniqueID.UGuid},
-                    {"col_b4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a1", record.Серія.UniqueID.UGuid},
-                    {"col_b5", record.Пакування.UniqueID.UGuid},
+                    {"col_b3", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_b4", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a1", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_b5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_b6", record.Коєфіціент},
                     {"col_b7", record.Кількість},
-                    {"col_a2", record.Партія.UniqueID.UGuid},
+                    {"col_a2", record.Партія.IsEmpty() ? DBNull.Value : record.Партія.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -22232,16 +22232,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -22433,27 +22433,27 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_c2"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_c3"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_c4"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_c5"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_c6"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_c2"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_c3"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_c4"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_c5"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_c6"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_c7"] = СумаДокументу;
             base.FieldValue["col_c9"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_d1"] = БанківськийРахунокОрганізації.UniqueID.UGuid;
-            base.FieldValue["col_d2"] = БанківськийРахунокКонтрагента.UniqueID.UGuid;
-            base.FieldValue["col_d3"] = Договір.UniqueID.UGuid;
+            base.FieldValue["col_d1"] = БанківськийРахунокОрганізації.IsEmpty() ? DBNull.Value : БанківськийРахунокОрганізації.UniqueID.UGuid;
+            base.FieldValue["col_d2"] = БанківськийРахунокКонтрагента.IsEmpty() ? DBNull.Value : БанківськийРахунокКонтрагента.UniqueID.UGuid;
+            base.FieldValue["col_d3"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
             base.FieldValue["col_d4"] = (int)СпосібДоставки;
             base.FieldValue["col_d5"] = АдресДоставки;
             base.FieldValue["col_d6"] = ЧасДоставкиЗ;
             base.FieldValue["col_d7"] = ЧасДоставкиДо;
-            base.FieldValue["col_a1"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_c8"] = Коментар;
-            base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_a5"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a6"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a7"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -22872,15 +22872,15 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_d8", record.Номенклатура.UniqueID.UGuid},
-                    {"col_d9", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a3", record.Серія.UniqueID.UGuid},
-                    {"col_e1", record.Пакування.UniqueID.UGuid},
+                    {"col_d8", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_d9", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a3", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_e1", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_e2", record.Коєфіціент},
                     {"col_e3", record.Кількість},
                     {"col_e4", record.Ціна},
                     {"col_e5", record.Сума},
-                    {"col_a2", record.ДокументПоступлення.UniqueID.UGuid},
+                    {"col_a2", record.ДокументПоступлення.IsEmpty() ? DBNull.Value : record.ДокументПоступлення.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -23089,16 +23089,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -23282,23 +23282,23 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_e8"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_e9"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_e8"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_e9"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_f1"] = СумаДокументу;
-            base.FieldValue["col_f2"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_f3"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_f5"] = Менеджер.UniqueID.UGuid;
-            base.FieldValue["col_f7"] = ДокументПродажу.UniqueID.UGuid;
+            base.FieldValue["col_f2"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_f3"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_f5"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_f7"] = ДокументПродажу.IsEmpty() ? DBNull.Value : ДокументПродажу.UniqueID.UGuid;
             base.FieldValue["col_f8"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_f9"] = Договір.UniqueID.UGuid;
+            base.FieldValue["col_f9"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
             base.FieldValue["col_g1"] = ПричинаПовернення;
-            base.FieldValue["col_g2"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_g2"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Підстава;
             base.FieldValue["col_f6"] = Коментар;
-            base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a4"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a6"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -23707,16 +23707,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_h2", record.НомерРядка},
-                    {"col_g3", record.Номенклатура.UniqueID.UGuid},
-                    {"col_g4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a1", record.Серія.UniqueID.UGuid},
-                    {"col_g5", record.Пакування.UniqueID.UGuid},
+                    {"col_g3", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_g4", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a1", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_g5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_g6", record.Коєфіціент},
                     {"col_g7", record.Кількість},
                     {"col_g8", record.Ціна},
                     {"col_g9", record.Сума},
                     {"col_h1", record.Штрихкод},
-                    {"col_a2", record.ДокументРеалізації.UniqueID.UGuid},
+                    {"col_a2", record.ДокументРеалізації.IsEmpty() ? DBNull.Value : record.ДокументРеалізації.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -23927,16 +23927,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -24118,22 +24118,22 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_b2"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_b3"] = ЗамовленняКлієнта.UniqueID.UGuid;
-            base.FieldValue["col_b4"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_b5"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b3"] = ЗамовленняКлієнта.IsEmpty() ? DBNull.Value : ЗамовленняКлієнта.UniqueID.UGuid;
+            base.FieldValue["col_b4"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a2"] = СумаДокументу;
             base.FieldValue["col_a3"] = (int)ФормаОплати;
-            base.FieldValue["col_a4"] = Договір.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
             base.FieldValue["col_a6"] = (int)ГосподарськаОперація;
             base.FieldValue["col_a1"] = Коментар;
-            base.FieldValue["col_a7"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a8"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_a9"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_b1"] = Підстава;
-            base.FieldValue["col_b7"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_b7"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_b8"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -24505,8 +24505,8 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_c4", record.НомерРядка},
-                    {"col_b8", record.Номенклатура.UniqueID.UGuid},
-                    {"col_b9", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_b8", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_b9", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_c1", record.Кількість},
                     {"col_c3", record.Ціна},
                     {"col_c2", record.Сума},
@@ -24710,16 +24710,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -25038,18 +25038,18 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_c8"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_d5"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_c9"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_d2"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_d3"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_d4"] = Договір.UniqueID.UGuid;
+            base.FieldValue["col_c8"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_d5"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_c9"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_d2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_d3"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_d4"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
             base.FieldValue["col_a1"] = (int)ГосподарськаОперація;
             base.FieldValue["col_d1"] = Коментар;
-            base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a4"] = Підстава;
-            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a6"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -25458,10 +25458,10 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_e4", record.НомерРядка},
-                    {"col_d6", record.Номенклатура.UniqueID.UGuid},
-                    {"col_d7", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a1", record.Серія.UniqueID.UGuid},
-                    {"col_d8", record.Пакування.UniqueID.UGuid},
+                    {"col_d6", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_d7", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a1", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_d8", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_d9", record.Коєфіціент},
                     {"col_e1", record.Кількість},
                     {"col_e2", record.Ціна},
@@ -25622,7 +25622,7 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_e5", record.Каса.UniqueID.UGuid},
+                    {"col_e5", record.Каса.IsEmpty() ? DBNull.Value : record.Каса.UniqueID.UGuid},
                     {"col_e6", record.Сума},
                     
                 };
@@ -25768,7 +25768,7 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_e7", record.БанківськийРахунок.UniqueID.UGuid},
+                    {"col_e7", record.БанківськийРахунок.IsEmpty() ? DBNull.Value : record.БанківськийРахунок.UniqueID.UGuid},
                     {"col_e8", record.Сума},
                     
                 };
@@ -25922,8 +25922,8 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_e9", record.Контрагент.UniqueID.UGuid},
-                    {"col_f1", record.Валюта.UniqueID.UGuid},
+                    {"col_e9", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_f1", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_f2", record.Сума},
                     {"col_a2", (int)record.ТипКонтрагента},
                     
@@ -26124,16 +26124,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -26288,15 +26288,15 @@ namespace GeneratedCode.Документи
         
         public async Task<bool> Save()
         {
-            base.FieldValue["col_f6"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_f7"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_f8"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_f9"] = ВидЦіни.UniqueID.UGuid;
+            base.FieldValue["col_f6"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_f7"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_f8"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_f9"] = ВидЦіни.IsEmpty() ? DBNull.Value : ВидЦіни.UniqueID.UGuid;
             base.FieldValue["col_g1"] = Коментар;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["docname"] = Назва;
-            base.FieldValue["col_a1"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -26603,8 +26603,8 @@ namespace GeneratedCode.Документи
                 
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_g2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_g3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_g2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_g3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_g4", record.Кількість},
                     {"col_g5", record.Ціна},
                     {"col_g6", record.Сума},
@@ -26749,12 +26749,12 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_h2"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_h3"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_h4"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_h5"] = ВидЦіни.UniqueID.UGuid;
+            base.FieldValue["col_h2"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_h3"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_h4"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_h5"] = ВидЦіни.IsEmpty() ? DBNull.Value : ВидЦіни.UniqueID.UGuid;
             base.FieldValue["col_h6"] = Коментар;
-            base.FieldValue["col_a1"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -27060,8 +27060,8 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_h7", record.Номенклатура.UniqueID.UGuid},
-                    {"col_h8", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_h7", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_h8", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_i1", record.Кількість},
                     {"col_h9", record.Ціна},
                     
@@ -27206,13 +27206,13 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_i6"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_i7"] = Відповідальний.UniqueID.UGuid;
+            base.FieldValue["col_i6"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_i7"] = Відповідальний.IsEmpty() ? DBNull.Value : Відповідальний.UniqueID.UGuid;
             base.FieldValue["col_i5"] = Коментар;
-            base.FieldValue["col_a1"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Підстава;
             
             bool result = await BaseSave();
@@ -27542,9 +27542,9 @@ namespace GeneratedCode.Документи
                     {"col_i9", record.КількістьФакт},
                     {"col_j1", record.Коєфіціент},
                     {"col_j3", record.КоєфіціентФакт},
-                    {"col_j4", record.Номенклатура.UniqueID.UGuid},
-                    {"col_j5", record.Пакування.UniqueID.UGuid},
-                    {"col_j6", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_j4", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_j5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_j6", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a1", record.НомерРядка},
                     {"col_a2", record.Коментар},
                     
@@ -27699,13 +27699,13 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a6"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_a8"] = Причина;
             base.FieldValue["col_a1"] = СумаДокументу;
             base.FieldValue["col_a5"] = Коментар;
-            base.FieldValue["col_a2"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_b2"] = Підстава;
             
@@ -28074,15 +28074,15 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a3", record.НомерРядка},
-                    {"col_b2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_b3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a1", record.Серія.UniqueID.UGuid},
-                    {"col_a4", record.Пакування.UniqueID.UGuid},
+                    {"col_b2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_b3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a1", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a4", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a5", record.Коєфіціент},
                     {"col_b4", record.Кількість},
                     {"col_b5", record.Ціна},
                     {"col_a2", record.Сума},
-                    {"col_a6", record.Партія.UniqueID.UGuid},
+                    {"col_a6", record.Партія.IsEmpty() ? DBNull.Value : record.Партія.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -28245,17 +28245,17 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a1"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_b1"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_a9"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a8"] = СумаДокументу;
             base.FieldValue["col_b7"] = Підстава;
-            base.FieldValue["col_b9"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_b9"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_b4"] = (int)ГосподарськаОперація;
             base.FieldValue["col_b2"] = Коментар;
             base.FieldValue["col_a3"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a5"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -28636,15 +28636,15 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_d2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_d3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a2", record.Серія.UniqueID.UGuid},
-                    {"col_d4", record.Пакування.UniqueID.UGuid},
+                    {"col_d2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_d3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a2", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_d4", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_d5", record.Коєфіціент},
                     {"col_d6", record.Кількість},
                     {"col_d8", record.Ціна},
                     {"col_d9", record.Сума},
-                    {"col_a3", record.Партія.UniqueID.UGuid},
+                    {"col_a3", record.Партія.IsEmpty() ? DBNull.Value : record.Партія.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -28853,16 +28853,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -29050,25 +29050,25 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_b4"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b4"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_b7"] = СумаДокументу;
-            base.FieldValue["col_b8"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_a1"] = (int)Статус;
             base.FieldValue["col_a3"] = (int)ФормаОплати;
-            base.FieldValue["col_a4"] = БанківськийРахунок.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = БанківськийРахунокКонтрагента.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Каса.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = БанківськийРахунок.IsEmpty() ? DBNull.Value : БанківськийРахунок.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = БанківськийРахунокКонтрагента.IsEmpty() ? DBNull.Value : БанківськийРахунокКонтрагента.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
             base.FieldValue["col_b9"] = (int)ГосподарськаОперація;
-            base.FieldValue["col_c2"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_c3"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_c4"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_c2"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_c3"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_c4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c1"] = Коментар;
-            base.FieldValue["col_a2"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a8"] = Підстава;
-            base.FieldValue["col_a9"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_b1"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -29467,16 +29467,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a2", record.НомерРядка},
-                    {"col_b9", record.Номенклатура.UniqueID.UGuid},
-                    {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_c2", record.Пакування.UniqueID.UGuid},
+                    {"col_b9", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_c1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_c2", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
-                    {"col_c5", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_c5", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     {"col_c6", record.Ціна},
                     {"col_c7", record.Сума},
                     {"col_c8", record.Скидка},
-                    {"col_a1", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -29687,16 +29687,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -30021,11 +30021,11 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = ДокументПоступлення.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = ДокументПоступлення.IsEmpty() ? DBNull.Value : ДокументПоступлення.UniqueID.UGuid;
             base.FieldValue["col_a8"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -30378,13 +30378,13 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Серія.UniqueID.UGuid},
-                    {"col_a5", record.Пакування.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
-                    {"col_a8", record.Комірка.UniqueID.UGuid},
+                    {"col_a8", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -30533,10 +30533,10 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a7"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -30892,14 +30892,14 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Серія.UniqueID.UGuid},
-                    {"col_a5", record.Пакування.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
-                    {"col_a8", record.КоміркаВідправник.UniqueID.UGuid},
-                    {"col_a9", record.КоміркаОтримувач.UniqueID.UGuid},
+                    {"col_a8", record.КоміркаВідправник.IsEmpty() ? DBNull.Value : record.КоміркаВідправник.UniqueID.UGuid},
+                    {"col_a9", record.КоміркаОтримувач.IsEmpty() ? DBNull.Value : record.КоміркаОтримувач.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -31052,11 +31052,11 @@ namespace GeneratedCode.Документи
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a7"] = ДокументРеалізації.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = ДокументРеалізації.IsEmpty() ? DBNull.Value : ДокументРеалізації.UniqueID.UGuid;
             base.FieldValue["col_a8"] = КлючовіСловаДляПошуку;
             
             bool result = await BaseSave();
@@ -31409,13 +31409,13 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Серія.UniqueID.UGuid},
-                    {"col_a5", record.Пакування.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
-                    {"col_a8", record.Комірка.UniqueID.UGuid},
+                    {"col_a8", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -31562,11 +31562,11 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_a2"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Склад.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
             base.FieldValue["col_g9"] = Коментар;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_a5"] = Підстава;
             base.FieldValue["col_a6"] = КлючовіСловаДляПошуку;
             
@@ -31881,9 +31881,9 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_h1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.Комірка.UniqueID.UGuid},
-                    {"col_h3", record.Пакування.UniqueID.UGuid},
+                    {"col_h1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
+                    {"col_h3", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -32026,13 +32026,13 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_c8"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_d5"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_c8"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_d5"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_d1"] = Коментар;
-            base.FieldValue["col_a3"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a2"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a1"] = Підстава;
-            base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a5"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -32375,8 +32375,8 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_e9", record.Контрагент.UniqueID.UGuid},
-                    {"col_f1", record.Валюта.UniqueID.UGuid},
+                    {"col_e9", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_f1", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_f2", record.Сума},
                     {"col_a2", (int)record.ТипКонтрагента},
                     
@@ -32577,16 +32577,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -32760,17 +32760,17 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_b4"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b4"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_a2"] = (int)ПричинаЗакриттяЗамовлення;
-            base.FieldValue["col_b8"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = ЗамовленняКлієнта.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_c2"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_c4"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = ЗамовленняКлієнта.IsEmpty() ? DBNull.Value : ЗамовленняКлієнта.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
+            base.FieldValue["col_c2"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_c4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c1"] = Коментар;
-            base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = СумаДокументу;
             base.FieldValue["col_a4"] = Підстава;
@@ -33145,12 +33145,12 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a2", record.НомерРядка},
-                    {"col_b9", record.Номенклатура.UniqueID.UGuid},
-                    {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_c2", record.Пакування.UniqueID.UGuid},
+                    {"col_b9", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_c1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_c2", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
-                    {"col_a1", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a3", record.Ціна},
                     {"col_a4", record.Сума},
                     
@@ -33315,17 +33315,17 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_b4"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b4"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_a2"] = (int)ПричинаЗакриттяРахунку;
-            base.FieldValue["col_b8"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = РахунокФактура.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_c2"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_c4"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = РахунокФактура.IsEmpty() ? DBNull.Value : РахунокФактура.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
+            base.FieldValue["col_c2"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_c4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c1"] = Коментар;
-            base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = СумаДокументу;
             base.FieldValue["col_a4"] = Підстава;
@@ -33696,12 +33696,12 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a2", record.НомерРядка},
-                    {"col_b9", record.Номенклатура.UniqueID.UGuid},
-                    {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_c2", record.Пакування.UniqueID.UGuid},
+                    {"col_b9", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_c1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_c2", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
-                    {"col_a1", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a3", record.Ціна},
                     {"col_a4", record.Сума},
                     
@@ -33866,17 +33866,17 @@ namespace GeneratedCode.Документи
             base.FieldValue["docname"] = Назва;
             base.FieldValue["docnomer"] = НомерДок;
             base.FieldValue["docdate"] = ДатаДок;
-            base.FieldValue["col_b4"] = Контрагент.UniqueID.UGuid;
-            base.FieldValue["col_b5"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_b6"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b4"] = Контрагент.IsEmpty() ? DBNull.Value : Контрагент.UniqueID.UGuid;
+            base.FieldValue["col_b5"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_b6"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_a2"] = (int)ПричинаЗакриттяЗамовлення;
-            base.FieldValue["col_b8"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = ЗамовленняПостачальнику.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = Каса.UniqueID.UGuid;
-            base.FieldValue["col_c2"] = Договір.UniqueID.UGuid;
-            base.FieldValue["col_c4"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_b8"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = ЗамовленняПостачальнику.IsEmpty() ? DBNull.Value : ЗамовленняПостачальнику.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = Каса.IsEmpty() ? DBNull.Value : Каса.UniqueID.UGuid;
+            base.FieldValue["col_c2"] = Договір.IsEmpty() ? DBNull.Value : Договір.UniqueID.UGuid;
+            base.FieldValue["col_c4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_c1"] = Коментар;
-            base.FieldValue["col_b2"] = Менеджер.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Менеджер.IsEmpty() ? DBNull.Value : Менеджер.UniqueID.UGuid;
             base.FieldValue["col_b3"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a3"] = СумаДокументу;
             base.FieldValue["col_a4"] = Підстава;
@@ -34247,12 +34247,12 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a2", record.НомерРядка},
-                    {"col_b9", record.Номенклатура.UniqueID.UGuid},
-                    {"col_c1", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_c2", record.Пакування.UniqueID.UGuid},
+                    {"col_b9", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_c1", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_c2", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_c3", record.Коєфіціент},
                     {"col_c4", record.Кількість},
-                    {"col_a1", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a3", record.Ціна},
                     {"col_a4", record.Сума},
                     
@@ -34413,12 +34413,12 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_a5"] = СумаДокументу;
-            base.FieldValue["col_a7"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a8"] = КасаККМ.UniqueID.UGuid;
-            base.FieldValue["col_a9"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = КасаККМ.IsEmpty() ? DBNull.Value : КасаККМ.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_b1"] = КлючовіСловаДляПошуку;
             base.FieldValue["col_a6"] = Знижка;
             base.FieldValue["col_b2"] = СумаБезЗнижки;
@@ -34798,16 +34798,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Серія.UniqueID.UGuid},
-                    {"col_a5", record.Пакування.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a5", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     {"col_a6", record.Коєфіціент},
                     {"col_a7", record.Кількість},
                     {"col_a8", record.Ціна},
                     {"col_a9", record.Сума},
                     {"col_b1", record.Знижка},
-                    {"col_b2", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_b2", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     {"col_b3", record.СумаБезЗнижки},
                     
                 };
@@ -34959,8 +34959,8 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["comment"] = Коментар;
             base.FieldValue["base"] = Підстава;
-            base.FieldValue["author"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a1"] = Організація.UniqueID.UGuid;
+            base.FieldValue["author"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -35348,24 +35348,24 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a3", record.Рахунок.UniqueID.UGuid},
+                    {"col_a3", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a4", record.Аналітика1},
                     {"col_a5", record.Аналітика2},
                     {"col_a6", record.Аналітика3},
                     {"col_a7", record.Сума},
                     {"col_a8", record.Кількість},
-                    {"col_a9", record.Валюта.UniqueID.UGuid},
+                    {"col_a9", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_b1", record.СумаВВалюті},
                     {"col_b2", record.СумаПО},
                     {"col_b8", record.Коментар},
-                    {"col_b9", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b9", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_c1", record.КорАналітика1},
                     {"col_c2", record.КорАналітика2},
                     {"col_c3", record.КорАналітика3},
-                    {"col_c4", record.Податок.UniqueID.UGuid},
+                    {"col_c4", record.Податок.IsEmpty() ? DBNull.Value : record.Податок.UniqueID.UGuid},
                     {"col_c5", record.СумаПодатку},
-                    {"col_c6", record.Журнал.UniqueID.UGuid},
-                    {"col_c7", record.ТипБухОперації.UniqueID.UGuid},
+                    {"col_c6", record.Журнал.IsEmpty() ? DBNull.Value : record.Журнал.UniqueID.UGuid},
+                    {"col_c7", record.ТипБухОперації.IsEmpty() ? DBNull.Value : record.ТипБухОперації.UniqueID.UGuid},
                     {"col_c8", record.КурсВалюти},
                     {"col_d2", (int)record.ВидПроводки},
                     
@@ -35550,15 +35550,15 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_a6"] = ФізичнаОсоба.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a6"] = ФізичнаОсоба.IsEmpty() ? DBNull.Value : ФізичнаОсоба.UniqueID.UGuid;
             base.FieldValue["col_a7"] = СумаДокументу;
-            base.FieldValue["col_a8"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a8"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a9"] = ПризначенняАвансу;
-            base.FieldValue["col_b1"] = ВидЦіни.UniqueID.UGuid;
-            base.FieldValue["col_b2"] = Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_b1"] = ВидЦіни.IsEmpty() ? DBNull.Value : ВидЦіни.UniqueID.UGuid;
+            base.FieldValue["col_b2"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
             base.FieldValue["col_b3"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -35949,16 +35949,16 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Аналітика1},
                     {"col_a4", record.Аналітика2},
                     {"col_a5", record.Аналітика3},
-                    {"col_a6", record.Податки.UniqueID.UGuid},
+                    {"col_a6", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     {"col_a7", record.Дебет},
                     {"col_a8", record.Кількість},
                     {"col_a9", (int)record.ВидПроводки},
                     {"col_b1", record.Кредит},
-                    {"col_b2", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b2", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b3", record.КорАналітика1},
                     {"col_b4", record.КорАналітика2},
                     {"col_b5", record.КорАналітика3},
@@ -36247,9 +36247,9 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a6"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -36538,9 +36538,9 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Автор.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a6"] = ВідобразитиВБухгалтерськомуОбліку;
             
             bool result = await BaseSave();
@@ -37119,14 +37119,14 @@ namespace GeneratedCode.Документи
             base.FieldValue["docdate"] = ДатаДок;
             base.FieldValue["col_a1"] = Коментар;
             base.FieldValue["col_a2"] = Підстава;
-            base.FieldValue["col_a3"] = Організація.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Підрозділ.UniqueID.UGuid;
-            base.FieldValue["col_a5"] = Автор.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Організація.IsEmpty() ? DBNull.Value : Організація.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Підрозділ.IsEmpty() ? DBNull.Value : Підрозділ.UniqueID.UGuid;
+            base.FieldValue["col_a5"] = Автор.IsEmpty() ? DBNull.Value : Автор.UniqueID.UGuid;
             base.FieldValue["col_a6"] = КлючовіСловаДляПошуку;
-            base.FieldValue["col_a7"] = ДокументБухгалтерськаОперація.UniqueID.UGuid;
+            base.FieldValue["col_a7"] = ДокументБухгалтерськаОперація.IsEmpty() ? DBNull.Value : ДокументБухгалтерськаОперація.UniqueID.UGuid;
             base.FieldValue["col_a8"] = ВідобразитиВБухгалтерськомуОбліку;
-            base.FieldValue["col_a9"] = Валюта.UniqueID.UGuid;
-            base.FieldValue["col_b3"] = СкладКомплектуючих.UniqueID.UGuid;
+            base.FieldValue["col_a9"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
+            base.FieldValue["col_b3"] = СкладКомплектуючих.IsEmpty() ? DBNull.Value : СкладКомплектуючих.UniqueID.UGuid;
             
             bool result = await BaseSave();
             if (result)
@@ -37516,14 +37516,14 @@ namespace GeneratedCode.Документи
                 {
                     {"col_a1", record.НомерРядка},
                     {"col_a2", record.Артикул},
-                    {"col_a3", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a5", record.Замовлення.UniqueID.UGuid},
-                    {"col_a6", record.Склад.UniqueID.UGuid},
-                    {"col_a7", record.ОдиницяВиміру.UniqueID.UGuid},
+                    {"col_a3", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a4", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a5", record.Замовлення.IsEmpty() ? DBNull.Value : record.Замовлення.UniqueID.UGuid},
+                    {"col_a6", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a7", record.ОдиницяВиміру.IsEmpty() ? DBNull.Value : record.ОдиницяВиміру.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     {"col_a9", record.Коментар},
-                    {"col_b1", record.Серія.UniqueID.UGuid},
+                    {"col_b1", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_b2", record.Коєфіціент},
                     
                 };
@@ -37714,14 +37714,14 @@ namespace GeneratedCode.Документи
                 {
                     {"col_a1", record.НомерРядка},
                     {"col_a6", record.Артикул},
-                    {"col_a7", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a8", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a9", record.Партія.UniqueID.UGuid},
-                    {"col_b1", record.Склад.UniqueID.UGuid},
-                    {"col_b2", record.ОдиницяВиміру.UniqueID.UGuid},
+                    {"col_a7", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a8", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a9", record.Партія.IsEmpty() ? DBNull.Value : record.Партія.UniqueID.UGuid},
+                    {"col_b1", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_b2", record.ОдиницяВиміру.IsEmpty() ? DBNull.Value : record.ОдиницяВиміру.UniqueID.UGuid},
                     {"col_b3", record.Кількість},
                     {"col_b4", record.Коментар},
-                    {"col_a2", record.Серія.UniqueID.UGuid},
+                    {"col_a2", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a3", record.Коєфіціент},
                     
                 };
@@ -37929,7 +37929,7 @@ namespace GeneratedCode.Документи
                 Dictionary<string, object> fieldValue = new()
                 {
                     {"col_a1", record.НомерРядка},
-                    {"col_a2", record.Рахунок.UniqueID.UGuid},
+                    {"col_a2", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"col_a3", record.Дебет},
                     {"col_a4", record.Кредит},
                     {"col_a5", record.Кількість},
@@ -37937,11 +37937,11 @@ namespace GeneratedCode.Документи
                     {"col_a7", record.Аналітика2},
                     {"col_a8", record.Аналітика3},
                     {"col_b3", (int)record.ВидПроводки},
-                    {"col_b4", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"col_b4", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"col_b5", record.КорАналітика1},
                     {"col_b6", record.КорАналітика2},
                     {"col_b7", record.КорАналітика3},
-                    {"col_a9", record.Податки.UniqueID.UGuid},
+                    {"col_a9", record.Податки.IsEmpty() ? DBNull.Value : record.Податки.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
@@ -50798,12 +50798,12 @@ namespace GeneratedCode.РегістриВідомостей
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_f5", record.Номенклатура.UniqueID.UGuid},
-                    {"col_f6", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_f7", record.ВидЦіни.UniqueID.UGuid},
+                    {"col_f5", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_f6", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_f7", record.ВидЦіни.IsEmpty() ? DBNull.Value : record.ВидЦіни.UniqueID.UGuid},
                     {"col_f8", record.Ціна},
-                    {"col_f9", record.Пакування.UniqueID.UGuid},
-                    {"col_g2", record.Валюта.UniqueID.UGuid},
+                    {"col_f9", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_g2", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, record.Period, record.Owner, record.OwnerType, fieldValue);
@@ -50878,12 +50878,12 @@ namespace GeneratedCode.РегістриВідомостей
         
         public async Task<bool> Save()
         {
-            base.FieldValue["col_f5"] = Номенклатура.UniqueID.UGuid;
-            base.FieldValue["col_f6"] = ХарактеристикаНоменклатури.UniqueID.UGuid;
-            base.FieldValue["col_f7"] = ВидЦіни.UniqueID.UGuid;
+            base.FieldValue["col_f5"] = Номенклатура.IsEmpty() ? DBNull.Value : Номенклатура.UniqueID.UGuid;
+            base.FieldValue["col_f6"] = ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.UniqueID.UGuid;
+            base.FieldValue["col_f7"] = ВидЦіни.IsEmpty() ? DBNull.Value : ВидЦіни.UniqueID.UGuid;
             base.FieldValue["col_f8"] = Ціна;
-            base.FieldValue["col_f9"] = Пакування.UniqueID.UGuid;
-            base.FieldValue["col_g2"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_f9"] = Пакування.IsEmpty() ? DBNull.Value : Пакування.UniqueID.UGuid;
+            base.FieldValue["col_g2"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             
             bool result = await BaseSave();
             Caption = string.Join(", ", [Period.ToString(), ]);
@@ -51001,7 +51001,7 @@ namespace GeneratedCode.РегістриВідомостей
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Валюта.UniqueID.UGuid},
+                    {"col_a1", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a2", record.Курс},
                     {"col_a3", record.Кратність},
                     
@@ -51072,7 +51072,7 @@ namespace GeneratedCode.РегістриВідомостей
         
         public async Task<bool> Save()
         {
-            base.FieldValue["col_a1"] = Валюта.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Валюта.IsEmpty() ? DBNull.Value : Валюта.UniqueID.UGuid;
             base.FieldValue["col_a2"] = Курс;
             base.FieldValue["col_a3"] = Кратність;
             
@@ -51197,9 +51197,9 @@ namespace GeneratedCode.РегістриВідомостей
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Штрихкод},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Пакування.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, record.Period, record.Owner, record.OwnerType, fieldValue);
@@ -51271,9 +51271,9 @@ namespace GeneratedCode.РегістриВідомостей
         public async Task<bool> Save()
         {
             base.FieldValue["col_a1"] = Штрихкод;
-            base.FieldValue["col_a2"] = Номенклатура.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = ХарактеристикаНоменклатури.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Пакування.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Номенклатура.IsEmpty() ? DBNull.Value : Номенклатура.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Пакування.IsEmpty() ? DBNull.Value : Пакування.UniqueID.UGuid;
             
             bool result = await BaseSave();
             Caption = string.Join(", ", [Period.ToString(), Штрихкод, ]);
@@ -51383,7 +51383,7 @@ namespace GeneratedCode.РегістриВідомостей
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Файл.UniqueID.UGuid},
+                    {"col_a1", record.Файл.IsEmpty() ? DBNull.Value : record.Файл.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, record.Period, record.Owner, record.OwnerType, fieldValue);
@@ -51448,7 +51448,7 @@ namespace GeneratedCode.РегістриВідомостей
         
         public async Task<bool> Save()
         {
-            base.FieldValue["col_a1"] = Файл.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Файл.IsEmpty() ? DBNull.Value : Файл.UniqueID.UGuid;
             
             bool result = await BaseSave();
             Caption = string.Join(", ", [Period.ToString(), ]);
@@ -51570,10 +51570,10 @@ namespace GeneratedCode.РегістриВідомостей
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.Склад.UniqueID.UGuid},
-                    {"col_a3", record.Приміщення.UniqueID.UGuid},
-                    {"col_a4", record.Комірка.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a3", record.Приміщення.IsEmpty() ? DBNull.Value : record.Приміщення.UniqueID.UGuid},
+                    {"col_a4", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, record.Period, record.Owner, record.OwnerType, fieldValue);
@@ -51644,10 +51644,10 @@ namespace GeneratedCode.РегістриВідомостей
         
         public async Task<bool> Save()
         {
-            base.FieldValue["col_a1"] = Номенклатура.UniqueID.UGuid;
-            base.FieldValue["col_a2"] = Склад.UniqueID.UGuid;
-            base.FieldValue["col_a3"] = Приміщення.UniqueID.UGuid;
-            base.FieldValue["col_a4"] = Комірка.UniqueID.UGuid;
+            base.FieldValue["col_a1"] = Номенклатура.IsEmpty() ? DBNull.Value : Номенклатура.UniqueID.UGuid;
+            base.FieldValue["col_a2"] = Склад.IsEmpty() ? DBNull.Value : Склад.UniqueID.UGuid;
+            base.FieldValue["col_a3"] = Приміщення.IsEmpty() ? DBNull.Value : Приміщення.UniqueID.UGuid;
+            base.FieldValue["col_a4"] = Комірка.IsEmpty() ? DBNull.Value : Комірка.UniqueID.UGuid;
             
             bool result = await BaseSave();
             Caption = string.Join(", ", [Period.ToString(), ]);
@@ -52121,10 +52121,10 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_e4", record.Номенклатура.UniqueID.UGuid},
-                    {"col_e5", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_e6", record.Склад.UniqueID.UGuid},
-                    {"col_a1", record.Серія.UniqueID.UGuid},
+                    {"col_e4", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_e5", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_e6", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_e7", record.ВНаявності},
                     {"col_e8", record.ДоВідвантаження},
                     
@@ -52203,10 +52203,10 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Склад.UniqueID.UGuid},
-                    {"col_a5", record.Серія.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a5", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a6", record.ВНаявності},
                     {"col_a7", record.ДоВідвантаження},
                     
@@ -52309,10 +52309,10 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Склад.UniqueID.UGuid},
-                    {"col_a5", record.Серія.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a5", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a6", record.ВНаявностіПрихід},
                     {"col_a7", record.ВНаявностіРозхід},
                     {"col_a8", record.ВНаявностіЗалишок},
@@ -52412,10 +52412,10 @@ namespace GeneratedCode.РегістриНакопичення
             {
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a3", record.Склад.UniqueID.UGuid},
-                    {"col_a4", record.Серія.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a3", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a4", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a5", record.ВНаявності},
                     {"col_a6", record.ДоВідвантаження},
                     
@@ -52563,10 +52563,10 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.ЗамовленняКлієнта.UniqueID.UGuid},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.ЗамовленняКлієнта.IsEmpty() ? DBNull.Value : record.ЗамовленняКлієнта.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a5", record.Замовлено},
                     {"col_a6", record.Сума},
                     
@@ -52645,10 +52645,10 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.ЗамовленняКлієнта.UniqueID.UGuid},
-                    {"col_a3", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a5", record.Склад.UniqueID.UGuid},
+                    {"col_a2", record.ЗамовленняКлієнта.IsEmpty() ? DBNull.Value : record.ЗамовленняКлієнта.UniqueID.UGuid},
+                    {"col_a3", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a4", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a5", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a6", record.Замовлено},
                     {"col_a7", record.Сума},
                     
@@ -52783,8 +52783,8 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a2", record.Валюта.UniqueID.UGuid},
-                    {"col_a5", record.Контрагент.UniqueID.UGuid},
+                    {"col_a2", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
+                    {"col_a5", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -52853,8 +52853,8 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Валюта.UniqueID.UGuid},
-                    {"col_a3", record.Контрагент.UniqueID.UGuid},
+                    {"col_a2", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
+                    {"col_a3", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -52943,8 +52943,8 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Валюта.UniqueID.UGuid},
-                    {"col_a3", record.Контрагент.UniqueID.UGuid},
+                    {"col_a2", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
+                    {"col_a3", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
                     {"col_a4", record.СумаПрихід},
                     {"col_a5", record.СумаРозхід},
                     {"col_a6", record.СумаЗалишок},
@@ -53107,12 +53107,12 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a5", record.Організація.UniqueID.UGuid},
-                    {"col_a6", record.Склад.UniqueID.UGuid},
-                    {"col_a7", record.Контрагент.UniqueID.UGuid},
-                    {"col_b3", record.Договір.UniqueID.UGuid},
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a5", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a6", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a7", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_b3", record.Договір.IsEmpty() ? DBNull.Value : record.Договір.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     {"col_b1", record.Сума},
                     {"col_a3", record.Собівартість},
@@ -53201,12 +53201,12 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.Склад.UniqueID.UGuid},
-                    {"col_a4", record.Контрагент.UniqueID.UGuid},
-                    {"col_a5", record.Договір.UniqueID.UGuid},
-                    {"col_a6", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a7", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a4", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_a5", record.Договір.IsEmpty() ? DBNull.Value : record.Договір.UniqueID.UGuid},
+                    {"col_a6", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a7", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     {"col_a9", record.Сума},
                     {"col_b1", record.Собівартість},
@@ -53357,9 +53357,9 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a5", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a6", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a7", record.Склад.UniqueID.UGuid},
+                    {"col_a5", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a6", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a7", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a8", record.ВНаявності},
                     {"col_b1", record.ВРезервіЗіСкладу},
                     {"col_b2", record.ВРезервіПідЗамовлення},
@@ -53441,9 +53441,9 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Склад.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a5", record.ВНаявності},
                     {"col_a6", record.ВРезервіЗіСкладу},
                     {"col_a7", record.ВРезервіПідЗамовлення},
@@ -53536,9 +53536,9 @@ namespace GeneratedCode.РегістриНакопичення
             {
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a3", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a3", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a4", record.ВНаявності},
                     {"col_a5", record.ВРезервіЗіСкладу},
                     {"col_a6", record.ВРезервіПідЗамовлення},
@@ -53685,10 +53685,10 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.ЗамовленняПостачальнику.UniqueID.UGuid},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.ЗамовленняПостачальнику.IsEmpty() ? DBNull.Value : record.ЗамовленняПостачальнику.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a5", record.Замовлено},
                     
                 };
@@ -53763,10 +53763,10 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.ЗамовленняПостачальнику.UniqueID.UGuid},
-                    {"col_a3", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a5", record.Склад.UniqueID.UGuid},
+                    {"col_a2", record.ЗамовленняПостачальнику.IsEmpty() ? DBNull.Value : record.ЗамовленняПостачальнику.UniqueID.UGuid},
+                    {"col_a3", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a4", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a5", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a6", record.Замовлено},
                     
                 };
@@ -53899,8 +53899,8 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a6", record.Контрагент.UniqueID.UGuid},
-                    {"col_a7", record.Валюта.UniqueID.UGuid},
+                    {"col_a6", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_a7", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a8", record.Сума},
                     
                 };
@@ -53969,8 +53969,8 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Контрагент.UniqueID.UGuid},
-                    {"col_a3", record.Валюта.UniqueID.UGuid},
+                    {"col_a2", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_a3", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -54059,8 +54059,8 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Контрагент.UniqueID.UGuid},
-                    {"col_a3", record.Валюта.UniqueID.UGuid},
+                    {"col_a2", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_a3", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a4", record.СумаПрихід},
                     {"col_a5", record.СумаРозхід},
                     {"col_a6", record.СумаЗалишок},
@@ -54201,9 +54201,9 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.Організація.UniqueID.UGuid},
-                    {"col_a2", record.Каса.UniqueID.UGuid},
-                    {"col_a3", record.Валюта.UniqueID.UGuid},
+                    {"col_a1", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a2", record.Каса.IsEmpty() ? DBNull.Value : record.Каса.UniqueID.UGuid},
+                    {"col_a3", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -54275,9 +54275,9 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.Каса.UniqueID.UGuid},
-                    {"col_a4", record.Валюта.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.Каса.IsEmpty() ? DBNull.Value : record.Каса.UniqueID.UGuid},
+                    {"col_a4", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a5", record.Сума},
                     
                 };
@@ -54369,9 +54369,9 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.Каса.UniqueID.UGuid},
-                    {"col_a4", record.Валюта.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.Каса.IsEmpty() ? DBNull.Value : record.Каса.UniqueID.UGuid},
+                    {"col_a4", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a5", record.СумаПрихід},
                     {"col_a6", record.СумаРозхід},
                     {"col_a7", record.СумаЗалишок},
@@ -54460,9 +54460,9 @@ namespace GeneratedCode.РегістриНакопичення
             {
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Організація.UniqueID.UGuid},
-                    {"col_a2", record.Каса.UniqueID.UGuid},
-                    {"col_a3", record.Валюта.UniqueID.UGuid},
+                    {"col_a1", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a2", record.Каса.IsEmpty() ? DBNull.Value : record.Каса.UniqueID.UGuid},
+                    {"col_a3", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -54623,12 +54623,12 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.Організація.UniqueID.UGuid},
-                    {"col_a9", record.ПартіяТоварівКомпозит.UniqueID.UGuid},
-                    {"col_a5", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a7", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a8", record.Серія.UniqueID.UGuid},
-                    {"col_a2", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a9", record.ПартіяТоварівКомпозит.IsEmpty() ? DBNull.Value : record.ПартіяТоварівКомпозит.UniqueID.UGuid},
+                    {"col_a5", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a7", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a8", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a2", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a6", record.Рядок},
                     {"col_a3", record.Кількість},
                     {"col_a4", record.Собівартість},
@@ -54719,12 +54719,12 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.ПартіяТоварівКомпозит.UniqueID.UGuid},
-                    {"col_a4", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a5", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a6", record.Серія.UniqueID.UGuid},
-                    {"col_a7", record.Склад.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.ПартіяТоварівКомпозит.IsEmpty() ? DBNull.Value : record.ПартіяТоварівКомпозит.UniqueID.UGuid},
+                    {"col_a4", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a5", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a6", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a7", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_b1", record.Рядок},
                     {"col_a8", record.Кількість},
                     {"col_a9", record.Собівартість},
@@ -54837,12 +54837,12 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.ПартіяТоварівКомпозит.UniqueID.UGuid},
-                    {"col_a4", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a5", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a6", record.Серія.UniqueID.UGuid},
-                    {"col_a7", record.Склад.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.ПартіяТоварівКомпозит.IsEmpty() ? DBNull.Value : record.ПартіяТоварівКомпозит.UniqueID.UGuid},
+                    {"col_a4", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a5", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a6", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a7", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_b5", record.Рядок},
                     {"col_a8", record.КількістьПрихід},
                     {"col_a9", record.КількістьРозхід},
@@ -54948,12 +54948,12 @@ namespace GeneratedCode.РегістриНакопичення
             {
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Організація.UniqueID.UGuid},
-                    {"col_a2", record.ПартіяТоварівКомпозит.UniqueID.UGuid},
-                    {"col_a3", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a4", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a5", record.Серія.UniqueID.UGuid},
-                    {"col_a6", record.Склад.UniqueID.UGuid},
+                    {"col_a1", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a2", record.ПартіяТоварівКомпозит.IsEmpty() ? DBNull.Value : record.ПартіяТоварівКомпозит.UniqueID.UGuid},
+                    {"col_a3", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a4", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a5", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
+                    {"col_a6", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     
                 };
@@ -55117,12 +55117,12 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a5", record.Організація.UniqueID.UGuid},
-                    {"col_a6", record.Склад.UniqueID.UGuid},
-                    {"col_a7", record.Контрагент.UniqueID.UGuid},
-                    {"col_b3", record.Договір.UniqueID.UGuid},
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a5", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a6", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a7", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_b3", record.Договір.IsEmpty() ? DBNull.Value : record.Договір.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     {"col_b1", record.Сума},
                     {"col_a4", record.Дохід},
@@ -55215,12 +55215,12 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.Склад.UniqueID.UGuid},
-                    {"col_a4", record.Контрагент.UniqueID.UGuid},
-                    {"col_a5", record.Договір.UniqueID.UGuid},
-                    {"col_a6", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a7", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.Склад.IsEmpty() ? DBNull.Value : record.Склад.UniqueID.UGuid},
+                    {"col_a4", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    {"col_a5", record.Договір.IsEmpty() ? DBNull.Value : record.Договір.UniqueID.UGuid},
+                    {"col_a6", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a7", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
                     {"col_a8", record.Кількість},
                     {"col_a9", record.Сума},
                     {"col_b1", record.Дохід},
@@ -55379,11 +55379,11 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a3", record.Пакування.UniqueID.UGuid},
-                    {"col_a4", record.Комірка.UniqueID.UGuid},
-                    {"col_a5", record.Серія.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a3", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_a4", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
+                    {"col_a5", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a6", record.ВНаявності},
                     
                 };
@@ -55465,11 +55465,11 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Пакування.UniqueID.UGuid},
-                    {"col_a5", record.Комірка.UniqueID.UGuid},
-                    {"col_a6", record.Серія.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_a5", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
+                    {"col_a6", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a7", record.ВНаявностіПрихід},
                     {"col_a8", record.ВНаявностіРозхід},
                     {"col_a9", record.ВНаявностіЗалишок},
@@ -55567,11 +55567,11 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a3", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a4", record.Пакування.UniqueID.UGuid},
-                    {"col_a5", record.Комірка.UniqueID.UGuid},
-                    {"col_a6", record.Серія.UniqueID.UGuid},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a4", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_a5", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
+                    {"col_a6", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a7", record.ВНаявності},
                     
                 };
@@ -55662,11 +55662,11 @@ namespace GeneratedCode.РегістриНакопичення
             {
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Номенклатура.UniqueID.UGuid},
-                    {"col_a2", record.ХарактеристикаНоменклатури.UniqueID.UGuid},
-                    {"col_a3", record.Пакування.UniqueID.UGuid},
-                    {"col_a4", record.Комірка.UniqueID.UGuid},
-                    {"col_a5", record.Серія.UniqueID.UGuid},
+                    {"col_a1", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a2", record.ХарактеристикаНоменклатури.IsEmpty() ? DBNull.Value : record.ХарактеристикаНоменклатури.UniqueID.UGuid},
+                    {"col_a3", record.Пакування.IsEmpty() ? DBNull.Value : record.Пакування.UniqueID.UGuid},
+                    {"col_a4", record.Комірка.IsEmpty() ? DBNull.Value : record.Комірка.UniqueID.UGuid},
+                    {"col_a5", record.Серія.IsEmpty() ? DBNull.Value : record.Серія.UniqueID.UGuid},
                     {"col_a6", record.ВНаявності},
                     
                 };
@@ -55805,9 +55805,9 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"col_a1", record.Організація.UniqueID.UGuid},
-                    {"col_a2", record.КасаККМ.UniqueID.UGuid},
-                    {"col_a3", record.Валюта.UniqueID.UGuid},
+                    {"col_a1", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a2", record.КасаККМ.IsEmpty() ? DBNull.Value : record.КасаККМ.UniqueID.UGuid},
+                    {"col_a3", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -55876,9 +55876,9 @@ namespace GeneratedCode.РегістриНакопичення
             {
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
-                    {"col_a1", record.Організація.UniqueID.UGuid},
-                    {"col_a2", record.КасаККМ.UniqueID.UGuid},
-                    {"col_a3", record.Валюта.UniqueID.UGuid},
+                    {"col_a1", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a2", record.КасаККМ.IsEmpty() ? DBNull.Value : record.КасаККМ.UniqueID.UGuid},
+                    {"col_a3", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a4", record.Сума},
                     
                 };
@@ -55969,9 +55969,9 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.КасаККМ.UniqueID.UGuid},
-                    {"col_a4", record.Валюта.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.КасаККМ.IsEmpty() ? DBNull.Value : record.КасаККМ.UniqueID.UGuid},
+                    {"col_a4", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a5", record.СумаПрихід},
                     {"col_a6", record.СумаРозхід},
                     {"col_a7", record.СумаЗалишок},
@@ -56063,9 +56063,9 @@ namespace GeneratedCode.РегістриНакопичення
                 Dictionary<string, object> fieldValue = new Dictionary<string, object>()
                 {
                     {"col_a1", record.Період},
-                    {"col_a2", record.Організація.UniqueID.UGuid},
-                    {"col_a3", record.КасаККМ.UniqueID.UGuid},
-                    {"col_a4", record.Валюта.UniqueID.UGuid},
+                    {"col_a2", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
+                    {"col_a3", record.КасаККМ.IsEmpty() ? DBNull.Value : record.КасаККМ.UniqueID.UGuid},
+                    {"col_a4", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a5", record.Сума},
                     
                 };
@@ -56283,19 +56283,19 @@ namespace GeneratedCode.РегістриНакопичення
                 record.OwnerType = owner.GetNameAndText();
                 Dictionary<string, object> fieldValue = new()
                 {
-                    {"account", record.Рахунок.UniqueID.UGuid},
+                    {"account", record.Рахунок.IsEmpty() ? DBNull.Value : record.Рахунок.UniqueID.UGuid},
                     {"analysis_1", record.Аналітика1},
                     {"analysis_2", record.Аналітика2},
                     {"analysis_3", record.Аналітика3},
-                    {"currency_debit", record.Валюта.UniqueID.UGuid},
+                    {"currency_debit", record.Валюта.IsEmpty() ? DBNull.Value : record.Валюта.UniqueID.UGuid},
                     {"col_a1", (int)record.ВидПроводки},
-                    {"corresponding_account", record.КореспондуючийРахунок.UniqueID.UGuid},
+                    {"corresponding_account", record.КореспондуючийРахунок.IsEmpty() ? DBNull.Value : record.КореспондуючийРахунок.UniqueID.UGuid},
                     {"corresponding_analysis_1", record.КорАналітика1},
                     {"corresponding_analysis_2", record.КорАналітика2},
                     {"corresponding_analysis_3", record.КорАналітика3},
-                    {"tax_information", record.Податок.UniqueID.UGuid},
-                    {"journal", record.Журнал.UniqueID.UGuid},
-                    {"transaction_type", record.ТипБухОперації.UniqueID.UGuid},
+                    {"tax_information", record.Податок.IsEmpty() ? DBNull.Value : record.Податок.UniqueID.UGuid},
+                    {"journal", record.Журнал.IsEmpty() ? DBNull.Value : record.Журнал.UniqueID.UGuid},
+                    {"transaction_type", record.ТипБухОперації.IsEmpty() ? DBNull.Value : record.ТипБухОперації.UniqueID.UGuid},
                     {"debit", record.Сума},
                     {"debit_quantity", record.Кількість},
                     {"currency_debit_amount", record.СумаВВалюті},
@@ -56303,8 +56303,8 @@ namespace GeneratedCode.РегістриНакопичення
                     {"tax_amount", record.СумаПодатку},
                     {"currency_debit_exchange_rate", record.КурсВалюти},
                     {"description", record.Коментар},
-                    {"author", record.Автор.UniqueID.UGuid},
-                    {"company", record.Організація.UniqueID.UGuid},
+                    {"author", record.Автор.IsEmpty() ? DBNull.Value : record.Автор.UniqueID.UGuid},
+                    {"company", record.Організація.IsEmpty() ? DBNull.Value : record.Організація.UniqueID.UGuid},
                     
                 };
                 record.UID = await base.BaseSave(record.UID, record.Period, record.Income, record.Owner, record.OwnerType, record.OwnerLineNum, fieldValue);

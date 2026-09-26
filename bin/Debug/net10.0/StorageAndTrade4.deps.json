@@ -12,8 +12,8 @@
           "Configurator4": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
           "InterfaceGtk4": "4.0.0",
-          "NPOI": "2.8.0",
-          "QuestPDF": "2026.8.0",
+          "NPOI": "2.8.1",
+          "QuestPDF": "2026.9.0",
           "SkiaSharp": "4.152.1"
         },
         "runtime": {
@@ -240,15 +240,15 @@
           }
         }
       },
-      "Google.GenAI/1.21.1": {
+      "Google.GenAI/1.22.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
           "Microsoft.Extensions.AI.Abstractions": "10.10.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.21.1.0",
-            "fileVersion": "1.21.1.0"
+            "assemblyVersion": "1.22.0.0",
+            "fileVersion": "1.22.0.0"
           }
         }
       },
@@ -432,7 +432,7 @@
           }
         }
       },
-      "NPOI/2.8.0": {
+      "NPOI/2.8.1": {
         "dependencies": {
           "BouncyCastle.Cryptography": "2.6.2",
           "Enums.NET": "5.0.0",
@@ -441,34 +441,34 @@
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "SharpZipLib": "1.4.2",
           "SkiaSharp": "4.152.1",
-          "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.2",
-          "System.Security.Cryptography.Xml": "8.0.2",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.4",
+          "System.Security.Cryptography.Xml": "10.0.10",
           "ZString": "2.6.0"
         },
         "runtime": {
           "lib/net10.0/NPOI.Core.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
+            "assemblyVersion": "2.8.1.0",
+            "fileVersion": "2.8.1.0"
           },
           "lib/net10.0/NPOI.OOXML.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
+            "assemblyVersion": "2.8.1.0",
+            "fileVersion": "2.8.1.0"
           },
           "lib/net10.0/NPOI.OpenXml4Net.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
+            "assemblyVersion": "2.8.1.0",
+            "fileVersion": "2.8.1.0"
           },
           "lib/net10.0/NPOI.OpenXmlFormats.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.0.0"
+            "assemblyVersion": "2.8.1.0",
+            "fileVersion": "2.8.1.0"
           }
         }
       },
-      "QuestPDF/2026.8.0": {
+      "QuestPDF/2026.9.0": {
         "runtime": {
           "lib/net10.0/QuestPDF.dll": {
-            "assemblyVersion": "2026.8.0.0",
-            "fileVersion": "2026.8.0.0"
+            "assemblyVersion": "2026.9.0.0",
+            "fileVersion": "2026.9.0.0"
           }
         },
         "runtimeTargets": {
@@ -574,7 +574,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.2": {
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.4": {
         "runtimeTargets": {
           "runtimes/linux-arm/native/libSkiaSharp.so": {
             "rid": "linux-arm",
@@ -583,6 +583,16 @@
           },
           "runtimes/linux-arm64/native/libSkiaSharp.so": {
             "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-bionic-arm64/native/libSkiaSharp.so": {
+            "rid": "linux-bionic-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-bionic-x64/native/libSkiaSharp.so": {
+            "rid": "linux-bionic-x64",
             "assetType": "native",
             "fileVersion": "0.0.0.0"
           },
@@ -711,30 +721,30 @@
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/8.0.1": {
+      "System.Security.Cryptography.Pkcs/10.0.10": {
         "runtime": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46610"
+          "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1026.32716"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46610"
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1026.32716"
           }
         }
       },
-      "System.Security.Cryptography.Xml/8.0.2": {
+      "System.Security.Cryptography.Xml/10.0.10": {
         "dependencies": {
-          "System.Security.Cryptography.Pkcs": "8.0.1"
+          "System.Security.Cryptography.Pkcs": "10.0.10"
         },
         "runtime": {
-          "lib/net8.0/System.Security.Cryptography.Xml.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46610"
+          "lib/net10.0/System.Security.Cryptography.Xml.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1026.32716"
           }
         }
       },
@@ -775,7 +785,7 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
-          "Google.GenAI": "1.21.1",
+          "Google.GenAI": "1.22.0",
           "InterfaceGtkLib": "4.0.0",
           "Microsoft.Extensions.AI": "10.10.0",
           "Microsoft.Extensions.Configuration": "10.0.12",
@@ -944,12 +954,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.21.1": {
+    "Google.GenAI/1.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vOZ5GPEvIsyrYTKd7LFUz4pSlnCINRXrieykd+6g+4uaRK/7haefU3VkFLURgTmtDZ7/pkHsYIu7flX5tLzT/A==",
-      "path": "google.genai/1.21.1",
-      "hashPath": "google.genai.1.21.1.nupkg.sha512"
+      "sha512": "sha512-o8yclR84AfGb8QzCkcYFGJ7wmtfHvwGi6DHRU2ZfkwoLU1vM1wl10HYGZLx6dm4Jsmw9+snX9TJSBMVI9tOplA==",
+      "path": "google.genai/1.22.0",
+      "hashPath": "google.genai.1.22.0.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -1070,19 +1080,19 @@
       "path": "npgsql/10.0.3",
       "hashPath": "npgsql.10.0.3.nupkg.sha512"
     },
-    "NPOI/2.8.0": {
+    "NPOI/2.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fAAc8iUvDuRu+e+TU+Ghg4czJPT1JY/v/wJjHvFaHJo0Y6XMWvanbH1U6nPaCK36UtcIc1Y9uOXNomRhdAaGEw==",
-      "path": "npoi/2.8.0",
-      "hashPath": "npoi.2.8.0.nupkg.sha512"
+      "sha512": "sha512-0Zxx/o+Qc0UkQqcpnzFuDWBfIsX5PO3WKbQopCQMB+8He80EHBR/1OItn/2J7RZLkqYeDqYto/rppxPJKrJBmQ==",
+      "path": "npoi/2.8.1",
+      "hashPath": "npoi.2.8.1.nupkg.sha512"
     },
-    "QuestPDF/2026.8.0": {
+    "QuestPDF/2026.9.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6c/YtDiZm8NgxnFdUDom+IWGVXKhiwBVJ3cvlyIXZYH7Wp0HaXWoR2XWj/RAsZfjpW7J5LMVc1EF6JnJFouoXQ==",
-      "path": "questpdf/2026.8.0",
-      "hashPath": "questpdf.2026.8.0.nupkg.sha512"
+      "sha512": "sha512-qJuBVHeJMECFI4xiUQ1+kWaHm8NoVeyNepByezQOjlWGZnDzL4eZjrtHyu6G2ccVVOLOu+z1nX1N3i3zkzuArA==",
+      "path": "questpdf/2026.9.0",
+      "hashPath": "questpdf.2026.9.0.nupkg.sha512"
     },
     "SharpZipLib/1.4.2": {
       "type": "package",
@@ -1098,12 +1108,12 @@
       "path": "skiasharp/4.152.1",
       "hashPath": "skiasharp.4.152.1.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.2": {
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1rmveKZ8Cz7k4QJQdtKV6RFXYIEqYBiX450Bm0Bk41EE50MMPUyF81cRnASsuV0qCwdZuzjZTaFvoqS0Q2zVfA==",
-      "path": "skiasharp.nativeassets.linux.nodependencies/3.119.2",
-      "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.2.nupkg.sha512"
+      "sha512": "sha512-iFnpOfZoim2SwhSPy0EJNZtQAaWM7D0A6Q1YvquwOXUdQAFrSy81Tfb1I4c0IHrrQnoVjcZPcwOc1+VM2ja77w==",
+      "path": "skiasharp.nativeassets.linux.nodependencies/3.119.4",
+      "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.4.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.macOS/4.152.1": {
       "type": "package",
@@ -1140,19 +1150,19 @@
       "path": "system.numerics.tensors/10.0.12",
       "hashPath": "system.numerics.tensors.10.0.12.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/8.0.1": {
+    "System.Security.Cryptography.Pkcs/10.0.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
-      "path": "system.security.cryptography.pkcs/8.0.1",
-      "hashPath": "system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
+      "sha512": "sha512-KG8t5RHczdgB3IWvRndpI0nE1DSo7ikDYSDbITxfgRFyIvnYiKzuPjaZOsPnwFQ1aOGUl9sEulJul9wlHLEUoA==",
+      "path": "system.security.cryptography.pkcs/10.0.10",
+      "hashPath": "system.security.cryptography.pkcs.10.0.10.nupkg.sha512"
     },
-    "System.Security.Cryptography.Xml/8.0.2": {
+    "System.Security.Cryptography.Xml/10.0.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aDM/wm0ZGEZ6ZYJLzgqjp2FZdHbDHh6/OmpGfb7AdZ105zYmPn/83JRU2xLIbwgoNz9U1SLUTJN0v5th3qmvjA==",
-      "path": "system.security.cryptography.xml/8.0.2",
-      "hashPath": "system.security.cryptography.xml.8.0.2.nupkg.sha512"
+      "sha512": "sha512-Mz6Y+s+uMQKj1H2BUF0OhlmaOQkLgSG34/IrUaBDirYBQ6bgwcFvO/XtXWcoDlBLFoFB0uKqDNhybHOd+fQK1A==",
+      "path": "system.security.cryptography.xml/10.0.10",
+      "hashPath": "system.security.cryptography.xml.10.0.10.nupkg.sha512"
     },
     "ZString/2.6.0": {
       "type": "package",

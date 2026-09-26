@@ -47,7 +47,11 @@ partial class СкладськіКомірки_Список : DirectoryFormJourn
             Папки.CallBack_Activate = async uniqueID =>
             {
                 //Відбір по полю Папка
-                ParentWhereList = [new(СкладськіКомірки_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+                ParentWhereList = uniqueID.IsEmpty() ?
+                    [new(СкладськіКомірки_Const.Папка, Comparison.ISNULL, null, true) { Group = "topLevel" },
+                        new(Comparison.OR, СкладськіКомірки_Const.Папка, Comparison.EQ, Guid.Empty) { Group = "topLevel" }]
+                         : [new(СкладськіКомірки_Const.Папка, Comparison.EQ, uniqueID.UGuid)];
+
                 if (!UseHierarchy.Active && TypeWhereState == TypeWhere.Standart)
                 {
                     PagesClear();
