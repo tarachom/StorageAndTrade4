@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 26.09.2026 16:05:02
+ * Дата конфігурації: 29.09.2026 16:41:36
  *
  *
  * Цей код згенерований в Конфігураторі 3. Шаблон Gtk4.xslt
@@ -378,7 +378,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = ПакуванняОдиниціВиміру_PointerControl.New();
                         ОдиницяВиміру.Caption = "";
                         ОдиницяВиміру.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ОдиницяВиміру.Pointer.UniqueID.UGuid;
+                        object get() => ОдиницяВиміру.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ОдиницяВиміру.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Номенклатура_Const.ОдиницяВиміру, get, sw));
                 form.Filter.Append("Пакування:", ОдиницяВиміру, sw);
@@ -400,7 +400,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Категорії_PointerControl Категорія = Категорії_PointerControl.New();
                         Категорія.Caption = "";
                         Категорія.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Категорія.Pointer.UniqueID.UGuid;
+                        object get() => Категорія.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Категорія.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Номенклатура_Const.Категорія, get, sw));
                 form.Filter.Append("Категорія:", Категорія, sw);
@@ -696,7 +696,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 ПакуванняОдиниціВиміру_PointerControl ОдиницяВиміру = ПакуванняОдиниціВиміру_PointerControl.New();
                         ОдиницяВиміру.Caption = "";
                         ОдиницяВиміру.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ОдиницяВиміру.Pointer.UniqueID.UGuid;
+                        object get() => ОдиницяВиміру.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ОдиницяВиміру.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Номенклатура_Const.ОдиницяВиміру, get, sw));
                 form.Filter.Append("Пакування:", ОдиницяВиміру, sw);
@@ -3294,7 +3294,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВидиЦін_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -4422,7 +4422,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(СтруктураПідприємства_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -4433,7 +4433,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Категорії_PointerControl Категорія = Категорії_PointerControl.New();
                         Категорія.Caption = "";
                         Категорія.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Категорія.Pointer.UniqueID.UGuid;
+                        object get() => Категорія.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Категорія.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(СтруктураПідприємства_Const.Категорія, get, sw));
                 form.Filter.Append("Категорія:", Категорія, sw);
@@ -6828,7 +6828,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Каси_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -7336,7 +7336,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(БанківськіРахункиОрганізацій_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -7622,7 +7622,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ДоговориКонтрагентів_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -8145,7 +8145,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(БанківськіРахункиКонтрагентів_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -10525,7 +10525,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(СкладськіПриміщення_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -10936,7 +10936,7 @@ namespace GeneratedCode.Довідники.ТабличніСписки
                 СкладськіПриміщення_PointerControl Приміщення = СкладськіПриміщення_PointerControl.New();
                         Приміщення.Caption = "";
                         Приміщення.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Приміщення.Pointer.UniqueID.UGuid;
+                        object get() => Приміщення.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Приміщення.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(СкладськіКомірки_Const.Приміщення, get, sw));
                 form.Filter.Append("Приміщення:", Приміщення, sw);
@@ -16976,7 +16976,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальнику_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -16987,7 +16987,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальнику_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -16998,7 +16998,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальнику_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -17009,7 +17009,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальнику_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -17030,7 +17030,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальнику_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -17530,7 +17530,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -17541,7 +17541,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -17552,7 +17552,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -17563,7 +17563,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -17574,7 +17574,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -17595,7 +17595,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -18079,7 +18079,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -18090,7 +18090,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -18101,7 +18101,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -18112,7 +18112,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -18123,7 +18123,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -18144,7 +18144,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоступленняТоварівТаПослуг_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -18650,7 +18650,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -18661,7 +18661,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -18672,7 +18672,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -18683,7 +18683,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -18694,7 +18694,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -18715,7 +18715,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнта_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -19225,7 +19225,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -19236,7 +19236,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -19247,7 +19247,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -19258,7 +19258,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -19269,7 +19269,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -19290,7 +19290,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РеалізаціяТоварівТаПослуг_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -19734,7 +19734,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВстановленняЦінНоменклатури_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -19745,7 +19745,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВстановленняЦінНоменклатури_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -19756,7 +19756,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 ВидиЦін_PointerControl ВидЦіни = ВидиЦін_PointerControl.New();
                         ВидЦіни.Caption = "";
                         ВидЦіни.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ВидЦіни.Pointer.UniqueID.UGuid;
+                        object get() => ВидЦіни.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ВидЦіни.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВстановленняЦінНоменклатури_Const.ВидЦіни, get, sw));
                 form.Filter.Append("Вид ціни:", ВидЦіни, sw);
@@ -19767,7 +19767,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВстановленняЦінНоменклатури_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -20253,7 +20253,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПрихіднийКасовийОрдер_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -20264,7 +20264,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПрихіднийКасовийОрдер_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -20275,7 +20275,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПрихіднийКасовийОрдер_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -20286,7 +20286,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПрихіднийКасовийОрдер_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -20307,7 +20307,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПрихіднийКасовийОрдер_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -20811,7 +20811,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозхіднийКасовийОрдер_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -20822,7 +20822,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозхіднийКасовийОрдер_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -20833,7 +20833,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозхіднийКасовийОрдер_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -20844,7 +20844,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозхіднийКасовийОрдер_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -20865,7 +20865,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозхіднийКасовийОрдер_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -21303,7 +21303,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -21314,7 +21314,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl СкладВідправник = Склади_PointerControl.New();
                         СкладВідправник.Caption = "";
                         СкладВідправник.AfterSelectFunc = () => sw.Active = true;
-                        object get() => СкладВідправник.Pointer.UniqueID.UGuid;
+                        object get() => СкладВідправник.Pointer.UniqueID.IsEmpty() ? DBNull.Value : СкладВідправник.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварів_Const.СкладВідправник, get, sw));
                 form.Filter.Append("Склад відправник:", СкладВідправник, sw);
@@ -21325,7 +21325,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl СкладОтримувач = Склади_PointerControl.New();
                         СкладОтримувач.Caption = "";
                         СкладОтримувач.AfterSelectFunc = () => sw.Active = true;
-                        object get() => СкладОтримувач.Pointer.UniqueID.UGuid;
+                        object get() => СкладОтримувач.Pointer.UniqueID.IsEmpty() ? DBNull.Value : СкладОтримувач.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварів_Const.СкладОтримувач, get, sw));
                 form.Filter.Append("Склад отримувач:", СкладОтримувач, sw);
@@ -21336,7 +21336,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварів_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -21822,7 +21822,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -21833,7 +21833,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -21844,7 +21844,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -21855,7 +21855,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -21866,7 +21866,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -21887,7 +21887,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівПостачальнику_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -22397,7 +22397,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -22408,7 +22408,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -22419,7 +22419,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -22430,7 +22430,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -22441,7 +22441,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -22462,7 +22462,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПоверненняТоварівВідКлієнта_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -22950,7 +22950,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АктВиконанихРобіт_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -22961,7 +22961,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АктВиконанихРобіт_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -22972,7 +22972,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АктВиконанихРобіт_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -22983,7 +22983,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АктВиконанихРобіт_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -23004,7 +23004,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АктВиконанихРобіт_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -23460,7 +23460,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВведенняЗалишків_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -23471,7 +23471,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВведенняЗалишків_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -23482,7 +23482,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВведенняЗалишків_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -23493,7 +23493,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВведенняЗалишків_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -23504,7 +23504,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВведенняЗалишків_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -23912,7 +23912,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(НадлишкиТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -23923,7 +23923,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(НадлишкиТоварів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -23934,7 +23934,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(НадлишкиТоварів_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -24322,7 +24322,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПересортицяТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -24333,7 +24333,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПересортицяТоварів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -24344,7 +24344,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПересортицяТоварів_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -24754,7 +24754,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПерерахунокТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -24765,7 +24765,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПерерахунокТоварів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -24776,7 +24776,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 ФізичніОсоби_PointerControl Відповідальний = ФізичніОсоби_PointerControl.New();
                         Відповідальний.Caption = "";
                         Відповідальний.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Відповідальний.Pointer.UniqueID.UGuid;
+                        object get() => Відповідальний.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Відповідальний.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПерерахунокТоварів_Const.Відповідальний, get, sw));
                 form.Filter.Append("Відповідальний:", Відповідальний, sw);
@@ -24787,7 +24787,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПерерахунокТоварів_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -25207,7 +25207,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПсуванняТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -25218,7 +25218,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПсуванняТоварів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -25239,7 +25239,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПсуванняТоварів_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -25675,7 +25675,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -25686,7 +25686,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -25697,7 +25697,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -25718,7 +25718,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВнутрішнєСпоживанняТоварів_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -26208,7 +26208,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РахунокФактура_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -26219,7 +26219,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РахунокФактура_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -26230,7 +26230,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РахунокФактура_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -26241,7 +26241,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РахунокФактура_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -26252,7 +26252,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РахунокФактура_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -26273,7 +26273,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РахунокФактура_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -26695,7 +26695,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозміщенняТоварівНаСкладі_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -26706,7 +26706,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 ПоступленняТоварівТаПослуг_PointerControl ДокументПоступлення = ПоступленняТоварівТаПослуг_PointerControl.New();
                         ДокументПоступлення.Caption = "";
                         ДокументПоступлення.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ДокументПоступлення.Pointer.UniqueID.UGuid;
+                        object get() => ДокументПоступлення.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ДокументПоступлення.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозміщенняТоварівНаСкладі_Const.ДокументПоступлення, get, sw));
                 form.Filter.Append("Документ поступлення:", ДокументПоступлення, sw);
@@ -26717,7 +26717,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозміщенняТоварівНаСкладі_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -27105,7 +27105,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварівНаСкладі_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -27116,7 +27116,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварівНаСкладі_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -27127,7 +27127,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПереміщенняТоварівНаСкладі_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -27515,7 +27515,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗбіркаТоварівНаСкладі_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -27526,7 +27526,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 РеалізаціяТоварівТаПослуг_PointerControl ДокументРеалізації = РеалізаціяТоварівТаПослуг_PointerControl.New();
                         ДокументРеалізації.Caption = "";
                         ДокументРеалізації.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ДокументРеалізації.Pointer.UniqueID.UGuid;
+                        object get() => ДокументРеалізації.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ДокументРеалізації.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗбіркаТоварівНаСкладі_Const.ДокументРеалізації, get, sw));
                 form.Filter.Append("Документ реалізації:", ДокументРеалізації, sw);
@@ -27537,7 +27537,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗбіркаТоварівНаСкладі_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -27925,7 +27925,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозміщенняНоменклатуриПоКоміркам_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -27936,7 +27936,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозміщенняНоменклатуриПоКоміркам_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -27947,7 +27947,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозміщенняНоменклатуриПоКоміркам_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -28313,7 +28313,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(КорегуванняБоргу_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -28324,7 +28324,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(КорегуванняБоргу_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -28812,7 +28812,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -28823,7 +28823,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -28834,7 +28834,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -28845,7 +28845,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -28856,7 +28856,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -28888,7 +28888,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняКлієнта_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -29402,7 +29402,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -29413,7 +29413,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -29424,7 +29424,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -29435,7 +29435,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -29446,7 +29446,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -29467,7 +29467,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяРахункуФактури_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -29999,7 +29999,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -30010,7 +30010,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -30021,7 +30021,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -30032,7 +30032,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -30043,7 +30043,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -30075,7 +30075,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗакриттяЗамовленняПостачальнику_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -31389,7 +31389,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АвансовийЗвіт_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -31400,7 +31400,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 ФізичніОсоби_PointerControl ФізичнаОсоба = ФізичніОсоби_PointerControl.New();
                         ФізичнаОсоба.Caption = "";
                         ФізичнаОсоба.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ФізичнаОсоба.Pointer.UniqueID.UGuid;
+                        object get() => ФізичнаОсоба.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ФізичнаОсоба.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АвансовийЗвіт_Const.ФізичнаОсоба, get, sw));
                 form.Filter.Append("Фізична особа:", ФізичнаОсоба, sw);
@@ -31411,7 +31411,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(АвансовийЗвіт_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -31785,7 +31785,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Амортизація_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -31796,7 +31796,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Амортизація_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -32152,7 +32152,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВизначенняФінансовогоРезультату_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -32163,7 +32163,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВизначенняФінансовогоРезультату_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -32809,7 +32809,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВиготовленняПродукції_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -32820,7 +32820,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 СтруктураПідприємства_PointerControl Підрозділ = СтруктураПідприємства_PointerControl.New();
                         Підрозділ.Caption = "";
                         Підрозділ.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Підрозділ.Pointer.UniqueID.UGuid;
+                        object get() => Підрозділ.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Підрозділ.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВиготовленняПродукції_Const.Підрозділ, get, sw));
                 form.Filter.Append("Підрозділ:", Підрозділ, sw);
@@ -32831,7 +32831,7 @@ namespace GeneratedCode.Документи.ТабличніСписки
                 Користувачі_PointerControl Автор = Користувачі_PointerControl.New();
                         Автор.Caption = "";
                         Автор.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Автор.Pointer.UniqueID.UGuid;
+                        object get() => Автор.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Автор.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВиготовленняПродукції_Const.Автор, get, sw));
                 form.Filter.Append("Автор:", Автор, sw);
@@ -45853,7 +45853,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЦіниНоменклатури_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -45864,7 +45864,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЦіниНоменклатури_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -45875,7 +45875,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 ВидиЦін_PointerControl ВидЦіни = ВидиЦін_PointerControl.New();
                         ВидЦіни.Caption = "";
                         ВидЦіни.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ВидЦіни.Pointer.UniqueID.UGuid;
+                        object get() => ВидЦіни.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ВидЦіни.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЦіниНоменклатури_Const.ВидЦіни, get, sw));
                 form.Filter.Append("ВидЦіни:", ВидЦіни, sw);
@@ -45896,7 +45896,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 ПакуванняОдиниціВиміру_PointerControl Пакування = ПакуванняОдиниціВиміру_PointerControl.New();
                         Пакування.Caption = "";
                         Пакування.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Пакування.Pointer.UniqueID.UGuid;
+                        object get() => Пакування.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Пакування.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЦіниНоменклатури_Const.Пакування, get, sw));
                 form.Filter.Append("Пакування:", Пакування, sw);
@@ -45907,7 +45907,7 @@ namespace GeneratedCode.РегістриВідомостей.ТабличніС�
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЦіниНоменклатури_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -47115,7 +47115,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариНаСкладах_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -47126,7 +47126,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариНаСкладах_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -47137,7 +47137,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариНаСкладах_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -47148,7 +47148,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 СеріїНоменклатури_PointerControl Серія = СеріїНоменклатури_PointerControl.New();
                         Серія.Caption = "";
                         Серія.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Серія.Pointer.UniqueID.UGuid;
+                        object get() => Серія.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Серія.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариНаСкладах_Const.Серія, get, sw));
                 form.Filter.Append("Серія:", Серія, sw);
@@ -47502,7 +47502,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ЗамовленняКлієнта_PointerControl ЗамовленняКлієнта = ЗамовленняКлієнта_PointerControl.New();
                         ЗамовленняКлієнта.Caption = "";
                         ЗамовленняКлієнта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ЗамовленняКлієнта.Pointer.UniqueID.UGuid;
+                        object get() => ЗамовленняКлієнта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ЗамовленняКлієнта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнтів_Const.ЗамовленняКлієнта, get, sw));
                 form.Filter.Append("Замовлення клієнта:", ЗамовленняКлієнта, sw);
@@ -47513,7 +47513,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнтів_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -47524,7 +47524,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнтів_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -47535,7 +47535,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняКлієнтів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -47824,7 +47824,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозрахункиЗКлієнтами_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -47835,7 +47835,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозрахункиЗКлієнтами_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -48253,7 +48253,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Закупівлі_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -48264,7 +48264,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Закупівлі_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -48275,7 +48275,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Закупівлі_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -48286,7 +48286,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
                         Договір.Caption = "";
                         Договір.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Договір.Pointer.UniqueID.UGuid;
+                        object get() => Договір.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Договір.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Закупівлі_Const.Договір, get, sw));
                 form.Filter.Append("Договір:", Договір, sw);
@@ -48297,7 +48297,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Закупівлі_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -48308,7 +48308,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Закупівлі_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -48666,7 +48666,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВільніЗалишки_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -48677,7 +48677,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВільніЗалишки_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -48688,7 +48688,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ВільніЗалишки_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -49021,7 +49021,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ЗамовленняПостачальнику_PointerControl ЗамовленняПостачальнику = ЗамовленняПостачальнику_PointerControl.New();
                         ЗамовленняПостачальнику.Caption = "";
                         ЗамовленняПостачальнику.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ЗамовленняПостачальнику.Pointer.UniqueID.UGuid;
+                        object get() => ЗамовленняПостачальнику.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ЗамовленняПостачальнику.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальникам_Const.ЗамовленняПостачальнику, get, sw));
                 form.Filter.Append("Замовлення постачальнику:", ЗамовленняПостачальнику, sw);
@@ -49032,7 +49032,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальникам_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -49043,7 +49043,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальникам_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -49054,7 +49054,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ЗамовленняПостачальникам_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -49342,7 +49342,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозрахункиЗПостачальниками_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -49353,7 +49353,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РозрахункиЗПостачальниками_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -49661,7 +49661,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РухКоштів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -49672,7 +49672,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Каси_PointerControl Каса = Каси_PointerControl.New();
                         Каса.Caption = "";
                         Каса.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Каса.Pointer.UniqueID.UGuid;
+                        object get() => Каса.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Каса.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РухКоштів_Const.Каса, get, sw));
                 form.Filter.Append("Каса:", Каса, sw);
@@ -49683,7 +49683,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РухКоштів_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -50124,7 +50124,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПартіїТоварів_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -50135,7 +50135,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ПартіяТоварівКомпозит_PointerControl ПартіяТоварівКомпозит = ПартіяТоварівКомпозит_PointerControl.New();
                         ПартіяТоварівКомпозит.Caption = "";
                         ПартіяТоварівКомпозит.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ПартіяТоварівКомпозит.Pointer.UniqueID.UGuid;
+                        object get() => ПартіяТоварівКомпозит.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ПартіяТоварівКомпозит.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПартіїТоварів_Const.ПартіяТоварівКомпозит, get, sw));
                 form.Filter.Append("Партія:", ПартіяТоварівКомпозит, sw);
@@ -50146,7 +50146,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПартіїТоварів_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -50157,7 +50157,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПартіїТоварів_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -50168,7 +50168,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 СеріїНоменклатури_PointerControl Серія = СеріїНоменклатури_PointerControl.New();
                         Серія.Caption = "";
                         Серія.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Серія.Pointer.UniqueID.UGuid;
+                        object get() => Серія.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Серія.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПартіїТоварів_Const.Серія, get, sw));
                 form.Filter.Append("Серія:", Серія, sw);
@@ -50179,7 +50179,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ПартіїТоварів_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -50626,7 +50626,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Продажі_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -50637,7 +50637,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Склади_PointerControl Склад = Склади_PointerControl.New();
                         Склад.Caption = "";
                         Склад.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Склад.Pointer.UniqueID.UGuid;
+                        object get() => Склад.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Склад.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Продажі_Const.Склад, get, sw));
                 form.Filter.Append("Склад:", Склад, sw);
@@ -50648,7 +50648,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Контрагенти_PointerControl Контрагент = Контрагенти_PointerControl.New();
                         Контрагент.Caption = "";
                         Контрагент.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Контрагент.Pointer.UniqueID.UGuid;
+                        object get() => Контрагент.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Контрагент.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Продажі_Const.Контрагент, get, sw));
                 form.Filter.Append("Контрагент:", Контрагент, sw);
@@ -50659,7 +50659,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ДоговориКонтрагентів_PointerControl Договір = ДоговориКонтрагентів_PointerControl.New();
                         Договір.Caption = "";
                         Договір.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Договір.Pointer.UniqueID.UGuid;
+                        object get() => Договір.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Договір.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Продажі_Const.Договір, get, sw));
                 form.Filter.Append("Договір:", Договір, sw);
@@ -50670,7 +50670,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Продажі_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -50681,7 +50681,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(Продажі_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -51040,7 +51040,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Номенклатура_PointerControl Номенклатура = Номенклатура_PointerControl.New();
                         Номенклатура.Caption = "";
                         Номенклатура.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Номенклатура.Pointer.UniqueID.UGuid;
+                        object get() => Номенклатура.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Номенклатура.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариВКомірках_Const.Номенклатура, get, sw));
                 form.Filter.Append("Номенклатура:", Номенклатура, sw);
@@ -51051,7 +51051,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ХарактеристикиНоменклатури_PointerControl ХарактеристикаНоменклатури = ХарактеристикиНоменклатури_PointerControl.New();
                         ХарактеристикаНоменклатури.Caption = "";
                         ХарактеристикаНоменклатури.AfterSelectFunc = () => sw.Active = true;
-                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
+                        object get() => ХарактеристикаНоменклатури.Pointer.UniqueID.IsEmpty() ? DBNull.Value : ХарактеристикаНоменклатури.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариВКомірках_Const.ХарактеристикаНоменклатури, get, sw));
                 form.Filter.Append("Характеристика:", ХарактеристикаНоменклатури, sw);
@@ -51062,7 +51062,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ПакуванняОдиниціВиміру_PointerControl Пакування = ПакуванняОдиниціВиміру_PointerControl.New();
                         Пакування.Caption = "";
                         Пакування.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Пакування.Pointer.UniqueID.UGuid;
+                        object get() => Пакування.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Пакування.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариВКомірках_Const.Пакування, get, sw));
                 form.Filter.Append("Пакування:", Пакування, sw);
@@ -51073,7 +51073,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 СкладськіКомірки_PointerControl Комірка = СкладськіКомірки_PointerControl.New();
                         Комірка.Caption = "";
                         Комірка.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Комірка.Pointer.UniqueID.UGuid;
+                        object get() => Комірка.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Комірка.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариВКомірках_Const.Комірка, get, sw));
                 form.Filter.Append("Комірка:", Комірка, sw);
@@ -51084,7 +51084,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 СеріїНоменклатури_PointerControl Серія = СеріїНоменклатури_PointerControl.New();
                         Серія.Caption = "";
                         Серія.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Серія.Pointer.UniqueID.UGuid;
+                        object get() => Серія.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Серія.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(ТовариВКомірках_Const.Серія, get, sw));
                 form.Filter.Append("Серія:", Серія, sw);
@@ -51395,7 +51395,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Організації_PointerControl Організація = Організації_PointerControl.New();
                         Організація.Caption = "";
                         Організація.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Організація.Pointer.UniqueID.UGuid;
+                        object get() => Організація.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Організація.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РухКоштівККМ_Const.Організація, get, sw));
                 form.Filter.Append("Організація:", Організація, sw);
@@ -51406,7 +51406,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 КасиККМ_PointerControl КасаККМ = КасиККМ_PointerControl.New();
                         КасаККМ.Caption = "";
                         КасаККМ.AfterSelectFunc = () => sw.Active = true;
-                        object get() => КасаККМ.Pointer.UniqueID.UGuid;
+                        object get() => КасаККМ.Pointer.UniqueID.IsEmpty() ? DBNull.Value : КасаККМ.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РухКоштівККМ_Const.КасаККМ, get, sw));
                 form.Filter.Append("Каса ККМ:", КасаККМ, sw);
@@ -51417,7 +51417,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 Валюти_PointerControl Валюта = Валюти_PointerControl.New();
                         Валюта.Caption = "";
                         Валюта.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Валюта.Pointer.UniqueID.UGuid;
+                        object get() => Валюта.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Валюта.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(РухКоштівККМ_Const.Валюта, get, sw));
                 form.Filter.Append("Валюта:", Валюта, sw);
@@ -52122,7 +52122,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ПланРахунків_PointerControl Рахунок = ПланРахунків_PointerControl.New();
                         Рахунок.Caption = "";
                         Рахунок.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Рахунок.Pointer.UniqueID.UGuid;
+                        object get() => Рахунок.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Рахунок.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(БухгалтерськіОперації_Const.Рахунок, get, sw));
                 form.Filter.Append("Рахунок:", Рахунок, sw);
@@ -52133,7 +52133,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ПланРахунків_PointerControl КореспондуючийРахунок = ПланРахунків_PointerControl.New();
                         КореспондуючийРахунок.Caption = "";
                         КореспондуючийРахунок.AfterSelectFunc = () => sw.Active = true;
-                        object get() => КореспондуючийРахунок.Pointer.UniqueID.UGuid;
+                        object get() => КореспондуючийРахунок.Pointer.UniqueID.IsEmpty() ? DBNull.Value : КореспондуючийРахунок.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(БухгалтерськіОперації_Const.КореспондуючийРахунок, get, sw));
                 form.Filter.Append("Кореспондуючий рахунок:", КореспондуючийРахунок, sw);
@@ -52144,7 +52144,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ВидиПодатків_PointerControl Податок = ВидиПодатків_PointerControl.New();
                         Податок.Caption = "";
                         Податок.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Податок.Pointer.UniqueID.UGuid;
+                        object get() => Податок.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Податок.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(БухгалтерськіОперації_Const.Податок, get, sw));
                 form.Filter.Append("Податок:", Податок, sw);
@@ -52155,7 +52155,7 @@ namespace GeneratedCode.РегістриНакопичення.Табличні�
                 ВидиЖурналів_PointerControl Журнал = ВидиЖурналів_PointerControl.New();
                         Журнал.Caption = "";
                         Журнал.AfterSelectFunc = () => sw.Active = true;
-                        object get() => Журнал.Pointer.UniqueID.UGuid;
+                        object get() => Журнал.Pointer.UniqueID.IsEmpty() ? DBNull.Value : Журнал.Pointer.UniqueID.UGuid;
                     
                 filterList.Add(new(БухгалтерськіОперації_Const.Журнал, get, sw));
                 form.Filter.Append("Журнал:", Журнал, sw);

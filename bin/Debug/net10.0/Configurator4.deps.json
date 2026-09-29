@@ -388,6 +388,18 @@
           }
         }
       },
+      "OllamaSharp/5.4.30": {
+        "dependencies": {
+          "Microsoft.Extensions.AI": "10.10.0",
+          "Microsoft.Extensions.AI.Abstractions": "10.10.0"
+        },
+        "runtime": {
+          "lib/net10.0/OllamaSharp.dll": {
+            "assemblyVersion": "5.4.30.0",
+            "fileVersion": "5.4.30.0"
+          }
+        }
+      },
       "System.CodeDom/7.0.0": {
         "runtime": {
           "lib/net7.0/System.CodeDom.dll": {
@@ -443,7 +455,8 @@
           "InterfaceGtkLib": "4.0.0",
           "Microsoft.Extensions.AI": "10.10.0",
           "Microsoft.Extensions.Configuration": "10.0.12",
-          "Microsoft.Extensions.Configuration.Json": "10.0.12"
+          "Microsoft.Extensions.Configuration.Json": "10.0.12",
+          "OllamaSharp": "5.4.30"
         },
         "runtime": {
           "InterfaceGtk4.dll": {
@@ -698,6 +711,13 @@
       "sha512": "sha512-7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w==",
       "path": "npgsql/10.0.3",
       "hashPath": "npgsql.10.0.3.nupkg.sha512"
+    },
+    "OllamaSharp/5.4.30": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r/dtO3cm/D+OCB1A3dPcA//YnC9Cak3SSSK1dxfvG9RbEKjMezf3l04Ag1j8tiDul/oGn9nb8+fIwlrg0KOkww==",
+      "path": "ollamasharp/5.4.30",
+      "hashPath": "ollamasharp.5.4.30.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",
