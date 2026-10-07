@@ -14,7 +14,7 @@
           "InterfaceGtk4": "4.0.0",
           "NPOI": "2.8.1",
           "QuestPDF": "2026.9.0",
-          "SkiaSharp": "4.153.0"
+          "SkiaSharp": "4.153.1"
         },
         "runtime": {
           "StorageAndTrade4.dll": {}
@@ -24,7 +24,8 @@
         "runtime": {
           "lib/net10.0/BCrypt-Net-Next.dll": {
             "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.2.0.0"
+            "fileVersion": "4.2.0.0",
+            "localPath": "BCrypt-Net-Next.dll"
           }
         }
       },
@@ -32,7 +33,8 @@
         "runtime": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.6.2.46322"
+            "fileVersion": "2.6.2.46322",
+            "localPath": "BouncyCastle.Cryptography.dll"
           }
         }
       },
@@ -40,7 +42,8 @@
         "runtime": {
           "lib/net7.0/Enums.NET.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.0.0"
+            "fileVersion": "5.0.0.0",
+            "localPath": "Enums.NET.dll"
           }
         }
       },
@@ -48,7 +51,8 @@
         "runtime": {
           "lib/net8.0/ExtendedNumerics.BigDecimal.dll": {
             "assemblyVersion": "2025.1001.2.129",
-            "fileVersion": "2025.1001.2.129"
+            "fileVersion": "2025.1001.2.129",
+            "localPath": "ExtendedNumerics.BigDecimal.dll"
           }
         }
       },
@@ -59,7 +63,8 @@
         "runtime": {
           "lib/net10.0/cairo-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "cairo-1.0.dll"
           }
         }
       },
@@ -71,7 +76,8 @@
         "runtime": {
           "lib/net10.0/freetype2-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "freetype2-2.0.dll"
           }
         }
       },
@@ -86,7 +92,8 @@
         "runtime": {
           "lib/net10.0/Gdk-4.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gdk-4.0.dll"
           }
         }
       },
@@ -97,7 +104,8 @@
         "runtime": {
           "lib/net10.0/GdkPixbuf-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "GdkPixbuf-2.0.dll"
           }
         }
       },
@@ -108,7 +116,8 @@
         "runtime": {
           "lib/net10.0/Gio-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gio-2.0.dll"
           }
         }
       },
@@ -116,7 +125,8 @@
         "runtime": {
           "lib/net10.0/GLib-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "GLib-2.0.dll"
           }
         }
       },
@@ -127,7 +137,8 @@
         "runtime": {
           "lib/net10.0/GObject-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "GObject-2.0.dll"
           }
         }
       },
@@ -138,7 +149,8 @@
         "runtime": {
           "lib/net10.0/Graphene-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Graphene-1.0.dll"
           }
         }
       },
@@ -150,7 +162,8 @@
         "runtime": {
           "lib/net10.0/Gsk-4.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gsk-4.0.dll"
           }
         }
       },
@@ -162,7 +175,8 @@
         "runtime": {
           "lib/net10.0/Gtk-4.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gtk-4.0.dll"
           }
         }
       },
@@ -174,7 +188,8 @@
         "runtime": {
           "lib/net10.0/HarfBuzz-0.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "HarfBuzz-0.0.dll"
           }
         }
       },
@@ -188,7 +203,8 @@
         "runtime": {
           "lib/net10.0/Pango-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Pango-1.0.dll"
           }
         }
       },
@@ -201,7 +217,8 @@
         "runtime": {
           "lib/net10.0/PangoCairo-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "PangoCairo-1.0.dll"
           }
         }
       },
@@ -212,7 +229,8 @@
         "runtime": {
           "lib/net6.0/Google.Apis.dll": {
             "assemblyVersion": "1.69.0.0",
-            "fileVersion": "1.69.0.0"
+            "fileVersion": "1.69.0.0",
+            "localPath": "Google.Apis.dll"
           }
         }
       },
@@ -225,7 +243,8 @@
         "runtime": {
           "lib/net6.0/Google.Apis.Auth.dll": {
             "assemblyVersion": "1.69.0.0",
-            "fileVersion": "1.69.0.0"
+            "fileVersion": "1.69.0.0",
+            "localPath": "Google.Apis.Auth.dll"
           }
         }
       },
@@ -236,19 +255,21 @@
         "runtime": {
           "lib/net6.0/Google.Apis.Core.dll": {
             "assemblyVersion": "1.69.0.0",
-            "fileVersion": "1.69.0.0"
+            "fileVersion": "1.69.0.0",
+            "localPath": "Google.Apis.Core.dll"
           }
         }
       },
-      "Google.GenAI/1.22.0": {
+      "Google.GenAI/1.24.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
           "Microsoft.Extensions.AI.Abstractions": "10.10.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.22.0.0",
-            "fileVersion": "1.22.0.0"
+            "assemblyVersion": "1.24.0.0",
+            "fileVersion": "1.24.0.0",
+            "localPath": "Google.GenAI.dll"
           }
         }
       },
@@ -256,7 +277,8 @@
         "runtime": {
           "lib/net6.0/MathNet.Numerics.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.0.0"
+            "fileVersion": "5.0.0.0",
+            "localPath": "MathNet.Numerics.dll"
           }
         }
       },
@@ -271,7 +293,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.dll": {
             "assemblyVersion": "10.10.0.0",
-            "fileVersion": "10.1000.26.45902"
+            "fileVersion": "10.1000.26.45902",
+            "localPath": "Microsoft.Extensions.AI.dll"
           }
         }
       },
@@ -279,7 +302,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
             "assemblyVersion": "10.10.0.0",
-            "fileVersion": "10.1000.26.45902"
+            "fileVersion": "10.1000.26.45902",
+            "localPath": "Microsoft.Extensions.AI.Abstractions.dll"
           }
         }
       },
@@ -290,7 +314,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Caching.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Caching.Abstractions.dll"
           }
         }
       },
@@ -302,7 +327,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.dll"
           }
         }
       },
@@ -313,7 +339,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.Abstractions.dll"
           }
         }
       },
@@ -328,7 +355,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.FileExtensions.dll"
           }
         }
       },
@@ -342,7 +370,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.Json.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.Json.dll"
           }
         }
       },
@@ -350,7 +379,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
           }
         }
       },
@@ -361,7 +391,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.FileProviders.Abstractions.dll"
           }
         }
       },
@@ -374,7 +405,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileProviders.Physical.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.FileProviders.Physical.dll"
           }
         }
       },
@@ -382,7 +414,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.FileSystemGlobbing.dll"
           }
         }
       },
@@ -393,7 +426,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Logging.Abstractions.dll"
           }
         }
       },
@@ -401,7 +435,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Primitives.dll"
           }
         }
       },
@@ -409,7 +444,8 @@
         "runtime": {
           "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll": {
             "assemblyVersion": "3.0.1.0",
-            "fileVersion": "3.0.1.0"
+            "fileVersion": "3.0.1.0",
+            "localPath": "Microsoft.IO.RecyclableMemoryStream.dll"
           }
         }
       },
@@ -417,7 +453,8 @@
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.3.27908"
+            "fileVersion": "13.0.3.27908",
+            "localPath": "Newtonsoft.Json.dll"
           }
         }
       },
@@ -428,7 +465,8 @@
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
             "assemblyVersion": "10.0.3.0",
-            "fileVersion": "10.0.3.0"
+            "fileVersion": "10.0.3.0",
+            "localPath": "Npgsql.dll"
           }
         }
       },
@@ -440,7 +478,7 @@
           "MathNet.Numerics.Signed": "5.0.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "SharpZipLib": "1.4.2",
-          "SkiaSharp": "4.153.0",
+          "SkiaSharp": "4.153.1",
           "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.4",
           "System.Security.Cryptography.Xml": "10.0.10",
           "ZString": "2.6.0"
@@ -448,19 +486,23 @@
         "runtime": {
           "lib/net10.0/NPOI.Core.dll": {
             "assemblyVersion": "2.8.1.0",
-            "fileVersion": "2.8.1.0"
+            "fileVersion": "2.8.1.0",
+            "localPath": "NPOI.Core.dll"
           },
           "lib/net10.0/NPOI.OOXML.dll": {
             "assemblyVersion": "2.8.1.0",
-            "fileVersion": "2.8.1.0"
+            "fileVersion": "2.8.1.0",
+            "localPath": "NPOI.OOXML.dll"
           },
           "lib/net10.0/NPOI.OpenXml4Net.dll": {
             "assemblyVersion": "2.8.1.0",
-            "fileVersion": "2.8.1.0"
+            "fileVersion": "2.8.1.0",
+            "localPath": "NPOI.OpenXml4Net.dll"
           },
           "lib/net10.0/NPOI.OpenXmlFormats.dll": {
             "assemblyVersion": "2.8.1.0",
-            "fileVersion": "2.8.1.0"
+            "fileVersion": "2.8.1.0",
+            "localPath": "NPOI.OpenXmlFormats.dll"
           }
         }
       },
@@ -468,89 +510,106 @@
         "runtime": {
           "lib/net10.0/QuestPDF.dll": {
             "assemblyVersion": "2026.9.0.0",
-            "fileVersion": "2026.9.0.0"
+            "fileVersion": "2026.9.0.0",
+            "localPath": "QuestPDF.dll"
           }
         },
         "runtimeTargets": {
           "runtimes/linux-arm64/native/libQuestPdfSkia.so": {
             "rid": "linux-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-arm64/native/libQuestPdfSkia.so"
           },
           "runtimes/linux-arm64/native/libqpdf.so": {
             "rid": "linux-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-arm64/native/libqpdf.so"
           },
           "runtimes/linux-musl-x64/native/libQuestPdfSkia.so": {
             "rid": "linux-musl-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-x64/native/libQuestPdfSkia.so"
           },
           "runtimes/linux-musl-x64/native/libqpdf.so": {
             "rid": "linux-musl-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-x64/native/libqpdf.so"
           },
           "runtimes/linux-x64/native/libQuestPdfSkia.so": {
             "rid": "linux-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-x64/native/libQuestPdfSkia.so"
           },
           "runtimes/linux-x64/native/libqpdf.so": {
             "rid": "linux-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-x64/native/libqpdf.so"
           },
           "runtimes/osx-arm64/native/libQuestPdfSkia.dylib": {
             "rid": "osx-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/osx-arm64/native/libQuestPdfSkia.dylib"
           },
           "runtimes/osx-arm64/native/libqpdf.dylib": {
             "rid": "osx-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/osx-arm64/native/libqpdf.dylib"
           },
           "runtimes/osx-x64/native/libQuestPdfSkia.dylib": {
             "rid": "osx-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/osx-x64/native/libQuestPdfSkia.dylib"
           },
           "runtimes/osx-x64/native/libqpdf.dylib": {
             "rid": "osx-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/osx-x64/native/libqpdf.dylib"
           },
           "runtimes/win-arm64/native/QuestPdfSkia.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-arm64/native/QuestPdfSkia.dll"
           },
           "runtimes/win-arm64/native/qpdf.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-arm64/native/qpdf.dll"
           },
           "runtimes/win-x64/native/QuestPdfSkia.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x64/native/QuestPdfSkia.dll"
           },
           "runtimes/win-x64/native/qpdf.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x64/native/qpdf.dll"
           },
           "runtimes/win-x86/native/QuestPdfSkia.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x86/native/QuestPdfSkia.dll"
           },
           "runtimes/win-x86/native/qpdf.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x86/native/qpdf.dll"
           }
         }
       },
@@ -558,19 +617,21 @@
         "runtime": {
           "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
             "assemblyVersion": "1.4.2.13",
-            "fileVersion": "1.4.2.13"
+            "fileVersion": "1.4.2.13",
+            "localPath": "ICSharpCode.SharpZipLib.dll"
           }
         }
       },
-      "SkiaSharp/4.153.0": {
+      "SkiaSharp/4.153.1": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "4.153.0",
-          "SkiaSharp.NativeAssets.macOS": "4.153.0"
+          "SkiaSharp.NativeAssets.Win32": "4.153.1",
+          "SkiaSharp.NativeAssets.macOS": "4.153.1"
         },
         "runtime": {
           "lib/net10.0/SkiaSharp.dll": {
             "assemblyVersion": "4.153.0.0",
-            "fileVersion": "4.153.0.0"
+            "fileVersion": "4.153.1.0",
+            "localPath": "SkiaSharp.dll"
           }
         }
       },
@@ -579,110 +640,130 @@
           "runtimes/linux-arm/native/libSkiaSharp.so": {
             "rid": "linux-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-arm/native/libSkiaSharp.so"
           },
           "runtimes/linux-arm64/native/libSkiaSharp.so": {
             "rid": "linux-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-arm64/native/libSkiaSharp.so"
           },
           "runtimes/linux-bionic-arm64/native/libSkiaSharp.so": {
             "rid": "linux-bionic-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-bionic-arm64/native/libSkiaSharp.so"
           },
           "runtimes/linux-bionic-x64/native/libSkiaSharp.so": {
             "rid": "linux-bionic-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-bionic-x64/native/libSkiaSharp.so"
           },
           "runtimes/linux-loongarch64/native/libSkiaSharp.so": {
             "rid": "linux-loongarch64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-loongarch64/native/libSkiaSharp.so"
           },
           "runtimes/linux-musl-arm/native/libSkiaSharp.so": {
             "rid": "linux-musl-arm",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-arm/native/libSkiaSharp.so"
           },
           "runtimes/linux-musl-arm64/native/libSkiaSharp.so": {
             "rid": "linux-musl-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-arm64/native/libSkiaSharp.so"
           },
           "runtimes/linux-musl-loongarch64/native/libSkiaSharp.so": {
             "rid": "linux-musl-loongarch64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-loongarch64/native/libSkiaSharp.so"
           },
           "runtimes/linux-musl-riscv64/native/libSkiaSharp.so": {
             "rid": "linux-musl-riscv64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-riscv64/native/libSkiaSharp.so"
           },
           "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
             "rid": "linux-musl-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-musl-x64/native/libSkiaSharp.so"
           },
           "runtimes/linux-riscv64/native/libSkiaSharp.so": {
             "rid": "linux-riscv64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-riscv64/native/libSkiaSharp.so"
           },
           "runtimes/linux-x64/native/libSkiaSharp.so": {
             "rid": "linux-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-x64/native/libSkiaSharp.so"
           },
           "runtimes/linux-x86/native/libSkiaSharp.so": {
             "rid": "linux-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/linux-x86/native/libSkiaSharp.so"
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/4.153.0": {
+      "SkiaSharp.NativeAssets.macOS/4.153.1": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/osx/native/libSkiaSharp.dylib"
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/4.153.0": {
+      "SkiaSharp.NativeAssets.Win32/4.153.1": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-arm64/native/libSkiaSharp.dll"
           },
           "runtimes/win-arm64/native/libSkiaSharp.pdb": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-arm64/native/libSkiaSharp.pdb"
           },
           "runtimes/win-x64/native/libSkiaSharp.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x64/native/libSkiaSharp.dll"
           },
           "runtimes/win-x64/native/libSkiaSharp.pdb": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x64/native/libSkiaSharp.pdb"
           },
           "runtimes/win-x86/native/libSkiaSharp.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x86/native/libSkiaSharp.dll"
           },
           "runtimes/win-x86/native/libSkiaSharp.pdb": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "0.0.0.0",
+            "localPath": "runtimes/win-x86/native/libSkiaSharp.pdb"
           }
         }
       },
@@ -690,7 +771,8 @@
         "runtime": {
           "lib/net7.0/System.CodeDom.dll": {
             "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "fileVersion": "7.0.22.51805",
+            "localPath": "System.CodeDom.dll"
           }
         }
       },
@@ -701,7 +783,8 @@
         "runtime": {
           "lib/net7.0/System.Management.dll": {
             "assemblyVersion": "7.0.0.2",
-            "fileVersion": "7.0.723.27404"
+            "fileVersion": "7.0.723.27404",
+            "localPath": "System.Management.dll"
           }
         },
         "runtimeTargets": {
@@ -709,7 +792,8 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "7.0.0.2",
-            "fileVersion": "7.0.723.27404"
+            "fileVersion": "7.0.723.27404",
+            "localPath": "runtimes/win/lib/net7.0/System.Management.dll"
           }
         }
       },
@@ -717,7 +801,8 @@
         "runtime": {
           "lib/net10.0/System.Numerics.Tensors.dll": {
             "assemblyVersion": "10.0.0.12",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "System.Numerics.Tensors.dll"
           }
         }
       },
@@ -725,7 +810,8 @@
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1026.32716"
+            "fileVersion": "10.0.1026.32716",
+            "localPath": "System.Security.Cryptography.Pkcs.dll"
           }
         },
         "runtimeTargets": {
@@ -733,7 +819,8 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1026.32716"
+            "fileVersion": "10.0.1026.32716",
+            "localPath": "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll"
           }
         }
       },
@@ -744,7 +831,8 @@
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.Xml.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1026.32716"
+            "fileVersion": "10.0.1026.32716",
+            "localPath": "System.Security.Cryptography.Xml.dll"
           }
         }
       },
@@ -752,7 +840,8 @@
         "runtime": {
           "lib/net7.0/ZString.dll": {
             "assemblyVersion": "2.6.0.0",
-            "fileVersion": "2.6.0.0"
+            "fileVersion": "2.6.0.0",
+            "localPath": "ZString.dll"
           }
         }
       },
@@ -785,7 +874,7 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
-          "Google.GenAI": "1.22.0",
+          "Google.GenAI": "1.24.0",
           "InterfaceGtkLib": "4.0.0",
           "Microsoft.Extensions.AI": "10.10.0",
           "Microsoft.Extensions.Configuration": "10.0.12",
@@ -954,12 +1043,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.22.0": {
+    "Google.GenAI/1.24.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o8yclR84AfGb8QzCkcYFGJ7wmtfHvwGi6DHRU2ZfkwoLU1vM1wl10HYGZLx6dm4Jsmw9+snX9TJSBMVI9tOplA==",
-      "path": "google.genai/1.22.0",
-      "hashPath": "google.genai.1.22.0.nupkg.sha512"
+      "sha512": "sha512-eNhvQLkRP60iyFdF6m1ok5Ht9UQRhGjUfxZspgY1Vf7jTINUNvy+7rIARFpfxXLhmoBdYR5c2JkRoD2Wm5lozA==",
+      "path": "google.genai/1.24.0",
+      "hashPath": "google.genai.1.24.0.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -1101,12 +1190,12 @@
       "path": "sharpziplib/1.4.2",
       "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
     },
-    "SkiaSharp/4.153.0": {
+    "SkiaSharp/4.153.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SUb82mheKR0PhZB0tm3Oz0z1Xy9j+0186AeOhY8ff7O777jq57tLaJXhFpbOKJ75y6axzp4kslMGzB0ka7oLsQ==",
-      "path": "skiasharp/4.153.0",
-      "hashPath": "skiasharp.4.153.0.nupkg.sha512"
+      "sha512": "sha512-TghYLOUaP3q6rTjQw7U9uQaaXh8lEs9rfA1U7/VtmyAptVDtj/SmjtcWzFWmcC/VMWxe3QgbV9uyvqDL7ySFtQ==",
+      "path": "skiasharp/4.153.1",
+      "hashPath": "skiasharp.4.153.1.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.4": {
       "type": "package",
@@ -1115,19 +1204,19 @@
       "path": "skiasharp.nativeassets.linux.nodependencies/3.119.4",
       "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.4.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/4.153.0": {
+    "SkiaSharp.NativeAssets.macOS/4.153.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HupVxGOlrSHW4G0yXtNQW2c56tqlQeXoBXt1yxjDX2V49AgmmhnvS81U/arLX/a9M388PZZKJyjIjK7nVT1eGQ==",
-      "path": "skiasharp.nativeassets.macos/4.153.0",
-      "hashPath": "skiasharp.nativeassets.macos.4.153.0.nupkg.sha512"
+      "sha512": "sha512-YTojWeWIhnpF7uC8vpMxB5wRONKkDB2t3r/nNPA3DL2pgj9fqMXRevA/rIanYazWnco4jo1ufgp3HkXuh1Tz8A==",
+      "path": "skiasharp.nativeassets.macos/4.153.1",
+      "hashPath": "skiasharp.nativeassets.macos.4.153.1.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/4.153.0": {
+    "SkiaSharp.NativeAssets.Win32/4.153.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-c1glJgnMtRYQE05h71nkotqZAdcmi8+9B9UcTvsQRKSA8G3QEM50lktSR119hJt3JE6KN8lHqihKMsJNbIVWOA==",
-      "path": "skiasharp.nativeassets.win32/4.153.0",
-      "hashPath": "skiasharp.nativeassets.win32.4.153.0.nupkg.sha512"
+      "sha512": "sha512-Yqg6rChTVh0BUE8QQxtOA3uUBnihfgID4yex/AvDa0+os2bVcBjmI3Qj9tnOB+R1hd/Jry1Gwl8qw5JI9HZG8Q==",
+      "path": "skiasharp.nativeassets.win32/4.153.1",
+      "hashPath": "skiasharp.nativeassets.win32.4.153.1.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",

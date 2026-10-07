@@ -20,7 +20,8 @@
         "runtime": {
           "lib/net10.0/BCrypt-Net-Next.dll": {
             "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.2.0.0"
+            "fileVersion": "4.2.0.0",
+            "localPath": "BCrypt-Net-Next.dll"
           }
         }
       },
@@ -31,7 +32,8 @@
         "runtime": {
           "lib/net10.0/cairo-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "cairo-1.0.dll"
           }
         }
       },
@@ -43,7 +45,8 @@
         "runtime": {
           "lib/net10.0/freetype2-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "freetype2-2.0.dll"
           }
         }
       },
@@ -58,7 +61,8 @@
         "runtime": {
           "lib/net10.0/Gdk-4.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gdk-4.0.dll"
           }
         }
       },
@@ -69,7 +73,8 @@
         "runtime": {
           "lib/net10.0/GdkPixbuf-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "GdkPixbuf-2.0.dll"
           }
         }
       },
@@ -80,7 +85,8 @@
         "runtime": {
           "lib/net10.0/Gio-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gio-2.0.dll"
           }
         }
       },
@@ -88,7 +94,8 @@
         "runtime": {
           "lib/net10.0/GLib-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "GLib-2.0.dll"
           }
         }
       },
@@ -99,7 +106,8 @@
         "runtime": {
           "lib/net10.0/GObject-2.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "GObject-2.0.dll"
           }
         }
       },
@@ -110,7 +118,8 @@
         "runtime": {
           "lib/net10.0/Graphene-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Graphene-1.0.dll"
           }
         }
       },
@@ -122,7 +131,8 @@
         "runtime": {
           "lib/net10.0/Gsk-4.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gsk-4.0.dll"
           }
         }
       },
@@ -134,7 +144,8 @@
         "runtime": {
           "lib/net10.0/Gtk-4.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Gtk-4.0.dll"
           }
         }
       },
@@ -146,7 +157,8 @@
         "runtime": {
           "lib/net10.0/HarfBuzz-0.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "HarfBuzz-0.0.dll"
           }
         }
       },
@@ -160,7 +172,8 @@
         "runtime": {
           "lib/net10.0/Pango-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "Pango-1.0.dll"
           }
         }
       },
@@ -173,7 +186,8 @@
         "runtime": {
           "lib/net10.0/PangoCairo-1.0.dll": {
             "assemblyVersion": "0.9.0.0",
-            "fileVersion": "0.9.0.0"
+            "fileVersion": "0.9.0.0",
+            "localPath": "PangoCairo-1.0.dll"
           }
         }
       },
@@ -184,7 +198,8 @@
         "runtime": {
           "lib/net6.0/Google.Apis.dll": {
             "assemblyVersion": "1.69.0.0",
-            "fileVersion": "1.69.0.0"
+            "fileVersion": "1.69.0.0",
+            "localPath": "Google.Apis.dll"
           }
         }
       },
@@ -197,7 +212,8 @@
         "runtime": {
           "lib/net6.0/Google.Apis.Auth.dll": {
             "assemblyVersion": "1.69.0.0",
-            "fileVersion": "1.69.0.0"
+            "fileVersion": "1.69.0.0",
+            "localPath": "Google.Apis.Auth.dll"
           }
         }
       },
@@ -208,19 +224,21 @@
         "runtime": {
           "lib/net6.0/Google.Apis.Core.dll": {
             "assemblyVersion": "1.69.0.0",
-            "fileVersion": "1.69.0.0"
+            "fileVersion": "1.69.0.0",
+            "localPath": "Google.Apis.Core.dll"
           }
         }
       },
-      "Google.GenAI/1.22.0": {
+      "Google.GenAI/1.24.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
           "Microsoft.Extensions.AI.Abstractions": "10.10.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.22.0.0",
-            "fileVersion": "1.22.0.0"
+            "assemblyVersion": "1.24.0.0",
+            "fileVersion": "1.24.0.0",
+            "localPath": "Google.GenAI.dll"
           }
         }
       },
@@ -235,7 +253,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.dll": {
             "assemblyVersion": "10.10.0.0",
-            "fileVersion": "10.1000.26.45902"
+            "fileVersion": "10.1000.26.45902",
+            "localPath": "Microsoft.Extensions.AI.dll"
           }
         }
       },
@@ -243,7 +262,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
             "assemblyVersion": "10.10.0.0",
-            "fileVersion": "10.1000.26.45902"
+            "fileVersion": "10.1000.26.45902",
+            "localPath": "Microsoft.Extensions.AI.Abstractions.dll"
           }
         }
       },
@@ -254,7 +274,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Caching.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Caching.Abstractions.dll"
           }
         }
       },
@@ -266,7 +287,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.dll"
           }
         }
       },
@@ -277,7 +299,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.Abstractions.dll"
           }
         }
       },
@@ -292,7 +315,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.FileExtensions.dll"
           }
         }
       },
@@ -306,7 +330,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Configuration.Json.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Configuration.Json.dll"
           }
         }
       },
@@ -314,7 +339,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
           }
         }
       },
@@ -325,7 +351,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.FileProviders.Abstractions.dll"
           }
         }
       },
@@ -338,7 +365,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileProviders.Physical.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.FileProviders.Physical.dll"
           }
         }
       },
@@ -346,7 +374,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.FileSystemGlobbing.dll"
           }
         }
       },
@@ -357,7 +386,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Logging.Abstractions.dll"
           }
         }
       },
@@ -365,7 +395,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "Microsoft.Extensions.Primitives.dll"
           }
         }
       },
@@ -373,7 +404,8 @@
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.3.27908"
+            "fileVersion": "13.0.3.27908",
+            "localPath": "Newtonsoft.Json.dll"
           }
         }
       },
@@ -384,7 +416,8 @@
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
             "assemblyVersion": "10.0.3.0",
-            "fileVersion": "10.0.3.0"
+            "fileVersion": "10.0.3.0",
+            "localPath": "Npgsql.dll"
           }
         }
       },
@@ -392,7 +425,8 @@
         "runtime": {
           "lib/net7.0/System.CodeDom.dll": {
             "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "fileVersion": "7.0.22.51805",
+            "localPath": "System.CodeDom.dll"
           }
         }
       },
@@ -403,7 +437,8 @@
         "runtime": {
           "lib/net7.0/System.Management.dll": {
             "assemblyVersion": "7.0.0.2",
-            "fileVersion": "7.0.723.27404"
+            "fileVersion": "7.0.723.27404",
+            "localPath": "System.Management.dll"
           }
         },
         "runtimeTargets": {
@@ -411,7 +446,8 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "7.0.0.2",
-            "fileVersion": "7.0.723.27404"
+            "fileVersion": "7.0.723.27404",
+            "localPath": "runtimes/win/lib/net7.0/System.Management.dll"
           }
         }
       },
@@ -419,7 +455,8 @@
         "runtime": {
           "lib/net10.0/System.Numerics.Tensors.dll": {
             "assemblyVersion": "10.0.0.12",
-            "fileVersion": "10.0.1226.42308"
+            "fileVersion": "10.0.1226.42308",
+            "localPath": "System.Numerics.Tensors.dll"
           }
         }
       },
@@ -439,7 +476,7 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
-          "Google.GenAI": "1.22.0",
+          "Google.GenAI": "1.24.0",
           "InterfaceGtkLib": "4.0.0",
           "Microsoft.Extensions.AI": "10.10.0",
           "Microsoft.Extensions.Configuration": "10.0.12",
@@ -587,12 +624,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.22.0": {
+    "Google.GenAI/1.24.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o8yclR84AfGb8QzCkcYFGJ7wmtfHvwGi6DHRU2ZfkwoLU1vM1wl10HYGZLx6dm4Jsmw9+snX9TJSBMVI9tOplA==",
-      "path": "google.genai/1.22.0",
-      "hashPath": "google.genai.1.22.0.nupkg.sha512"
+      "sha512": "sha512-eNhvQLkRP60iyFdF6m1ok5Ht9UQRhGjUfxZspgY1Vf7jTINUNvy+7rIARFpfxXLhmoBdYR5c2JkRoD2Wm5lozA==",
+      "path": "google.genai/1.24.0",
+      "hashPath": "google.genai.1.24.0.nupkg.sha512"
     },
     "Microsoft.Extensions.AI/10.10.0": {
       "type": "package",
