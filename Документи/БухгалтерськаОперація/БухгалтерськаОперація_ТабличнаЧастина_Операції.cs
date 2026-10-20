@@ -568,7 +568,7 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict(), false);
 
                 listItem.Child = cell;
             };

@@ -19,7 +19,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
     #region Data
 
     [GObject.Subclass<GObject.Object>("ItemRow_frifATz1c3uMYB53ePq3Aw")]
-   public partial class ItemRow : IRowSubclassTablePart
+    public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
 
@@ -620,7 +620,7 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Пров
             factory.OnSetup += (_, args) =>
             {
                 if (args.Object is not ListItem listItem) return;
-                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict());
+                var cell = DropDownTablePartCell.NewWithValues(ПсевдонімиПерелічення.ВидиПроводок_Dict(), false);
 
                 listItem.Child = cell;
             };
