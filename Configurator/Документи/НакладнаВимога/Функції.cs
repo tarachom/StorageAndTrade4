@@ -20,11 +20,11 @@ static class НакладнаВимога_Функції
             
             //Назва
             new Where(НакладнаВимога_Const.Назва, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
-                    
+
         ];
     }
 
-    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null, 
+    public static async Task OpenPageElement(bool IsNew, UniqueID? uniqueID = null,
         Action<UniqueID?>? сallBack_LoadRecords = null,
         Action<UniqueID>? сallBack_OnSelectPointer = null)
     {
@@ -36,7 +36,7 @@ static class НакладнаВимога_Функції
             await page.Елемент.New();
         else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
-            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
+            await Message.Info(Program.BasicForm, "Не вдалось прочитати!");
             return;
         }
 
@@ -68,12 +68,12 @@ static class НакладнаВимога_Функції
         {
             НакладнаВимога_Object Новий = await Обєкт.Copy(true);
             await Новий.Save();
-            
+
             return Новий.UniqueID;
         }
         else
         {
-            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
+            await Message.Info(Program.BasicForm, "Не вдалось прочитати!");
             return null;
         }
     }
@@ -92,4 +92,3 @@ static class НакладнаВимога_Функції
             await Обєкт.ClearSpendTheDocument();
     }
 }
-    

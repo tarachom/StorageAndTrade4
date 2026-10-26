@@ -401,13 +401,8 @@ partial class ПереміщенняТоварів_ТабличнаЧастин�
                 if (Store.GetNItems() == 0)
                     await ЗаповнитиПроводки();
                 else
-                    Message.Request(NotebookFunc?.BasicForm, "Очистити табличну частину?",
-                        "В табличній частині вже є дані. Щоб продовжити заповнення потрібно спочатку очистити табличну частину!",
-                        async x =>
-                        {
-                            if (x == Message.YesNo.Yes)
-                                await ЗаповнитиПроводки();
-                        });
+                    if (await Message.Request(NotebookFunc?.BasicForm, "Очистити табличну частину?", "В табличній частині вже є дані. Щоб продовжити заповнення потрібно спочатку очистити табличну частину!") == Message.YesNo.Yes)
+                        await ЗаповнитиПроводки();
 
                 button.Sensitive = true;
             };
@@ -430,7 +425,7 @@ partial class ПереміщенняТоварів_ТабличнаЧастин�
             if (ЕлементВласник != null && !ЕлементВласник.ДокументБухгалтерськаОперація.IsEmpty())
                 await БухгалтерськаОперація_Функції.OpenPageElement(false, ЕлементВласник.ДокументБухгалтерськаОперація.UniqueID);
             else
-                Message.Error(Program.BasicForm,
+                await Message.Info(Program.BasicForm,
                     "Не знайдено документ Бух операція",
                     "Можливо документ ще не записаний чи не проведений або не встановлена галочка 'Відобразити в бух обліку'");
         });
@@ -795,7 +790,7 @@ partial class ПереміщенняТоварів_ТабличнаЧастин�
             Grid.AppendColumn(column);
         }
     }
-   
+
     public override async Task LoadRecords()
     {
         if (ЕлементВласник != null)

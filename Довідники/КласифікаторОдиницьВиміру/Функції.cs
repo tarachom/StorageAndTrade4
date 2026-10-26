@@ -41,7 +41,7 @@ static class КласифікаторОдиницьВиміру_Функції
         }
         else if (uniqueID == null || !await page.Елемент.Read(uniqueID))
         {
-            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
+            await Message.Info(Program.BasicForm, "Не вдалось прочитати!");
             return;
         }
 
@@ -82,7 +82,7 @@ static class КласифікаторОдиницьВиміру_Функції
         }
         else
         {
-            Message.Error(Program.BasicForm, "Не вдалось прочитати!");
+            await Message.Info(Program.BasicForm, "Не вдалось прочитати!");
             return null;
         }
     }

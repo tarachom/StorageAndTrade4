@@ -77,29 +77,29 @@ partial class FormStorageAndTrade : FormGeneral
 
     }
 
-    protected override bool OpenDocumentByType(string name)
+    protected override async Task<bool> OpenDocumentByType(string name)
     {
-        return new FunctionForDynamicOpen().OpenDocumentByType(name, null);
+        return await new FunctionForDynamicOpen().OpenDocumentByType(name, null);
     }
 
-    protected override bool OpenDirectoryByType(string name)
+    protected override async Task<bool> OpenDirectoryByType(string name)
     {
-        return new FunctionForDynamicOpen().OpenDirectoryByType(name, null);
+        return await new FunctionForDynamicOpen().OpenDirectoryByType(name, null);
     }
 
-    protected override bool OpenJournalByType(string name)
+    protected override async Task<bool> OpenJournalByType(string name)
     {
-        return new FunctionForDynamicOpen().OpenJournalByType(name, null);
+        return await new FunctionForDynamicOpen().OpenJournalByType(name, null);
     }
 
-    protected override bool OpenRegisterInformationByType(string name)
+    protected override async Task<bool> OpenRegisterInformationByType(string name)
     {
-        return new FunctionForDynamicOpen().OpenRegisterInformationByType(name, null);
+        return await new FunctionForDynamicOpen().OpenRegisterInformationByType(name, null);
     }
 
-    protected override bool OpenRegisterAccumulationByType(string name)
+    protected override async Task<bool> OpenRegisterAccumulationByType(string name)
     {
-        return new FunctionForDynamicOpen().OpenRegisterAccumulationByType(name, null);
+        return await new FunctionForDynamicOpen().OpenRegisterAccumulationByType(name, null);
     }
 
     protected override void Settings(LinkButton linkButton)
