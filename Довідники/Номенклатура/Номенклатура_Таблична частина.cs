@@ -175,7 +175,7 @@ partial class Номенклатура_ТабличнаЧастина_Файли
                 if (listItem.Child is not CheckTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
 
-                cell.OnСhanged = () => row.Основний = cell.Check.Active;
+                cell.OnСhanged = () => row.Основний = cell.Value;
                 (row.Сhanged_Основний = () => cell.Value = row.Основний).Invoke();
 
             };

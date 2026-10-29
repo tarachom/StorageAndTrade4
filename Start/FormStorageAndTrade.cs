@@ -34,6 +34,8 @@ partial class FormStorageAndTrade : FormGeneral
         //Відкрити журнал ВиготовленняПродукції
         await ВиготовленняПродукції_Функції.OpenPageList();
 
+        //await ТестовийДовідник_Функції.OpenPageList();
+
         /*
         {
             PageAI page = PageAI.New();
