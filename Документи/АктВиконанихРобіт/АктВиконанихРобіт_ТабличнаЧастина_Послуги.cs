@@ -1,4 +1,3 @@
-
 /*
         АктВиконанихРобіт_ТабличнаЧастина_Послуги.cs
         Таблична Частина
@@ -12,12 +11,12 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_7OOiht2imEqkbjbZWTYPmQ")]
+[GObject.Subclass<DocumentFormTablePart>("AktVykonanykhRobit_TablePart_Posluhy")]
 partial class АктВиконанихРобіт_ТабличнаЧастина_Послуги : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
 
-    [GObject.Subclass<GObject.Object>("ItemRow_7OOiht2imEqkbjbZWTYPmQ")]
+    [GObject.Subclass<GObject.Object>("AktVykonanykhRobit_TablePart_Posluhy_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -269,6 +268,14 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -290,7 +297,7 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 if (args.Object is not ListItem listItem) return;
                 if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
-
+                
                 cell.OnSelect = async () =>
                 {
                     row.Номенклатура = cell.Pointer;
@@ -299,6 +306,15 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
                 (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+                row.Сhanged_Номенклатура = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
@@ -334,6 +350,16 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ХарактеристикиНоменклатури_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.BeforeClickOpenFunc = null;
+                cell.OnSelect = null;
+                row.Сhanged_ХарактеристикаНоменклатури = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
@@ -365,6 +391,15 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
 
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Кількість = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
@@ -398,6 +433,15 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 (row.Сhanged_Ціна = () => cell.Value = row.Ціна).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Ціна = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -430,6 +474,15 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Сума = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -445,34 +498,49 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<АктВиконанихРобіт_Послуги_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.Номенклатура = x.Номенклатура;
+        row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
+        row.Кількість = x.Кількість;
+        row.Ціна = x.Ціна;
+        row.Сума = x.Сума;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<АктВиконанихРобіт_Послуги_TablePart.Record> ToRecords()
+    {
+        List<АктВиконанихРобіт_Послуги_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Номенклатура = row.Номенклатура,
+                    ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
+                    Кількість = row.Кількість,
+                    Ціна = row.Ціна,
+                    Сума = row.Сума,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
-        if (ЕлементВласник != null)
+        if (ЕлементВласник != null) 
         {
             ЕлементВласник.Послуги_TablePart.FillJoin([АктВиконанихРобіт_Послуги_TablePart.НомерРядка,]);
             await ЕлементВласник.Послуги_TablePart.Read();
-
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.Послуги_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.Номенклатура = record.Номенклатура;
-                row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
-                row.Кількість = record.Кількість;
-                row.Ціна = record.Ціна;
-                row.Сума = record.Сума;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            
+            UpdateStore(ToItemRows(ЕлементВласник.Послуги_TablePart.Records));
         }
     }
 
@@ -481,56 +549,9 @@ partial class АктВиконанихРобіт_ТабличнаЧастина_
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Послуги_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Послуги_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Номенклатура = row.Номенклатура,
-                        ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                        Кількість = row.Кількість,
-                        Ціна = row.Ціна,
-                        Сума = row.Сума,
-
-                    });
-                }
-            }
+            ЕлементВласник.Послуги_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.Послуги_TablePart.Save(true);
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
-
-                var rows = ЕлементВласник.Послуги_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.Номенклатура = x.Номенклатура;
-                    row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
-                    row.Кількість = x.Кількість;
-                    row.Ціна = x.Ціна;
-                    row.Сума = x.Сума;
-
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
+            UpdateStore(ToItemRows(ЕлементВласник.Послуги_TablePart.Records));
         }
     }
 

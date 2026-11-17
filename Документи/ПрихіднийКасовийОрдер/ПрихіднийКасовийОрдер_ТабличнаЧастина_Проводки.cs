@@ -1,4 +1,3 @@
-
 /*
         ПрихіднийКасовийОрдер_ТабличнаЧастина_Проводки.cs
         Таблична Частина
@@ -13,12 +12,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_e5GeAQtHn3WveUObFlQ0A")]
+[GObject.Subclass<DocumentFormTablePart>("PrykhidnyiKasovyiOrder_TablePart_Provodky")]
 partial class ПрихіднийКасовийОрдер_ТабличнаЧастина_Проводки : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
 
-    [GObject.Subclass<GObject.Object>("ItemRow_QLifAaLmdnWgrnucX8pgZA")]
+    [GObject.Subclass<GObject.Object>("PrykhidnyiKasovyiOrder_TablePart_Provodky_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -395,15 +394,12 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
             button.AddCssClass("toolbar");
             button.OnClicked += async (_, _) =>
             {
-                button.Sensitive = false;
-
-                if (Store.GetNItems() == 0)
+                if (Store.GetNItems() == 0 || await Message.Request(NotebookFunc?.BasicForm, "Очистити табличну частину?", "В табличній частині вже є дані. Щоб продовжити заповнення потрібно спочатку очистити табличну частину!") == Message.YesNo.Yes)
+                {
+                    button.Sensitive = false;
                     await ЗаповнитиПроводки();
-                else
-                    if (await Message.Request(NotebookFunc?.BasicForm, "Очистити табличну частину?", "В табличній частині вже є дані. Щоб продовжити заповнення потрібно спочатку очистити табличну частину!") == Message.YesNo.Yes)
-                        await ЗаповнитиПроводки();
-
-                button.Sensitive = true;
+                    button.Sensitive = true;
+                }
             };
             HBoxToolbarTop.Append(button);
         }
@@ -473,6 +469,14 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                    
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -504,6 +508,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
 
                 (row.Сhanged_Рахунок = () => cell.Pointer = row.Рахунок).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПланРахунків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_Рахунок = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
             column.Resizable = true;
@@ -537,6 +551,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 (row.Сhanged_Дебет = () => cell.Value = row.Дебет).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Дебет = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Дебет", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -568,6 +592,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
 
                 (row.Сhanged_Кредит = () => cell.Value = row.Кредит).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Кредит = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кредит", factory);
             column.Resizable = true;
@@ -601,6 +635,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Кількість = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -627,6 +671,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
                 (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_ВидПроводки = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
             column.Resizable = true;
@@ -667,6 +721,21 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 (row.Сhanged_Аналітика3 = () => cell.Аналітика3.Pointer = row.Аналітика3).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Група_Аналітика cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.Аналітика1.OnSelect = null;
+                row.Сhanged_Аналітика1 = null;
+
+                cell.Аналітика2.OnSelect = null;
+                row.Сhanged_Аналітика2 = null;
+
+                cell.Аналітика3.OnSelect = null;
+                row.Сhanged_Аналітика3 = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Аналітика 1\nАналітика 2\nАналітика 3", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
@@ -701,6 +770,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 };
 
                 (row.Сhanged_КореспондуючийРахунок = () => cell.Pointer = row.КореспондуючийРахунок).Invoke();
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПланРахунків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_КореспондуючийРахунок = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий\nрахунок", factory);
             column.Resizable = true;
@@ -742,6 +821,21 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 (row.Сhanged_КорАналітика3 = () => cell.Аналітика3.Pointer = row.КорАналітика3).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Група_Аналітика cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.Аналітика1.OnSelect = null;
+                row.Сhanged_КорАналітика1 = null;
+
+                cell.Аналітика2.OnSelect = null;
+                row.Сhanged_КорАналітика2 = null;
+
+                cell.Аналітика3.OnSelect = null;
+                row.Сhanged_КорАналітика3 = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 1\nКор аналітика 2\nКор аналітика 3", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
@@ -772,6 +866,16 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
                 (row.Сhanged_Податки = () => cell.Pointer = row.Податки).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ВидиПодатків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_Податки = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Податки", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
@@ -790,114 +894,81 @@ partial class ПрихіднийКасовийОрдер_ТабличнаЧас�
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<ПрихіднийКасовийОрдер_Проводки_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.Рахунок = x.Рахунок;
+        row.ВидПроводки = x.ВидПроводки;
+        row.Аналітика1 = x.Аналітика1;
+        row.Аналітика2 = x.Аналітика2;
+        row.Аналітика3 = x.Аналітика3;
+        row.Податки = x.Податки;
+        row.Кількість = x.Кількість;
+        row.Дебет = x.Дебет;
+        row.Кредит = x.Кредит;
+        row.КореспондуючийРахунок = x.КореспондуючийРахунок;
+        row.КорАналітика1 = x.КорАналітика1;
+        row.КорАналітика2 = x.КорАналітика2;
+        row.КорАналітика3 = x.КорАналітика3;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<ПрихіднийКасовийОрдер_Проводки_TablePart.Record> ToRecords()
+    {
+        List<ПрихіднийКасовийОрдер_Проводки_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Рахунок = row.Рахунок,
+                    ВидПроводки = row.ВидПроводки,
+                    Аналітика1 = row.Аналітика1,
+                    Аналітика2 = row.Аналітика2,
+                    Аналітика3 = row.Аналітика3,
+                    Податки = row.Податки,
+                    Кількість = row.Кількість,
+                    Дебет = row.Дебет,
+                    Кредит = row.Кредит,
+                    КореспондуючийРахунок = row.КореспондуючийРахунок,
+                    КорАналітика1 = row.КорАналітика1,
+                    КорАналітика2 = row.КорАналітика2,
+                    КорАналітика3 = row.КорАналітика3,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
-        if (ЕлементВласник != null)
+        
+        if (ЕлементВласник != null) 
         {
+            
             ЕлементВласник.Проводки_TablePart.FillJoin([ПрихіднийКасовийОрдер_Проводки_TablePart.НомерРядка,]);
             await ЕлементВласник.Проводки_TablePart.Read();
-
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.Проводки_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.Рахунок = record.Рахунок;
-                row.Дебет = record.Дебет;
-                row.Кредит = record.Кредит;
-                row.Кількість = record.Кількість;
-                row.ВидПроводки = record.ВидПроводки;
-                row.Аналітика1 = record.Аналітика1;
-                row.Аналітика2 = record.Аналітика2;
-                row.Аналітика3 = record.Аналітика3;
-                row.КореспондуючийРахунок = record.КореспондуючийРахунок;
-                row.КорАналітика1 = record.КорАналітика1;
-                row.КорАналітика2 = record.КорАналітика2;
-                row.КорАналітика3 = record.КорАналітика3;
-                row.Податки = record.Податки;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            
+            UpdateStore(ToItemRows(ЕлементВласник.Проводки_TablePart.Records));
+        
         }
     }
 
     public override async Task SaveRecords()
     {
+        
         if (ЕлементВласник != null)
         {
-            ЕлементВласник.Проводки_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Проводки_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Рахунок = row.Рахунок,
-                        Дебет = row.Дебет,
-                        Кредит = row.Кредит,
-                        Кількість = row.Кількість,
-                        ВидПроводки = row.ВидПроводки,
-                        Аналітика1 = row.Аналітика1,
-                        Аналітика2 = row.Аналітика2,
-                        Аналітика3 = row.Аналітика3,
-                        КореспондуючийРахунок = row.КореспондуючийРахунок,
-                        КорАналітика1 = row.КорАналітика1,
-                        КорАналітика2 = row.КорАналітика2,
-                        КорАналітика3 = row.КорАналітика3,
-                        Податки = row.Податки,
-                    });
-                }
-            }
+        ЕлементВласник.Проводки_TablePart.Records.Clear();
+            ЕлементВласник.Проводки_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.Проводки_TablePart.Save(true);
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
+            UpdateStore(ToItemRows(ЕлементВласник.Проводки_TablePart.Records));
 
-                var rows = ЕлементВласник.Проводки_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.Рахунок = x.Рахунок;
-                    row.Дебет = x.Дебет;
-                    row.Кредит = x.Кредит;
-                    row.Кількість = x.Кількість;
-                    row.ВидПроводки = x.ВидПроводки;
-                    row.Аналітика1 = x.Аналітика1;
-                    row.Аналітика2 = x.Аналітика2;
-                    row.Аналітика3 = x.Аналітика3;
-                    row.КореспондуючийРахунок = x.КореспондуючийРахунок;
-                    row.КорАналітика1 = x.КорАналітика1;
-                    row.КорАналітика2 = x.КорАналітика2;
-                    row.КорАналітика3 = x.КорАналітика3;
-                    row.Податки = x.Податки;
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
         }
     }
 

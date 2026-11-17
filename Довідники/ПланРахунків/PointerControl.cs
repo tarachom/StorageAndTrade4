@@ -11,19 +11,19 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_WNcsPMytx0aEjYuHpnLWhA")]
+[GObject.Subclass<PointerControl>("PlanRakhunkiv_PointerControl")]
 public partial class ПланРахунків_PointerControl : PointerControl
 {
+    public static ПланРахунків_PointerControl New() => NewWithProperties([]);
+
     event EventHandler<ПланРахунків_Pointer>? PointerChanged;
 
     partial void Initialize()
     {
         WidthPresentation = 300;
         Caption = $"{ПланРахунків_Const.FULLNAME}:";
-        PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+        PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
-
-    public static ПланРахунків_PointerControl New() => NewWithProperties([]);
 
     ПланРахунків_Pointer pointer = new();
     public ПланРахунків_Pointer Pointer
@@ -58,6 +58,7 @@ public partial class ПланРахунків_PointerControl : PointerControl
             Pointer = new ПланРахунків_Pointer(selectPointer);
             AfterSelectFunc?.Invoke();
         };
+
 
         popover.SetChild(page);
         popover.Show();

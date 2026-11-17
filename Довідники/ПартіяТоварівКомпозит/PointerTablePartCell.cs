@@ -8,12 +8,11 @@ using Gtk;
 using InterfaceGtk4;
 using GeneratedCode.Довідники;
 using AccountingSoftware;
-using NPOI.Util.Optional;
 using GeneratedCode.РегістриНакопичення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_TX0HFAhPEaKOvE8m6A")]
+[GObject.Subclass<PointerTablePartCell>("PartiiaTovarivKompozyt_PointerTablePartCell")]
 public partial class ПартіяТоварівКомпозит_PointerTablePartCell : PointerTablePartCell
 {
     public static ПартіяТоварівКомпозит_PointerTablePartCell New() => NewWithProperties([]);
@@ -29,7 +28,7 @@ public partial class ПартіяТоварівКомпозит_PointerTablePart
         }
     }
 
-    public async Task GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+    public async Task GetPresentation() => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
 
     async Task PointerChange(UniqueID? p)
     {

@@ -12,33 +12,32 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_xxlQMlAUW0e7vH5vEtBp6g")]
+[GObject.Subclass<PointerControl>("Kontrahenty_PointerControl")]
 public partial class Контрагенти_PointerControl : PointerControl
 {
+    public static Контрагенти_PointerControl New() => NewWithProperties([]);
+
     event EventHandler<Контрагенти_Pointer>? PointerChanged;
 
     partial void Initialize()
     {
         WidthPresentation = 300;
         Caption = $"{Контрагенти_Const.FULLNAME}:";
-        PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+        PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
-
-    public static Контрагенти_PointerControl New() => NewWithProperties([]);
 
     Контрагенти_Pointer pointer = new();
     public Контрагенти_Pointer Pointer
     {
-        get
-        {
-            return pointer;
-        }
+        get => pointer;
         set
         {
             pointer = value;
             PointerChanged?.Invoke(null, pointer);
         }
     }
+
+    
 
     public ConfigurationDirectories.HierarchicalContentType? AllowedContentSelection { get; set; }
 
@@ -61,6 +60,7 @@ public partial class Контрагенти_PointerControl : PointerControl
             AfterSelectFunc?.Invoke();
         };
 
+        
         popover.SetChild(page);
         popover.Show();
 
@@ -99,3 +99,4 @@ public partial class Контрагенти_PointerControl : PointerControl
         }
     }
 }
+    

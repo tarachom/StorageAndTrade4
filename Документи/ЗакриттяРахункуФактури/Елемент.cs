@@ -38,6 +38,11 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
 
     #endregion
 
+    #region Значення полів на зовні (тільки читання)
+    public РахунокФактура_Pointer РахунокФактура_Значення { get => РахунокФактура.Pointer; }
+
+    #endregion
+
     #region TabularParts
 
     // Таблична частина "Товари" 
@@ -54,6 +59,8 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
+        Товари.ЕлементВласник = Елемент;
+        Товари.ЕлементВласникФорма = this;
         Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
         Interface.Notebook.SetCurrentPage(0);
 
@@ -206,7 +213,6 @@ partial class ЗакриттяРахункуФактури_Елемент : Docu
         Підстава.Pointer = Елемент.Підстава;
 
         // Таблична частина "Товари" 
-        Товари.ЕлементВласник = Елемент;
         await Товари.LoadRecords();
 
         if (IsNew)

@@ -37,13 +37,13 @@ partial class Блокнот_Елемент : DirectoryFormElement
         Код.WidthRequest = 100;
 
         // Назва:
-        Назва.WidthRequest = 500;
+        Назва.WidthRequest = 1200;
 
         // Опис:
         Опис.WrapMode = WrapMode.Word;
 
         // Лінк:
-        Лінк.WidthRequest = 500;
+        Лінк.WidthRequest = 1200;
     }
 
     public static Блокнот_Елемент New()
@@ -76,7 +76,7 @@ partial class Блокнот_Елемент : DirectoryFormElement
         CreateField(vBox, "Дата запису:", ДатаЗапису);
 
         // Опис
-        CreateFieldView(vBox, "Опис:", Опис, 500, 200);
+        CreateFieldView(vBox, "Опис:", Опис, 1200, 500);
 
         // Лінк
         CreateField(vBox, "Лінк:", Лінк);

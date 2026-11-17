@@ -1,0 +1,77 @@
+
+
+/*     
+        ХарактеристикиНоменклатури_PointerTablePartCell.cs
+        PointerTablePartCell
+*/
+using Gtk;
+using InterfaceGtk4;
+using GeneratedCode.Довідники;
+using AccountingSoftware;
+
+namespace StorageAndTrade;
+
+[GObject.Subclass<PointerTablePartCell>("KharakterystykyNomenklatury_PointerTablePartCell")]
+public partial class ХарактеристикиНоменклатури_PointerTablePartCell : PointerTablePartCell
+{
+    public static ХарактеристикиНоменклатури_PointerTablePartCell New() => NewWithProperties([]);
+
+    ХарактеристикиНоменклатури_Pointer pointer = new();
+    public ХарактеристикиНоменклатури_Pointer Pointer
+    {
+        get => pointer;
+        set
+        {
+            pointer = value;
+            Presentation = pointer.Name;
+        }
+    }
+
+    public async Task GetPresentation() => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
+
+    async Task PointerChange(UniqueID? p)
+    {
+        Pointer = new ХарактеристикиНоменклатури_Pointer(p ?? new UniqueID());
+        await GetPresentation();
+        OnSelect?.Invoke();
+    }
+
+    
+    public Номенклатура_Pointer Власник { get; set; } = new Номенклатура_Pointer();
+    
+
+    protected override async void Select(Button button, EventArgs args)
+    {
+        Popover popover = Popover.New();
+        popover.SetParent(button);
+        popover.WidthRequest = 800;
+        popover.HeightRequest = 400;
+        BeforeClickOpenFunc?.Invoke();
+
+        ХарактеристикиНоменклатури_ШвидкийВибір page = ХарактеристикиНоменклатури_ШвидкийВибір.New();
+        page.PopoverParent = popover;
+            
+        page.DirectoryPointerItem = pointer.UniqueID;
+        page.CallBack_OnSelectPointer = async p => 
+        {
+            await PointerChange(p);
+            AfterSelectFunc?.Invoke();
+        };
+        
+        page.Власник.Pointer = Власник;
+        
+
+        popover.SetChild(page);
+        popover.Show();
+
+        await page.SetValue();
+    }
+
+    protected override async void Clear()
+    {
+        await PointerChange(null);
+        AfterSelectFunc?.Invoke();
+        AfterClearFunc?.Invoke();
+    }
+}
+    

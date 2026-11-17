@@ -1,4 +1,3 @@
-
 /*
         ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки.cs
         Таблична Частина
@@ -12,12 +11,12 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_03lg9OJznEi9L8iPPlUaxA")]
+[GObject.Subclass<DocumentFormTablePart>("VvedenniaZalyshkiv_TablePart_BankivskiRakhunky")]
 partial class ВведенняЗалишків_ТабличнаЧастина_БанківськіРахунки : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
 
-    [GObject.Subclass<GObject.Object>("ItemRow_03lg9OJznEi9L8iPPlUaxA")]
+    [GObject.Subclass<GObject.Object>("VvedenniaZalyshkiv_TablePart_BankivskiRakhunky_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -186,6 +185,14 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                    
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -216,6 +223,16 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
 
                 (row.Сhanged_БанківськийРахунок = () => cell.Pointer = row.БанківськийРахунок).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not БанківськіРахункиОрганізацій_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_БанківськийРахунок = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Банківський рахунок", factory);
             column.Resizable = true;
@@ -249,6 +266,16 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Сума = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -264,31 +291,43 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<ВведенняЗалишків_БанківськіРахунки_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.БанківськийРахунок = x.БанківськийРахунок;
+        row.Сума = x.Сума;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<ВведенняЗалишків_БанківськіРахунки_TablePart.Record> ToRecords()
+    {
+        List<ВведенняЗалишків_БанківськіРахунки_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    БанківськийРахунок = row.БанківськийРахунок,
+                    Сума = row.Сума,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
-        if (ЕлементВласник != null)
+        if (ЕлементВласник != null) 
         {
             ЕлементВласник.БанківськіРахунки_TablePart.FillJoin([ВведенняЗалишків_БанківськіРахунки_TablePart.НомерРядка,]);
             await ЕлементВласник.БанківськіРахунки_TablePart.Read();
-
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.БанківськіРахунки_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.БанківськийРахунок = record.БанківськийРахунок;
-                row.Сума = record.Сума;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            
+            UpdateStore(ToItemRows(ЕлементВласник.БанківськіРахунки_TablePart.Records));
         }
     }
 
@@ -297,51 +336,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_Б
         if (ЕлементВласник != null)
         {
             ЕлементВласник.БанківськіРахунки_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.БанківськіРахунки_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        БанківськийРахунок = row.БанківськийРахунок,
-                        Сума = row.Сума,
-
-                    });
-                }
-            }
+            ЕлементВласник.БанківськіРахунки_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.БанківськіРахунки_TablePart.Save(true);
-
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
-
-                var rows = ЕлементВласник.БанківськіРахунки_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.БанківськийРахунок = x.БанківськийРахунок;
-                    row.Сума = x.Сума;
-
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
+            UpdateStore(ToItemRows(ЕлементВласник.БанківськіРахунки_TablePart.Records));
         }
     }
 

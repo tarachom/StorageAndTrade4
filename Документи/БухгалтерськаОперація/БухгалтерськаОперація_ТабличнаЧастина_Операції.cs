@@ -1,4 +1,3 @@
-
 /*
         БухгалтерськаОперація_ТабличнаЧастина_Операції.cs
         Таблична Частина
@@ -13,12 +12,12 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_Wc5I6l3tR0azl5Y4HtABAg")]
+[GObject.Subclass<DocumentFormTablePart>("BukhhalterskaOperatsiia_TablePart_Operatsii")]
 partial class БухгалтерськаОперація_ТабличнаЧастина_Операції : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
 
-    [GObject.Subclass<GObject.Object>("ItemRow_NrefAf5WQn2qUPT4C4Ig0w")]
+    [GObject.Subclass<GObject.Object>("BukhhalterskaOperatsiia_TablePart_Operatsii_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -556,6 +555,14 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -581,6 +588,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 cell.OnСhanged = () => row.ВидПроводки = ПсевдонімиПерелічення.ВидиПроводок_FindByName(cell.Value);
                 (row.Сhanged_ВидПроводки = () => cell.Value = row.ВидПроводки.ToString()).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not DropDownTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_ВидПроводки = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид", factory);
             column.Resizable = true;
@@ -612,6 +629,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 };
 
                 (row.Сhanged_Рахунок = () => cell.Pointer = row.Рахунок).Invoke();
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПланРахунків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+
+                row.Сhanged_Рахунок = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Рахунок", factory);
             column.Resizable = true;
@@ -650,6 +677,21 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_Аналітика3 = () => cell.Аналітика3.Pointer = row.Аналітика3).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Група_Аналітика cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.Аналітика1.OnSelect = null;
+                row.Сhanged_Аналітика1 = null;
+
+                cell.Аналітика2.OnSelect = null;
+                row.Сhanged_Аналітика2 = null;
+
+                cell.Аналітика3.OnSelect = null;
+                row.Сhanged_Аналітика3 = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Аналітика 1\nАналітика 2\nАналітика 3", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
@@ -677,6 +719,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_Сума = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -703,6 +755,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 cell.OnСhanged = () => row.Кількість = cell.Value;
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_Кількість = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
@@ -737,6 +799,21 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_СумаПО = () => cell.СумаПО.Value = row.СумаПО).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Група_ВалютаТаСуми cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.Валюта.OnSelect = null;
+                row.Сhanged_Валюта = null;
+
+                cell.СумаВВалюті.OnСhanged = null;
+                row.Сhanged_СумаВВалюті = null;
+
+                cell.СумаПО.OnСhanged = null;
+                row.Сhanged_СумаПО = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Валюта\nСума в валюті\nСума ПО", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -763,6 +840,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 cell.OnСhanged = () => row.КурсВалюти = cell.Value;
                 (row.Сhanged_КурсВалюти = () => cell.Value = row.КурсВалюти).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_КурсВалюти = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Курс валюти", factory);
             column.Resizable = true;
@@ -795,6 +882,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 };
 
                 (row.Сhanged_КореспондуючийРахунок = () => cell.Pointer = row.КореспондуючийРахунок).Invoke();
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПланРахунків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+
+                row.Сhanged_КореспондуючийРахунок = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кореспондуючий\nрахунок", factory);
             column.Resizable = true;
@@ -833,6 +930,21 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_КорАналітика3 = () => cell.Аналітика3.Pointer = row.КорАналітика3).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Група_Аналітика cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.Аналітика1.OnSelect = null;
+                row.Сhanged_КорАналітика1 = null;
+
+                cell.Аналітика2.OnSelect = null;
+                row.Сhanged_КорАналітика2 = null;
+
+                cell.Аналітика3.OnSelect = null;
+                row.Сhanged_КорАналітика3 = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Кор аналітика 1\nКор аналітика 2\nКор аналітика 3", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
@@ -859,6 +971,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 cell.OnSelect = () => row.Податок = cell.Pointer;
                 (row.Сhanged_Податок = () => cell.Pointer = row.Податок).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ВидиПодатків_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+
+                row.Сhanged_Податок = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Податок", factory);
             column.Resizable = true;
@@ -887,6 +1009,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_СумаПодатку = () => cell.Value = row.СумаПодатку).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_СумаПодатку = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума податку", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -913,6 +1045,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 cell.OnSelect = () => row.Журнал = cell.Pointer;
                 (row.Сhanged_Журнал = () => cell.Pointer = row.Журнал).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ВидиЖурналів_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+
+                row.Сhanged_Журнал = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Журнал", factory);
             column.Resizable = true;
@@ -941,6 +1083,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_ТипБухОперації = () => cell.Pointer = row.ТипБухОперації).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ТипиБухОперацій_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+
+                row.Сhanged_ТипБухОперації = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Тип бух операції", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
@@ -968,6 +1120,16 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
                 (row.Сhanged_Коментар = () => cell.Value = row.Коментар).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not TextTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_Коментар = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Коментар", factory);
             column.Resizable = true;
             column.FixedWidth = 200;
@@ -983,138 +1145,95 @@ partial class БухгалтерськаОперація_ТабличнаЧас�
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<БухгалтерськаОперація_Операції_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.Рахунок = x.Рахунок;
+        row.ВидПроводки = x.ВидПроводки;
+        row.Аналітика1 = x.Аналітика1;
+        row.Аналітика2 = x.Аналітика2;
+        row.Аналітика3 = x.Аналітика3;
+        row.Коментар = x.Коментар;
+        row.КореспондуючийРахунок = x.КореспондуючийРахунок;
+        row.КорАналітика1 = x.КорАналітика1;
+        row.КорАналітика2 = x.КорАналітика2;
+        row.КорАналітика3 = x.КорАналітика3;
+        row.Податок = x.Податок;
+        row.СумаПодатку = x.СумаПодатку;
+        row.Журнал = x.Журнал;
+        row.ТипБухОперації = x.ТипБухОперації;
+        row.Сума = x.Сума;
+        row.Кількість = x.Кількість;
+        row.Валюта = x.Валюта;
+        row.СумаВВалюті = x.СумаВВалюті;
+        row.СумаПО = x.СумаПО;
+        row.КурсВалюти = x.КурсВалюти;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<БухгалтерськаОперація_Операції_TablePart.Record> ToRecords()
+    {
+        List<БухгалтерськаОперація_Операції_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Рахунок = row.Рахунок,
+                    ВидПроводки = row.ВидПроводки,
+                    Аналітика1 = row.Аналітика1,
+                    Аналітика2 = row.Аналітика2,
+                    Аналітика3 = row.Аналітика3,
+                    Коментар = row.Коментар,
+                    КореспондуючийРахунок = row.КореспондуючийРахунок,
+                    КорАналітика1 = row.КорАналітика1,
+                    КорАналітика2 = row.КорАналітика2,
+                    КорАналітика3 = row.КорАналітика3,
+                    Податок = row.Податок,
+                    СумаПодатку = row.СумаПодатку,
+                    Журнал = row.Журнал,
+                    ТипБухОперації = row.ТипБухОперації,
+                    Сума = row.Сума,
+                    Кількість = row.Кількість,
+                    Валюта = row.Валюта,
+                    СумаВВалюті = row.СумаВВалюті,
+                    СумаПО = row.СумаПО,
+                    КурсВалюти = row.КурсВалюти,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
-        if (ЕлементВласник != null)
+        
+        if (ЕлементВласник != null) 
         {
+            
             ЕлементВласник.Операції_TablePart.FillJoin([БухгалтерськаОперація_Операції_TablePart.НомерРядка,]);
             await ЕлементВласник.Операції_TablePart.Read();
-
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.Операції_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.Рахунок = record.Рахунок;
-                row.ВидПроводки = record.ВидПроводки;
-                row.Аналітика1 = record.Аналітика1;
-                row.Аналітика2 = record.Аналітика2;
-                row.Аналітика3 = record.Аналітика3;
-                row.Коментар = record.Коментар;
-                row.КореспондуючийРахунок = record.КореспондуючийРахунок;
-                row.КорАналітика1 = record.КорАналітика1;
-                row.КорАналітика2 = record.КорАналітика2;
-                row.КорАналітика3 = record.КорАналітика3;
-                row.Податок = record.Податок;
-                row.СумаПодатку = record.СумаПодатку;
-                row.Журнал = record.Журнал;
-                row.ТипБухОперації = record.ТипБухОперації;
-                row.Сума = record.Сума;
-                row.Кількість = record.Кількість;
-                row.Валюта = record.Валюта;
-                row.СумаВВалюті = record.СумаВВалюті;
-                row.СумаПО = record.СумаПО;
-                row.КурсВалюти = record.КурсВалюти;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            
+            UpdateStore(ToItemRows(ЕлементВласник.Операції_TablePart.Records));
+        
         }
     }
 
     public override async Task SaveRecords()
     {
+        
         if (ЕлементВласник != null)
         {
-            ЕлементВласник.Операції_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Операції_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Рахунок = row.Рахунок,
-                        ВидПроводки = row.ВидПроводки,
-                        Аналітика1 = row.Аналітика1,
-                        Аналітика2 = row.Аналітика2,
-                        Аналітика3 = row.Аналітика3,
-                        Коментар = row.Коментар,
-                        КореспондуючийРахунок = row.КореспондуючийРахунок,
-                        КорАналітика1 = row.КорАналітика1,
-                        КорАналітика2 = row.КорАналітика2,
-                        КорАналітика3 = row.КорАналітика3,
-                        Податок = row.Податок,
-                        СумаПодатку = row.СумаПодатку,
-                        Журнал = row.Журнал,
-                        ТипБухОперації = row.ТипБухОперації,
-                        Сума = row.Сума,
-                        Кількість = row.Кількість,
-                        Валюта = row.Валюта,
-                        СумаВВалюті = row.СумаВВалюті,
-                        СумаПО = row.СумаПО,
-                        КурсВалюти = row.КурсВалюти,
-
-                    });
-                }
-            }
+        ЕлементВласник.Операції_TablePart.Records.Clear();
+            ЕлементВласник.Операції_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.Операції_TablePart.Save(true);
+            UpdateStore(ToItemRows(ЕлементВласник.Операції_TablePart.Records));
 
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
-
-                var rows = ЕлементВласник.Операції_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.Рахунок = x.Рахунок;
-                    row.ВидПроводки = x.ВидПроводки;
-                    row.Аналітика1 = x.Аналітика1;
-                    row.Аналітика2 = x.Аналітика2;
-                    row.Аналітика3 = x.Аналітика3;
-                    row.Коментар = x.Коментар;
-                    row.КореспондуючийРахунок = x.КореспондуючийРахунок;
-                    row.КорАналітика1 = x.КорАналітика1;
-                    row.КорАналітика2 = x.КорАналітика2;
-                    row.КорАналітика3 = x.КорАналітика3;
-                    row.Податок = x.Податок;
-                    row.СумаПодатку = x.СумаПодатку;
-                    row.Журнал = x.Журнал;
-                    row.ТипБухОперації = x.ТипБухОперації;
-                    row.Сума = x.Сума;
-                    row.Кількість = x.Кількість;
-                    row.Валюта = x.Валюта;
-                    row.СумаВВалюті = x.СумаВВалюті;
-                    row.СумаПО = x.СумаПО;
-                    row.КурсВалюти = x.КурсВалюти;
-
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
         }
     }
 

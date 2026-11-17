@@ -47,6 +47,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
 
         // Таблична частина "Товари"
         Товари.HeightRequest = 300;
+        Товари.ЕлементВласник = Елемент;
         Interface.Notebook.InsertPage(Товари, Label.New("Товари"), 0);
         Interface.Notebook.SetCurrentPage(0);
 
@@ -149,9 +150,7 @@ partial class ЧекККМ_Елемент : DocumentFormElement
         Автор.Pointer = Елемент.Автор;
 
         // Таблична частина "Товари" 
-        Товари.ЕлементВласник = Елемент;
         await Товари.LoadRecords();
-
     }
 
     protected override void GetValue()

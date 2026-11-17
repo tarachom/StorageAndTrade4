@@ -1,4 +1,3 @@
-
 /*
         РахунокФактура_ТабличнаЧастина_Товари.cs
         Таблична Частина
@@ -16,12 +15,12 @@ using GeneratedCode.Константи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_2nfbfLchXk20h7F3Z29tig")]
+[GObject.Subclass<DocumentFormTablePart>("RakhunokFaktura_TablePart_Tovary")]
 partial class РахунокФактура_ТабличнаЧастина_Товари : DocumentFormTablePart
 {
     #region Data
 
-    [GObject.Subclass<GObject.Object>("ItemRow_2nfbfLchXk20h7F3Z29tig")]
+    [GObject.Subclass<GObject.Object>("RakhunokFaktura_TablePart_Tovary_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -437,6 +436,14 @@ LIMIT 1
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -467,6 +474,15 @@ LIMIT 1
 
                 (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+                row.Сhanged_Номенклатура = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
@@ -502,6 +518,16 @@ LIMIT 1
                 (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ХарактеристикиНоменклатури_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.BeforeClickOpenFunc = null;
+                cell.OnSelect = null;
+                row.Сhanged_ХарактеристикаНоменклатури = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
@@ -528,6 +554,15 @@ LIMIT 1
                 cell.OnСhanged = () => row.Коєфіціент = cell.Value;
                 (row.Сhanged_Коєфіціент = () => cell.Value = row.Коєфіціент).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Коєфіціент = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
             column.Resizable = true;
@@ -562,6 +597,16 @@ LIMIT 1
                 (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.BeforeClickOpenFunc = null;
+                cell.OnSelect = null;
+                row.Сhanged_Пакування = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -594,6 +639,15 @@ LIMIT 1
                 (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Кількість = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -620,6 +674,15 @@ LIMIT 1
                 cell.OnSelect = () => row.ВидЦіни = cell.Pointer;
                 (row.Сhanged_ВидЦіни = () => cell.Pointer = row.ВидЦіни).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ВидиЦін_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+                row.Сhanged_ВидЦіни = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Вид ціни", factory);
             column.Resizable = true;
@@ -653,6 +716,15 @@ LIMIT 1
                 (row.Сhanged_Ціна = () => cell.Value = row.Ціна).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Ціна = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Ціна", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -684,6 +756,15 @@ LIMIT 1
 
                 (row.Сhanged_Скидка = () => cell.Value = row.Скидка).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Скидка = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Знижка", factory);
             column.Resizable = true;
@@ -717,6 +798,15 @@ LIMIT 1
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+                row.Сhanged_Сума = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -744,6 +834,15 @@ LIMIT 1
                 (row.Сhanged_Склад = () => cell.Pointer = row.Склад).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Склади_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+                row.Сhanged_Склад = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Склад", factory);
             column.Resizable = true;
             column.FixedWidth = 300;
@@ -759,6 +858,48 @@ LIMIT 1
         }
     }
 
+    ItemRow[] ToItemRows(List<РахунокФактура_Товари_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.Номенклатура = x.Номенклатура;
+        row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
+        row.Коєфіціент = x.Коєфіціент;
+        row.Пакування = x.Пакування;
+        row.Кількість = x.Кількість;
+        row.ВидЦіни = x.ВидЦіни;
+        row.Ціна = x.Ціна;
+        row.Сума = x.Сума;
+        row.Скидка = x.Скидка;
+        row.Склад = x.Склад;
+        
+        return row;
+    })];
+
+    List<РахунокФактура_Товари_TablePart.Record> ToRecords()
+    {
+        List<РахунокФактура_Товари_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Номенклатура = row.Номенклатура,
+                    ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
+                    Коєфіціент = row.Коєфіціент,
+                    Пакування = row.Пакування,
+                    Кількість = row.Кількість,
+                    ВидЦіни = row.ВидЦіни,
+                    Ціна = row.Ціна,
+                    Сума = row.Сума,
+                    Скидка = row.Скидка,
+                    Склад = row.Склад,
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
         if (ЕлементВласник != null)
@@ -766,32 +907,7 @@ LIMIT 1
             ЕлементВласник.Товари_TablePart.FillJoin([РахунокФактура_Товари_TablePart.НомерРядка,]);
             await ЕлементВласник.Товари_TablePart.Read();
 
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.Товари_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.Номенклатура = record.Номенклатура;
-                row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
-                row.Коєфіціент = record.Коєфіціент;
-                row.Пакування = record.Пакування;
-                row.Кількість = record.Кількість;
-                row.ВидЦіни = record.ВидЦіни;
-                row.Ціна = record.Ціна;
-                row.Сума = record.Сума;
-                row.Скидка = record.Скидка;
-                row.Склад = record.Склад;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            UpdateStore(ToItemRows(ЕлементВласник.Товари_TablePart.Records));
         }
     }
 
@@ -800,67 +916,9 @@ LIMIT 1
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Товари_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Товари_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Номенклатура = row.Номенклатура,
-                        ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                        Коєфіціент = row.Коєфіціент,
-                        Пакування = row.Пакування,
-                        Кількість = row.Кількість,
-                        ВидЦіни = row.ВидЦіни,
-                        Ціна = row.Ціна,
-                        Сума = row.Сума,
-                        Скидка = row.Скидка,
-                        Склад = row.Склад,
-
-                    });
-                }
-            }
+            ЕлементВласник.Товари_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.Товари_TablePart.Save(true);
-
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
-
-                var rows = ЕлементВласник.Товари_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.Номенклатура = x.Номенклатура;
-                    row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
-                    row.Коєфіціент = x.Коєфіціент;
-                    row.Пакування = x.Пакування;
-                    row.Кількість = x.Кількість;
-                    row.ВидЦіни = x.ВидЦіни;
-                    row.Ціна = x.Ціна;
-                    row.Сума = x.Сума;
-                    row.Скидка = x.Скидка;
-                    row.Склад = x.Склад;
-
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
+            UpdateStore(ToItemRows(ЕлементВласник.Товари_TablePart.Records));
         }
     }
 

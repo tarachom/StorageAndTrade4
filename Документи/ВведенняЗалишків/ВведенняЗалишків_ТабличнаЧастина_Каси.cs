@@ -1,4 +1,3 @@
-
 /*
         ВведенняЗалишків_ТабличнаЧастина_Каси.cs
         Таблична Частина
@@ -12,12 +11,12 @@ using GeneratedCode.Документи;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_5gTeaNxNUe8whrouitQg")]
+[GObject.Subclass<DocumentFormTablePart>("VvedenniaZalyshkiv_TablePart_Kasy")]
 partial class ВведенняЗалишків_ТабличнаЧастина_Каси : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
 
-    [GObject.Subclass<GObject.Object>("ItemRow_5gTeaNxNUe8whrouitQg")]
+    [GObject.Subclass<GObject.Object>("VvedenniaZalyshkiv_TablePart_Kasy_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -186,6 +185,14 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                    
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -216,6 +223,16 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
 
                 (row.Сhanged_Каса = () => cell.Pointer = row.Каса).Invoke();
 
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Каси_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_Каса = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Каса", factory);
             column.Resizable = true;
@@ -249,6 +266,16 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Сума = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 150;
@@ -264,31 +291,43 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<ВведенняЗалишків_Каси_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.Каса = x.Каса;
+        row.Сума = x.Сума;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<ВведенняЗалишків_Каси_TablePart.Record> ToRecords()
+    {
+        List<ВведенняЗалишків_Каси_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Каса = row.Каса,
+                    Сума = row.Сума,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
-        if (ЕлементВласник != null)
+        if (ЕлементВласник != null) 
         {
             ЕлементВласник.Каси_TablePart.FillJoin([ВведенняЗалишків_Каси_TablePart.НомерРядка,]);
             await ЕлементВласник.Каси_TablePart.Read();
-
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.Каси_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.Каса = record.Каса;
-                row.Сума = record.Сума;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            
+            UpdateStore(ToItemRows(ЕлементВласник.Каси_TablePart.Records));
         }
     }
 
@@ -297,51 +336,9 @@ partial class ВведенняЗалишків_ТабличнаЧастина_К
         if (ЕлементВласник != null)
         {
             ЕлементВласник.Каси_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Каси_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Каса = row.Каса,
-                        Сума = row.Сума,
-
-                    });
-                }
-            }
+            ЕлементВласник.Каси_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.Каси_TablePart.Save(true);
-
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
-
-                var rows = ЕлементВласник.Каси_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.Каса = x.Каса;
-                    row.Сума = x.Сума;
-
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
+            UpdateStore(ToItemRows(ЕлементВласник.Каси_TablePart.Records));
         }
     }
 

@@ -14,22 +14,21 @@ namespace StorageAndTrade;
 /// <summary>
 /// Переоприділення композитного контрола вибору
 /// </summary>
-[GObject.Subclass<InterfaceGtk4.CompositePointerControlTablePartCell>]
+[GObject.Subclass<InterfaceGtk4.CompositePointerControlTablePartCell>(nameof(CompositePointerControlTablePartCell))]
 partial class CompositePointerControlTablePartCell : InterfaceGtk4.CompositePointerControlTablePartCell
 {
     /// <summary>
     /// Новий
     /// </summary>
     /// <returns>Новий контрол</returns>
-    public static CompositePointerControlTablePartCell New()
-    {
-        CompositePointerControlTablePartCell control = NewWithProperties([]);
-        control.Kernel = Config.Kernel;
-        control.NamespaceProgram = Config.NamespaceProgram;
-        control.NamespaceCodeGeneration = Config.NamespaceCodeGeneration;
-        control.NotebookFunc = Program.BasicForm?.NotebookFunc;
+    public static CompositePointerControlTablePartCell New() => NewWithProperties([]);
 
-        return control;
+    partial void Initialize()
+    {
+        Kernel = Config.Kernel;
+        NamespaceProgram = Config.NamespaceProgram;
+        NamespaceCodeGeneration = Config.NamespaceCodeGeneration;
+        NotebookFunc = Program.BasicForm?.NotebookFunc;
     }
 
     /// <summary>

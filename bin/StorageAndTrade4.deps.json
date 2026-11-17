@@ -1,11 +1,11 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
+    "name": ".NETCoreApp,Version=v11.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v10.0": {
+    ".NETCoreApp,Version=v11.0": {
       "StorageAndTrade4/4.0.0.0": {
         "dependencies": {
           "AccountingSoftware": "4.0.0",
@@ -13,8 +13,8 @@
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
           "InterfaceGtk4": "4.0.0",
           "NPOI": "2.8.1",
-          "QuestPDF": "2026.9.0",
-          "SkiaSharp": "4.153.1"
+          "SkiaSharp": "4.156.0",
+          "System.Security.Cryptography.Xml": "10.0.13"
         },
         "runtime": {
           "StorageAndTrade4.dll": {}
@@ -272,15 +272,15 @@
           }
         }
       },
-      "Google.GenAI/1.27.0": {
+      "Google.GenAI/2.1.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
-          "Microsoft.Extensions.AI.Abstractions": "10.11.0"
+          "Microsoft.Extensions.AI.Abstractions": "11.0.0"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "1.27.0.0",
-            "fileVersion": "1.27.0.0",
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0",
             "localPath": "Google.GenAI.dll"
           }
         }
@@ -294,70 +294,25 @@
           }
         }
       },
-      "Microsoft.Extensions.AI/10.11.0": {
+      "Microsoft.Extensions.AI/11.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "10.11.0",
-          "Microsoft.Extensions.Caching.Abstractions": "10.0.13",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.13",
-          "Microsoft.Extensions.Logging.Abstractions": "10.0.13",
-          "System.Numerics.Tensors": "10.0.13"
+          "Microsoft.Extensions.AI.Abstractions": "11.0.0",
+          "System.Numerics.Tensors": "11.0.0"
         },
         "runtime": {
-          "lib/net10.0/Microsoft.Extensions.AI.dll": {
-            "assemblyVersion": "10.11.0.0",
-            "fileVersion": "10.1100.26.51307",
+          "lib/net11.0/Microsoft.Extensions.AI.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.26.56003",
             "localPath": "Microsoft.Extensions.AI.dll"
           }
         }
       },
-      "Microsoft.Extensions.AI.Abstractions/10.11.0": {
+      "Microsoft.Extensions.AI.Abstractions/11.0.0": {
         "runtime": {
-          "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
-            "assemblyVersion": "10.11.0.0",
-            "fileVersion": "10.1100.26.51307",
+          "lib/net11.0/Microsoft.Extensions.AI.Abstractions.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.26.56003",
             "localPath": "Microsoft.Extensions.AI.Abstractions.dll"
-          }
-        }
-      },
-      "Microsoft.Extensions.Caching.Abstractions/10.0.13": {
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "10.0.13"
-        },
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1326.50504",
-            "localPath": "Microsoft.Extensions.Caching.Abstractions.dll"
-          }
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.13": {
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1326.50504",
-            "localPath": "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/10.0.13": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.13"
-        },
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1326.50504",
-            "localPath": "Microsoft.Extensions.Logging.Abstractions.dll"
-          }
-        }
-      },
-      "Microsoft.Extensions.Primitives/10.0.13": {
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.Primitives.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1326.50504",
-            "localPath": "Microsoft.Extensions.Primitives.dll"
           }
         }
       },
@@ -380,9 +335,6 @@
         }
       },
       "Npgsql/10.0.3": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "10.0.13"
-        },
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
             "assemblyVersion": "10.0.3.0",
@@ -399,9 +351,9 @@
           "MathNet.Numerics.Signed": "5.0.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "SharpZipLib": "1.4.2",
-          "SkiaSharp": "4.153.1",
+          "SkiaSharp": "4.156.0",
           "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.4",
-          "System.Security.Cryptography.Xml": "10.0.10",
+          "System.Security.Cryptography.Xml": "10.0.13",
           "ZString": "2.6.0"
         },
         "runtime": {
@@ -427,113 +379,6 @@
           }
         }
       },
-      "QuestPDF/2026.9.0": {
-        "runtime": {
-          "lib/net10.0/QuestPDF.dll": {
-            "assemblyVersion": "2026.9.0.0",
-            "fileVersion": "2026.9.0.0",
-            "localPath": "QuestPDF.dll"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/linux-arm64/native/libQuestPdfSkia.so": {
-            "rid": "linux-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/linux-arm64/native/libQuestPdfSkia.so"
-          },
-          "runtimes/linux-arm64/native/libqpdf.so": {
-            "rid": "linux-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/linux-arm64/native/libqpdf.so"
-          },
-          "runtimes/linux-musl-x64/native/libQuestPdfSkia.so": {
-            "rid": "linux-musl-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/linux-musl-x64/native/libQuestPdfSkia.so"
-          },
-          "runtimes/linux-musl-x64/native/libqpdf.so": {
-            "rid": "linux-musl-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/linux-musl-x64/native/libqpdf.so"
-          },
-          "runtimes/linux-x64/native/libQuestPdfSkia.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/linux-x64/native/libQuestPdfSkia.so"
-          },
-          "runtimes/linux-x64/native/libqpdf.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/linux-x64/native/libqpdf.so"
-          },
-          "runtimes/osx-arm64/native/libQuestPdfSkia.dylib": {
-            "rid": "osx-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/osx-arm64/native/libQuestPdfSkia.dylib"
-          },
-          "runtimes/osx-arm64/native/libqpdf.dylib": {
-            "rid": "osx-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/osx-arm64/native/libqpdf.dylib"
-          },
-          "runtimes/osx-x64/native/libQuestPdfSkia.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/osx-x64/native/libQuestPdfSkia.dylib"
-          },
-          "runtimes/osx-x64/native/libqpdf.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/osx-x64/native/libqpdf.dylib"
-          },
-          "runtimes/win-arm64/native/QuestPdfSkia.dll": {
-            "rid": "win-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/win-arm64/native/QuestPdfSkia.dll"
-          },
-          "runtimes/win-arm64/native/qpdf.dll": {
-            "rid": "win-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/win-arm64/native/qpdf.dll"
-          },
-          "runtimes/win-x64/native/QuestPdfSkia.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/win-x64/native/QuestPdfSkia.dll"
-          },
-          "runtimes/win-x64/native/qpdf.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/win-x64/native/qpdf.dll"
-          },
-          "runtimes/win-x86/native/QuestPdfSkia.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/win-x86/native/QuestPdfSkia.dll"
-          },
-          "runtimes/win-x86/native/qpdf.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0",
-            "localPath": "runtimes/win-x86/native/qpdf.dll"
-          }
-        }
-      },
       "SharpZipLib/1.4.2": {
         "runtime": {
           "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
@@ -543,15 +388,15 @@
           }
         }
       },
-      "SkiaSharp/4.153.1": {
+      "SkiaSharp/4.156.0": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "4.153.1",
-          "SkiaSharp.NativeAssets.macOS": "4.153.1"
+          "SkiaSharp.NativeAssets.Win32": "4.156.0",
+          "SkiaSharp.NativeAssets.macOS": "4.156.0"
         },
         "runtime": {
           "lib/net10.0/SkiaSharp.dll": {
-            "assemblyVersion": "4.153.0.0",
-            "fileVersion": "4.153.1.0",
+            "assemblyVersion": "4.156.0.0",
+            "fileVersion": "4.156.0.0",
             "localPath": "SkiaSharp.dll"
           }
         }
@@ -638,7 +483,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/4.153.1": {
+      "SkiaSharp.NativeAssets.macOS/4.156.0": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
@@ -648,7 +493,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/4.153.1": {
+      "SkiaSharp.NativeAssets.Win32/4.156.0": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
@@ -718,20 +563,20 @@
           }
         }
       },
-      "System.Numerics.Tensors/10.0.13": {
+      "System.Numerics.Tensors/11.0.0": {
         "runtime": {
-          "lib/net10.0/System.Numerics.Tensors.dll": {
-            "assemblyVersion": "10.0.0.13",
-            "fileVersion": "10.0.1326.50504",
+          "lib/net11.0/System.Numerics.Tensors.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.26.53018",
             "localPath": "System.Numerics.Tensors.dll"
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/10.0.10": {
+      "System.Security.Cryptography.Pkcs/10.0.13": {
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1026.32716",
+            "fileVersion": "10.0.1326.50504",
             "localPath": "System.Security.Cryptography.Pkcs.dll"
           }
         },
@@ -740,19 +585,19 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1026.32716",
+            "fileVersion": "10.0.1326.50504",
             "localPath": "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll"
           }
         }
       },
-      "System.Security.Cryptography.Xml/10.0.10": {
+      "System.Security.Cryptography.Xml/10.0.13": {
         "dependencies": {
-          "System.Security.Cryptography.Pkcs": "10.0.10"
+          "System.Security.Cryptography.Pkcs": "10.0.13"
         },
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.Xml.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1026.32716",
+            "fileVersion": "10.0.1326.50504",
             "localPath": "System.Security.Cryptography.Xml.dll"
           }
         }
@@ -796,9 +641,9 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
-          "Google.GenAI": "1.27.0",
+          "Google.GenAI": "2.1.0",
           "InterfaceGtkLib": "4.0.0",
-          "Microsoft.Extensions.AI": "10.11.0"
+          "Microsoft.Extensions.AI": "11.0.0"
         },
         "runtime": {
           "InterfaceGtk4.dll": {
@@ -970,12 +815,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/1.27.0": {
+    "Google.GenAI/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hIoqvTL8Vf5E+kxGws/PkWlGgUFEZicl3kslIMOHf1u4cQGgbgQLJHvfLK2IqLzy9nAdjrrO4TIgqBTmMQG7qQ==",
-      "path": "google.genai/1.27.0",
-      "hashPath": "google.genai.1.27.0.nupkg.sha512"
+      "sha512": "sha512-eqrnpcFOh02/m22Q6QQS3hjTMkIKipD5kbihacLZrKXUjlv3LFRpczsjoH8H3WKdQNUrYprvDpYupuWGuns/Ww==",
+      "path": "google.genai/2.1.0",
+      "hashPath": "google.genai.2.1.0.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -984,47 +829,19 @@
       "path": "mathnet.numerics.signed/5.0.0",
       "hashPath": "mathnet.numerics.signed.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI/10.11.0": {
+    "Microsoft.Extensions.AI/11.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PtgeWqaC3gQ8/saMgkUiwKeqCBPfDOcjfqDLcXtwJI//pu79gYZqUMPOh7/bFdFWcJihP/rWq9sgQd2xQtEP0A==",
-      "path": "microsoft.extensions.ai/10.11.0",
-      "hashPath": "microsoft.extensions.ai.10.11.0.nupkg.sha512"
+      "sha512": "sha512-Vn8jo7RCYS3+tD7XOYgwtAPtd6CZIfIpzE20wGkbehAezj+tRY0lZWnEgehP0bLEAno/L54aCa4GnretNoGkXQ==",
+      "path": "microsoft.extensions.ai/11.0.0",
+      "hashPath": "microsoft.extensions.ai.11.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI.Abstractions/10.11.0": {
+    "Microsoft.Extensions.AI.Abstractions/11.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-h4DX/TdJU4fk1GGaf19n6Kujkj6VXbGeL4UEOsQ8+ZJC5fVApPauokCtvBP684BYbczUYZQNfo1mbmyHG4WVSg==",
-      "path": "microsoft.extensions.ai.abstractions/10.11.0",
-      "hashPath": "microsoft.extensions.ai.abstractions.10.11.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Caching.Abstractions/10.0.13": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UOJqcdNMoFcV/5RUcOlVKq9pPmbrcmbpLx5iYz9QtrmMcWRQzlL5Q/NZRfbPPLNyIEc1HWjjs5Z7nIwqewU1sg==",
-      "path": "microsoft.extensions.caching.abstractions/10.0.13",
-      "hashPath": "microsoft.extensions.caching.abstractions.10.0.13.nupkg.sha512"
-    },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.13": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-G2GrGWNAPZBsii2F6AU8n+JT2tC1/I0Ml/e9ZyNCgPjf3hZqronP7o0X91aAynCmVeae8KkSIUNXXeXCNRmdVQ==",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/10.0.13",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.10.0.13.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Abstractions/10.0.13": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aSZEhEig4fvNiw2zs8Z6NyDlniKtq6YjcF3DyHuqTEHcZ2VKA/6itMPZ+dW+yWABWExlDcQwwdbqX1Rcb7W8WQ==",
-      "path": "microsoft.extensions.logging.abstractions/10.0.13",
-      "hashPath": "microsoft.extensions.logging.abstractions.10.0.13.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Primitives/10.0.13": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZjTwxzhiw2TMEzIbUDkMF0dfDB2I4NQgIfKD0ELu9/5Mk+SRGdKZcD0/lvBrRCAPo6KN2r0BW86MRancoyJkoA==",
-      "path": "microsoft.extensions.primitives/10.0.13",
-      "hashPath": "microsoft.extensions.primitives.10.0.13.nupkg.sha512"
+      "sha512": "sha512-UYZTudmTrGykWIRzcO/TKauTx/+L/h4MYpUBODCG7aIybRVkv2y6uhVwG6UHRS6uTzRqg0K8IJprC9/QhMZGsw==",
+      "path": "microsoft.extensions.ai.abstractions/11.0.0",
+      "hashPath": "microsoft.extensions.ai.abstractions.11.0.0.nupkg.sha512"
     },
     "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
       "type": "package",
@@ -1054,13 +871,6 @@
       "path": "npoi/2.8.1",
       "hashPath": "npoi.2.8.1.nupkg.sha512"
     },
-    "QuestPDF/2026.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qJuBVHeJMECFI4xiUQ1+kWaHm8NoVeyNepByezQOjlWGZnDzL4eZjrtHyu6G2ccVVOLOu+z1nX1N3i3zkzuArA==",
-      "path": "questpdf/2026.9.0",
-      "hashPath": "questpdf.2026.9.0.nupkg.sha512"
-    },
     "SharpZipLib/1.4.2": {
       "type": "package",
       "serviceable": true,
@@ -1068,12 +878,12 @@
       "path": "sharpziplib/1.4.2",
       "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
     },
-    "SkiaSharp/4.153.1": {
+    "SkiaSharp/4.156.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TghYLOUaP3q6rTjQw7U9uQaaXh8lEs9rfA1U7/VtmyAptVDtj/SmjtcWzFWmcC/VMWxe3QgbV9uyvqDL7ySFtQ==",
-      "path": "skiasharp/4.153.1",
-      "hashPath": "skiasharp.4.153.1.nupkg.sha512"
+      "sha512": "sha512-bdBfG346spQvqwvdz7w8yoqquN7MmU89O+TJ9TwnwyFuqhHkBOQnLJ57euu+4XWi99a5uXikDMZmcM4q58HUXw==",
+      "path": "skiasharp/4.156.0",
+      "hashPath": "skiasharp.4.156.0.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.4": {
       "type": "package",
@@ -1082,19 +892,19 @@
       "path": "skiasharp.nativeassets.linux.nodependencies/3.119.4",
       "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.4.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/4.153.1": {
+    "SkiaSharp.NativeAssets.macOS/4.156.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YTojWeWIhnpF7uC8vpMxB5wRONKkDB2t3r/nNPA3DL2pgj9fqMXRevA/rIanYazWnco4jo1ufgp3HkXuh1Tz8A==",
-      "path": "skiasharp.nativeassets.macos/4.153.1",
-      "hashPath": "skiasharp.nativeassets.macos.4.153.1.nupkg.sha512"
+      "sha512": "sha512-pBJ4ARN6ekiBqh+G697sMQmZd4igIEtSdxx9mfxR3nUTxErkrx0JeaU1+IQ4dX8qobG9Fcskv6azW3zPbAEqXQ==",
+      "path": "skiasharp.nativeassets.macos/4.156.0",
+      "hashPath": "skiasharp.nativeassets.macos.4.156.0.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/4.153.1": {
+    "SkiaSharp.NativeAssets.Win32/4.156.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Yqg6rChTVh0BUE8QQxtOA3uUBnihfgID4yex/AvDa0+os2bVcBjmI3Qj9tnOB+R1hd/Jry1Gwl8qw5JI9HZG8Q==",
-      "path": "skiasharp.nativeassets.win32/4.153.1",
-      "hashPath": "skiasharp.nativeassets.win32.4.153.1.nupkg.sha512"
+      "sha512": "sha512-D4q5I+N/IBH3LTC/SK51MkfdjuX5JZVSS4gTJHbLPZ9btgga3xSC/gL/lyh18mfpwFmnm6b61DsEv6zrhTy0Ow==",
+      "path": "skiasharp.nativeassets.win32/4.156.0",
+      "hashPath": "skiasharp.nativeassets.win32.4.156.0.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",
@@ -1110,26 +920,26 @@
       "path": "system.management/7.0.2",
       "hashPath": "system.management.7.0.2.nupkg.sha512"
     },
-    "System.Numerics.Tensors/10.0.13": {
+    "System.Numerics.Tensors/11.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E4JC7KcY4j1yx9uy8tVsHlGThnwLdUWtUz6aLHCqbN/jbtwbwbZgnVEF9atUr/7ynFCbo8Rbij056Y9bWM9ALg==",
-      "path": "system.numerics.tensors/10.0.13",
-      "hashPath": "system.numerics.tensors.10.0.13.nupkg.sha512"
+      "sha512": "sha512-thx6y1hMzB6LumB/aLcZoLHWq8wr+dbldk/FiNghyT+4ynxo9u2oCTFfb5iDMDG6hykDXLorXuaf4EPEij2BBg==",
+      "path": "system.numerics.tensors/11.0.0",
+      "hashPath": "system.numerics.tensors.11.0.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/10.0.10": {
+    "System.Security.Cryptography.Pkcs/10.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KG8t5RHczdgB3IWvRndpI0nE1DSo7ikDYSDbITxfgRFyIvnYiKzuPjaZOsPnwFQ1aOGUl9sEulJul9wlHLEUoA==",
-      "path": "system.security.cryptography.pkcs/10.0.10",
-      "hashPath": "system.security.cryptography.pkcs.10.0.10.nupkg.sha512"
+      "sha512": "sha512-a+EovgC1fBnwdlQ6cn3j4JFBfKqiFaFvoAhjisOoSvazLAcIznaBzPQP0oYnvccmeXfqUH1KebVZOxSeH6rMaw==",
+      "path": "system.security.cryptography.pkcs/10.0.13",
+      "hashPath": "system.security.cryptography.pkcs.10.0.13.nupkg.sha512"
     },
-    "System.Security.Cryptography.Xml/10.0.10": {
+    "System.Security.Cryptography.Xml/10.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Mz6Y+s+uMQKj1H2BUF0OhlmaOQkLgSG34/IrUaBDirYBQ6bgwcFvO/XtXWcoDlBLFoFB0uKqDNhybHOd+fQK1A==",
-      "path": "system.security.cryptography.xml/10.0.10",
-      "hashPath": "system.security.cryptography.xml.10.0.10.nupkg.sha512"
+      "sha512": "sha512-v6/GHhLaHkuN/ISgbKzBeyC7TP7S6Qm/dVyKA+p0ay9nlJyLif+spozjAGclY/FRIv2TC+KNQCo7dSNmupvWtQ==",
+      "path": "system.security.cryptography.xml/10.0.13",
+      "hashPath": "system.security.cryptography.xml.10.0.13.nupkg.sha512"
     },
     "ZString/2.6.0": {
       "type": "package",

@@ -1,4 +1,3 @@
-
 /*
         ПереміщенняТоварівНаСкладі_ТабличнаЧастина_Товари.cs
         Таблична Частина
@@ -7,18 +6,19 @@
 using Gtk;
 using InterfaceGtk4;
 using AccountingSoftware;
+using GeneratedCode.Константи;
 using GeneratedCode.Довідники;
 using GeneratedCode.Документи;
 using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_USesTQOMj0mi2zx8oNwmVw")]
+[GObject.Subclass<DocumentFormTablePart>("PeremishchenniaTovarivNaSkladi_TablePart_Tovary")]
 partial class ПереміщенняТоварівНаСкладі_ТабличнаЧастина_Товари : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
     
-    [GObject.Subclass<GObject.Object>("ItemRow_USesTQOMj0mi2zx8oNwmVw")]
+    [GObject.Subclass<GObject.Object>("PeremishchenniaTovarivNaSkladi_TablePart_Tovary_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -217,6 +217,29 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
 
     #endregion
 
+    #region Функції
+
+    static Task ПісляДодаванняНового(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_Коєфіціент(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_Кількість(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_Номенклатура(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_ХарактеристикаНоменклатури(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_Серія(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_Пакування(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_КоміркаВідправник(ItemRow row) => Task.CompletedTask;
+    
+    static Task ПісляЗміни_КоміркаОтримувач(ItemRow row) => Task.CompletedTask;
+    
+
+    #endregion
+
     
     public ПереміщенняТоварівНаСкладі_Object? ЕлементВласник { get; set; }
         
@@ -260,8 +283,16 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not LabelTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
+                (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                    
+                row.Сhanged_НомерРядка = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
@@ -285,9 +316,23 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnSelect = () => row.Номенклатура = cell.Pointer;
-                (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke();
+                cell.OnSelect = async () => //Із комірки в модель ->
+                {
+                    row.Номенклатура = cell.Pointer;
+                    await ПісляЗміни_Номенклатура(row);
+                };
+                (row.Сhanged_Номенклатура = () => cell.Pointer = row.Номенклатура).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not Номенклатура_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_Номенклатура = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Номенклатура", factory);
             column.Resizable = true;
@@ -315,9 +360,25 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 
                 cell.BeforeClickOpenFunc = () => cell.Власник  = row.Номенклатура;
                         
-                cell.OnSelect = () => row.ХарактеристикаНоменклатури = cell.Pointer;
-                (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke();
+                cell.OnSelect = async () => //Із комірки в модель ->
+                {
+                    row.ХарактеристикаНоменклатури = cell.Pointer;
+                    await ПісляЗміни_ХарактеристикаНоменклатури(row);
+                };
+                (row.Сhanged_ХарактеристикаНоменклатури = () => cell.Pointer = row.ХарактеристикаНоменклатури).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ХарактеристикиНоменклатури_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.BeforeClickOpenFunc = null;
+                            
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_ХарактеристикаНоменклатури = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Характеристика", factory);
             column.Resizable = true;
@@ -343,9 +404,23 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not СеріїНоменклатури_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnSelect = () => row.Серія = cell.Pointer;
-                (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke();
+                cell.OnSelect = async () => //Із комірки в модель ->
+                {
+                    row.Серія = cell.Pointer;
+                    await ПісляЗміни_Серія(row);
+                };
+                (row.Сhanged_Серія = () => cell.Pointer = row.Серія).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not СеріїНоменклатури_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_Серія = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Серія", factory);
             column.Resizable = true;
@@ -371,9 +446,23 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnСhanged = () => row.Коєфіціент = cell.Value;
-                (row.Сhanged_Коєфіціент = () => cell.Value = row.Коєфіціент).Invoke();
+                cell.OnСhanged = async () => //Із комірки в модель ->
+                {
+                    row.Коєфіціент = cell.Value;
+                    await ПісляЗміни_Коєфіціент(row);
+                };
+                (row.Сhanged_Коєфіціент = () => cell.Value = row.Коєфіціент).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Коєфіціент = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Коєфіціент", factory);
             column.Resizable = true;
@@ -397,10 +486,27 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.BeforeClickOpenFunc = async () => cell.Власник = row.Номенклатура;
-                cell.OnSelect = () => row.Пакування = cell.Pointer;
-                (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke();
+                cell.BeforeClickOpenFunc = () => cell.Власник  = row.Номенклатура;
+                        
+                cell.OnSelect = async () => //Із комірки в модель ->
+                {
+                    row.Пакування = cell.Pointer;
+                    await ПісляЗміни_Пакування(row);
+                };
+                (row.Сhanged_Пакування = () => cell.Pointer = row.Пакування).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not ПакуванняОдиниціВиміру_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.BeforeClickOpenFunc = null;
+                            
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_Пакування = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Пакування", factory);
             column.Resizable = true;
@@ -426,9 +532,23 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not NumericTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnСhanged = () => row.Кількість = cell.Value;
-                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke();
+                cell.OnСhanged = async () => //Із комірки в модель ->
+                {
+                    row.Кількість = cell.Value;
+                    await ПісляЗміни_Кількість(row);
+                };
+                (row.Сhanged_Кількість = () => cell.Value = row.Кількість).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnСhanged = null;
+                        
+                row.Сhanged_Кількість = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Кількість", factory);
             column.Resizable = true;
@@ -452,9 +572,23 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not СкладськіКомірки_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnSelect = () => row.КоміркаВідправник = cell.Pointer;
-                (row.Сhanged_КоміркаВідправник = () => cell.Pointer = row.КоміркаВідправник).Invoke();
+                cell.OnSelect = async () => //Із комірки в модель ->
+                {
+                    row.КоміркаВідправник = cell.Pointer;
+                    await ПісляЗміни_КоміркаВідправник(row);
+                };
+                (row.Сhanged_КоміркаВідправник = () => cell.Pointer = row.КоміркаВідправник).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not СкладськіКомірки_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_КоміркаВідправник = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Комірка відправник", factory);
             column.Resizable = true;
@@ -480,9 +614,23 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
                 if (listItem.Child is not СкладськіКомірки_PointerTablePartCell cell) return;
                 if (listItem.Item is not ItemRow row) return;
                 
-                cell.OnSelect = () => row.КоміркаОтримувач = cell.Pointer;
-                (row.Сhanged_КоміркаОтримувач = () => cell.Pointer = row.КоміркаОтримувач).Invoke();
+                cell.OnSelect = async () => //Із комірки в модель ->
+                {
+                    row.КоміркаОтримувач = cell.Pointer;
+                    await ПісляЗміни_КоміркаОтримувач(row);
+                };
+                (row.Сhanged_КоміркаОтримувач = () => cell.Pointer = row.КоміркаОтримувач).Invoke(); //<- Із моделі в комірку 
                     
+            };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not СкладськіКомірки_PointerTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+                
+                cell.OnSelect = null;   
+                        
+                row.Сhanged_КоміркаОтримувач = null;
             };
             ColumnViewColumn column = ColumnViewColumn.New("Комірка отримувач", factory);
             column.Resizable = true;
@@ -500,6 +648,47 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<ПереміщенняТоварівНаСкладі_Товари_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.Номенклатура = x.Номенклатура;
+        row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
+        row.Серія = x.Серія;
+        row.Коєфіціент = x.Коєфіціент;
+        row.Пакування = x.Пакування;
+        row.Кількість = x.Кількість;
+        row.КоміркаВідправник = x.КоміркаВідправник;
+        row.КоміркаОтримувач = x.КоміркаОтримувач;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<ПереміщенняТоварівНаСкладі_Товари_TablePart.Record> ToRecords()
+    {
+        List<ПереміщенняТоварівНаСкладі_Товари_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    Номенклатура = row.Номенклатура,
+                    ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
+                    Серія = row.Серія,
+                    Коєфіціент = row.Коєфіціент,
+                    Пакування = row.Пакування,
+                    Кількість = row.Кількість,
+                    КоміркаВідправник = row.КоміркаВідправник,
+                    КоміркаОтримувач = row.КоміркаОтримувач,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
         
@@ -509,30 +698,8 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
             ЕлементВласник.Товари_TablePart.FillJoin([ПереміщенняТоварівНаСкладі_Товари_TablePart.НомерРядка,]);
             await ЕлементВласник.Товари_TablePart.Read();
             
-            Store.RemoveAll();
+            UpdateStore(ToItemRows(ЕлементВласник.Товари_TablePart.Records));
         
-            foreach (var record in ЕлементВласник.Товари_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.Номенклатура = record.Номенклатура;
-                row.ХарактеристикаНоменклатури = record.ХарактеристикаНоменклатури;
-                row.Серія = record.Серія;
-                row.Коєфіціент = record.Коєфіціент;
-                row.Пакування = record.Пакування;
-                row.Кількість = record.Кількість;
-                row.КоміркаВідправник = record.КоміркаВідправник;
-                row.КоміркаОтримувач = record.КоміркаОтримувач;
-                
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
         }
     }
 
@@ -542,70 +709,19 @@ partial class ПереміщенняТоварівНаСкладі_Таблич�
         if (ЕлементВласник != null)
         {
         ЕлементВласник.Товари_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.Товари_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        Номенклатура = row.Номенклатура,
-                        ХарактеристикаНоменклатури = row.ХарактеристикаНоменклатури,
-                        Серія = row.Серія,
-                        Коєфіціент = row.Коєфіціент,
-                        Пакування = row.Пакування,
-                        Кількість = row.Кількість,
-                        КоміркаВідправник = row.КоміркаВідправник,
-                        КоміркаОтримувач = row.КоміркаОтримувач,
-                        
-                    });
-                }
-            }
+            ЕлементВласник.Товари_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.Товари_TablePart.Save(true);
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
+            UpdateStore(ToItemRows(ЕлементВласник.Товари_TablePart.Records));
 
-                var rows = ЕлементВласник.Товари_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.Номенклатура = x.Номенклатура;
-                    row.ХарактеристикаНоменклатури = x.ХарактеристикаНоменклатури;
-                    row.Серія = x.Серія;
-                    row.Коєфіціент = x.Коєфіціент;
-                    row.Пакування = x.Пакування;
-                    row.Кількість = x.Кількість;
-                    row.КоміркаВідправник = x.КоміркаВідправник;
-                    row.КоміркаОтримувач = x.КоміркаОтримувач;
-                    
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-                
-            }
         }
     }
 
     public override async Task<bool> NewRecord()
     {
-        Store.Append(ItemRow.New());
+        ItemRow row = ItemRow.New();
+        await ПісляДодаванняНового(row);
+        
+        Store.Append(row);
         return true;
     }
 }
-    

@@ -1,4 +1,3 @@
-
 /*
         АвансовийЗвіт_ТабличнаЧастина_ВиданіАванси.cs
         Таблична Частина
@@ -13,12 +12,12 @@ using GeneratedCode.Перелічення;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<DocumentFormTablePart>("TablePart_lJaeAQCGrXOqBabbm9Oc0A")]
+[GObject.Subclass<DocumentFormTablePart>("AvansovyiZvit_TablePart_VydaniAvansy")]
 partial class АвансовийЗвіт_ТабличнаЧастина_ВиданіАванси : DocumentFormTablePart
 {
-    #region Data
+    #region Модель даних
 
-    [GObject.Subclass<GObject.Object>("ItemRow_lJaeAQCGrXOqBabbm9Oc0A")]
+    [GObject.Subclass<GObject.Object>("AvansovyiZvit_TablePart_VydaniAvansy_ItemRow")]
     public partial class ItemRow : IRowSubclassTablePart
     {
         public static ItemRow New() => NewWithProperties([]);
@@ -206,6 +205,14 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Вида
                 (row.Сhanged_НомерРядка = () => cell.SetText(row.НомерРядка)).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not LabelTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                row.Сhanged_НомерРядка = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("№", factory);
             column.Resizable = true;
 
@@ -239,6 +246,16 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Вида
                 (row.Сhanged_ДокументАвансу = () => cell.Pointer = row.ДокументАвансу).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not CompositePointerControlTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnSelect = null;
+
+                row.Сhanged_ДокументАвансу = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Документ авансу", factory);
             column.Resizable = true;
             column.FixedWidth = 500;
@@ -271,6 +288,16 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Вида
                 (row.Сhanged_Сума = () => cell.Value = row.Сума).Invoke();
 
             };
+            factory.OnUnbind += (_, args) =>
+            {
+                if (args.Object is not ListItem listItem) return;
+                if (listItem.Child is not NumericTablePartCell cell) return;
+                if (listItem.Item is not ItemRow row) return;
+
+                cell.OnСhanged = null;
+
+                row.Сhanged_Сума = null;
+            };
             ColumnViewColumn column = ColumnViewColumn.New("Сума", factory);
             column.Resizable = true;
             column.FixedWidth = 100;
@@ -286,84 +313,59 @@ partial class АвансовийЗвіт_ТабличнаЧастина_Вида
         }
     }
 
+    //З таб частин в модель
+    ItemRow[] ToItemRows(List<АвансовийЗвіт_ВиданіАванси_TablePart.Record> records) => [.. records.Select(x =>
+    {
+        var row = ItemRow.New();
+        row.UniqueID = new(x.UID);
+        row.НомерРядка = x.НомерРядка;
+        row.ДокументАвансу = x.ДокументАвансу;
+        row.Сума = x.Сума;
+        
+        return row;
+    })];
+
+    //З моделі в таб частину
+    List<АвансовийЗвіт_ВиданіАванси_TablePart.Record> ToRecords()
+    {
+        List<АвансовийЗвіт_ВиданіАванси_TablePart.Record> rows = [];
+        for (uint i = 0; i <= Store.GetNItems(); i++)
+            if (Store.GetObject(i) is ItemRow row)
+                rows.Add(new()
+                {
+                    UID = row.UniqueID.UGuid,
+                    НомерРядка = row.НомерРядка,
+                    ДокументАвансу = row.ДокументАвансу,
+                    Сума = row.Сума,
+                    
+                });
+        return rows;
+    }
+
     public override async Task LoadRecords()
     {
-        if (ЕлементВласник != null)
+        
+        if (ЕлементВласник != null) 
         {
+            
             ЕлементВласник.ВиданіАванси_TablePart.FillJoin([АвансовийЗвіт_ВиданіАванси_TablePart.НомерРядка,]);
             await ЕлементВласник.ВиданіАванси_TablePart.Read();
-
-            Store.RemoveAll();
-
-            foreach (var record in ЕлементВласник.ВиданіАванси_TablePart.Records)
-            {
-                var row = ItemRow.New();
-                row.UniqueID = new(record.UID);
-                row.НомерРядка = record.НомерРядка;
-                row.ДокументАвансу = record.ДокументАвансу;
-                row.Сума = record.Сума;
-
-                Store.Append(row);
-
-                if (SelectPosition > 0)
-                {
-                    Grid.Model.SelectItem(SelectPosition, true);
-                    ScrollTo(SelectPosition);
-                }
-            }
+            
+            UpdateStore(ToItemRows(ЕлементВласник.ВиданіАванси_TablePart.Records));
+        
         }
     }
 
     public override async Task SaveRecords()
     {
+        
         if (ЕлементВласник != null)
         {
-            ЕлементВласник.ВиданіАванси_TablePart.Records.Clear();
-            for (uint i = 0; i <= Store.GetNItems(); i++)
-            {
-                ItemRow? row = (ItemRow?)Store.GetObject(i);
-                if (row != null)
-                {
-                    ЕлементВласник.ВиданіАванси_TablePart.Records.Add(new()
-                    {
-                        UID = row.UniqueID.UGuid,
-                        НомерРядка = row.НомерРядка,
-                        ДокументАвансу = row.ДокументАвансу,
-                        Сума = row.Сума,
-
-                    });
-                }
-            }
+        ЕлементВласник.ВиданіАванси_TablePart.Records.Clear();
+            ЕлементВласник.ВиданіАванси_TablePart.Records.AddRange(ToRecords());
             await ЕлементВласник.ВиданіАванси_TablePart.Save(true);
+            UpdateStore(ToItemRows(ЕлементВласник.ВиданіАванси_TablePart.Records));
 
-            //Оновлення табличної частини після збереження
-            {
-                //Пошук виділених рядків
-                Bitset bitset = Grid.Model.GetSelection();
-                List<uint> selection = [];
-                for (uint i = bitset.GetMinimum(); i <= bitset.GetMaximum(); i++)
-                    if (Grid.Model.IsSelected(i)) selection.Add(i);
-
-                var rows = ЕлементВласник.ВиданіАванси_TablePart.Records.Select(x =>
-                {
-                    var row = ItemRow.New();
-                    row.UniqueID = new(x.UID);
-                    row.НомерРядка = x.НомерРядка;
-                    row.ДокументАвансу = x.ДокументАвансу;
-                    row.Сума = x.Сума;
-
-                    return row;
-                });
-
-                uint count = (uint)rows.Count();
-
-                //Оновлення всіх рядків
-                Store.Splice(0, count, [.. rows], count);
-
-                //Виділення рядків після оновлення
-                foreach (var position in selection)
-                    Grid.Model.SelectItem(position, false);
-            }
         }
     }
 

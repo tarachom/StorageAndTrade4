@@ -11,7 +11,7 @@ using AccountingSoftware;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerTablePartCell>("PointerTablePartCell_EnLTchBHrkWXoL946rMpbA")]
+[GObject.Subclass<PointerTablePartCell>("PlanRakhunkiv_PointerTablePartCell")]
 public partial class ПланРахунків_PointerTablePartCell : PointerTablePartCell
 {
     public static ПланРахунків_PointerTablePartCell New() => NewWithProperties([]);
@@ -27,7 +27,7 @@ public partial class ПланРахунків_PointerTablePartCell : PointerTabl
         }
     }
 
-    public async Task GetPresentation() => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+    public async Task GetPresentation() => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
 
     async Task PointerChange(UniqueID? p)
     {
@@ -36,26 +36,28 @@ public partial class ПланРахунків_PointerTablePartCell : PointerTabl
         OnSelect?.Invoke();
     }
 
+    
+
     protected override async void Select(Button button, EventArgs args)
     {
         Popover popover = Popover.New();
         popover.SetParent(button);
-        //popover.SetOffset(0,-30);
         popover.WidthRequest = 800;
         popover.HeightRequest = 400;
         BeforeClickOpenFunc?.Invoke();
 
         ПланРахунків_ШвидкийВибір page = ПланРахунків_ШвидкийВибір.New();
         page.PopoverParent = popover;
-
+            
         page.AllowedContentSelection = ConfigurationDirectories.HierarchicalContentType.Elements;
-
+            
         page.DirectoryPointerItem = pointer.UniqueID;
-        page.CallBack_OnSelectPointer = async p =>
+        page.CallBack_OnSelectPointer = async p => 
         {
             await PointerChange(p);
             AfterSelectFunc?.Invoke();
         };
+        
 
         popover.SetChild(page);
         popover.Show();
@@ -70,3 +72,4 @@ public partial class ПланРахунків_PointerTablePartCell : PointerTabl
         AfterClearFunc?.Invoke();
     }
 }
+    

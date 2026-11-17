@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 29.10.2026 16:22:18
+ * Дата конфігурації: 13.11.2026 13:23:20
  *
  *
  * Згенеровано в Конфігураторі 4. Шаблон GeneratedCode.xslt
@@ -494,6 +494,18 @@ namespace GeneratedCode.Константи
             public List<Record> Records { get; set; } = [];
 
             public event EventHandler? Saved;
+
+            public void FillJoin(string[]? orderFields = null)
+            {
+                QuerySelect.Clear();
+
+                if (orderFields != null)
+                {
+                  foreach(string field in orderFields)
+                    QuerySelect.Order.Add(field, SelectOrder.ASC);
+                }
+                
+            }
         
             public async Task Read()
             {
@@ -512,12 +524,13 @@ namespace GeneratedCode.Константи
                         
                     };
                     Records.Add(record);
+                    
                 }
             
                 base.BaseClear();
             }
         
-            public async Task Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -597,6 +610,18 @@ namespace GeneratedCode.Константи
             public List<Record> Records { get; set; } = [];
 
             public event EventHandler? Saved;
+
+            public void FillJoin(string[]? orderFields = null)
+            {
+                QuerySelect.Clear();
+
+                if (orderFields != null)
+                {
+                  foreach(string field in orderFields)
+                    QuerySelect.Order.Add(field, SelectOrder.ASC);
+                }
+                
+            }
         
             public async Task Read()
             {
@@ -617,12 +642,13 @@ namespace GeneratedCode.Константи
                         
                     };
                     Records.Add(record);
+                    
                 }
             
                 base.BaseClear();
             }
         
-            public async Task Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -704,6 +730,18 @@ namespace GeneratedCode.Константи
             public List<Record> Records { get; set; } = [];
 
             public event EventHandler? Saved;
+
+            public void FillJoin(string[]? orderFields = null)
+            {
+                QuerySelect.Clear();
+
+                if (orderFields != null)
+                {
+                  foreach(string field in orderFields)
+                    QuerySelect.Order.Add(field, SelectOrder.ASC);
+                }
+                
+            }
         
             public async Task Read()
             {
@@ -722,12 +760,13 @@ namespace GeneratedCode.Константи
                         
                     };
                     Records.Add(record);
+                    
                 }
             
                 base.BaseClear();
             }
         
-            public async Task Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -807,6 +846,18 @@ namespace GeneratedCode.Константи
             public List<Record> Records { get; set; } = [];
 
             public event EventHandler? Saved;
+
+            public void FillJoin(string[]? orderFields = null)
+            {
+                QuerySelect.Clear();
+
+                if (orderFields != null)
+                {
+                  foreach(string field in orderFields)
+                    QuerySelect.Order.Add(field, SelectOrder.ASC);
+                }
+                
+            }
         
             public async Task Read()
             {
@@ -827,12 +878,13 @@ namespace GeneratedCode.Константи
                         
                     };
                     Records.Add(record);
+                    
                 }
             
                 base.BaseClear();
             }
         
-            public async Task Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -915,6 +967,21 @@ namespace GeneratedCode.Константи
             public List<Record> Records { get; set; } = [];
 
             public event EventHandler? Saved;
+
+            public void FillJoin(string[]? orderFields = null)
+            {
+                QuerySelect.Clear();
+
+                if (orderFields != null)
+                {
+                  foreach(string field in orderFields)
+                    QuerySelect.Order.Add(field, SelectOrder.ASC);
+                }
+                
+                          /* pointer */
+                          Довідники.Користувачі_Pointer.GetJoin(QuerySelect, Користувач, $"{TABLE}", "join_tab_1", "Користувач");
+                      
+            }
         
             public async Task Read()
             {
@@ -934,12 +1001,20 @@ namespace GeneratedCode.Константи
                         
                     };
                     Records.Add(record);
+                    
+                    if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
+                    {
+                      record.JoinItemValue = ItemValue;
+                      record.Користувач.Name = ItemValue["Користувач"];
+                          
+                    }
+                    
                 }
             
                 base.BaseClear();
             }
         
-            public async Task Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -953,7 +1028,7 @@ namespace GeneratedCode.Константи
                     
                     Dictionary<string, object> fieldValue = new()
                     {
-                        {"col_a1", record.Користувач.UniqueID.UGuid},
+                        {"col_a1", record.Користувач.IsEmpty() ? DBNull.Value : record.Користувач.UniqueID.UGuid},
                         {"col_a2", record.Журнал},
                         {"col_a3", record.ПеріодЗначення},
                         {"col_a4", record.ДатаСтарт},
@@ -1876,17 +1951,6 @@ namespace GeneratedCode.Константи
             await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q6", value);
             return value;
         }
-        public static async Task<int> ТестовийДок()
-        {
-            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_r1");
-            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
-        }
-
-        public static async Task<int> ТестовийДок(int value)
-        {
-            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_r1", value);
-            return value;
-        }
              
     }
     #endregion
@@ -2367,50 +2431,6 @@ namespace GeneratedCode.Константи
             await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_m4", value);
             return value;
         }
-        public static async Task<int> sewetw()
-        {
-            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_o9");
-            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
-        }
-
-        public static async Task<int> sewetw(int value)
-        {
-            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_o9", value);
-            return value;
-        }
-        public static async Task<int> ТестовийДовідник()
-        {
-            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q9");
-            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
-        }
-
-        public static async Task<int> ТестовийДовідник(int value)
-        {
-            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q9", value);
-            return value;
-        }
-        public static async Task<int> Тестовий()
-        {
-            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q7");
-            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
-        }
-
-        public static async Task<int> Тестовий(int value)
-        {
-            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q7", value);
-            return value;
-        }
-        public static async Task<int> Тестовий2()
-        {
-            var recordResult = await Config.Kernel.DataBase.SelectConstants(SpecialTables.Constants, "col_q8");
-            return recordResult.Result ? ((recordResult.Value != DBNull.Value) ? (int)recordResult.Value : 0) : 0;
-        }
-
-        public static async Task<int> Тестовий2(int value)
-        {
-            await Config.Kernel.DataBase.SaveConstants(SpecialTables.Constants, "col_q8", value);
-            return value;
-        }
              
     }
     #endregion
@@ -2506,6 +2526,18 @@ namespace GeneratedCode.Константи
             public List<Record> Records { get; set; } = [];
 
             public event EventHandler? Saved;
+
+            public void FillJoin(string[]? orderFields = null)
+            {
+                QuerySelect.Clear();
+
+                if (orderFields != null)
+                {
+                  foreach(string field in orderFields)
+                    QuerySelect.Order.Add(field, SelectOrder.ASC);
+                }
+                
+            }
         
             public async Task Read()
             {
@@ -2524,12 +2556,13 @@ namespace GeneratedCode.Константи
                         
                     };
                     Records.Add(record);
+                    
                 }
             
                 base.BaseClear();
             }
         
-            public async Task Save(bool clear_all_before_save /*= true*/) 
+            public async Task Save(bool clear_all_before_save) 
             {
                 await base.BaseBeginTransaction();
                 
@@ -7842,7 +7875,7 @@ namespace GeneratedCode.Довідники
         public const string TABLE = "tab_a27";
         public const string TYPE = "БанківськіРахункиОрганізацій"; /* Назва вказівника */
         public const string POINTER = "Довідники.БанківськіРахункиОрганізацій"; /* Повна назва вказівника */
-        public const string FULLNAME = "Банківські рахунки"; /* Повна назва об'єкта */
+        public const string FULLNAME = "Банківські рахунки організацій"; /* Повна назва об'єкта */
         public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
         public readonly static string[] PRESENTATION_FIELDS = ["col_l1", ];
         
@@ -8043,7 +8076,7 @@ namespace GeneratedCode.Довідники
         public const string TABLE = "tab_a28";
         public const string TYPE = "ДоговориКонтрагентів"; /* Назва вказівника */
         public const string POINTER = "Довідники.ДоговориКонтрагентів"; /* Повна назва вказівника */
-        public const string FULLNAME = "Договори"; /* Повна назва об'єкта */
+        public const string FULLNAME = "Договори контрагентів"; /* Повна назва об'єкта */
         public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
         public readonly static string[] PRESENTATION_FIELDS = ["col_n4", "col_b8", ];
         

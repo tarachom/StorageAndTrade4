@@ -18,6 +18,8 @@ namespace StorageAndTrade;
 [GObject.Subclass<Form>]
 partial class PageHome : Form
 {
+    //НалаштуванняКористувача_ТабличнаЧастина_ПеріодиЖурналів table;
+
     partial void Initialize()
     {
         {
@@ -37,6 +39,16 @@ partial class PageHome : Form
             hBox.Append(view);
             Append(hBox);
         }
+
+        /*{
+            table = НалаштуванняКористувача_ТабличнаЧастина_ПеріодиЖурналів.New();
+            table.Hexpand = true;
+
+            Box hBox = New(Orientation.Horizontal, 0);
+            hBox.MarginBottom = 10;
+            hBox.Append(table);
+            Append(hBox);
+        }*/
     }
 
     /// <summary>
@@ -53,6 +65,6 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
-
+        //await table.LoadRecords();
     }
 }

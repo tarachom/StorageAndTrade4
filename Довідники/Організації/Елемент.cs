@@ -67,6 +67,12 @@ partial class Організації_Елемент : DirectoryFormElement
         // Холдинг:
         Холдинг.Caption = "Холдинг";
         Холдинг.WidthPresentation = 300;
+
+        // Таблична частина "Контакти"
+        Контакти.ЕлементВласник = Елемент;
+        Контакти.WidthRequest = 500;
+        Контакти.HeightRequest = 300;
+        Контакти.Vexpand = false;
     }
 
     public static Організації_Елемент New()
@@ -120,10 +126,6 @@ partial class Організації_Елемент : DirectoryFormElement
 
     void CreateEnd(Box vBox)
     {
-        // Таблична частина "Контакти"
-        Контакти.WidthRequest = 500;
-        Контакти.HeightRequest = 300;
-        Контакти.Vexpand = false;
         CreateTablePart(vBox, "Контакти", Контакти);
     }
 
@@ -144,7 +146,6 @@ partial class Організації_Елемент : DirectoryFormElement
         Холдинг.Pointer = Елемент.Холдинг;
 
         // Таблична частина "Контакти"
-        Контакти.ЕлементВласник = Елемент;
         await Контакти.LoadRecords();
     }
 

@@ -11,27 +11,24 @@ using GeneratedCode.Довідники;
 
 namespace StorageAndTrade;
 
-[GObject.Subclass<PointerControl>("PointerControl_Uuo48VfehEGbtafN1Uf68A")]
+[GObject.Subclass<PointerControl>("PartiiaTovarivKompozyt_PointerControl")]
 public partial class ПартіяТоварівКомпозит_PointerControl : PointerControl
 {
+    public static ПартіяТоварівКомпозит_PointerControl New() => NewWithProperties([]);
+
     event EventHandler<ПартіяТоварівКомпозит_Pointer>? PointerChanged;
 
     partial void Initialize()
     {
         WidthPresentation = 300;
         Caption = $"{ПартіяТоварівКомпозит_Const.FULLNAME}:";
-        PointerChanged += async (_, pointer) => Presentation = pointer != null ? await pointer.GetPresentation() : "";
+        PointerChanged += async (_, pointer) => Presentation = !pointer.IsEmpty() ? await pointer.GetPresentation() : "";
     }
-
-    public static ПартіяТоварівКомпозит_PointerControl New() => NewWithProperties([]);
 
     ПартіяТоварівКомпозит_Pointer pointer = new();
     public ПартіяТоварівКомпозит_Pointer Pointer
     {
-        get
-        {
-            return pointer;
-        }
+        get => pointer;
         set
         {
             pointer = value;

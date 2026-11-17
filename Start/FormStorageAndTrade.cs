@@ -32,7 +32,8 @@ partial class FormStorageAndTrade : FormGeneral
         }
 
         //Відкрити журнал ВиготовленняПродукції
-        await ВиготовленняПродукції_Функції.OpenPageList();
+        //await ВиготовленняПродукції_Функції.OpenPageList();
+        //await Організації_Функції.OpenPageList();
 
         //await ТестовийДовідник_Функції.OpenPageList();
 

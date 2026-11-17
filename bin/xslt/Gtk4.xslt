@@ -149,11 +149,22 @@ limitations under the License.
             //Image
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    listItem.SetChild(ImageTablePartCell.New());
+                };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.DeletionLabel ?? false) ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is ImageTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["#image"] = ()=&gt; cell.SetImage(row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal)).Invoke(); <!-- Назва поля починається з #, так як це службове поле. Реальне поле не може так називатися -->
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#image"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -164,11 +175,22 @@ limitations under the License.
             //Spend
             {
                 SignalListItemFactory factory = SignalListItemFactory.New();
+                factory.OnSetup += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    listItem.SetChild(ImageTablePartCell.New());
+                };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    DocumentRowJournal? row = (DocumentRowJournal?)listItem.Item;
-                    listItem.SetChild(ImageTablePartCell.NewFromPixbuf((row?.Spend ?? false) ? InterfaceGtk4.Icon.ForInformation.Check : null));
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is ImageTablePartCell cell &amp;&amp; listItem.Item is DocumentRowJournal row)
+                        (row.Update["#spend"] = ()=&gt; cell.SetImage(row.Spend ? InterfaceGtk4.Icon.ForInformation.Check : null)).Invoke(); <!-- Назва поля починається з #, так як це службове поле. Реальне поле не може так називатися -->
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is DocumentRowJournal row)
+                        row.Update["#spend"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 form.Grid.AppendColumn(column);
@@ -181,18 +203,22 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     var cell = LabelTablePartCell.New();
                     cell.Halign = Align.Center;
                     listItem.Child = cell;
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    RegisterAccumulationRowJournal? row = (RegisterAccumulationRowJournal?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.Income ? "+" : "-");
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is RegisterAccumulationRowJournal row)
+                        (row.Update["#income"] = ()=&gt; cell.SetText(row.Income ? "+" : "-")).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is RegisterAccumulationRowJournal row)
+                        row.Update["#income"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Рух", factory);
                 form.Grid.AppendColumn(column);
@@ -206,16 +232,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.New();
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.Period);
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["#period"] = ()=&gt; cell.SetText(row.Period)).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#period"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Період", factory);
                 form.Grid.AppendColumn(column);
@@ -229,16 +259,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.New();
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.Owner.ToString());
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["#owner"] = ()=&gt; cell.SetText(row.Owner.ToString())).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#owner"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Власник", factory);
                 form.Grid.AppendColumn(column);
@@ -252,16 +286,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.New();
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.OwnerType);
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["#owner_type"] = ()=&gt; cell.SetText(row.OwnerType)).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#owner_type"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Тип власника", factory);
                 form.Grid.AppendColumn(column);
@@ -275,16 +313,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.New();
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.OwnerName);
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["#owner_name"] = ()=&gt; cell.SetText(row.OwnerName)).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#owner_name"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("Назва власника", factory);
                 form.Grid.AppendColumn(column);
@@ -298,16 +340,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.New();
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.OwnerLineNum.ToString());
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["#owner_line_num"] = ()=&gt; cell.SetText(row.OwnerLineNum.ToString())).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#owner_line_num"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("№", factory);
                 form.Grid.AppendColumn(column);
@@ -324,16 +370,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.NewFromType("<xsl:value-of select="Type"/>");
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                    <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)listItem.Item;
-                    if (cell != null &amp;&amp; row != null)
-                        cell.SetText(row.Fields["<xsl:value-of select="Name"/>"]);
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Child is LabelTablePartCell cell &amp;&amp; listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["<xsl:value-of select="Name"/>"] = ()=&gt; cell.SetText(row.Fields["<xsl:value-of select="Name"/>"])).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["<xsl:value-of select="Name"/>"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("<xsl:value-of select="Caption"/>", factory);
                 column.Resizable = true;
@@ -353,20 +403,20 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     listItem.Child = LabelTablePartCell.NewFromType("<xsl:value-of select="Type"/>");
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    TreeListRow? treeRow = (TreeListRow?)listItem.GetItem();
-                    if (treeRow != null)
-                    {
-                        LabelTablePartCell? cell = (LabelTablePartCell?)listItem.Child;
-                        <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)treeRow.Item;
-                        if (cell != null &amp;&amp; row != null)
-                            cell.SetText(row.Fields["<xsl:value-of select="Name"/>"]);
-                    }
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.GetItem() is TreeListRow treeRow &amp;&amp; listItem.Child is LabelTablePartCell cell &amp;&amp; treeRow.Item is <xsl:value-of select="$RowType"/> row)
+                        (row.Update["<xsl:value-of select="Name"/>"] = ()=&gt; cell.SetText(row.Fields["<xsl:value-of select="Name"/>"])).Invoke();
+                };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.GetItem() is TreeListRow treeRow &amp;&amp; treeRow.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["<xsl:value-of select="Name"/>"] = null;
                 };
                 ColumnViewColumn column = ColumnViewColumn.New("<xsl:value-of select="Caption"/>", factory);
                 column.Resizable = true;
@@ -383,30 +433,37 @@ limitations under the License.
                 SignalListItemFactory factory = SignalListItemFactory.New();
                 factory.OnSetup += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
+                    if (args.Object is not ListItem listItem) return;
                     TreeExpander expander = TreeExpander.New();
                     expander.SetChild(ImageTablePartCell.New());
                     listItem.SetChild(expander);
                 };
                 factory.OnBind += (_, args) =&gt;
                 {
-                    ListItem listItem = (ListItem)args.Object;
-                    TreeExpander? expander = (TreeExpander?)listItem.GetChild();
-                    TreeListRow? treeRow = (TreeListRow?)listItem.GetItem();
-                    if (expander != null &amp;&amp; treeRow != null)
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.GetChild() is TreeExpander expander &amp;&amp; listItem.GetItem() is TreeListRow treeRow)
                     {
                         expander.SetListRow(treeRow);
-                        ImageTablePartCell? cell = (ImageTablePartCell?)expander.GetChild();
-                        <xsl:value-of select="$RowType"/>? row = (<xsl:value-of select="$RowType"/>?)treeRow.Item;
-                        if (cell != null &amp;&amp; row != null &amp;&amp; !row.UniqueID.IsEmpty()) <!-- Для пустого рядка (InsertEmptyFirstRow) не виводиться іконка -->
-                            if (row.IsLoading)
-                                cell.SetSpinner();
-                            else
-                                cell.SetImage(row.IsFolder? 
-                                    (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
-                                    (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                        if (expander.GetChild() is ImageTablePartCell cell &amp;&amp; treeRow.Item is <xsl:value-of select="$RowType"/> row &amp;&amp; !row.UniqueID.IsEmpty()) <!-- Для пустого рядка (InsertEmptyFirstRow) не виводиться іконка -->
+                            (row.Update["#tree_image"] = ()=&gt; <!-- Назва поля починається з #, так як це службове поле. Реальне поле не може так називатися -->
+                            {
+                                if (row.IsLoading)
+                                    cell.SetSpinner();
+                                else
+                                    cell.SetImage(row.IsFolder? 
+                                        (row.DeletionLabel ? InterfaceGtk4.Icon.ForTree.Delete : InterfaceGtk4.Icon.ForTree.Normal) : 
+                                        (row.DeletionLabel ? InterfaceGtk4.Icon.ForTabularLists.Delete : InterfaceGtk4.Icon.ForTabularLists.Normal));
+                            }).Invoke();
                     }
                 };
+                factory.OnUnbind += (_, args) =&gt;
+                {
+                    if (args.Object is not ListItem listItem) return;
+                    if (listItem.GetChild() is TreeExpander expander) expander.SetListRow(null);
+                    if (listItem.GetItem() is TreeListRow treeRow &amp;&amp; treeRow.Item is <xsl:value-of select="$RowType"/> row)
+                        row.Update["#tree_image"] = null;
+                };
+
                 ColumnViewColumn column = ColumnViewColumn.New("", factory);
                 column.Resizable = true;
                 form.Grid.AppendColumn(column);
@@ -564,7 +621,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
         static readonly ConfigurationDirectories.HierarchicalContentType AllowedContent = Configuration.GetAllowedContent("<xsl:value-of select="$DirectoryAllowedContent"/>");
         </xsl:if>
         public static void AddColumn(DirectoryFormJournalBase form)
-        {
+        { 
             <xsl:choose>
                 <xsl:when test="$DirectoryType = 'Hierarchical'">
                     <xsl:call-template name="AddColumnTreeExpander">
@@ -614,7 +671,6 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
 
         public static async Task UpdateRecords(DirectoryFormJournalBase form)
         {
-            <xsl:if test="$DirectoryType != 'Hierarchical'">
             List&lt;ObjectChanged&gt; records = [];
             lock (form.Loсked)
             {
@@ -625,12 +681,19 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
             if (records.Count == 0) return;
 
             //Словник для швидкого пошуку
-            Dictionary&lt;Guid, uint&gt; storeMap = [];
-            for (uint i = 0; i &lt; form.Store.GetNItems(); i++)
-            {
-                <xsl:value-of select="$RowType"/>? item = (<xsl:value-of select="$RowType"/>?)form.Store.GetObject(i);
-                if (item != null) storeMap.Add(item.UniqueID.UGuid, i);
-            }
+            Dictionary&lt;Guid, <xsl:value-of select="$RowType"/>&gt; storeMap = [];
+            MultiSelection model = (MultiSelection)form.Grid.Model;
+            for (uint i = 0; i &lt; model.GetNItems(); i++)
+            {<xsl:choose>
+                <xsl:when test="$DirectoryType = 'Hierarchical'">
+                if (model.GetObject(i) is TreeListRow row &amp;&amp; row.GetItem() is <xsl:value-of select="$RowType"/> item)
+                    storeMap.TryAdd(item.UniqueID.UGuid, item);
+                </xsl:when>
+                <xsl:otherwise>
+                if (model.GetObject(i) is <xsl:value-of select="$RowType"/> item) 
+                    storeMap.TryAdd(item.UniqueID.UGuid, item);
+                </xsl:otherwise>
+            </xsl:choose>}
             
             /* Вибірка */
             <xsl:call-template name="Select">
@@ -663,17 +726,22 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
                     <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString());
                     </xsl:for-each>
-                    if (storeMap.TryGetValue(curr.UniqueID.UGuid, out uint index))
+                    <xsl:if test="$DirectoryType = 'Hierarchical'">
+                        row.AllowedContent = AllowedContent;
+                        <xsl:if test="$DirectoryAllowedContent = 'FoldersAndElements'">
+                            row.IsFolder = (bool)Fields[Довідники.<xsl:value-of select="concat($DirectoryName, '_Const.', $DirectoryIsFolderField)"/>];
+                        </xsl:if>
+                    </xsl:if>
+                    if (storeMap.TryGetValue(curr.UniqueID.UGuid, out <xsl:value-of select="$RowType"/>? rowUp))
                     {
-                        bool sel = form.Grid.Model.IsSelected(index);
-                        form.Store.Splice(index, 1, [row], 1);
-                        if (sel) form.Grid.Model.SelectItem(index, false);
+                        rowUp.DeletionLabel = row.DeletionLabel;
+                        rowUp.Fields = row.Fields;
+                        rowUp.OnUpdate();
                     }
                     else if (records.Find(x =&gt; x.Uid.Equals(curr.UniqueID.UGuid))?.Type == TypeObjectChanged.Add)
                         form.Store.Append(row);
                 }
             }
-            </xsl:if>
         }
 
         <xsl:if test="$DirectoryType = 'Hierarchical'">
@@ -795,12 +863,11 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
 
             <!-- Вибрати дані -->
             await <xsl:value-of select="$DirectoryName"/>_Select.Select();
-            if (form.Store.GetNItems() &gt; 0) form.Store.RemoveAll();
+            List&lt;<xsl:value-of select="$RowType"/>&gt; rows = new(<xsl:value-of select="$DirectoryName"/>_Select.Count());
 
             <xsl:if test="$DirectoryType = 'Hierarchical'">
             /* Пустий рядок */
-            if (form.InsertEmptyFirstRow)
-                form.Store.Append(LoadEmptyChildren(form));
+            if (form.InsertEmptyFirstRow) rows.Add(LoadEmptyChildren(form));
             </xsl:if>
 
             while (<xsl:value-of select="$DirectoryName"/>_Select.MoveNext())
@@ -824,15 +891,16 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Дові
                     <xsl:if test="$DirectoryAllowedContent = 'FoldersAndElements'">
                     row.IsFolder = (bool)Fields[Довідники.<xsl:value-of select="concat($DirectoryName, '_Const.', $DirectoryIsFolderField)"/>];
                     </xsl:if>
-                    form.Store.Append(row);
+                    rows.Add(row);
                         </xsl:when>
                         <xsl:otherwise>
-                    form.Store.Append(row);
-                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                    rows.Add(row);
+                    if (selectPosition == 0 &amp;&amp; row.UniqueID.Equals(unigueIDSelect)) selectPosition = (uint)rows.Count;
                         </xsl:otherwise>
                     </xsl:choose>
                 }
             }
+            form.Store.Splice(0, form.Store.GetNItems(), [.. rows], (uint)rows.Count);
             <xsl:choose>
                 <xsl:when test="$DirectoryType = 'Hierarchical'">
             /* Вибірка всіх родичів для вибраного елементу */
@@ -911,6 +979,13 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
                 while(form.RecordsChangedQueue.Count &gt; 0)
                     records.AddRange(form.RecordsChangedQueue.Dequeue());
             }
+
+            if (records.Count == 0) return;
+
+            //Словник для швидкого пошуку
+            Dictionary&lt;Guid, DocumentRowJournal&gt; storeMap = [];
+            for (uint i = 0; i &lt; form.Store.GetNItems(); i++)
+                if (form.Store.GetObject(i) is DocumentRowJournal item) storeMap.TryAdd(item.UniqueID.UGuid, item);
             
             /* Вибірка */
             <xsl:call-template name="Select">
@@ -940,25 +1015,15 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
                     <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString() ?? "");
                     </xsl:for-each>
-                    ObjectChanged? objCh = records.Find(x =&gt; x.Uid.Equals(curr.UniqueID.UGuid));
-                    if (objCh != null)
+                    if (storeMap.TryGetValue(curr.UniqueID.UGuid, out DocumentRowJournal? rowUp))
                     {
-                        bool exist = false;
-                        for (uint i = 0; i &lt; form.Store.GetNItems(); i++)
-                        {
-                            DocumentRowJournal? item = (DocumentRowJournal?)form.Store.GetObject(i);
-                            if (item != null &amp;&amp; item.UniqueID.Equals(curr.UniqueID))
-                            {
-                                bool sel = form.Grid.Model.IsSelected(i);
-                                form.Store.Splice(i, 1, [row], 1);
-                                if (sel) form.Grid.Model.SelectItem(i, false);
-                                exist = true;
-                                break;
-                            }
-                        }
-                        if (!exist &amp;&amp; objCh.Type == TypeObjectChanged.Add)
-                            form.Store.Append(row);
+                        rowUp.DeletionLabel = row.DeletionLabel;
+                        rowUp.Spend = row.Spend;
+                        rowUp.Fields = row.Fields;
+                        rowUp.OnUpdate();
                     }
+                    else if (records.Find(x =&gt; x.Uid.Equals(curr.UniqueID.UGuid))?.Type == TypeObjectChanged.Add)
+                        form.Store.Append(row);
                 }
             }
         }
@@ -987,11 +1052,11 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
 
             /* Cторінки */
             await form.SplitPages(<xsl:value-of select="$DocumentName"/>_Select.SplitSelectToPages, <xsl:value-of select="$DocumentName"/>_Select.QuerySelect, unigueIDSelect);
+            uint selectPosition = 0;
 
             <!-- Вибрати дані -->
             await <xsl:value-of select="$DocumentName"/>_Select.Select();
-            if (form.Store.GetNItems() &gt; 0) form.Store.RemoveAll();
-            uint selectPosition = 0;
+            List&lt;DocumentRowJournal&gt; rows = new(<xsl:value-of select="$DocumentName"/>_Select.Count());
             while (<xsl:value-of select="$DocumentName"/>_Select.MoveNext())
             {
                 Документи.<xsl:value-of select="$DocumentName"/>_Pointer? curr = <xsl:value-of select="$DocumentName"/>_Select.Current;
@@ -1008,10 +1073,11 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Доку
                     <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                         <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", Fields["<xsl:value-of select="Name"/>"].ToString() ?? "");
                     </xsl:for-each>
-                    form.Store.Append(row);
-                    if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                    rows.Add(row);
+                    if (selectPosition == 0 &amp;&amp; row.UniqueID.Equals(unigueIDSelect)) selectPosition = (uint)rows.Count;
                 }
             }
+            form.Store.Splice(0, form.Store.GetNItems(), [.. rows], (uint)rows.Count);
             form.AfterLoadRecords(selectPosition);
         }
     }
@@ -1092,11 +1158,11 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Регі
 
             /* Cторінки */
             await form.SplitPages(<xsl:value-of select="$RegisterName"/>_Select.SplitSelectToPages, <xsl:value-of select="$RegisterName"/>_Select.QuerySelect, unigueIDSelect);
+            uint selectPosition = 0;
 
             <!-- Вибрати дані -->
             await <xsl:value-of select="$RegisterName"/>_Select.Read();
-            if (form.Store.GetNItems() &gt; 0) form.Store.RemoveAll();
-            uint selectPosition = 0;
+            List&lt;RegisterInformationRowJournal&gt; rows = new(<xsl:value-of select="$RegisterName"/>_Select.Records.Count);            
             foreach (<xsl:value-of select="$RegisterName"/>_<xsl:value-of select="$SelectType"/>.Record record in <xsl:value-of select="$RegisterName"/>_Select.Records)
             {
                 RegisterInformationRowJournal row = RegisterInformationRowJournal.New();
@@ -1111,9 +1177,10 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Регі
                 <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                     <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", record.JoinItemValue["<xsl:value-of select="Name"/>"].ToString() ?? "");
                 </xsl:for-each>
-                form.Store.Append(row);
-                if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                rows.Add(row);
+                if (selectPosition == 0 &amp;&amp; row.UniqueID.Equals(unigueIDSelect)) selectPosition = (uint)rows.Count;
             }
+            form.Store.Splice(0, form.Store.GetNItems(), [.. rows], (uint)rows.Count);
             form.AfterLoadRecords(selectPosition);
         }
     }
@@ -1198,11 +1265,11 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Регі
 
             /* Cторінки */
             await form.SplitPages(<xsl:value-of select="$RegisterName"/>_Select.SplitSelectToPages, <xsl:value-of select="$RegisterName"/>_Select.QuerySelect, unigueIDSelect);
+            uint selectPosition = 0;
 
             <!-- Вибрати дані -->
             await <xsl:value-of select="$RegisterName"/>_Select.Read();
-            if (form.Store.GetNItems() &gt; 0) form.Store.RemoveAll();
-            uint selectPosition = 0;
+            List&lt;RegisterAccumulationRowJournal&gt; rows = new(<xsl:value-of select="$RegisterName"/>_Select.Records.Count);            
             foreach (<xsl:value-of select="$RegisterName"/>_<xsl:value-of select="$SelectType"/>.Record record in <xsl:value-of select="$RegisterName"/>_Select.Records)
             {
                 RegisterAccumulationRowJournal row = RegisterAccumulationRowJournal.New();
@@ -1219,9 +1286,10 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Регі
                 <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                     <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", record.JoinItemValue["<xsl:value-of select="Name"/>"].ToString() ?? "");
                 </xsl:for-each>
-                form.Store.Append(row);
-                if (row.UniqueID.Equals(unigueIDSelect)) selectPosition = form.Store.GetNItems();
+                rows.Add(row);
+                if (selectPosition == 0 &amp;&amp; row.UniqueID.Equals(unigueIDSelect)) selectPosition = (uint)rows.Count;
             }
+            form.Store.Splice(0, form.Store.GetNItems(), [.. rows], (uint)rows.Count);
             form.AfterLoadRecords(selectPosition);
         }
     }
@@ -1282,7 +1350,7 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Регі
 
             <!-- Вибрати дані -->
             await <xsl:value-of select="$RegisterName"/>_Select.Read();
-            if (form.Store.GetNItems() &gt; 0) form.Store.RemoveAll();
+            List&lt;RegisterAccumulationRowJournal&gt; rows = new(<xsl:value-of select="$RegisterName"/>_Select.Records.Count);
             foreach (<xsl:value-of select="$RegisterName"/>_<xsl:value-of select="$SelectType"/>.Record record in <xsl:value-of select="$RegisterName"/>_Select.Records)
             {
                 RegisterAccumulationRowJournal row = RegisterAccumulationRowJournal.New();
@@ -1299,8 +1367,9 @@ namespace <xsl:value-of select="Configuration/NameSpaceGeneratedCode"/>.Регі
                 <xsl:for-each select="Fields/AdditionalField[Visible = 'True']">
                     <xsl:text>row.Fields.Add("</xsl:text><xsl:value-of select="Name"/>", record.JoinItemValue["<xsl:value-of select="Name"/>"].ToString() ?? "");
                 </xsl:for-each>
-                form.Store.Append(row);
+                rows.Add(row);
             }
+            form.Store.Splice(0, form.Store.GetNItems(), [.. rows], (uint)rows.Count);
             form.AfterLoadRecords(0);
         }
     }
