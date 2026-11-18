@@ -3,7 +3,7 @@
  *
  * Конфігурації ""Зберігання та Торгівля" для України"
  * Автор Тарахомин Юрій Іванович, accounting.org.ua
- * Дата конфігурації: 13.11.2026 13:23:20
+ * Дата конфігурації: 17.11.2026 12:29:42
  *
  *
  * Згенеровано в Конфігураторі 4. Шаблон GeneratedCode.xslt
@@ -135,6 +135,7 @@ namespace GeneratedCode
                         "Співробітники" => await new Довідники.Співробітники_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "ТипиБухОперацій" => await new Довідники.ТипиБухОперацій_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "КласифікаторОдиницьВиміру" => await new Довідники.КласифікаторОдиницьВиміру_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "НовийДовідник" => await new Довідники.НовийДовідник_Pointer(uuidAndText.Uuid).GetPresentation(),
                         _ => ""
                         };
                     }
@@ -222,6 +223,7 @@ namespace GeneratedCode
                         "СписанняВитратМайбутніхПеріодів" => await new Документи.СписанняВитратМайбутніхПеріодів_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "СписанняТоварів" => await new Документи.СписанняТоварів_Pointer(uuidAndText.Uuid).GetPresentation(),
                         "Сторнування" => await new Документи.Сторнування_Pointer(uuidAndText.Uuid).GetPresentation(),
+                        "Магазини" => await new Документи.Магазини_Pointer(uuidAndText.Uuid).GetPresentation(),
                         _ => ""
                         };
                     }
@@ -3057,7 +3059,7 @@ namespace GeneratedCode.Довідники
     #region DIRECTORY "Номенклатура"
     public static class Номенклатура_Const
     {
-        public const string TABLE = "tab_a03";
+        public const string TABLE = "goods";
         public const string TYPE = "Номенклатура"; /* Назва вказівника */
         public const string POINTER = "Довідники.Номенклатура"; /* Повна назва вказівника */
         public const string FULLNAME = "Номенклатура"; /* Повна назва об'єкта */
@@ -3082,7 +3084,7 @@ namespace GeneratedCode.Довідники
 
     public class Номенклатура_Object : DirectoryObject
     {
-        public Номенклатура_Object() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE,
+        public Номенклатура_Object() : base(Config.Kernel, "goods", Номенклатура_Const.TYPE,
              ["col_b1", "col_b2", "col_b4", "col_a1", "col_b3", "col_b5", "col_a2", "col_a3", "col_a4", "col_a5", "col_a7", "col_a6", "col_a8", "col_b6", ], true)
         {
             
@@ -3245,12 +3247,12 @@ namespace GeneratedCode.Довідники
 
     public class Номенклатура_Pointer : DirectoryPointer
     {
-        public Номенклатура_Pointer() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(new UniqueID());
-        public Номенклатура_Pointer(object? uid) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(new UniqueID(uid));
-        public Номенклатура_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
-        public Номенклатура_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid);
-        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid, fields);
-        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public Номенклатура_Pointer() : base(Config.Kernel, "goods", Номенклатура_Const.TYPE) => base.Init(new UniqueID());
+        public Номенклатура_Pointer(object? uid) : base(Config.Kernel, "goods", Номенклатура_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Номенклатура_Pointer(object? uid, object? name) : base(Config.Kernel, "goods", Номенклатура_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Номенклатура_Pointer(UniqueID uid) : base(Config.Kernel, "goods", Номенклатура_Const.TYPE) => base.Init(uid);
+        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "goods", Номенклатура_Const.TYPE) => base.Init(uid, fields);
+        public Номенклатура_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "goods", Номенклатура_Const.TYPE) => base.Init(uid, fields, name?.ToString());
         public async Task<Номенклатура_Object?> GetDirectoryObject(bool readAllTablePart = false)
         {
             if (this.IsEmpty()) return null;
@@ -3280,7 +3282,7 @@ namespace GeneratedCode.Довідники
     
     public class Номенклатура_Select : DirectorySelect
     {
-        public Номенклатура_Select() : base(Config.Kernel, "tab_a03", Номенклатура_Const.TYPE, Номенклатура_Const.PRESENTATION_FIELDS) { }        
+        public Номенклатура_Select() : base(Config.Kernel, "goods", Номенклатура_Const.TYPE, Номенклатура_Const.PRESENTATION_FIELDS) { }        
         public async Task<bool> Select() => await base.BaseSelect();
         public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
         public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Номенклатура_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
@@ -3402,7 +3404,7 @@ namespace GeneratedCode.Довідники
         
         public async Task Save(bool clear_all_before_save) 
         {
-            if (!await base.IsExistOwner(Owner.UniqueID, "tab_a03"))
+            if (!await base.IsExistOwner(Owner.UniqueID, "goods"))
                 throw new Exception("Owner not exist");
             
             base.OwnerVersionID = Owner.VersionID;
@@ -14239,6 +14241,175 @@ namespace GeneratedCode.Довідники
    
     #endregion
     
+    #region DIRECTORY "НовийДовідник"
+    public static class НовийДовідник_Const
+    {
+        public const string TABLE = "tab_a03";
+        public const string TYPE = "НовийДовідник"; /* Назва вказівника */
+        public const string POINTER = "Довідники.НовийДовідник"; /* Повна назва вказівника */
+        public const string FULLNAME = "Новий довідник"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public readonly static string[] PRESENTATION_FIELDS = ["col_a2", ];
+        
+        public const string Код = "col_a1";
+        public const string Назва = "col_a2";
+    }
+
+    public class НовийДовідник_Object : DirectoryObject
+    {
+        public НовийДовідник_Object() : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE,
+             ["col_a1", "col_a2", ])
+        {
+            
+        }
+        
+        public async Task New()
+        {
+            BaseNew();
+            Caption = НовийДовідник_Const.FULLNAME + " *";
+            
+                await НовийДовідник_Triggers.New(this);
+              
+        }
+
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Код = base.FieldValue["col_a1"].ToString() ?? "";
+                Назва = base.FieldValue["col_a2"].ToString() ?? "";
+                
+                BaseClear();
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async Task<bool> Save()
+        {
+            base.FieldValue["col_a1"] = Код;
+            base.FieldValue["col_a2"] = Назва;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async Task<НовийДовідник_Object> Copy(bool copyTableParts = false)
+        {
+            НовийДовідник_Object copy = new()
+            {
+                Код = Код,
+                Назва = Назва,
+                
+            };
+            
+
+            await copy.New();
+            
+            await НовийДовідник_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async Task SetDeletionLabel(bool label = true)
+        {
+            
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async Task Delete()
+        {
+            
+            await base.BaseDelete([]);
+        }
+        
+        public НовийДовідник_Pointer GetDirectoryPointer() => new(UniqueID);
+        public async Task<string> GetPresentation() => await base.BasePresentation(НовийДовідник_Const.PRESENTATION_FIELDS);
+        
+        public string Код { get; set; } = "";
+        public string Назва { get; set; } = "";
+        
+    }
+
+    public class НовийДовідник_Pointer : DirectoryPointer
+    {
+        public НовийДовідник_Pointer() : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE) => base.Init(new UniqueID());
+        public НовийДовідник_Pointer(object? uid) : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE) => base.Init(new UniqueID(uid));
+        public НовийДовідник_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public НовийДовідник_Pointer(UniqueID uid) : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE) => base.Init(uid);
+        public НовийДовідник_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE) => base.Init(uid, fields);
+        public НовийДовідник_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public async Task<НовийДовідник_Object?> GetDirectoryObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            НовийДовідник_Object obj = new();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+        public НовийДовідник_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(НовийДовідник_Const.PRESENTATION_FIELDS);
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [НовийДовідник_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{НовийДовідник_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(НовийДовідник_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
+        public async Task SetDeletionLabel(bool label = true)
+        {
+            
+            await base.BaseDeletionLabel(label);
+        }
+        public НовийДовідник_Pointer GetEmptyPointer() => new();
+    }
+    
+    public class НовийДовідник_Select : DirectorySelect
+    {
+        public НовийДовідник_Select() : base(Config.Kernel, "tab_a03", НовийДовідник_Const.TYPE, НовийДовідник_Const.PRESENTATION_FIELDS) { }        
+        public async Task<bool> Select() => await base.BaseSelect();
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new НовийДовідник_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
+        public НовийДовідник_Pointer? Current { get; private set; }
+        
+        public async Task<НовийДовідник_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return result && MoveNext() && Current != null ? Current : new();
+        }
+        
+        public async Task<List<НовийДовідник_Pointer>> FindListByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            List<НовийДовідник_Pointer> list = [];
+            if (await base.BaseFindListByField(name, value, funcToField, funcToField_Param1))
+                while(MoveNext()) if (Current != null) list.Add(Current);
+            return list;
+        }
+
+        public async Task<bool> SelectByField(string[] selectFields, string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            bool result = await base.BaseSelectByField(selectFields, name, value, funcToField, funcToField_Param1);
+            return result && MoveNext() && Current != null;
+        }
+        
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Код { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public string Назва { get { var obj = getValue("col_a2"); return obj.ToString() ?? ""; } }
+        
+    }
+
+    
+   
+    #endregion
+    
 }
 
 namespace GeneratedCode.Перелічення
@@ -14494,6 +14665,14 @@ namespace GeneratedCode.Перелічення
     {
          Дебет = 1,
          Кредит = 2
+    }
+    #endregion
+    
+    #region ENUM "ТипДокументу"
+    public enum ТипДокументу
+    {
+         Новий = 1,
+         Існуючий = 2
     }
     #endregion
     
@@ -15665,6 +15844,44 @@ namespace GeneratedCode.Перелічення
             return new() {
             {"Дебет", "Дт"},
             {"Кредит", "Кт"},
+            };
+        }
+        #endregion
+    
+        #region ENUM "ТипДокументу"
+        public static string ТипДокументу_Alias(ТипДокументу value)
+        {
+            return value switch
+            {
+                ТипДокументу.Новий => "Новий",
+                ТипДокументу.Існуючий => "Існуючий",
+                _ => ""
+            };
+        }
+
+        public static ТипДокументу ТипДокументу_FindByName(string? name)
+        {
+            return name switch
+            {
+                "Новий" => ТипДокументу.Новий,
+                "Існуючий" => ТипДокументу.Існуючий,
+                _ => 0
+            };
+        }
+
+        public static List<NameValue<ТипДокументу>> ТипДокументу_List()
+        {
+            return [
+            new NameValue<ТипДокументу>("Новий", ТипДокументу.Новий),
+            new NameValue<ТипДокументу>("Існуючий", ТипДокументу.Існуючий),
+            ];
+        }
+
+        public static Dictionary<string, string> ТипДокументу_Dict()
+        {
+            return new() {
+            {"Новий", "Новий"},
+            {"Існуючий", "Існуючий"},
             };
         }
         #endregion
@@ -49106,6 +49323,411 @@ namespace GeneratedCode.Документи
 
     #endregion
     
+    #region DOCUMENT "Магазини"
+    public static class Магазини_Const
+    {
+        public const string TABLE = "tab_b16";
+        public const string TYPE = "Магазини"; /* Назва вказівника */
+        public const string POINTER = "Документи.Магазини"; /* Повна назва вказівника */
+        public const string FULLNAME = "Магазини"; /* Повна назва об'єкта */
+        public const string DELETION_LABEL = "deletion_label"; /* Помітка на видалення true|false */
+        public const string SPEND = "spend"; /* Проведений true|false */
+        public const string SPEND_DATE = "spend_date"; /* Дата проведення DateTime */
+        public readonly static string[] PRESENTATION_FIELDS = ["docname", ];
+        
+        
+        public const string Назва = "docname";
+        public const string НомерДок = "docnomer";
+        public const string ДатаДок = "docdate";
+        public const string Коментар = "col_a1";
+        public const string Підстава = "col_a2";
+        public const string Тип = "col_a3";
+    }
+
+    public class Магазини_Object : DocumentObject
+    {
+        public Магазини_Object() : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE,
+             ["docname", "docnomer", "docdate", "col_a1", "col_a2", "col_a3", ])
+        {
+            
+                //Табличні частини
+                Товари_TablePart = new Магазини_Товари_TablePart(this);
+                
+        }
+        
+        public async Task New()
+        {
+            BaseNew();
+            Caption = Магазини_Const.FULLNAME + " *";
+            
+                await Магазини_Triggers.New(this);
+              
+        }
+
+        public async Task<bool> Read(UniqueID uid, bool readAllTablePart = false)
+        {
+            if (await BaseRead(uid))
+            {
+                Назва = base.FieldValue["docname"].ToString() ?? "";
+                НомерДок = base.FieldValue["docnomer"].ToString() ?? "";
+                ДатаДок = (base.FieldValue["docdate"] != DBNull.Value) ? DateTime.Parse(base.FieldValue["docdate"].ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue;
+                Коментар = base.FieldValue["col_a1"].ToString() ?? "";
+                Підстава = (base.FieldValue["col_a2"] != DBNull.Value) ? (UuidAndText)base.FieldValue["col_a2"] : new UuidAndText();
+                Тип = (base.FieldValue["col_a3"] != DBNull.Value) ? (Перелічення.ТипДокументу)base.FieldValue["col_a3"] : 0;
+                
+                BaseClear();
+                
+                if (readAllTablePart)
+                {
+                    
+                    await Товари_TablePart.Read();
+                }
+                
+                Caption = string.Join(", ", [Назва, ]);
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        public async Task<bool> Save()
+        {
+            
+                await Магазини_Triggers.BeforeSave(this);
+            base.FieldValue["docname"] = Назва;
+            base.FieldValue["docnomer"] = НомерДок;
+            base.FieldValue["docdate"] = ДатаДок;
+            base.FieldValue["col_a1"] = Коментар;
+            base.FieldValue["col_a2"] = Підстава;
+            base.FieldValue["col_a3"] = (int)Тип;
+            
+            bool result = await BaseSave();
+            if (result)
+            {
+                
+            }
+            Caption = string.Join(", ", [Назва, ]);
+            return result;
+        }
+
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
+        {
+            
+            await BaseSpend(false, DateTime.MinValue);
+            return false;
+                
+        }
+
+        
+        /* Очищення регістрів накопичення */
+        Task ClearRegAccum() => Task.CompletedTask;
+
+        public async Task ClearSpendTheDocument()
+        {
+            await ClearRegAccum();
+            
+            await BaseSpend(false, DateTime.MinValue);
+        }
+
+        public async Task<Магазини_Object> Copy(bool copyTableParts = false)
+        {
+            Магазини_Object copy = new()
+            {
+                Назва = Назва,
+                НомерДок = НомерДок,
+                ДатаДок = ДатаДок,
+                Коментар = Коментар,
+                Підстава = Підстава.Copy(),
+                Тип = Тип,
+                
+            };
+            
+            if (copyTableParts)
+            {
+            
+                //Товари - Таблична частина
+                await Товари_TablePart.Read();
+                copy.Товари_TablePart.Records = Товари_TablePart.Copy();
+            
+            }
+            
+
+            await copy.New();
+            
+                await Магазини_Triggers.Copying(copy, this);      
+            
+            return copy;
+        }
+
+        public async Task SetDeletionLabel(bool label = true)
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDeletionLabel(label);
+        }
+
+        public async Task Delete()
+        {
+            
+            await ClearSpendTheDocument();
+            await base.BaseDelete(["tab_b14", ]);
+        }
+        
+        public Магазини_Pointer GetDocumentPointer() => new(UniqueID);
+        public async Task<string> GetPresentation() => await base.BasePresentation(Магазини_Const.PRESENTATION_FIELDS);
+        
+        public string Назва { get; set; } = "";
+        public string НомерДок { get; set; } = "";
+        public DateTime ДатаДок { get; set; } = DateTime.MinValue;
+        public string Коментар { get; set; } = "";
+        public UuidAndText Підстава { get; set; } = new UuidAndText();
+        public Перелічення.ТипДокументу Тип { get; set; } = 0;
+        
+        //Табличні частини
+        public Магазини_Товари_TablePart Товари_TablePart { get; set; }
+        
+    }
+    
+    public class Магазини_Pointer : DocumentPointer
+    {
+        public Магазини_Pointer() : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE) => base.Init(new UniqueID());
+        public Магазини_Pointer(object? uid) : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE) => base.Init(new UniqueID(uid));
+        public Магазини_Pointer(object? uid, object? name) : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE) => base.Init(new UniqueID(uid), name?.ToString());
+        public Магазини_Pointer(UniqueID uid) : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE) => base.Init(uid);
+        public Магазини_Pointer(UniqueID uid, Dictionary<string, object>? fields) : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE) => base.Init(uid, fields);
+        public Магазини_Pointer(UniqueID uid, Dictionary<string, object>? fields, object? name) : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE) => base.Init(uid, fields, name?.ToString());
+        public string Назва { get => Name; set => Name = value; }
+        public async Task<string> GetPresentation() => Name = await base.BasePresentation(Магазини_Const.PRESENTATION_FIELDS);
+        public static void GetJoin(Query querySelect, string joinField, string parentTable, string joinTableAlias, string fieldAlias)
+        {
+            string[] presentationField = new string [Магазини_Const.PRESENTATION_FIELDS.Length];
+            for (int i = 0; i < presentationField.Length; i++) presentationField[i] = $"{joinTableAlias}.{Магазини_Const.PRESENTATION_FIELDS[i]}";
+            querySelect.Joins.Add(new Join(Магазини_Const.TABLE, joinField, parentTable, joinTableAlias));
+            querySelect.FieldAndAlias.Add(new ValueName<string>(presentationField.Length switch { 1 => presentationField[0], >1 => $"concat_ws (', ', " + string.Join(", ", presentationField) + ")", _ => "'#'" }, fieldAlias));
+        }
+        public async Task<bool?> IsSpend() => await base.BaseIsSpend();
+        public async Task<(bool? Spend, DateTime SpendDate)> GetSpend() => await base.BaseGetSpend();
+        public async Task<bool> SpendTheDocument(DateTime spendDate)
+        {
+            Магазини_Object? obj = await GetDocumentObject();
+            return obj != null && await obj.SpendTheDocument(spendDate);
+        }
+        public async Task ClearSpendTheDocument()
+        {
+            
+            await ClearRegAccum();
+            await BaseSpend(false, DateTime.MinValue);
+                
+        }
+        public async Task<bool?> GetDeletionLabel() => await base.BaseGetDeletionLabel();
+        
+        /* Очищення регістрів накопичення */
+        Task ClearRegAccum() => Task.CompletedTask;
+        public async Task SetDeletionLabel(bool label = true)
+        {
+          
+            if (label)
+            {
+                await ClearRegAccum();
+                await BaseSpend(false, DateTime.MinValue);
+            }
+            
+          await base.BaseDeletionLabel(label);
+        }
+        public Магазини_Pointer Copy() => new(base.UniqueID, base.Fields, Name);
+        public Магазини_Pointer GetEmptyPointer() => new();
+        public async Task<Магазини_Object?> GetDocumentObject(bool readAllTablePart = false)
+        {
+            if (this.IsEmpty()) return null;
+            Магазини_Object obj = new();
+            return await obj.Read(base.UniqueID, readAllTablePart) ? obj : null;
+        }
+    }
+
+    public class Магазини_Select : DocumentSelect
+    {		
+        public Магазини_Select() : base(Config.Kernel, "tab_b16", Магазини_Const.TYPE, Магазини_Const.PRESENTATION_FIELDS) { }
+        public async Task<bool> Select() => await base.BaseSelect();
+        public async Task<bool> SelectSingle() { if (await base.BaseSelectSingle()) { MoveNext(); return true; } else { Current = null; return false; } }
+        public bool MoveNext() { if (base.MoveToPosition() && base.CurrentPointerPosition.HasValue) { Current = new Магазини_Pointer(base.CurrentPointerPosition.Value.UniqueID, base.CurrentPointerPosition.Value.Fields, base.CurrentPointerPresentation); return true; } else { Current = null; return false; } }
+        public Магазини_Pointer? Current { get; private set; }
+
+        public async Task<Магазини_Pointer> FindByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            bool result = await base.BaseFindByField(name, value, funcToField, funcToField_Param1);
+            return result && MoveNext() && Current != null ? Current : new();
+        }
+        
+        public async Task<List<Магазини_Pointer>> FindListByField(string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            List<Магазини_Pointer> list = [];
+            if (await base.BaseFindListByField(name, value, funcToField, funcToField_Param1))
+                while(MoveNext()) if (Current != null) list.Add(Current);
+            return list;
+        }
+
+        public async Task<bool> SelectByField(string[] selectFields, string name, object value, string funcToField = "", string funcToField_Param1 = "")
+        {
+            bool result = await base.BaseSelectByField(selectFields, name, value, funcToField, funcToField_Param1);
+            return result && MoveNext() && Current != null;
+        }
+        
+        object getValue(string name) => Current != null && Current.Fields.TryGetValue(name, out object? value) ? value : throw new KeyNotFoundException($"Не знайдено поле '{name}' в колекції вибраних полів! Можливо потрібно спочатку додати поле в колекцію полів для вибору!");
+        public string Назва { get { var obj = getValue("docname"); return obj.ToString() ?? ""; } }
+        public string НомерДок { get { var obj = getValue("docnomer"); return obj.ToString() ?? ""; } }
+        public DateTime ДатаДок { get { var obj = getValue("docdate"); return (obj != DBNull.Value) ? DateTime.Parse(obj.ToString() ?? DateTime.MinValue.ToString()) : DateTime.MinValue; } }
+        public string Коментар { get { var obj = getValue("col_a1"); return obj.ToString() ?? ""; } }
+        public UuidAndText Підстава { get { var obj = getValue("col_a2"); return (obj != DBNull.Value) ? (UuidAndText)obj : new UuidAndText(); } }
+        public Перелічення.ТипДокументу Тип { get { var obj = getValue("col_a3"); return (obj != DBNull.Value) ? (Перелічення.ТипДокументу)obj : 0; } }
+        
+    }
+
+      
+    
+    public class Магазини_Товари_TablePart : DocumentTablePart
+    {
+        public Магазини_Товари_TablePart(Магазини_Object owner) : base(Config.Kernel, "tab_b14",
+             ["col_a1", "col_a2", "col_a3", ])
+        {
+            if (owner == null) throw new Exception("owner null");
+            Owner = owner;
+            
+            QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+            
+        }
+
+        public const string TABLE = "tab_b14";
+        
+        public const string НомерРядка = "col_a1";
+        public const string Номенклатура = "col_a2";
+        public const string Контрагент = "col_a3";
+
+        public Магазини_Object Owner { get; private set; }
+        
+        public List<Record> Records { get; set; } = [];
+
+        public event EventHandler? Saved;
+        
+        public void FillJoin(string[]? orderFields = null)
+        {
+            QuerySelect.Clear();
+
+            if (orderFields != null)
+            {
+              foreach(string field in orderFields)
+                QuerySelect.Order.Add(field, SelectOrder.ASC);
+            }
+            
+            else
+            { 
+              QuerySelect.Order.Add(НомерРядка, SelectOrder.ASC);
+              
+            }
+            
+                      /* pointer */
+                      Довідники.Номенклатура_Pointer.GetJoin(QuerySelect, Номенклатура, $"{TABLE}", "join_tab_2", "Номенклатура");
+                  
+                      /* pointer */
+                      Довідники.Контрагенти_Pointer.GetJoin(QuerySelect, Контрагент, $"{TABLE}", "join_tab_3", "Контрагент");
+                  
+        }
+
+        public async Task Read()
+        {
+            Records.Clear();
+            await base.BaseRead(Owner.UniqueID);
+
+            foreach (Dictionary<string, object> fieldValue in base.FieldValueList) 
+            {
+                Record record = new()
+                {
+                    UID = (Guid)fieldValue["uid"],
+                    НомерРядка = (fieldValue["col_a1"] != DBNull.Value) ? (int)fieldValue["col_a1"] : 0,
+                    Номенклатура = new Довідники.Номенклатура_Pointer(fieldValue["col_a2"]),
+                    Контрагент = new Довідники.Контрагенти_Pointer(fieldValue["col_a3"]),
+                    
+                };
+                Records.Add(record);
+                
+                if (JoinValue.TryGetValue(record.UID.ToString(), out var ItemValue))
+                {
+                  record.JoinItemValue = ItemValue;
+                  record.Номенклатура.Name = ItemValue["Номенклатура"];
+                      record.Контрагент.Name = ItemValue["Контрагент"];
+                      
+                }
+                
+            }
+            
+            base.BaseClear();
+        }
+        
+        public async Task Save(bool clear_all_before_save) 
+        {
+            if (!await base.IsExistOwner(Owner.UniqueID, "tab_b16"))
+                throw new Exception("Owner not exist");
+            
+
+            await base.BaseBeginTransaction();
+            
+            if (clear_all_before_save)
+                await base.BaseDelete(Owner.UniqueID);
+
+            
+            int sequenceNumber_НомерРядка = 0;
+            
+            foreach (Record record in Records)
+            {
+                
+                record.НомерРядка = ++sequenceNumber_НомерРядка;
+                
+                Dictionary<string, object> fieldValue = new()
+                {
+                    {"col_a1", record.НомерРядка},
+                    {"col_a2", record.Номенклатура.IsEmpty() ? DBNull.Value : record.Номенклатура.UniqueID.UGuid},
+                    {"col_a3", record.Контрагент.IsEmpty() ? DBNull.Value : record.Контрагент.UniqueID.UGuid},
+                    
+                };
+                record.UID = await base.BaseSave(record.UID, Owner.UniqueID, fieldValue);
+                
+            }
+            
+            await base.BaseCommitTransaction();
+            
+            Saved?.Invoke(this, new EventArgs());
+        }
+
+        public List<Record> Copy()
+        {
+            int count = Records.Count;
+            List<Record> copy = new(count);
+            for (int i = 0; i < count; i++)
+            {
+                Record original = Records[i];
+                copy.Add(new()
+                {
+                    НомерРядка = original.НомерРядка,
+                    Номенклатура = original.Номенклатура.Copy(),
+                    Контрагент = original.Контрагент.Copy(),
+                     
+                });
+            }
+
+            return copy;
+        }
+
+        public class Record : DocumentTablePartRecord
+        {
+            public int НомерРядка { get; set; } = 0;
+            public Довідники.Номенклатура_Pointer Номенклатура { get; set; } = new Довідники.Номенклатура_Pointer();
+            public Довідники.Контрагенти_Pointer Контрагент { get; set; } = new Довідники.Контрагенти_Pointer();
+            
+        }
+    }
+      
+
+    #endregion
+    
 }
 
 namespace GeneratedCode.Журнали
@@ -49114,8 +49736,8 @@ namespace GeneratedCode.Журнали
     public class JournalSelect: AccountingSoftware.JournalSelect
     {
         public JournalSelect() : base(Config.Kernel,
-             ["tab_a25", "tab_a32", "tab_a34", "tab_a36", "tab_a42", "tab_a44", "tab_a48", "tab_a31", "tab_a51", "tab_a53", "tab_a81", "tab_a83", "tab_a88", "tab_a90", "tab_a92", "tab_a94", "tab_b07", "tab_b10", "tab_a64", "tab_b09", "tab_b27", "tab_b29", "tab_a65", "tab_a96", "tab_b41", "tab_b44", "tab_b51", "acc_operations", "tab_b72", "tab_b73", "tab_b74", "tab_b75", "tab_b76", "tab_b77", "tab_b78", "tab_b79", "tab_b80", "tab_b81", "tab_b82", "tab_b83", "tab_b84", "tab_b85", "tab_b86", "tab_b87", "tab_b88", "tab_b89", "tab_b90", "tab_b91", "tab_b92", "tab_b93", "tab_b94", "tab_b95", "tab_b96", "tab_b97", "tab_b98", "tab_b99", "tab_c01", "tab_c02", "tab_c03", "tab_c04", "tab_c05", "tab_c06", "tab_c07", "tab_c08", "tab_c09", "tab_c10", "tab_c11", "tab_c12", "tab_c13", "tab_c14", "tab_c15", "tab_c16", "tab_c17", "tab_c18", "tab_c19", "tab_c20", "tab_c21", "tab_c22", "tab_c23", "tab_c24", ],
-             ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ВстановленняЦінНоменклатури", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "НадлишкиТоварів", "ПересортицяТоварів", "ПерерахунокТоварів", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", "РозміщенняНоменклатуриПоКоміркам", "КорегуванняБоргу", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЗакриттяЗамовленняПостачальнику", "ЧекККМ", "БухгалтерськаОперація", "АвансовийЗвіт", "Амортизація", "ВизначенняФінансовогоРезультату", "ВиплатаЗаробітноїПлати", "ВиготовленняПродукції", "Додаток1ДоПодатковоїНакладної", "Додаток2ДоПодатковоїНакладної", "ЗаписКнигиПридбання", "ЗмінаПараметрівОсновнихЗасобів", "ЗвітКомісіонераПроПродажТоварів", "ЗвітКомітентуПроПродажТоварів", "КоригуванняНезавершеногоВиробництва", "КоригуванняПДВ", "КоригуванняІншихВитрат", "Модернізація", "Комплектація", "НакладнаВимога", "Наряд", "НарахуванняЗаробітньоїПлати", "ПередачаМатеріалівВЕксплуатацію", "ПереміщенняМатеріалівВЕксплуатації", "ПередачаНематеріальнихАктивів", "ПереміщенняНематеріальнихАктивів", "ПередачаОбладнанняВМонтаж", "ПередачаОсновнихЗасобів", "ПереміщенняОсновнихЗасобів", "ПередачаТоварів", "ПереоцінкаВалюти", "ПереоцінкаОсновнихЗасобів", "ПереоцінкаТоварів", "ПлатіжнеДорученняВхідне", "ПлатіжнеДорученняВихідне", "ПодатковаНакладна", "ПокупкаАбоПродажВалюти", "ПідготовкаДоПередачіОсновнихЗасобів", "ПослугиСторонньоїОрганізації", "ПрибуткуванняМатеріалівЗВиробництва", "ПрибуткуванняТоварівВПереробку", "ПрибуткуванняТоварівЗПереробки", "ПрибуткуванняНезавершеногоВиробництва", "ПрийняттяДоОбліку", "ПоверненняПереданихТоварів", "РемонтОсновнихЗасобів", "РозподілІншихВитрат", "РозрахунокСобівартостіВипуску", "СписанняМатеріалів", "СписанняНезавершеногоВиробництва", "СписанняНематеріальнихАктивів", "СписанняОсновнихЗасобів", "СписанняВитратМайбутніхПеріодів", "СписанняТоварів", "Сторнування", ]) { }
+             ["tab_a25", "tab_a32", "tab_a34", "tab_a36", "tab_a42", "tab_a44", "tab_a48", "tab_a31", "tab_a51", "tab_a53", "tab_a81", "tab_a83", "tab_a88", "tab_a90", "tab_a92", "tab_a94", "tab_b07", "tab_b10", "tab_a64", "tab_b09", "tab_b27", "tab_b29", "tab_a65", "tab_a96", "tab_b41", "tab_b44", "tab_b51", "acc_operations", "tab_b72", "tab_b73", "tab_b74", "tab_b75", "tab_b76", "tab_b77", "tab_b78", "tab_b79", "tab_b80", "tab_b81", "tab_b82", "tab_b83", "tab_b84", "tab_b85", "tab_b86", "tab_b87", "tab_b88", "tab_b89", "tab_b90", "tab_b91", "tab_b92", "tab_b93", "tab_b94", "tab_b95", "tab_b96", "tab_b97", "tab_b98", "tab_b99", "tab_c01", "tab_c02", "tab_c03", "tab_c04", "tab_c05", "tab_c06", "tab_c07", "tab_c08", "tab_c09", "tab_c10", "tab_c11", "tab_c12", "tab_c13", "tab_c14", "tab_c15", "tab_c16", "tab_c17", "tab_c18", "tab_c19", "tab_c20", "tab_c21", "tab_c22", "tab_c23", "tab_c24", "tab_b16", ],
+             ["ЗамовленняПостачальнику", "ПоступленняТоварівТаПослуг", "ЗамовленняКлієнта", "РеалізаціяТоварівТаПослуг", "ВстановленняЦінНоменклатури", "ПрихіднийКасовийОрдер", "РозхіднийКасовийОрдер", "ПереміщенняТоварів", "ПоверненняТоварівПостачальнику", "ПоверненняТоварівВідКлієнта", "АктВиконанихРобіт", "ВведенняЗалишків", "НадлишкиТоварів", "ПересортицяТоварів", "ПерерахунокТоварів", "ПсуванняТоварів", "ВнутрішнєСпоживанняТоварів", "РахунокФактура", "РозміщенняТоварівНаСкладі", "ПереміщенняТоварівНаСкладі", "ЗбіркаТоварівНаСкладі", "РозміщенняНоменклатуриПоКоміркам", "КорегуванняБоргу", "ЗакриттяЗамовленняКлієнта", "ЗакриттяРахункуФактури", "ЗакриттяЗамовленняПостачальнику", "ЧекККМ", "БухгалтерськаОперація", "АвансовийЗвіт", "Амортизація", "ВизначенняФінансовогоРезультату", "ВиплатаЗаробітноїПлати", "ВиготовленняПродукції", "Додаток1ДоПодатковоїНакладної", "Додаток2ДоПодатковоїНакладної", "ЗаписКнигиПридбання", "ЗмінаПараметрівОсновнихЗасобів", "ЗвітКомісіонераПроПродажТоварів", "ЗвітКомітентуПроПродажТоварів", "КоригуванняНезавершеногоВиробництва", "КоригуванняПДВ", "КоригуванняІншихВитрат", "Модернізація", "Комплектація", "НакладнаВимога", "Наряд", "НарахуванняЗаробітньоїПлати", "ПередачаМатеріалівВЕксплуатацію", "ПереміщенняМатеріалівВЕксплуатації", "ПередачаНематеріальнихАктивів", "ПереміщенняНематеріальнихАктивів", "ПередачаОбладнанняВМонтаж", "ПередачаОсновнихЗасобів", "ПереміщенняОсновнихЗасобів", "ПередачаТоварів", "ПереоцінкаВалюти", "ПереоцінкаОсновнихЗасобів", "ПереоцінкаТоварів", "ПлатіжнеДорученняВхідне", "ПлатіжнеДорученняВихідне", "ПодатковаНакладна", "ПокупкаАбоПродажВалюти", "ПідготовкаДоПередачіОсновнихЗасобів", "ПослугиСторонньоїОрганізації", "ПрибуткуванняМатеріалівЗВиробництва", "ПрибуткуванняТоварівВПереробку", "ПрибуткуванняТоварівЗПереробки", "ПрибуткуванняНезавершеногоВиробництва", "ПрийняттяДоОбліку", "ПоверненняПереданихТоварів", "РемонтОсновнихЗасобів", "РозподілІншихВитрат", "РозрахунокСобівартостіВипуску", "СписанняМатеріалів", "СписанняНезавершеногоВиробництва", "СписанняНематеріальнихАктивів", "СписанняОсновнихЗасобів", "СписанняВитратМайбутніхПеріодів", "СписанняТоварів", "Сторнування", "Магазини", ]) { }
 
         public async Task<DocumentObject?> GetDocumentObject(bool readAllTablePart = true)
         {
@@ -49202,6 +49824,7 @@ namespace GeneratedCode.Журнали
                 "СписанняВитратМайбутніхПеріодів" => await new Документи.СписанняВитратМайбутніхПеріодів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
                 "СписанняТоварів" => await new Документи.СписанняТоварів_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
                 "Сторнування" => await new Документи.Сторнування_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
+                "Магазини" => await new Документи.Магазини_Pointer(Current.UniqueID).GetDocumentObject(readAllTablePart),
                 _ => null
             };
         }
