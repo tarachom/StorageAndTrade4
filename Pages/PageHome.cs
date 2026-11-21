@@ -9,6 +9,7 @@ using InterfaceGtk4;
 using GeneratedCode;
 using GeneratedCode.Документи;
 using GeneratedCode.Довідники;
+using AccountingSoftware;
 
 namespace StorageAndTrade;
 
@@ -18,8 +19,6 @@ namespace StorageAndTrade;
 [GObject.Subclass<Form>]
 partial class PageHome : Form
 {
-    //НалаштуванняКористувача_ТабличнаЧастина_ПеріодиЖурналів table;
-
     partial void Initialize()
     {
         {
@@ -40,15 +39,31 @@ partial class PageHome : Form
             Append(hBox);
         }
 
-        /*{
-            table = НалаштуванняКористувача_ТабличнаЧастина_ПеріодиЖурналів.New();
-            table.Hexpand = true;
+        {
+            ReportPage report = ReportPage.New();
+            report.ColumnSettings =
+            [
+               new() { Title = "Назва 2423 4234 23 2", Cell = LabelReportCell.New, Value = x => [x.Fields["Name"]]},
+               new() { Title = "Назва2", Cell = () => TwoLabelReportCell.NewWithOrientation(Orientation.Vertical), Value = x => [x.Fields["Name"], "0000"]},
+               new() { Title = "Назва3", Cell = () => ThreeLabelReportCell.NewWithOrientation(Orientation.Vertical), Value = x => [x.Fields["Name"], "erter erwe", 1]},
+               new() { Title = "Назва3", Cell = ThreeLabelReportCell.New, Value = x => [x.Fields["Name"], "erter erwe", 1]},
+               new() { Title = "Назва4", Cell = () => PointerReportCell.NewWithType(Номенклатура_Const.POINTER), Value = x => [ new UuidAndText(Guid.CreateVersion7(), "Text") ]},
+            ];
+
+            report.Columns();
+
+            List<ReportRow> list = [];
+            ReportRow row = ReportRow.New();
+            row.Fields.Add("Name", "Name name");
+            list.Add(row);
+
+            report.Fill([.. list]);
 
             Box hBox = New(Orientation.Horizontal, 0);
             hBox.MarginBottom = 10;
-            hBox.Append(table);
+            hBox.Append(report);
             Append(hBox);
-        }*/
+        }
     }
 
     /// <summary>
@@ -65,6 +80,6 @@ partial class PageHome : Form
 
     public async Task SetValue()
     {
-        //await table.LoadRecords();
+
     }
 }

@@ -7,7 +7,7 @@
   <Author>Тарахомин Юрій Іванович, accounting.org.ua</Author>
   <Desc>Конфігурація "Зберігання та Торгівля"
 https://accounting.org.ua/storage_and_trade.html</Desc>
-  <DateTimeSave>13.11.2026 13:23:20</DateTimeSave>
+  <DateTimeSave>17.11.2026 17:13:32</DateTimeSave>
   <DictTSearch>simple</DictTSearch>
   <GtkVersion>Gtk4</GtkVersion>
   <ConstantsBlocks>
@@ -29724,7 +29724,7 @@ FROM
           <NotSaveToFile>0</NotSaveToFile>
           <TabularList>Записи</TabularList>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerControl</Name>
           <FullName>Pointer control</FullName>
           <LatinName>PointerControl</LatinName>
@@ -29734,7 +29734,7 @@ FROM
           <GeneratedCode Zip="1">H4sIAAAAAAAACq1Uy27TQBTdW/I/XCIWTkEGCRaoxa3aUEIEtBHhsUComtq3zhB3xsyMUwVUqYD4AYS6YAFbloCKVBDwDeM/QuNHYicFkcIsMpm5rzPn3Gvbsq0LC2CWbWUbAOj36YE+Tl+lh/pI/9DH+qt+qz+mz/VP/Tk7vUsP9JH+kh5sdTllCkWLMyV45PpykqVusq2FC7aVSMpCaKvBUvm/Y3x2iI9tNbg8vm0jQ0EUBi0eoKvf6J/6W/pSf9df9I/0hT5esi3bYmQXZUx8hJ7igoS4yoK7ggSYWR+2N7cfo6/cXrLtR0TKq3VAy06jK0aDPg3YiN4kkg9HdFMEKKbe1Gg+sq042Y6oDzERipIIsnynpwkWZ8h5lvOGQ2QK1s3vDcKCCMXV+assr4zT9wkLMcj4MOlL/ENOA+gwag70KTrN3FyAMOsBDVS/K1AiU0RRzsCDSxcvLk08WiQu7s82ns0BssWZVO71e7dubazeXt9fbFRy1mHDOQ+IHDEfnK3zEOe2JnjLMAXsTGFzO3J9N1YjpwkrQPYIVWWU20ZVDXKasAiNsvT+mJ9cZmmc/H/QdwP3nAzoBu49oIZIHqNQFKXz8FFzLMf8Bcr3gAfM1Fiq4T5FvmKf0T9EZfAX5SoSSVSTQyUggzEGNyRRYsawaq2Lu+J22JAP0GFJFE3UrcTsT4sjuEJfYQB8iELQAIvuyLp5M0bWwwh95awlSnEG29l2Pp+mVRFKICKUs63e5bFJCHGxe+WNm8lYQVR4uD1UXSKQKSevcZJPNkB38EmCUoEHV2qzUzrdQBr21cTrcs1rDXe4wFZE/YF53fWE+WPWJk00ZyPpD9nVkf6WGV7rY/0pPUwPICYhgvc/Us3yRkJ0C1Jz4sArOZh2u8b9ZBeZKrqlo3A3UyQf43uMPkmwc206qkWiaI34g63NognK/vZA1s/Lv+3eSQjDvVPMklOrVH2/Was7CkWObUbIccfXRK10W6tPo8AxLz2xHfs853tiKj5+hpoeqvtmGseV/jRQ+SixVoREzD9H/8hf9W1/Q1fmk0E90WXftopPyC+BZcti5QgAAA==</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerTablePartCell</Name>
           <FullName>Pointer table part cell</FullName>
           <LatinName>PointerTablePartCell</LatinName>
@@ -31049,7 +31049,7 @@ FROM
             </TablePart>
           </ElementTableParts>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerControl</Name>
           <FullName>Pointer control</FullName>
           <LatinName>PointerControl</LatinName>
@@ -31059,7 +31059,7 @@ FROM
           <GeneratedCode Zip="1">H4sIAAAAAAAACq1Uy27TQBTdW/I/XCIWDiCDBAvU4lZtWkIEtBXhsaiqamrfOkPcGTMzTlVQpQLiBxBiwQKxZAmoiIJov2H8R2j8SOykIFKYRSYz93XmnHttW7Z1+QKYZVvZBgD6gz7R39JX6Vt9qI/1kf6u3+lP6XN9or9kp/fpgT7UX9ODzTVOmULR4kwJHrm+HGWpm2zrwmXbSiRlIbRVf7b83zE+28THtupfG962kaEgCoMWD9DVb/SJ/pG+1D/1V32cvtBHs7ZlW4zsoIyJj9BVXJAQF1hwX5AAM+t6e3XrMfrK7SZbfkSkvFEHNOc07vGn/R4N2B69TSQf7NFVEaAYe1OjuWFbcbIVUR9iIhQlEWT5zk4TzEyQ8yznDQfIFCyb31uEBRGKG9NXmZsfpu8RFmKQ8WHSl/gHnAbQYdQc6FN0mrm5AGHWIxqo3ppAiUwRRTkDD65euTI78miRuLg/33g2BcgWZ1K5Nx/cubOycHd5f6ZRyVmHDRc9IHKP+eBsXoI4tzXBm4MxYOcKm9uRyzux2nOaMA9kl1BVRrltVNUgpwkz0ChL7w/5yWWWxsn/B31XcNfJgK7g7iNqiOQxCkVROusbzaEc0xco3wMeMFNjtob7DPmKfUL/EJXBX5SrSCRRjQ6VgAzGENyARIkZw6q1Lu6822ED3keHJVE0UrcSsz8ujuAKfYUB8AEKQQMsuiPr5tUYWRcj9JWzmCjFGWxl26V8mhZEKIGIUE62+hqPTUKIi90rb9xMxgqiwsPtolojAply8hqn+WQDdA+fJCgVeHC9Njul0y2kYU+NvK7VvBZxmwtsRdTvm9fdTJg/ZG3URFM2kv6YXR3qH5nhtT7Sn9O36QHEJETw/keqSd5IiG5Bak4ceCUH425L3E92kKmiWzoKdzJF8jF+wOiTBDtL41EtEkWLxO9vrhZNUPa3B7J+nvtt945CGO6eYZacWqXq+81a2FYocmwTQg47viZqpdtaPRoFjnnpqe3Y4znfI1Px8TPUdFE9NNM4rPSngcpHibUiJGL6OfpH/qpv+xu6Mp8M6qku+7ZVfEJ+AVcCjDPlCAAA</GeneratedCode>
           <NotSaveToFile>0</NotSaveToFile>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerTablePartCell</Name>
           <FullName>Pointer table part cell</FullName>
           <LatinName>PointerTablePartCell</LatinName>
@@ -32219,7 +32219,7 @@ FROM
         <ClearSpend Action="1">Clear</ClearSpend>
       </SpendFunctions>
       <Forms>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerControl</Name>
           <FullName>Pointer control</FullName>
           <LatinName>PointerControl</LatinName>
@@ -32497,7 +32497,7 @@ FROM
             </TablePart>
           </ElementTableParts>
         </Form>
-        <Form Modified="1">
+        <Form Modified="0">
           <Name>PointerTablePartCell</Name>
           <LatinName>PointerTablePartCell</LatinName>
           <Desc>PointerTablePartCell</Desc>

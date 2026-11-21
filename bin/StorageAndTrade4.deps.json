@@ -13,7 +13,7 @@
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
           "InterfaceGtk4": "4.0.0",
           "NPOI": "2.8.1",
-          "SkiaSharp": "4.156.0",
+          "SkiaSharp": "4.157.0",
           "System.Security.Cryptography.Xml": "10.0.13"
         },
         "runtime": {
@@ -272,15 +272,15 @@
           }
         }
       },
-      "Google.GenAI/2.1.0": {
+      "Google.GenAI/2.2.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.69.0",
-          "Microsoft.Extensions.AI.Abstractions": "11.0.0"
+          "Microsoft.Extensions.AI.Abstractions": "11.0.1"
         },
         "runtime": {
           "lib/net8.0/Google.GenAI.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.0",
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0",
             "localPath": "Google.GenAI.dll"
           }
         }
@@ -294,24 +294,24 @@
           }
         }
       },
-      "Microsoft.Extensions.AI/11.0.0": {
+      "Microsoft.Extensions.AI/11.0.1": {
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "11.0.0",
+          "Microsoft.Extensions.AI.Abstractions": "11.0.1",
           "System.Numerics.Tensors": "11.0.0"
         },
         "runtime": {
           "lib/net11.0/Microsoft.Extensions.AI.dll": {
             "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.26.56003",
+            "fileVersion": "11.0.126.57002",
             "localPath": "Microsoft.Extensions.AI.dll"
           }
         }
       },
-      "Microsoft.Extensions.AI.Abstractions/11.0.0": {
+      "Microsoft.Extensions.AI.Abstractions/11.0.1": {
         "runtime": {
           "lib/net11.0/Microsoft.Extensions.AI.Abstractions.dll": {
             "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.26.56003",
+            "fileVersion": "11.0.126.57002",
             "localPath": "Microsoft.Extensions.AI.Abstractions.dll"
           }
         }
@@ -334,11 +334,11 @@
           }
         }
       },
-      "Npgsql/10.0.3": {
+      "Npgsql/11.0.0": {
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
-            "assemblyVersion": "10.0.3.0",
-            "fileVersion": "10.0.3.0",
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0",
             "localPath": "Npgsql.dll"
           }
         }
@@ -351,7 +351,7 @@
           "MathNet.Numerics.Signed": "5.0.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "SharpZipLib": "1.4.2",
-          "SkiaSharp": "4.156.0",
+          "SkiaSharp": "4.157.0",
           "SkiaSharp.NativeAssets.Linux.NoDependencies": "3.119.4",
           "System.Security.Cryptography.Xml": "10.0.13",
           "ZString": "2.6.0"
@@ -388,15 +388,15 @@
           }
         }
       },
-      "SkiaSharp/4.156.0": {
+      "SkiaSharp/4.157.0": {
         "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "4.156.0",
-          "SkiaSharp.NativeAssets.macOS": "4.156.0"
+          "SkiaSharp.NativeAssets.Win32": "4.157.0",
+          "SkiaSharp.NativeAssets.macOS": "4.157.0"
         },
         "runtime": {
           "lib/net10.0/SkiaSharp.dll": {
-            "assemblyVersion": "4.156.0.0",
-            "fileVersion": "4.156.0.0",
+            "assemblyVersion": "4.157.0.0",
+            "fileVersion": "4.157.0.0",
             "localPath": "SkiaSharp.dll"
           }
         }
@@ -483,7 +483,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.macOS/4.156.0": {
+      "SkiaSharp.NativeAssets.macOS/4.157.0": {
         "runtimeTargets": {
           "runtimes/osx/native/libSkiaSharp.dylib": {
             "rid": "osx",
@@ -493,7 +493,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Win32/4.156.0": {
+      "SkiaSharp.NativeAssets.Win32/4.157.0": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
             "rid": "win-arm64",
@@ -614,7 +614,7 @@
       "AccountingSoftware/4.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.2.0",
-          "Npgsql": "10.0.3"
+          "Npgsql": "11.0.0"
         },
         "runtime": {
           "AccountingSoftware.dll": {
@@ -641,9 +641,9 @@
         "dependencies": {
           "AccountingSoftware": "4.0.0",
           "GirCore.Gtk-4.0": "0.9.0-preview.1",
-          "Google.GenAI": "2.1.0",
+          "Google.GenAI": "2.2.0",
           "InterfaceGtkLib": "4.0.0",
-          "Microsoft.Extensions.AI": "11.0.0"
+          "Microsoft.Extensions.AI": "11.0.1"
         },
         "runtime": {
           "InterfaceGtk4.dll": {
@@ -815,12 +815,12 @@
       "path": "google.apis.core/1.69.0",
       "hashPath": "google.apis.core.1.69.0.nupkg.sha512"
     },
-    "Google.GenAI/2.1.0": {
+    "Google.GenAI/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eqrnpcFOh02/m22Q6QQS3hjTMkIKipD5kbihacLZrKXUjlv3LFRpczsjoH8H3WKdQNUrYprvDpYupuWGuns/Ww==",
-      "path": "google.genai/2.1.0",
-      "hashPath": "google.genai.2.1.0.nupkg.sha512"
+      "sha512": "sha512-WuVrdkPHU0M1uT67ONuChfsA9SqLVqYT8TpcVD2BuKxrO40H/MjR20OJ4Pyuqh6SOxVcTv3Ta5FcFBw40Sm5bg==",
+      "path": "google.genai/2.2.0",
+      "hashPath": "google.genai.2.2.0.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -829,19 +829,19 @@
       "path": "mathnet.numerics.signed/5.0.0",
       "hashPath": "mathnet.numerics.signed.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI/11.0.0": {
+    "Microsoft.Extensions.AI/11.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Vn8jo7RCYS3+tD7XOYgwtAPtd6CZIfIpzE20wGkbehAezj+tRY0lZWnEgehP0bLEAno/L54aCa4GnretNoGkXQ==",
-      "path": "microsoft.extensions.ai/11.0.0",
-      "hashPath": "microsoft.extensions.ai.11.0.0.nupkg.sha512"
+      "sha512": "sha512-MP6zzZzPseaXu0DtZFCkPCWPXLTu7JY28ciyxqSoeDOP5Raf+wJT8+HapyLfXaI7F1CXpyr5PgiCQEE0CeVCqw==",
+      "path": "microsoft.extensions.ai/11.0.1",
+      "hashPath": "microsoft.extensions.ai.11.0.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI.Abstractions/11.0.0": {
+    "Microsoft.Extensions.AI.Abstractions/11.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UYZTudmTrGykWIRzcO/TKauTx/+L/h4MYpUBODCG7aIybRVkv2y6uhVwG6UHRS6uTzRqg0K8IJprC9/QhMZGsw==",
-      "path": "microsoft.extensions.ai.abstractions/11.0.0",
-      "hashPath": "microsoft.extensions.ai.abstractions.11.0.0.nupkg.sha512"
+      "sha512": "sha512-pG3n1nHRnVcYuMAiqhDPuKefXTtUGAhAtqhBUKpNsZXYef9Vm51iZhUAVfQ2EzYhechFaA5hCcgQgK18jTzuiw==",
+      "path": "microsoft.extensions.ai.abstractions/11.0.1",
+      "hashPath": "microsoft.extensions.ai.abstractions.11.0.1.nupkg.sha512"
     },
     "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
       "type": "package",
@@ -857,12 +857,12 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
-    "Npgsql/10.0.3": {
+    "Npgsql/11.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w==",
-      "path": "npgsql/10.0.3",
-      "hashPath": "npgsql.10.0.3.nupkg.sha512"
+      "sha512": "sha512-ozQ8GJcEAiW6XSKz2RUpdJDvM4l380BdHx/MRB7QJHL2cTH/0js7f/cisCaYMrZvVUj4/HIW80UjXxI+ikQQzQ==",
+      "path": "npgsql/11.0.0",
+      "hashPath": "npgsql.11.0.0.nupkg.sha512"
     },
     "NPOI/2.8.1": {
       "type": "package",
@@ -878,12 +878,12 @@
       "path": "sharpziplib/1.4.2",
       "hashPath": "sharpziplib.1.4.2.nupkg.sha512"
     },
-    "SkiaSharp/4.156.0": {
+    "SkiaSharp/4.157.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bdBfG346spQvqwvdz7w8yoqquN7MmU89O+TJ9TwnwyFuqhHkBOQnLJ57euu+4XWi99a5uXikDMZmcM4q58HUXw==",
-      "path": "skiasharp/4.156.0",
-      "hashPath": "skiasharp.4.156.0.nupkg.sha512"
+      "sha512": "sha512-C0PYSs8z0OGihExuIPaCEJnoEmDwiVRTFmDI2TZ44rWr2u7UiQX4rZyEwfVSHEiV5Zn/FYh1WbcO9uMPRxAsbw==",
+      "path": "skiasharp/4.157.0",
+      "hashPath": "skiasharp.4.157.0.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.4": {
       "type": "package",
@@ -892,19 +892,19 @@
       "path": "skiasharp.nativeassets.linux.nodependencies/3.119.4",
       "hashPath": "skiasharp.nativeassets.linux.nodependencies.3.119.4.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.macOS/4.156.0": {
+    "SkiaSharp.NativeAssets.macOS/4.157.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pBJ4ARN6ekiBqh+G697sMQmZd4igIEtSdxx9mfxR3nUTxErkrx0JeaU1+IQ4dX8qobG9Fcskv6azW3zPbAEqXQ==",
-      "path": "skiasharp.nativeassets.macos/4.156.0",
-      "hashPath": "skiasharp.nativeassets.macos.4.156.0.nupkg.sha512"
+      "sha512": "sha512-s44YB0BMAEudDf/AdcJLCcN6AXxhpKto0ZnJjats1TwNC+SD4mI2FhotDft58M593Ocea1ra6ad5slfJBhxfvg==",
+      "path": "skiasharp.nativeassets.macos/4.157.0",
+      "hashPath": "skiasharp.nativeassets.macos.4.157.0.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.Win32/4.156.0": {
+    "SkiaSharp.NativeAssets.Win32/4.157.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-D4q5I+N/IBH3LTC/SK51MkfdjuX5JZVSS4gTJHbLPZ9btgga3xSC/gL/lyh18mfpwFmnm6b61DsEv6zrhTy0Ow==",
-      "path": "skiasharp.nativeassets.win32/4.156.0",
-      "hashPath": "skiasharp.nativeassets.win32.4.156.0.nupkg.sha512"
+      "sha512": "sha512-tP54cTnPqGrzf2pBcyupMZWdIUjV34ELdKuh3/c329kRQF4UCVLZvilQZrDMqPJ9P/+AUJC8kDRMBgT/jBvYug==",
+      "path": "skiasharp.nativeassets.win32/4.157.0",
+      "hashPath": "skiasharp.nativeassets.win32.4.157.0.nupkg.sha512"
     },
     "System.CodeDom/7.0.0": {
       "type": "package",
