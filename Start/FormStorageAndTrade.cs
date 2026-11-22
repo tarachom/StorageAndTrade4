@@ -139,7 +139,7 @@ partial class FormStorageAndTrade : FormGeneral
 
     protected override void MenuReports(Box vBox, Popover? popover = null)
     {
-
+        vBox.Append(Menu_Report.New(popover));
     }
 
     protected override void MenuRegisters(Box vBox, Popover? popover = null)

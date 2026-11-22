@@ -24,6 +24,9 @@ static class ВиготовленняПродукції_Функції
             //Коментар
             new Where(Comparison.OR, ВиготовленняПродукції_Const.Коментар, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
                     
+            //КлючовіСловаДляПошуку
+            new Where(Comparison.OR, ВиготовленняПродукції_Const.КлючовіСловаДляПошуку, Comparison.LIKE, searchText) { FuncToField = "LOWER" },
+                    
         ];
     }
 
@@ -75,6 +78,8 @@ static class ВиготовленняПродукції_Функції
                 await Новий.ГотовийВиріб_TablePart.Save(false); // Таблична частина "ГотовийВиріб"
             
                 await Новий.Комплектуючі_TablePart.Save(false); // Таблична частина "Комплектуючі"
+            
+                await Новий.Проводки_TablePart.Save(false); // Таблична частина "Проводки"
             
             return Новий.UniqueID;
         }
